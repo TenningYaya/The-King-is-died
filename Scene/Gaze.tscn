@@ -4,5 +4,9 @@
 
 [node name="Gaze" type="Node2D" unique_id=511512720]
 script = ExtResource("1_f26ee")
+min_level = null
+max_level = null
+start_level = null
+gaze_folder = null
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1915883613]
