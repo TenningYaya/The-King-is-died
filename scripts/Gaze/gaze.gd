@@ -68,6 +68,9 @@ func _unhandled_input(event: InputEvent) -> void:
 	elif event is InputEventMouseMotion:
 		if dragging:
 			var target := get_global_mouse_position() - drag_offset
+			set_top_left(target)
+			get_viewport().set_input_as_handled()
+
 
 #判断鼠标是否在凝视范围里
 func mouse_inside_gaze() -> bool:
@@ -79,7 +82,7 @@ func mouse_inside_gaze() -> bool:
 	var mouseXPosGridFromTopLeft := int(floor(mousePos.x/grid_size))
 	var mouseYPosGridFromTopLeft := int(floor(mousePos.y/grid_size))
 	#节省算力，先粗略检测
-	if mouseXPosGridFromTopLeft < 0 or mouseYPosGridFromTopLeft < 0 or mouseXPosGridFromTopLeft > width or mouseYPosGridFromTopLeft > height:
+	if mouseXPosGridFromTopLeft < 0 or mouseYPosGridFromTopLeft < 0 or mouseXPosGridFromTopLeft >= width or mouseYPosGridFromTopLeft >= height:
 		return false
 	#精确检测，判断在格子里
 	return Vector2i(mouseXPosGridFromTopLeft, mouseYPosGridFromTopLeft) in gaze
@@ -108,6 +111,7 @@ func rotate_90() -> void:
 	refresh_shape()
 	update_sprite_offset()
 	# 旋转后也需要 clamp（因为包围盒可能交换 w/h）
+	sprite.rotation = rotation_degree * PI * 0.5
 	set_top_left(get_top_left())
 	
 func refresh_shape() -> void:
