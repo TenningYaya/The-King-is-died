@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7kx7segxo8rb"
-path="res://.godot/imported/warpgal-stand-aim-big.png-96aaff81da4bb12e661261273a714825.ctex"
+uid="uid://mw7ia7limre5"
+path="res://.godot/imported/3grid.png-02710080c1b2aac69432e0c140587982.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ArtAssets/warpgal-stand-aim-big.png"
-dest_files=["res://.godot/imported/warpgal-stand-aim-big.png-96aaff81da4bb12e661261273a714825.ctex"]
+source_file="res://ArtAssets/Gaze/3grid.png"
+dest_files=["res://.godot/imported/3grid.png-02710080c1b2aac69432e0c140587982.ctex"]
 
 [params]
 
