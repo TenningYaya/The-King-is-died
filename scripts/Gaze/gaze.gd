@@ -36,6 +36,7 @@ var width := 1
 var height := 1
 # 
 func _ready() -> void:
+	sprite.centered = false
 	pass 
 
 #负责管各种input（左键按住拖动和右键旋转）
@@ -81,9 +82,17 @@ func get_top_left() -> Vector2:
 	return global_position - size_px * 0.5
 
 func set_top_left(target_top_left: Vector2) -> void:
+	# 吸附到 120px 网格
+	var snapped := target_top_left.snapped(Vector2(grid_size, grid_size))
+	# clamp 到 600×600 内（基于形状包围盒尺寸）
+	var size_px := get_pixel_size()
+	var max_top_left := Vector2(field_size - size_px.x, field_size - size_px.y)
+	var clamped := Vector2(
+		clampf(snapped.x, 0.0, max_top_left.x),
+		clampf(snapped.y, 0.0, max_top_left.y)
+	)
+	global_position = clamped + size_px * 0.5
 	
-	
-
 func get_pixel_size() -> Vector2:
 	return Vector2(float(width * grid_size), float(height * grid_size))
 
@@ -91,10 +100,9 @@ func rotate_90() -> void:
 	rotation_degree = (rotation_degree + 1) % 4
 	refresh_shape()
 	_update_sprite_offset()
+	# 旋转后也需要 clamp（因为包围盒可能交换 w/h）
+	set_top_left(get_top_left())
 	
-	
-
-
 func refresh_shape() -> void:
 	var base_1based: Array[Vector2i] = shape.get(level, []) 
 	var base := normalize_to_0based(base_1based)
