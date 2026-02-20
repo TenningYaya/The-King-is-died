@@ -12,7 +12,7 @@ const field_size := 600
 @export var max_level := 6
 @export var start_level := 3
 #资源文件夹
-@export var gaze_folder := "res://ArtAssets/Gaze/"
+@export var gaze_folder := "res://art_assets/gaze/"
 
 @onready var sprite: Sprite2D = $Sprite2D
 
@@ -25,11 +25,16 @@ var rotation_degree := 0
 
 #整个凝视的集合array（以格子的形式，0,0 这种）
 var gaze: Array[Vector2i] = []
+const SHAPE_3: Array[Vector2i] = [Vector2i(1,1), Vector2i(1,2), Vector2i(2,2)]
+const SHAPE_4: Array[Vector2i] = [Vector2i(1,1), Vector2i(1,2), Vector2i(2,1), Vector2i(2,2)]
+const SHAPE_5: Array[Vector2i] = [Vector2i(1,1), Vector2i(1,2), Vector2i(2,1), Vector2i(2,2), Vector2i(3,2)]
+const SHAPE_6: Array[Vector2i] = [Vector2i(1,1), Vector2i(1,2), Vector2i(2,1), Vector2i(2,2), Vector2i(3,1), Vector2i(3,2)]
+
 const shape := {
-	3: [Vector2i(1,1), Vector2i(1,2), Vector2i(2,2)],
-	4: [Vector2i(1,1), Vector2i(1,2), Vector2i(2,1), Vector2i(2,2)],
-	5: [Vector2i(1,1), Vector2i(1,2), Vector2i(2,1), Vector2i(2,2), Vector2i(3,2)],
-	6: [Vector2i(1,1), Vector2i(1,2), Vector2i(2,1), Vector2i(2,2), Vector2i(3,1), Vector2i(3,2)],
+	3: SHAPE_3,
+	4: SHAPE_4,
+	5: SHAPE_5,
+	6: SHAPE_6,
 }
 
 var width := 1
@@ -37,7 +42,9 @@ var height := 1
 # 
 func _ready() -> void:
 	sprite.centered = false
-	pass 
+	level = clampi(start_level, min_level, max_level)
+	refresh_level()
+	set_top_left(Vector2.ZERO)
 
 #负责管各种input（左键按住拖动和右键旋转）
 func _unhandled_input(event: InputEvent) -> void:
@@ -99,12 +106,12 @@ func get_pixel_size() -> Vector2:
 func rotate_90() -> void:
 	rotation_degree = (rotation_degree + 1) % 4
 	refresh_shape()
-	_update_sprite_offset()
+	update_sprite_offset()
 	# 旋转后也需要 clamp（因为包围盒可能交换 w/h）
 	set_top_left(get_top_left())
 	
 func refresh_shape() -> void:
-	var base_1based: Array[Vector2i] = shape.get(level, []) 
+	var base_1based: Array[Vector2i] = shape[level] if shape.has(level) else ([] as Array[Vector2i])
 	var base := normalize_to_0based(base_1based)
 	apply_rotation_from_base(base)
 	
@@ -159,8 +166,22 @@ func apply_rotation_from_base(base_cells: Array[Vector2i]) -> void:
 		out.append(Vector2i(rx, ry))
 	gaze = out
 
-func _update_sprite_offset() -> void:
+func update_sprite_offset() -> void:
 	# Sprite2D centered=false，所以它 position 是“绘制左上角”
 	# 我们要让 Node2D 的原点始终在“包围盒中心”，这样旋转好用
 	var size_px := get_pixel_size()
 	sprite.position = -size_px * 0.5
+
+func refresh_level() -> void:
+	apply_texture_for_level(level)
+	rotation_degree = rotation_degree % 4
+	refresh_shape()
+	update_sprite_offset()
+
+func apply_texture_for_level(n: int) -> void:
+	var path := "%s%dgrid.png" % [gaze_folder, n]
+	var tex := load(path)
+	if tex == null:
+		push_error("Gaze texture not found: " + path)
+		return
+	sprite.texture = tex

@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://dcgyebt1n48mk" path="res://art_assets/tile/tile.jpg" id="1_n3f48"]
 
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vx4y2"]
 resource_name = "Tile"
 texture = ExtResource("1_n3f48")

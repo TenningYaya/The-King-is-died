@@ -1,3 +1,8 @@
 [gd_scene format=3 uid="uid://d3ylqyij3fkit"]
 
+[ext_resource type="PackedScene" uid="uid://jfqlwaedgf0u" path="res://scene/gaze.tscn" id="1_5kiuu"]
+
 [node name="Game" type="Node2D" unique_id=1503047627]
+
+[node name="Gaze" parent="." unique_id=511512720 instance=ExtResource("1_5kiuu")]
+position = Vector2(123, 79)
