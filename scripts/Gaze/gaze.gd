@@ -80,7 +80,8 @@ func get_top_left() -> Vector2:
 	var size_px := get_pixel_size()
 	return global_position - size_px * 0.5
 
-func set_top_left() -> Vector2:
+func set_top_left(target_top_left: Vector2) -> void:
+	
 	
 
 func get_pixel_size() -> Vector2:
