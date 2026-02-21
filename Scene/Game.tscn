@@ -1,8 +1,13 @@
 [gd_scene format=3 uid="uid://d3ylqyij3fkit"]
 
 [ext_resource type="PackedScene" uid="uid://jfqlwaedgf0u" path="res://scene/gaze.tscn" id="1_5kiuu"]
+[ext_resource type="Texture2D" uid="uid://b8veoqh66lpuw" path="res://temp.png" id="1_dbls1"]
 
 [node name="Game" type="Node2D" unique_id=1503047627]
+
+[node name="temp" type="Sprite2D" parent="." unique_id=1305795195]
+position = Vector2(300, 300)
+texture = ExtResource("1_dbls1")
 
 [node name="Gaze" parent="." unique_id=511512720 instance=ExtResource("1_5kiuu")]
 position = Vector2(123, 79)
