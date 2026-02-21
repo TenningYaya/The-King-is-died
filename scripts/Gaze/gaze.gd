@@ -25,9 +25,9 @@ var rotation_degree := 0
 
 #整个凝视的集合array（以格子的形式，0,0 这种）
 var gaze: Array[Vector2i] = []
-const SHAPE_3: Array[Vector2i] = [Vector2i(1,1), Vector2i(1,2), Vector2i(2,2)]
+const SHAPE_3: Array[Vector2i] = [Vector2i(1,1), Vector2i(2,1), Vector2i(2,2)]
 const SHAPE_4: Array[Vector2i] = [Vector2i(1,1), Vector2i(1,2), Vector2i(2,1), Vector2i(2,2)]
-const SHAPE_5: Array[Vector2i] = [Vector2i(1,1), Vector2i(1,2), Vector2i(2,1), Vector2i(2,2), Vector2i(3,2)]
+const SHAPE_5: Array[Vector2i] = [Vector2i(1,1), Vector2i(1,2), Vector2i(2,1), Vector2i(2,2), Vector2i(2,3)]
 const SHAPE_6: Array[Vector2i] = [Vector2i(1,1), Vector2i(1,2), Vector2i(2,1), Vector2i(2,2), Vector2i(3,1), Vector2i(3,2)]
 
 const shape := {
@@ -41,51 +41,58 @@ var width := 1
 var height := 1
 # 
 func _ready() -> void:
-	sprite.centered = false
+	# ✅ 让 sprite 以纹理中心为旋转中心（自转）
+	sprite.centered = true
+	sprite.position = Vector2.ZERO
+
 	level = clampi(start_level, min_level, max_level)
 	refresh_level()
 	set_top_left(Vector2.ZERO)
 
+func _process(_delta: float) -> void:
+	if dragging and not Input.is_action_pressed("drag_gaze"):
+		dragging = false
+
 #负责管各种input（左键按住拖动和右键旋转）
-func _unhandled_input(event: InputEvent) -> void:
-	if event is InputEventMouseButton:
-		var mouse := event as InputEventMouseButton
-		#左键按住
-		if mouse.button_index == MOUSE_BUTTON_LEFT:
-			if mouse.pressed:
-				if mouse_inside_gaze():
-					dragging = true
-					drag_offset = get_global_mouse_position() - get_top_left()
-					get_viewport().set_input_as_handled()
-			else:
-				dragging = false
-		#右键点击旋转
-		if mouse.button_index == MOUSE_BUTTON_RIGHT and mouse.pressed:
-			if mouse_inside_gaze():
-				rotate_90()
-				get_viewport().set_input_as_handled()
-			
-	elif event is InputEventMouseMotion:
-		if dragging:
-			var target := get_global_mouse_position() - drag_offset
-			set_top_left(target)
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("drag_gaze"):
+		if mouse_inside_gaze():
+			dragging = true
+			drag_offset = get_global_mouse_position() - get_top_left()
 			get_viewport().set_input_as_handled()
+
+	if event.is_action_released("drag_gaze"):
+		dragging = false
+
+	if event.is_action_pressed("rotate_gaze"):
+		if mouse_inside_gaze():
+			rotate_90()
+			get_viewport().set_input_as_handled()
+
+	if event is InputEventMouseMotion and dragging:
+		var target := get_global_mouse_position() - drag_offset
+		set_top_left(target)
+		get_viewport().set_input_as_handled()
 
 
 #判断鼠标是否在凝视范围里
 func mouse_inside_gaze() -> bool:
-	var mousePos := get_global_mouse_position() - get_top_left()
-	#防止0到-1的小数
+	# Node2D 原点在“包围盒中心”，所以 local(0,0) 是中心
+	# 转成“左上角为(0,0)”的坐标：
+	var local := to_local(get_global_mouse_position())
+	var mousePos := local + get_pixel_size() * 0.5
+
 	if mousePos.x < 0 or mousePos.y < 0:
 		return false
-	#得到mouse的position处在哪个格子
-	var mouseXPosGridFromTopLeft := int(floor(mousePos.x/grid_size))
-	var mouseYPosGridFromTopLeft := int(floor(mousePos.y/grid_size))
-	#节省算力，先粗略检测
-	if mouseXPosGridFromTopLeft < 0 or mouseYPosGridFromTopLeft < 0 or mouseXPosGridFromTopLeft >= width or mouseYPosGridFromTopLeft >= height:
+
+	var gx := int(floor(mousePos.x / grid_size))
+	var gy := int(floor(mousePos.y / grid_size))
+
+	# 注意是 >=
+	if gx < 0 or gy < 0 or gx >= width or gy >= height:
 		return false
-	#精确检测，判断在格子里
-	return Vector2i(mouseXPosGridFromTopLeft, mouseYPosGridFromTopLeft) in gaze
+
+	return Vector2i(gx, gy) in gaze
 	
 func get_top_left() -> Vector2:
 	var size_px := get_pixel_size()
@@ -107,37 +114,50 @@ func get_pixel_size() -> Vector2:
 	return Vector2(float(width * grid_size), float(height * grid_size))
 
 func rotate_90() -> void:
+	var old_center := global_position
+
 	rotation_degree = (rotation_degree + 1) % 4
 	refresh_shape()
-	update_sprite_offset()
-	# 旋转后也需要 clamp（因为包围盒可能交换 w/h）
+
+	# ✅ sprite 自转：只转 sprite，不改 sprite.position
 	sprite.rotation = rotation_degree * PI * 0.5
-	set_top_left(get_top_left())
+
+	# ✅ 位置仍然按你的逻辑：保持中心不变，再用 top_left 做 snap + clamp
+	var new_top_left := old_center - get_pixel_size() * 0.5
+	set_top_left(new_top_left)
 	
 func refresh_shape() -> void:
 	var base_1based: Array[Vector2i] = shape[level] if shape.has(level) else ([] as Array[Vector2i])
 	var base := normalize_to_0based(base_1based)
 	apply_rotation_from_base(base)
 	
-func normalize_to_0based(cells_1based: Array[Vector2i]) -> Array[Vector2i]:
-	# 输入是 1-based 且只是形状描述，我们要：
-	# 1) 先整体减1 -> 0-based
-	# 2) 再把最小 x/y 平移到 0（保证形状左上从(0,0)开始）
-	var tmp: Array[Vector2i] = []
-	var min_x := INF
-	var min_y := INF
-	for c in cells_1based:
-		var z := c - Vector2i.ONE
-		tmp.append(z)
-		min_x = mini(min_x, z.x)
-		min_y = mini(min_y, z.y)
+func normalize_to_0based(cells: Array[Vector2i]) -> Array[Vector2i]:
+	var min_x := 1_000_000_000
+	var min_y := 1_000_000_000
+	for c in cells:
+		min_x = mini(min_x, c.x)
+		min_y = mini(min_y, c.y)
+
 	var out: Array[Vector2i] = []
-	for z in tmp:
-		out.append(Vector2i(z.x - min_x, z.y - min_y))
+	for c in cells:
+		out.append(Vector2i(c.x - min_x, c.y - min_y))
 	return out
 
+
+func _update_bbox(cells: Array[Vector2i]) -> void:
+	var max_x := 0
+	var max_y := 0
+	for c in cells:
+		max_x = maxi(max_x, c.x)
+		max_y = maxi(max_y, c.y)
+	width = max_x + 1
+	height = max_y + 1
+
 func apply_rotation_from_base(base_cells: Array[Vector2i]) -> void:
-	# 先算 base 的width和height
+	# base_cells 必须是 0-based
+	var out: Array[Vector2i] = []
+
+	# 先拿 base 的 bbox（用于旋转公式）
 	var max_x := 0
 	var max_y := 0
 	for c in base_cells:
@@ -145,7 +165,7 @@ func apply_rotation_from_base(base_cells: Array[Vector2i]) -> void:
 		max_y = maxi(max_y, c.y)
 	var bw := max_x + 1
 	var bh := max_y + 1
-	var out: Array[Vector2i] = []
+
 	for c in base_cells:
 		var x := c.x
 		var y := c.y
@@ -154,22 +174,23 @@ func apply_rotation_from_base(base_cells: Array[Vector2i]) -> void:
 		match rotation_degree:
 			0:
 				rx = x; ry = y
-				width = bw; height = bh
-			1: # 90° CW: (x,y)->(h-1-y, x)
+			1: # 90 CW
 				rx = bh - 1 - y
 				ry = x
-				width = bh; height = bw
-			2: # 180°
+			2: # 180
 				rx = bw - 1 - x
 				ry = bh - 1 - y
-				width = bw; height = bh
-			3: # 270° CW
+			3: # 270 CW
 				rx = y
 				ry = bw - 1 - x
-				width = bh; height = bw
 		out.append(Vector2i(rx, ry))
-	gaze = out
 
+	# ✅ 关键：旋转后再 normalize，让形状回到左上角(0,0)
+	out = normalize_to_0based(out)
+
+	gaze = out
+	_update_bbox(gaze)
+	
 func update_sprite_offset() -> void:
 	# Sprite2D centered=false，所以它 position 是“绘制左上角”
 	# 我们要让 Node2D 的原点始终在“包围盒中心”，这样旋转好用
@@ -180,7 +201,9 @@ func refresh_level() -> void:
 	apply_texture_for_level(level)
 	rotation_degree = rotation_degree % 4
 	refresh_shape()
-	update_sprite_offset()
+
+	# ✅ centered=true 后不需要 update_sprite_offset()
+	sprite.rotation = rotation_degree * PI * 0.5
 
 func apply_texture_for_level(n: int) -> void:
 	var path := "%s%dgrid.png" % [gaze_folder, n]
