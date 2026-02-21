@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cbxiq5h01n5uc"]
+
+[ext_resource type="Script" uid="uid://ba50vbnilk2mx" path="res://scripts/buildings/blueprint.gd" id="1_rmgg5"]
+[ext_resource type="Resource" uid="uid://bwac0f2i8fdcs" path="res://resources/elixir_spring.tres" id="2_d8md6"]
+[ext_resource type="Texture2D" uid="uid://mauom8xw2hfv" path="res://art_assets/buildings/elixir_spring.jpg" id="2_wrv05"]
+[ext_resource type="PackedScene" uid="uid://cs7473lfyhaex" path="res://Scene/buildings/producer/elixir_spring.tscn" id="3_41kdw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lkr8q"]
+size = Vector2(113, 112)
+
+[node name="Blueprint" type="Area2D" unique_id=1064392020]
+collision_mask = 2
+script = ExtResource("1_rmgg5")
+data = ExtResource("2_d8md6")
+building_scene = ExtResource("3_41kdw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1273299420]
+position = Vector2(-0.5, -1)
+shape = SubResource("RectangleShape2D_lkr8q")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=208631132]
+position = Vector2(-1.66893e-06, -2.0000038)
+scale = Vector2(0.11836736, 0.11428572)
+texture = ExtResource("2_wrv05")

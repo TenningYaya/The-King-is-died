@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="BuildingData" format=3 uid="uid://bwac0f2i8fdcs"]
+
+[ext_resource type="Texture2D" uid="uid://mauom8xw2hfv" path="res://art_assets/buildings/elixir_spring.jpg" id="1_hbora"]
+[ext_resource type="Script" uid="uid://dai8darcd7q2w" path="res://scripts/buildings/building_data.gd" id="1_rf7nl"]
+
+[resource]
+script = ExtResource("1_rf7nl")
+icon = ExtResource("1_hbora")
+building_name = "ElixirSpring"
+product_type = "elixir"
+production_time = 1.0
+max_production = 0
+metadata/_custom_type_script = "uid://dai8darcd7q2w"

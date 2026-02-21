@@ -1,13 +1,114 @@
 [gd_scene format=3 uid="uid://d3ylqyij3fkit"]
 
-[ext_resource type="PackedScene" uid="uid://jfqlwaedgf0u" path="res://scene/gaze.tscn" id="1_5kiuu"]
+[ext_resource type="PackedScene" uid="uid://jfqlwaedgf0u" path="res://Scene/Gaze.tscn" id="1_5kiuu"]
 [ext_resource type="Texture2D" uid="uid://b8veoqh66lpuw" path="res://temp.png" id="1_dbls1"]
+[ext_resource type="PackedScene" uid="uid://c4cb7fh3c203h" path="res://Scene/tile.tscn" id="2_mopgc"]
+[ext_resource type="PackedScene" uid="uid://cbxiq5h01n5uc" path="res://Scene/buildings/blueprint.tscn" id="5_3xgnh"]
+[ext_resource type="PackedScene" uid="uid://cs7473lfyhaex" path="res://Scene/buildings/producer/elixir_spring.tscn" id="5_ivtx6"]
 
 [node name="Game" type="Node2D" unique_id=1503047627]
 
+[node name="Gaze" parent="." unique_id=511512720 instance=ExtResource("1_5kiuu")]
+position = Vector2(123, 79)
+
+[node name="CollisionSets" type="Node2D" parent="." unique_id=1721479888]
+
+[node name="CollisionSetsHorizontal" type="Node2D" parent="CollisionSets" unique_id=81578321]
+
+[node name="Tile" parent="CollisionSets/CollisionSetsHorizontal" unique_id=837481126 groups=["slots"] instance=ExtResource("2_mopgc")]
+position = Vector2(62, 60)
+
+[node name="Tile2" parent="CollisionSets/CollisionSetsHorizontal" unique_id=78724950 groups=["slots"] instance=ExtResource("2_mopgc")]
+position = Vector2(181, 60)
+
+[node name="Tile3" parent="CollisionSets/CollisionSetsHorizontal" unique_id=222330485 groups=["slots"] instance=ExtResource("2_mopgc")]
+position = Vector2(300, 60)
+
+[node name="Tile4" parent="CollisionSets/CollisionSetsHorizontal" unique_id=1585810041 groups=["slots"] instance=ExtResource("2_mopgc")]
+position = Vector2(420, 60)
+
+[node name="Tile5" parent="CollisionSets/CollisionSetsHorizontal" unique_id=1790127165 groups=["slots"] instance=ExtResource("2_mopgc")]
+position = Vector2(541, 60)
+
+[node name="CollisionSetsHorizontal2" type="Node2D" parent="CollisionSets" unique_id=617624170]
+position = Vector2(-1, 120)
+
+[node name="Tile" parent="CollisionSets/CollisionSetsHorizontal2" unique_id=5733930 groups=["slots"] instance=ExtResource("2_mopgc")]
+position = Vector2(62, 60)
+
+[node name="Tile2" parent="CollisionSets/CollisionSetsHorizontal2" unique_id=1236199929 groups=["slots"] instance=ExtResource("2_mopgc")]
+position = Vector2(181, 60)
+
+[node name="Tile3" parent="CollisionSets/CollisionSetsHorizontal2" unique_id=921893297 groups=["slots"] instance=ExtResource("2_mopgc")]
+position = Vector2(300, 60)
+
+[node name="Tile4" parent="CollisionSets/CollisionSetsHorizontal2" unique_id=1389672684 groups=["slots"] instance=ExtResource("2_mopgc")]
+position = Vector2(420, 60)
+
+[node name="Tile5" parent="CollisionSets/CollisionSetsHorizontal2" unique_id=1234503426 groups=["slots"] instance=ExtResource("2_mopgc")]
+position = Vector2(541, 60)
+
+[node name="CollisionSetsHorizontal3" type="Node2D" parent="CollisionSets" unique_id=1660372336]
+position = Vector2(-1, 238)
+
+[node name="Tile" parent="CollisionSets/CollisionSetsHorizontal3" unique_id=1680404437 groups=["slots"] instance=ExtResource("2_mopgc")]
+position = Vector2(62, 60)
+
+[node name="Tile2" parent="CollisionSets/CollisionSetsHorizontal3" unique_id=139959843 groups=["slots"] instance=ExtResource("2_mopgc")]
+position = Vector2(181, 60)
+
+[node name="Tile3" parent="CollisionSets/CollisionSetsHorizontal3" unique_id=1839196454 groups=["slots"] instance=ExtResource("2_mopgc")]
+position = Vector2(300, 60)
+
+[node name="Tile4" parent="CollisionSets/CollisionSetsHorizontal3" unique_id=698471085 groups=["slots"] instance=ExtResource("2_mopgc")]
+position = Vector2(420, 60)
+
+[node name="Tile5" parent="CollisionSets/CollisionSetsHorizontal3" unique_id=561047280 groups=["slots"] instance=ExtResource("2_mopgc")]
+position = Vector2(541, 60)
+
+[node name="CollisionSetsHorizontal4" type="Node2D" parent="CollisionSets" unique_id=1398577820]
+position = Vector2(-1, 359)
+
+[node name="Tile" parent="CollisionSets/CollisionSetsHorizontal4" unique_id=819861888 groups=["slots"] instance=ExtResource("2_mopgc")]
+position = Vector2(62, 60)
+
+[node name="Tile2" parent="CollisionSets/CollisionSetsHorizontal4" unique_id=1099123931 groups=["slots"] instance=ExtResource("2_mopgc")]
+position = Vector2(181, 60)
+
+[node name="Tile3" parent="CollisionSets/CollisionSetsHorizontal4" unique_id=1534330922 groups=["slots"] instance=ExtResource("2_mopgc")]
+position = Vector2(300, 60)
+
+[node name="Tile4" parent="CollisionSets/CollisionSetsHorizontal4" unique_id=1513582379 groups=["slots"] instance=ExtResource("2_mopgc")]
+position = Vector2(420, 60)
+
+[node name="Tile5" parent="CollisionSets/CollisionSetsHorizontal4" unique_id=353557086 groups=["slots"] instance=ExtResource("2_mopgc")]
+position = Vector2(541, 60)
+
+[node name="CollisionSetsHorizontal5" type="Node2D" parent="CollisionSets" unique_id=974339688]
+position = Vector2(-1, 477)
+
+[node name="Tile" parent="CollisionSets/CollisionSetsHorizontal5" unique_id=1592128474 groups=["slots"] instance=ExtResource("2_mopgc")]
+position = Vector2(62, 60)
+
+[node name="Tile2" parent="CollisionSets/CollisionSetsHorizontal5" unique_id=1859892947 groups=["slots"] instance=ExtResource("2_mopgc")]
+position = Vector2(181, 60)
+
+[node name="Tile3" parent="CollisionSets/CollisionSetsHorizontal5" unique_id=52837966 groups=["slots"] instance=ExtResource("2_mopgc")]
+position = Vector2(300, 60)
+
+[node name="Tile4" parent="CollisionSets/CollisionSetsHorizontal5" unique_id=786463420 groups=["slots"] instance=ExtResource("2_mopgc")]
+position = Vector2(420, 60)
+
+[node name="Tile5" parent="CollisionSets/CollisionSetsHorizontal5" unique_id=180275249 groups=["slots"] instance=ExtResource("2_mopgc")]
+position = Vector2(541, 60)
+
 [node name="temp" type="Sprite2D" parent="." unique_id=1305795195]
+visible = false
 position = Vector2(300, 300)
 texture = ExtResource("1_dbls1")
 
-[node name="Gaze" parent="." unique_id=511512720 instance=ExtResource("1_5kiuu")]
-position = Vector2(123, 79)
+[node name="ElixirSpring" parent="." unique_id=270404273 instance=ExtResource("5_ivtx6")]
+position = Vector2(845, 196)
+
+[node name="Blueprint" parent="." unique_id=1064392020 instance=ExtResource("5_3xgnh")]
+position = Vector2(272, 714)
