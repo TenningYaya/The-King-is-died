@@ -1,14 +1,13 @@
 [gd_scene format=3 uid="uid://d3ylqyij3fkit"]
 
 [ext_resource type="PackedScene" uid="uid://jfqlwaedgf0u" path="res://Scene/Gaze.tscn" id="1_5kiuu"]
-[ext_resource type="Texture2D" uid="uid://b8veoqh66lpuw" path="res://temp.png" id="1_dbls1"]
 [ext_resource type="PackedScene" uid="uid://c4cb7fh3c203h" path="res://Scene/tile.tscn" id="2_mopgc"]
 [ext_resource type="PackedScene" uid="uid://cbxiq5h01n5uc" path="res://Scene/buildings/blueprint.tscn" id="5_3xgnh"]
-[ext_resource type="PackedScene" uid="uid://cs7473lfyhaex" path="res://Scene/buildings/producer/elixir_spring.tscn" id="5_ivtx6"]
+[ext_resource type="Script" uid="uid://bx385egptpnpx" path="res://scripts/level/level_resource_manager.gd" id="6_3xgnh"]
 
 [node name="Game" type="Node2D" unique_id=1503047627]
 
-[node name="Gaze" parent="." unique_id=511512720 instance=ExtResource("1_5kiuu")]
+[node name="Gaze" parent="." unique_id=511512720 groups=["gaze_controller"] instance=ExtResource("1_5kiuu")]
 position = Vector2(123, 79)
 
 [node name="CollisionSets" type="Node2D" parent="." unique_id=1721479888]
@@ -102,13 +101,9 @@ position = Vector2(420, 60)
 [node name="Tile5" parent="CollisionSets/CollisionSetsHorizontal5" unique_id=180275249 groups=["slots"] instance=ExtResource("2_mopgc")]
 position = Vector2(541, 60)
 
-[node name="temp" type="Sprite2D" parent="." unique_id=1305795195]
-visible = false
-position = Vector2(300, 300)
-texture = ExtResource("1_dbls1")
-
-[node name="ElixirSpring" parent="." unique_id=270404273 instance=ExtResource("5_ivtx6")]
-position = Vector2(845, 196)
+[node name="LevelResourceManager" type="Node" parent="." unique_id=1377458719 groups=["level_manager"]]
+script = ExtResource("6_3xgnh")
+metadata/_custom_type_script = "uid://bx385egptpnpx"
 
 [node name="Blueprint" parent="." unique_id=1064392020 instance=ExtResource("5_3xgnh")]
-position = Vector2(272, 714)
+position = Vector2(348, 739)

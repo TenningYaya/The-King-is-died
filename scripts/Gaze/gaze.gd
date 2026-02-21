@@ -212,3 +212,17 @@ func apply_texture_for_level(n: int) -> void:
 		push_error("Gaze texture not found: " + path)
 		return
 	sprite.texture = tex
+
+## 建筑调用此函数：输入建筑的 global_position，返回是否被覆盖
+func is_position_covered(global_pos: Vector2) -> bool:
+	# 1. 转为 Gaze 节点的局部坐标
+	var local_pos = to_local(global_pos)
+	# 2. 偏移 half_size 得到从左上角 (0,0) 开始的坐标（同 mouse_inside_gaze 逻辑）
+	var offset_pos = local_pos + get_pixel_size() * 0.5
+	
+	# 3. 换算成格子索引
+	var gx = int(floor(offset_pos.x / grid_size))
+	var gy = int(floor(offset_pos.y / grid_size))
+	
+	# 4. 检查是否在有效形状数组内
+	return Vector2i(gx, gy) in gaze

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="BuildingData" format=3 uid="uid://gk1itjr45wc1"]
+
+[ext_resource type="Texture2D" uid="uid://drygoq6ig2tky" path="res://art_assets/buildings/spirit_vein.jpg" id="1_pqf0l"]
+[ext_resource type="Script" uid="uid://dai8darcd7q2w" path="res://scripts/buildings/building_data.gd" id="1_u7yqm"]
+
+[resource]
+script = ExtResource("1_u7yqm")
+icon = ExtResource("1_pqf0l")
+building_name = "MysticIronOre"
+product_type = "mystic_iron"
+metadata/_custom_type_script = "uid://dai8darcd7q2w"

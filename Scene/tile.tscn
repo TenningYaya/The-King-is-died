@@ -6,6 +6,7 @@ size = Vector2(0.25, 0.25)
 [node name="Tile" type="Area2D" unique_id=837481126]
 collision_layer = 2
 collision_mask = 0
+input_pickable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=663506127]
 shape = SubResource("RectangleShape2D_u3axt")
@@ -15,4 +16,5 @@ offset_left = -55.0
 offset_top = -55.0
 offset_right = 55.0
 offset_bottom = 55.0
+mouse_filter = 2
 color = Color(0.83632696, 0.83632696, 0.83632696, 1)

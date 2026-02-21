@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="BuildingData" format=3 uid="uid://c8cu8kdl0hchx"]
+
+[ext_resource type="Texture2D" uid="uid://dgcnn1mulc0ai" path="res://art_assets/buildings/herb_garden.png" id="1_j82hb"]
+[ext_resource type="Script" uid="uid://dai8darcd7q2w" path="res://scripts/buildings/building_data.gd" id="1_nyxeu"]
+
+[resource]
+script = ExtResource("1_nyxeu")
+icon = ExtResource("1_j82hb")
+building_name = "HerbGarden"
+product_type = "herb"
+production_time = 1.0
+max_production = 500
+metadata/_custom_type_script = "uid://dai8darcd7q2w"

@@ -16,3 +16,7 @@ class_name BuildingData
 @export var amount_per_cycle: int = 1
 @export var production_time: float = 2.0
 @export var max_production: int = 100
+
+@export_group("搬迁惩罚配置")
+@export var move_penalty_multiplier: float = 0.5
+@export var move_penalty_duration_factor: float = 2.0
