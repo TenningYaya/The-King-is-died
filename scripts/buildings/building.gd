@@ -3,6 +3,7 @@ extends Area2D
 class_name Building
 
 @export var data: BuildingData # 每个建筑实体都持有一份数据引用
+var current_slot: Area2D = null
 
 var current_progress: float = 0.0
 var is_active: bool = true
@@ -59,9 +60,6 @@ func _on_cycle_complete():
 
 func _input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton:
-		# 只要有点击，无论左键右键、带不带 Shift，都打印
-		print("鼠标点击了建筑：", event.as_text(), " | Shift键状态：", Input.is_key_pressed(KEY_SHIFT))
-		
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if event.pressed and Input.is_key_pressed(KEY_SHIFT):
 				_start_moving()
@@ -84,15 +82,30 @@ func _stop_moving():
 	var target_slot = null
 	for a in areas:
 		if a.is_in_group("slots"):
-			target_slot = a
-			break
+			# ✅ 使用元数据检测占用，如果没设置过 meta，默认设为 false
+			var occupied = a.get_meta("is_occupied", false)
+			if not occupied:
+				target_slot = a
+				break
 	
 	if target_slot:
+		# 释放旧格子
+		if current_slot:
+			current_slot.set_meta("is_occupied", false)
+		
+		# 占领新格子
 		global_position = target_slot.global_position
-		_on_moved_to_new_slot() # 触发降速惩罚逻辑
+		target_slot.set_meta("is_occupied", true)
+		current_slot = target_slot
+		_on_moved_to_new_slot()
 	else:
 		global_position = original_pos # 挪动失败回位
-
+		
+func set_initial_slot(slot_node: Area2D):
+	current_slot = slot_node
+	current_slot.set_meta("is_occupied", true)
+	global_position = slot_node.global_position
+	
 func _on_moved_to_new_slot():
 	if data:
 		# 时间 = 生产周期 * 惩罚因子

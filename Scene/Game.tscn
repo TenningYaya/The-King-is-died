@@ -107,3 +107,6 @@ metadata/_custom_type_script = "uid://bx385egptpnpx"
 
 [node name="Blueprint" parent="." unique_id=1064392020 instance=ExtResource("5_3xgnh")]
 position = Vector2(348, 739)
+
+[node name="Blueprint2" parent="." unique_id=262191292 instance=ExtResource("5_3xgnh")]
+position = Vector2(580, 739)

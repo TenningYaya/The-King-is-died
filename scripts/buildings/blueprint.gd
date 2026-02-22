@@ -55,9 +55,11 @@ func _on_release():
 
 # 建议使用 Group 判定，比 name.begins_with 更稳健
 func _on_area_entered(area):
-	if area.is_in_group("slots"): 
-		current_slot = area
-
+	if area.is_in_group("slots"):
+		# ✅ 检查元数据：只有没被占用的地块才会被记录
+		if not area.get_meta("is_occupied", false):
+			current_slot = area
+			
 func _on_area_exited(area):
 	if area == current_slot:
 		current_slot = null
@@ -80,7 +82,9 @@ func _start_working():
 	# 4. 对齐位置
 	new_building.global_position = current_slot.global_position
 	
-	print("[%s] 蓝图植入成功！" % data.building_name)
-	
+	current_slot.set_meta("is_occupied", true)
+	if "current_slot" in new_building:
+		new_building.current_slot = current_slot
+			
 	# 5. 移除蓝图虚影
 	queue_free()

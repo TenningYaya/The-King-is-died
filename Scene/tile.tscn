@@ -7,6 +7,7 @@ size = Vector2(0.25, 0.25)
 collision_layer = 2
 collision_mask = 0
 input_pickable = false
+metadata/is_occupied = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=663506127]
 shape = SubResource("RectangleShape2D_u3axt")
