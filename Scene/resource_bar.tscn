@@ -1,0 +1,169 @@
+[gd_scene format=3 uid="uid://dno43pe6wjeqf"]
+
+[ext_resource type="Script" uid="uid://cjeexr3ii4105" path="res://Scene/resource_bar.gd" id="1_ke2c8"]
+[ext_resource type="Texture2D" uid="uid://cr5aj7wtnbdj6" path="res://art_assets/ui/Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_BookCover01a.png" id="2_pd6es"]
+[ext_resource type="Texture2D" uid="uid://mauom8xw2hfv" path="res://art_assets/buildings/elixir_spring.jpg" id="3_rojot"]
+
+[sub_resource type="SystemFont" id="SystemFont_74428"]
+
+[node name="ResourceBar" type="CanvasLayer" unique_id=298767585]
+script = ExtResource("1_ke2c8")
+
+[node name="Background" type="NinePatchRect" parent="." unique_id=22803245]
+anchors_preset = 10
+anchor_right = 1.0
+offset_right = -1390.0
+offset_bottom = 270.0
+grow_horizontal = 2
+texture = ExtResource("2_pd6es")
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="GridContainer" type="GridContainer" parent="Background" unique_id=1153349541]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 4
+
+[node name="ElixirItem" type="HBoxContainer" parent="Background/GridContainer" unique_id=1785969801]
+custom_minimum_size = Vector2(130, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="Background/GridContainer/ElixirItem" unique_id=1549038704]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("3_rojot")
+expand_mode = 1
+
+[node name="ElixirLabel" type="Label" parent="Background/GridContainer/ElixirItem" unique_id=2138412763]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_74428")
+theme_override_font_sizes/font_size = 16
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HerbItem" type="HBoxContainer" parent="Background/GridContainer" unique_id=360231571]
+custom_minimum_size = Vector2(130, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="Background/GridContainer/HerbItem" unique_id=1598915694]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("3_rojot")
+expand_mode = 1
+
+[node name="HerbLabel" type="Label" parent="Background/GridContainer/HerbItem" unique_id=1587003811]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_74428")
+theme_override_font_sizes/font_size = 16
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CrystalItem" type="HBoxContainer" parent="Background/GridContainer" unique_id=477723495]
+custom_minimum_size = Vector2(130, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="Background/GridContainer/CrystalItem" unique_id=2138683348]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("3_rojot")
+expand_mode = 1
+
+[node name="CrystalLabel" type="Label" parent="Background/GridContainer/CrystalItem" unique_id=571857669]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_74428")
+theme_override_font_sizes/font_size = 16
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="IronItem" type="HBoxContainer" parent="Background/GridContainer" unique_id=2047502614]
+custom_minimum_size = Vector2(130, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="Background/GridContainer/IronItem" unique_id=995721676]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("3_rojot")
+expand_mode = 1
+
+[node name="IronLabel" type="Label" parent="Background/GridContainer/IronItem" unique_id=269700884]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_74428")
+theme_override_font_sizes/font_size = 16
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StoneItem" type="HBoxContainer" parent="Background/GridContainer" unique_id=1524594508]
+custom_minimum_size = Vector2(130, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="Background/GridContainer/StoneItem" unique_id=2038578690]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("3_rojot")
+expand_mode = 1
+
+[node name="StoneLabel" type="Label" parent="Background/GridContainer/StoneItem" unique_id=1256274898]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_74428")
+theme_override_font_sizes/font_size = 16
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CoinItem" type="HBoxContainer" parent="Background/GridContainer" unique_id=1375181130]
+custom_minimum_size = Vector2(130, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="Background/GridContainer/CoinItem" unique_id=340168756]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("3_rojot")
+expand_mode = 1
+
+[node name="CoinLabel" type="Label" parent="Background/GridContainer/CoinItem" unique_id=1919632589]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_74428")
+theme_override_font_sizes/font_size = 16
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
