@@ -7,6 +7,7 @@
 script = ExtResource("1_nyxeu")
 icon = ExtResource("1_j82hb")
 building_name = "HerbGarden"
+base_scene_path = "uid://cs7473lfyhaex"
 product_type = "herb"
 production_time = 1.0
 max_production = 500

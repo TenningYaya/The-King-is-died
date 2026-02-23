@@ -15,6 +15,14 @@ var original_pos: Vector2
 
 @onready var progress_pie = $UIContainer/ProgressBar
 
+func _ready():
+	if data:
+		if has_node("Sprite2D") and data.icon:
+			$Sprite2D.texture = data.icon
+		
+		if progress_pie:
+			progress_pie.value = 0
+			
 func _process(delta):
 	if not is_active or data == null:
 		return

@@ -8,7 +8,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dvdb5"]
 size = Vector2(116, 117)
 
-[node name="ElixirSpring" type="Area2D" unique_id=270404273]
+[node name="ProductionBuilding" type="Area2D" unique_id=270404273]
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_x0iil")

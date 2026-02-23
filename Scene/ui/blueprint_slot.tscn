@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://e27owbe3qpni"]
+
+[ext_resource type="Script" uid="uid://by2aqnfalv8uj" path="res://scripts/ui/blueprint_slot.gd" id="1_34gw6"]
+
+[node name="BlueprintSlot" type="Button" unique_id=2013709848]
+custom_minimum_size = Vector2(120, 120)
+script = ExtResource("1_34gw6")
+
+[node name="SlotBG" type="ColorRect" parent="." unique_id=1548545691]
+layout_mode = 0
+offset_right = 120.0
+offset_bottom = 118.0
+color = Color(0.6781173, 0.6781179, 0.67811733, 1)
+
+[node name="Icon" type="TextureRect" parent="." unique_id=71297365]
+layout_mode = 0
+offset_right = 118.0
+offset_bottom = 118.0
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CountLabel" type="Label" parent="." unique_id=1489096096]
+modulate = Color(0.8901961, 0.003921569, 0.003921569, 1)
+layout_mode = 0
+offset_left = 74.0
+offset_top = 4.0
+offset_right = 114.0
+offset_bottom = 27.0

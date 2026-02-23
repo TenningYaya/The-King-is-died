@@ -7,6 +7,7 @@
 script = ExtResource("1_rf7nl")
 icon = ExtResource("1_hbora")
 building_name = "ElixirSpring"
+base_scene_path = "uid://cs7473lfyhaex"
 product_type = "elixir"
 production_time = 1.0
 max_production = 0

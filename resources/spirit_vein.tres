@@ -7,6 +7,8 @@
 script = ExtResource("1_cyop6")
 icon = ExtResource("1_qcxbg")
 building_name = "SpiritVein"
+base_scene_path = "uid://cs7473lfyhaex"
+product_type = "aether_crystal"
 production_time = 1.0
 max_production = 500
 metadata/_custom_type_script = "uid://dai8darcd7q2w"

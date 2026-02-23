@@ -7,5 +7,6 @@
 script = ExtResource("1_u7yqm")
 icon = ExtResource("1_pqf0l")
 building_name = "MysticIronOre"
+base_scene_path = "uid://cs7473lfyhaex"
 product_type = "mystic_iron"
 metadata/_custom_type_script = "uid://dai8darcd7q2w"

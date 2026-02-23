@@ -1,0 +1,130 @@
+[gd_scene format=3 uid="uid://xohgmd3qdtav"]
+
+[ext_resource type="Script" uid="uid://cqgnu5813wbc8" path="res://scripts/level/level_blueprint_manager.gd" id="1_hhnae"]
+[ext_resource type="Script" uid="uid://dqv4ehqim0ek6" path="res://scripts/ui/test_panel.gd" id="1_rkeu6"]
+[ext_resource type="Script" uid="uid://bl7lscddse5ko" path="res://scripts/ui/blueprint_filter.gd" id="1_rlm7m"]
+[ext_resource type="PackedScene" uid="uid://e27owbe3qpni" path="res://Scene/ui/blueprint_slot.tscn" id="1_rmctn"]
+[ext_resource type="PackedScene" uid="uid://cbxiq5h01n5uc" path="res://Scene/buildings/blueprint.tscn" id="3_eqi16"]
+
+[node name="BlueprintUI" type="CanvasLayer" unique_id=55262024]
+script = ExtResource("1_hhnae")
+slot_scene = ExtResource("1_rmctn")
+common_blueprint_scene = ExtResource("3_eqi16")
+
+[node name="Control" type="Control" parent="." unique_id=469888182]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 29.0
+offset_top = 734.0
+offset_right = 69.0
+offset_bottom = 774.0
+mouse_filter = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control" unique_id=754640073]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="FilterButton" type="VBoxContainer" parent="Control/HBoxContainer" unique_id=1571475950]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="All" type="Button" parent="Control/HBoxContainer/FilterButton" unique_id=555654019]
+layout_mode = 2
+text = "All"
+script = ExtResource("1_rlm7m")
+
+[node name="Product" type="Button" parent="Control/HBoxContainer/FilterButton" unique_id=863903421]
+layout_mode = 2
+text = "Produce"
+script = ExtResource("1_rlm7m")
+filter_to_set = 1
+
+[node name="Battle" type="Button" parent="Control/HBoxContainer/FilterButton" unique_id=996915716]
+layout_mode = 2
+text = "Battle"
+script = ExtResource("1_rlm7m")
+filter_to_set = 2
+
+[node name="BlueprintsSlots" type="GridContainer" parent="Control/HBoxContainer" unique_id=2019948940]
+custom_minimum_size = Vector2(125, 125)
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 5
+
+[node name="BlueprintSlot" parent="Control/HBoxContainer/BlueprintsSlots" unique_id=2013709848 instance=ExtResource("1_rmctn")]
+layout_mode = 2
+
+[node name="BlueprintSlot2" parent="Control/HBoxContainer/BlueprintsSlots" unique_id=434307780 instance=ExtResource("1_rmctn")]
+layout_mode = 2
+
+[node name="BlueprintSlot3" parent="Control/HBoxContainer/BlueprintsSlots" unique_id=1390929254 instance=ExtResource("1_rmctn")]
+layout_mode = 2
+
+[node name="BlueprintSlot4" parent="Control/HBoxContainer/BlueprintsSlots" unique_id=727933258 instance=ExtResource("1_rmctn")]
+layout_mode = 2
+
+[node name="BlueprintSlot5" parent="Control/HBoxContainer/BlueprintsSlots" unique_id=461935520 instance=ExtResource("1_rmctn")]
+layout_mode = 2
+
+[node name="BlueprintSlot6" parent="Control/HBoxContainer/BlueprintsSlots" unique_id=2067149247 instance=ExtResource("1_rmctn")]
+layout_mode = 2
+
+[node name="BlueprintSlot7" parent="Control/HBoxContainer/BlueprintsSlots" unique_id=126983670 instance=ExtResource("1_rmctn")]
+layout_mode = 2
+
+[node name="BlueprintSlot8" parent="Control/HBoxContainer/BlueprintsSlots" unique_id=710137961 instance=ExtResource("1_rmctn")]
+layout_mode = 2
+
+[node name="BlueprintSlot9" parent="Control/HBoxContainer/BlueprintsSlots" unique_id=1708689944 instance=ExtResource("1_rmctn")]
+layout_mode = 2
+
+[node name="BlueprintSlot10" parent="Control/HBoxContainer/BlueprintsSlots" unique_id=905347712 instance=ExtResource("1_rmctn")]
+layout_mode = 2
+
+[node name="TestButtons" type="VBoxContainer" parent="Control" unique_id=1318161386]
+layout_mode = 0
+offset_left = 725.0
+offset_top = 5.0
+offset_right = 872.0
+offset_bottom = 294.0
+mouse_filter = 2
+script = ExtResource("1_rkeu6")
+
+[node name="herb_garden" type="Button" parent="Control/TestButtons" unique_id=1471434081]
+layout_mode = 2
+text = "Herb Garden"
+
+[node name="spirit_vein" type="Button" parent="Control/TestButtons" unique_id=553470608]
+layout_mode = 2
+text = "Spirit Vein"
+
+[node name="elixir_spring" type="Button" parent="Control/TestButtons" unique_id=700923221]
+layout_mode = 2
+text = "Elixir Spring"
+
+[node name="mystic_iron_ore" type="Button" parent="Control/TestButtons" unique_id=684325615]
+layout_mode = 2
+text = "Mystic Iron Ore"
+
+[node name="Sword Monument" type="Button" parent="Control/TestButtons" unique_id=752687089]
+layout_mode = 2
+text = "Sword Monument"
+
+[node name="Martial Arena" type="Button" parent="Control/TestButtons" unique_id=1984965031]
+layout_mode = 2
+text = "Martial Arena"
+
+[node name="Origin Pavilion" type="Button" parent="Control/TestButtons" unique_id=194490723]
+layout_mode = 2
+text = "Origin Pavilion"
+
+[node name="Alchemy Lab" type="Button" parent="Control/TestButtons" unique_id=637811562]
+layout_mode = 2
+text = "Alchemy Lab"
+
+[node name="Market" type="Button" parent="Control/TestButtons" unique_id=594028050]
+layout_mode = 2

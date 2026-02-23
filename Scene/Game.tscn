@@ -5,7 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://cbxiq5h01n5uc" path="res://Scene/buildings/blueprint.tscn" id="5_3xgnh"]
 [ext_resource type="Resource" uid="uid://c8cu8kdl0hchx" path="res://resources/herb_garden.tres" id="5_48ymf"]
 [ext_resource type="Script" uid="uid://bx385egptpnpx" path="res://scripts/level/level_resource_manager.gd" id="6_3xgnh"]
-[ext_resource type="PackedScene" uid="uid://dno43pe6wjeqf" path="res://Scene/resource_bar.tscn" id="6_cohtu"]
+[ext_resource type="PackedScene" uid="uid://dno43pe6wjeqf" path="res://Scene/ui/resource_bar.tscn" id="6_cohtu"]
+[ext_resource type="PackedScene" uid="uid://xohgmd3qdtav" path="res://Scene/ui/blueprint_bar.tscn" id="7_48ymf"]
 
 [node name="Game" type="Node2D" unique_id=1503047627]
 
@@ -115,3 +116,5 @@ position = Vector2(944, 397)
 data = ExtResource("5_48ymf")
 
 [node name="ResourceBar" parent="." unique_id=298767585 instance=ExtResource("6_cohtu")]
+
+[node name="BlueprintUI" parent="." unique_id=55262024 instance=ExtResource("7_48ymf")]
