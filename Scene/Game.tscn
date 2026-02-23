@@ -2,8 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://jfqlwaedgf0u" path="res://Scene/Gaze.tscn" id="1_5kiuu"]
 [ext_resource type="PackedScene" uid="uid://c4cb7fh3c203h" path="res://Scene/tile.tscn" id="2_mopgc"]
-[ext_resource type="PackedScene" uid="uid://cbxiq5h01n5uc" path="res://Scene/buildings/blueprint.tscn" id="5_3xgnh"]
-[ext_resource type="Resource" uid="uid://c8cu8kdl0hchx" path="res://resources/herb_garden.tres" id="5_48ymf"]
 [ext_resource type="Script" uid="uid://bx385egptpnpx" path="res://scripts/level/level_resource_manager.gd" id="6_3xgnh"]
 [ext_resource type="PackedScene" uid="uid://dno43pe6wjeqf" path="res://Scene/ui/resource_bar.tscn" id="6_cohtu"]
 [ext_resource type="PackedScene" uid="uid://xohgmd3qdtav" path="res://Scene/ui/blueprint_bar.tscn" id="7_48ymf"]
@@ -107,13 +105,6 @@ position = Vector2(541, 60)
 [node name="LevelResourceManager" type="Node" parent="." unique_id=1377458719 groups=["level_manager"]]
 script = ExtResource("6_3xgnh")
 metadata/_custom_type_script = "uid://bx385egptpnpx"
-
-[node name="Blueprint" parent="." unique_id=1064392020 instance=ExtResource("5_3xgnh")]
-position = Vector2(745, 338)
-
-[node name="Blueprint2" parent="." unique_id=262191292 instance=ExtResource("5_3xgnh")]
-position = Vector2(944, 397)
-data = ExtResource("5_48ymf")
 
 [node name="ResourceBar" parent="." unique_id=298767585 instance=ExtResource("6_cohtu")]
 
