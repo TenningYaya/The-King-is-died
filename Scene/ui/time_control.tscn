@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bfwvu1fjj5oav"]
+
+[ext_resource type="Script" uid="uid://08c47lp2473c" path="res://Scene/ui/time_control.gd" id="1_mggev"]
+[ext_resource type="Texture2D" uid="uid://dgegcg3038470" path="res://art_assets/ui/Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_IconPause01a.png" id="1_ruv2l"]
+[ext_resource type="Texture2D" uid="uid://dsp7x3h7d4jqa" path="res://art_assets/ui/Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_IconStar01e.png" id="2_mggev"]
+[ext_resource type="Texture2D" uid="uid://dauqbhd8fjeah" path="res://art_assets/ui/Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_IconStar01c.png" id="3_pgip0"]
+[ext_resource type="Texture2D" uid="uid://bjsb11md727ju" path="res://art_assets/ui/Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_IconStar01a.png" id="4_jo45q"]
+
+[node name="TimeControl" type="HBoxContainer" unique_id=835025454]
+theme_override_constants/separation = 20
+script = ExtResource("1_mggev")
+
+[node name="PauseBtn" type="TextureButton" parent="." unique_id=689945899]
+layout_mode = 2
+texture_normal = ExtResource("1_ruv2l")
+
+[node name="Speed1Btn" type="TextureButton" parent="." unique_id=1282334503]
+layout_mode = 2
+texture_normal = ExtResource("2_mggev")
+
+[node name="Speed2Btn" type="TextureButton" parent="." unique_id=1537113390]
+layout_mode = 2
+texture_normal = ExtResource("3_pgip0")
+
+[node name="Speed3Btn" type="TextureButton" parent="." unique_id=1803705626]
+layout_mode = 2
+texture_normal = ExtResource("4_jo45q")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1592609738]
+position = Vector2(54, 8)
+zoom = Vector2(10, 10)
