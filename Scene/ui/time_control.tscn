@@ -25,7 +25,3 @@ texture_normal = ExtResource("3_pgip0")
 [node name="Speed3Btn" type="TextureButton" parent="." unique_id=1803705626]
 layout_mode = 2
 texture_normal = ExtResource("4_jo45q")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1592609738]
-position = Vector2(54, 8)
-zoom = Vector2(10, 10)
