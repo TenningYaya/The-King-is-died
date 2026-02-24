@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://duptcluexkt70"]
+
+[ext_resource type="Script" uid="uid://cpggpd68uqqu0" path="res://scripts/Combat/Enemy_Tank.gd" id="1_pojax"]
+[ext_resource type="Texture2D" uid="uid://bjnf3bqet1dlw" path="res://art_assets/Unit/warpgal-run-3-aim-big.png" id="2_i0d2r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kjgma"]
+size = Vector2(118, 148)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_762ar"]
+
+[node name="UnitTank" type="CharacterBody2D" unique_id=422876923 groups=["player_units"]]
+script = ExtResource("1_pojax")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1163316575]
+texture = ExtResource("2_i0d2r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=35597690]
+position = Vector2(-6, 15)
+shape = SubResource("RectangleShape2D_kjgma")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1059610]
+
+[node name="AttackArea" type="Area2D" parent="." unique_id=1387313981]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=2031735190]
+position = Vector2(97, 0)
+scale = Vector2(1, 0.9599999)
+shape = SubResource("CircleShape2D_762ar")
