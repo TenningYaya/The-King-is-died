@@ -6,7 +6,6 @@ func _on_ready_override() -> void:
 	# 设置默认数值，也可直接在 Inspector 里改
 	max_hp = 300.0
 	attack_damage = 15.0
-	attack_range = 60.0
 	attack_type = AttackType.SINGLE
 	move_speed = 50.0
 	current_hp = max_hp

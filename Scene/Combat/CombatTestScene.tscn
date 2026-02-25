@@ -8069,9 +8069,9 @@ navigation_layers = 65535
 position = Vector2(960, 540)
 texture = ExtResource("1_8f4ix")
 
-[node name="UnitTank" parent="." unique_id=422876923 instance=ExtResource("2_8qpqg")]
-position = Vector2(1289, 500)
-faction = 1
+[node name="UnitTank" parent="." unique_id=364362264 instance=ExtResource("3_5v58d")]
+position = Vector2(690, 456)
+attack_damage = 100.0
 
-[node name="UnitTank2" parent="." unique_id=364362264 instance=ExtResource("3_5v58d")]
-position = Vector2(693, 498)
+[node name="UnitTank2" parent="." unique_id=422876923 instance=ExtResource("2_8qpqg")]
+position = Vector2(1260, 459)

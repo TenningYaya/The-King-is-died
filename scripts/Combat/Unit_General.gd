@@ -68,6 +68,9 @@ func _physics_process(delta: float) -> void:
 	attack_timer -= delta
 
 	current_target = _find_target()
+	var dist = global_position.distance_to(current_target.global_position) if current_target else -1.0
+	var in_range = _in_attack_range(current_target) if current_target else false
+	print("[%s] 目标:%s 距离:%.1f 射程:%.1f 在射程内:%s attack_timer:%.2f" % [name, current_target, dist, attack_range, in_range, attack_timer])
 
 	if current_target and _in_attack_range(current_target):
 		# 在射程内：停止移动，尝试攻击
@@ -136,6 +139,7 @@ func _in_attack_range(target: Unit_General) -> bool:
 #  攻击执行
 # ─────────────────────────────────────────
 func _perform_attack(target: Unit_General) -> void:
+	print("[%s] 攻击 [%s]，目标剩余血量：%.1f" % [name, target.name, target.current_hp])
 	if projectile_scene:
 		_fire_projectile(target)
 	else:
@@ -169,12 +173,14 @@ func take_damage(amount: float) -> void:
 	if is_dead:
 		return
 	current_hp -= amount
+	print("[%s] 受到 %.1f 伤害，剩余血量：%.1f / %.1f" % [name, amount, current_hp, max_hp])
 	_on_damage_override(amount)
 	if current_hp <= 0.0:
 		_die()
 
 func _die() -> void:
 	is_dead = true
+	print("[%s] 已死亡" % name)
 	_on_death_override()
 	queue_free()
 

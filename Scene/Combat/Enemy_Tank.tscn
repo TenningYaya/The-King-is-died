@@ -8,8 +8,10 @@ size = Vector2(118, 148)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_762ar"]
 
-[node name="UnitTank" type="CharacterBody2D" unique_id=422876923 groups=["player_units"]]
+[node name="UnitTank" type="CharacterBody2D" unique_id=422876923 groups=["enemy_units"]]
 script = ExtResource("1_pojax")
+faction = 1
+attack_range = 150.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1163316575]
 texture = ExtResource("2_i0d2r")

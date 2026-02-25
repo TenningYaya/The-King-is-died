@@ -8,6 +8,5 @@ func _on_ready_override() -> void:
 	max_hp = 300.0
 	current_hp = max_hp
 	attack_damage = 15.0
-	attack_range = 60.0
 	move_speed = 50.0
 	attack_type = AttackType.SINGLE

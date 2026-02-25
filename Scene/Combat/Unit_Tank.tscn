@@ -10,6 +10,7 @@ size = Vector2(118, 148)
 
 [node name="UnitTank" type="CharacterBody2D" unique_id=422876923 groups=["player_units"]]
 script = ExtResource("1_kjgma")
+attack_range = 150.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1163316575]
 texture = ExtResource("1_re8yu")
