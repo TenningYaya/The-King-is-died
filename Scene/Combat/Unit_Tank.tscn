@@ -19,7 +19,7 @@ texture = ExtResource("1_re8yu")
 position = Vector2(-6, 15)
 shape = SubResource("RectangleShape2D_kjgma")
 
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1059610]
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1059610 groups=["player_units"]]
 
 [node name="AttackArea" type="Area2D" parent="." unique_id=1387313981]
 
