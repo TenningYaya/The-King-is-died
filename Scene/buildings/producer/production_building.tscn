@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://cs7473lfyhaex"]
 
-[ext_resource type="Script" uid="uid://ch4oo3t72pa2x" path="res://scripts/buildings/producer/elixir_spring.gd" id="1_x0iil"]
-[ext_resource type="Resource" uid="uid://bwac0f2i8fdcs" path="res://resources/elixir_spring.tres" id="2_4xp6y"]
+[ext_resource type="Script" uid="uid://cwy3sp5kjws12" path="res://scripts/buildings/producer_building.gd" id="1_kj3mx"]
 [ext_resource type="Texture2D" uid="uid://mauom8xw2hfv" path="res://art_assets/buildings/elixir_spring.jpg" id="2_avp2u"]
 [ext_resource type="Texture2D" uid="uid://1oh6ldhxsl27" path="res://icon.svg" id="3_4xp6y"]
 
@@ -11,8 +10,7 @@ size = Vector2(116, 117)
 [node name="ProductionBuilding" type="Area2D" unique_id=270404273]
 collision_layer = 4
 collision_mask = 2
-script = ExtResource("1_x0iil")
-data = ExtResource("2_4xp6y")
+script = ExtResource("1_kj3mx")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=163179081]
 scale = Vector2(0.12, 0.12)

@@ -59,12 +59,8 @@ func _tick_production(delta):
 		
 		if current_progress >= 1.0:
 			current_progress = 0.0
-			_on_cycle_complete() # 钩子函数
 	else:
 		pass
-
-func _on_cycle_complete():
-	pass
 
 func _input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton:
