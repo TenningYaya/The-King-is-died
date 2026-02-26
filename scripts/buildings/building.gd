@@ -16,6 +16,7 @@ var original_pos: Vector2
 @onready var progress_pie = $UIContainer/ProgressBar
 
 func _ready():
+	add_to_group("buildings")  # <- 新增：用于 gaze 判断“鼠标下是不是 building”
 	if data:
 		if has_node("Sprite2D") and data.icon:
 			$Sprite2D.texture = data.icon
@@ -67,6 +68,7 @@ func _input_event(_viewport, event, _shape_idx):
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if event.pressed and Input.is_key_pressed(KEY_SHIFT):
 				_start_moving()
+				get_viewport().set_input_as_handled() # <- 新增：优先级给 building
 			elif not event.pressed and is_moving:
 				_stop_moving()
 

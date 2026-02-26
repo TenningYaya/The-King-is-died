@@ -56,6 +56,9 @@ func _process(_delta: float) -> void:
 #负责管各种input（左键按住拖动和右键旋转）
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("drag_gaze"):
+		# ✅ 优先让 building 的 Shift+拖动生效
+		if Input.is_key_pressed(KEY_SHIFT) and _mouse_over_building():
+			return
 		if mouse_inside_gaze():
 			dragging = true
 			drag_offset = get_global_mouse_position() - get_top_left()
@@ -226,3 +229,18 @@ func is_position_covered(global_pos: Vector2) -> bool:
 	
 	# 4. 检查是否在有效形状数组内
 	return Vector2i(gx, gy) in gaze
+
+func _mouse_over_building() -> bool:
+	var space := get_world_2d().direct_space_state
+	var params := PhysicsPointQueryParameters2D.new()
+	params.position = get_global_mouse_position()
+	params.collide_with_areas = true
+	params.collide_with_bodies = true
+	# 不限定 mask，直接查全部；如果你后面想优化，再加 mask
+	var hits := space.intersect_point(params, 32)
+
+	for h in hits:
+		var c = h.get("collider")
+		if c and c.is_in_group("buildings"):
+			return true
+	return false
