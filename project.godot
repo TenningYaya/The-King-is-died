@@ -28,6 +28,7 @@ window/size/viewport_height=1080
 
 player_units=""
 enemy_units=""
+structures=""
 
 [input]
 
