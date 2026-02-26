@@ -7,24 +7,46 @@
 [ext_resource type="Texture2D" uid="uid://bjsb11md727ju" path="res://art_assets/ui/Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_IconStar01a.png" id="4_jo45q"]
 
 [node name="TimeControl" type="HBoxContainer" unique_id=835025454]
-theme_override_constants/separation = 20
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 50
+alignment = 1
 script = ExtResource("1_mggev")
 
 [node name="PauseBtn" type="TextureButton" parent="." unique_id=689945899]
+custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 texture_normal = ExtResource("1_ruv2l")
+ignore_texture_size = true
+stretch_mode = 5
 
 [node name="Speed1Btn" type="TextureButton" parent="." unique_id=1282334503]
+custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 texture_normal = ExtResource("2_mggev")
+ignore_texture_size = true
+stretch_mode = 5
 
 [node name="Speed2Btn" type="TextureButton" parent="." unique_id=1537113390]
+custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
+size_flags_horizontal = 4
 texture_normal = ExtResource("3_pgip0")
+ignore_texture_size = true
+stretch_mode = 5
 
 [node name="Speed3Btn" type="TextureButton" parent="." unique_id=1803705626]
+custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 texture_normal = ExtResource("4_jo45q")
+ignore_texture_size = true
+stretch_mode = 5
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=914477151]
 zoom = Vector2(8, 8)
