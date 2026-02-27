@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://jfqlwaedgf0u" path="res://Scene/Gaze.tscn" id="1_5kiuu"]
 [ext_resource type="PackedScene" uid="uid://c4cb7fh3c203h" path="res://Scene/tile.tscn" id="2_mopgc"]
 [ext_resource type="Script" uid="uid://bx385egptpnpx" path="res://scripts/level/level_resource_manager.gd" id="6_3xgnh"]
+[ext_resource type="PackedScene" uid="uid://bf3vu14x5n1ds" path="res://Scene/Combat/Wall.tscn" id="6_48ymf"]
 [ext_resource type="PackedScene" uid="uid://dno43pe6wjeqf" path="res://Scene/ui/resource_bar.tscn" id="6_cohtu"]
 [ext_resource type="PackedScene" uid="uid://xohgmd3qdtav" path="res://Scene/ui/blueprint_bar.tscn" id="7_48ymf"]
 
@@ -109,3 +110,6 @@ metadata/_custom_type_script = "uid://bx385egptpnpx"
 [node name="ResourceBar" parent="." unique_id=298767585 instance=ExtResource("6_cohtu")]
 
 [node name="BlueprintUI" parent="." unique_id=55262024 instance=ExtResource("7_48ymf")]
+
+[node name="Wall" parent="." unique_id=1173008175 instance=ExtResource("6_48ymf")]
+position = Vector2(833, 403)
