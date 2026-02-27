@@ -47,6 +47,3 @@ size_flags_vertical = 4
 texture_normal = ExtResource("4_jo45q")
 ignore_texture_size = true
 stretch_mode = 5
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=914477151]
-zoom = Vector2(8, 8)
