@@ -8071,12 +8071,12 @@ position = Vector2(960, 540)
 texture = ExtResource("1_8f4ix")
 
 [node name="UnitTank" parent="." unique_id=364362264 instance=ExtResource("3_5v58d")]
-position = Vector2(1139, 276)
+position = Vector2(707, 450)
 attack_damage = 100.0
 move_speed = 200.0
 
 [node name="UnitTank2" parent="." unique_id=422876923 instance=ExtResource("2_8qpqg")]
-position = Vector2(1260, 459)
+position = Vector2(1246, 460)
 attack_preference = 4
 
 [node name="Wall" parent="." unique_id=313594495 instance=ExtResource("4_5v58d")]
