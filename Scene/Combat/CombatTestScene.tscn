@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://yydqkde2t4tj" path="res://art_assets/Unit/loading_45.tga" id="1_8f4ix"]
 [ext_resource type="PackedScene" uid="uid://duptcluexkt70" path="res://Scene/Combat/Enemy_Tank.tscn" id="2_8qpqg"]
 [ext_resource type="PackedScene" uid="uid://ds7qlt13y0rsv" path="res://Scene/Combat/Unit_Tank.tscn" id="3_5v58d"]
+[ext_resource type="PackedScene" uid="uid://bf3vu14x5n1ds" path="res://Scene/Combat/Wall.tscn" id="4_5v58d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8f4ix"]
 texture = ExtResource("1_8f4ix")
@@ -8070,8 +8071,13 @@ position = Vector2(960, 540)
 texture = ExtResource("1_8f4ix")
 
 [node name="UnitTank" parent="." unique_id=364362264 instance=ExtResource("3_5v58d")]
-position = Vector2(690, 456)
+position = Vector2(1139, 276)
 attack_damage = 100.0
+move_speed = 200.0
 
 [node name="UnitTank2" parent="." unique_id=422876923 instance=ExtResource("2_8qpqg")]
 position = Vector2(1260, 459)
+attack_preference = 4
+
+[node name="Wall" parent="." unique_id=313594495 instance=ExtResource("4_5v58d")]
+position = Vector2(962, 454)

@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bf3vu14x5n1ds"]
+
+[ext_resource type="Script" uid="uid://cvab1rup5dagb" path="res://scripts/Combat/Wall.gd" id="1_bseja"]
+[ext_resource type="Texture2D" uid="uid://dp5kxdjge0tl" path="res://art_assets/Unit/wall.png" id="2_uca6p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_35rry"]
+size = Vector2(77, 386)
+
+[node name="Wall" type="CharacterBody2D" unique_id=1173008175 groups=["player_units", "structures"]]
+script = ExtResource("1_bseja")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=732995732]
+position = Vector2(2.499999, 0)
+scale = Vector2(0.16244726, 1)
+texture = ExtResource("2_uca6p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1404319683]
+position = Vector2(2.5, -1)
+shape = SubResource("RectangleShape2D_35rry")
