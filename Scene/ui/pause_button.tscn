@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://c2wapnlwhs1yw"]
+
+[ext_resource type="Texture2D" uid="uid://copi7q06004h4" path="res://art_assets/ui/Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_IconGear01a.png" id="1_3bf1o"]
+
+[node name="PauseButton" type="Control" unique_id=1851983709]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=560883275]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("1_3bf1o")

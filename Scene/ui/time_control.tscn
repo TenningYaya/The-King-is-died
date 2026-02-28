@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bfwvu1fjj5oav"]
 
-[ext_resource type="Script" uid="uid://08c47lp2473c" path="res://Scene/ui/time_control.gd" id="1_mggev"]
+[ext_resource type="Script" uid="uid://08c47lp2473c" path="res://scripts/ui/time_control.gd" id="1_mggev"]
 [ext_resource type="Texture2D" uid="uid://dgegcg3038470" path="res://art_assets/ui/Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_IconPause01a.png" id="1_ruv2l"]
 [ext_resource type="Texture2D" uid="uid://dsp7x3h7d4jqa" path="res://art_assets/ui/Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_IconStar01e.png" id="2_mggev"]
 [ext_resource type="Texture2D" uid="uid://dauqbhd8fjeah" path="res://art_assets/ui/Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_IconStar01c.png" id="3_pgip0"]
