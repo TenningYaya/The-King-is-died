@@ -1,11 +1,15 @@
 [gd_scene format=3 uid="uid://b1vdm2dchhc2i"]
 
+[ext_resource type="Script" uid="uid://12ehut4bb56k" path="res://scripts/ui/pause_menu.gd" id="1_7xpis"]
 [ext_resource type="Texture2D" uid="uid://cr5aj7wtnbdj6" path="res://art_assets/ui/Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_BookCover01a.png" id="1_cokpm"]
 [ext_resource type="Texture2D" uid="uid://docy75ofkpcam" path="res://art_assets/ui/Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_Popup01a.png" id="2_7xpis"]
+[ext_resource type="Texture2D" uid="uid://u2axjphr0m6b" path="res://art_assets/ui/Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_IconCross01a.png" id="4_vgx5q"]
 
 [node name="PauseMenu" type="CanvasLayer" unique_id=1743093916]
+process_mode = 3
 layer = 10
 visible = false
+script = ExtResource("1_7xpis")
 
 [node name="ScreenOverlay" type="TextureRect" parent="." unique_id=475909854]
 anchors_preset = 15
@@ -39,6 +43,7 @@ patch_margin_right = 20
 patch_margin_bottom = 20
 
 [node name="CloseBtn" type="TextureButton" parent="ScreenOverlay/MenuBox" unique_id=1147125322]
+custom_minimum_size = Vector2(64, 64)
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -46,3 +51,6 @@ anchor_right = 1.0
 offset_left = -40.0
 offset_bottom = 40.0
 grow_horizontal = 0
+texture_normal = ExtResource("4_vgx5q")
+ignore_texture_size = true
+stretch_mode = 5
