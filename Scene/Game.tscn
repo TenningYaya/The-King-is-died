@@ -3,9 +3,12 @@
 [ext_resource type="PackedScene" uid="uid://jfqlwaedgf0u" path="res://Scene/Gaze.tscn" id="1_5kiuu"]
 [ext_resource type="PackedScene" uid="uid://c4cb7fh3c203h" path="res://Scene/tile.tscn" id="2_mopgc"]
 [ext_resource type="Script" uid="uid://bx385egptpnpx" path="res://scripts/level/level_resource_manager.gd" id="6_3xgnh"]
-[ext_resource type="PackedScene" path="res://Scene/Combat/Wall.tscn" id="6_48ymf"]
+[ext_resource type="PackedScene" uid="uid://bf3vu14x5n1ds" path="res://Scene/Combat/Wall.tscn" id="6_48ymf"]
 [ext_resource type="PackedScene" uid="uid://dno43pe6wjeqf" path="res://Scene/ui/resource_bar.tscn" id="6_cohtu"]
 [ext_resource type="PackedScene" uid="uid://xohgmd3qdtav" path="res://Scene/ui/blueprint_bar.tscn" id="7_48ymf"]
+[ext_resource type="PackedScene" uid="uid://c2wapnlwhs1yw" path="res://Scene/ui/pause_button.tscn" id="7_cohtu"]
+[ext_resource type="PackedScene" uid="uid://bfwvu1fjj5oav" path="res://Scene/ui/time_control.tscn" id="8_tujvx"]
+[ext_resource type="PackedScene" uid="uid://b1vdm2dchhc2i" path="res://Scene/ui/pause_menu.tscn" id="9_tujvx"]
 
 [node name="Game" type="Node2D" unique_id=1503047627]
 
@@ -113,3 +116,17 @@ metadata/_custom_type_script = "uid://bx385egptpnpx"
 
 [node name="Wall" parent="." unique_id=1173008175 instance=ExtResource("6_48ymf")]
 position = Vector2(833, 403)
+
+[node name="PauseButton" parent="." unique_id=1851983709 instance=ExtResource("7_cohtu")]
+offset_left = 1836.0
+offset_top = 18.0
+offset_right = 1900.0
+offset_bottom = 82.0
+
+[node name="TimeControl" parent="." unique_id=835025454 instance=ExtResource("8_tujvx")]
+offset_left = 1380.0
+offset_top = 16.0
+offset_right = 1786.0
+offset_bottom = 80.0
+
+[node name="PauseMenu" parent="." unique_id=1743093916 instance=ExtResource("9_tujvx")]
