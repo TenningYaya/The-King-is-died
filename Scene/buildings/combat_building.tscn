@@ -1,3 +1,34 @@
 [gd_scene format=3 uid="uid://cs2uw4cq2noiw"]
 
+[ext_resource type="Texture2D" uid="uid://1oh6ldhxsl27" path="res://icon.svg" id="1_133jy"]
+[ext_resource type="Script" uid="uid://54l60nadu43t" path="res://scripts/buildings/combat_building.gd" id="1_cjbx4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q2xer"]
+size = Vector2(116, 115)
+
 [node name="CombatBuilding" type="Area2D" unique_id=762521563]
+script = ExtResource("1_cjbx4")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1815181641]
+
+[node name="UIContainer" type="Control" parent="." unique_id=233357779]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 38.0
+offset_top = -79.215
+offset_right = 78.0
+offset_bottom = -39.215027
+
+[node name="ProgressBar" type="TextureProgressBar" parent="UIContainer" unique_id=1599757003]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.345, 0.345)
+fill_mode = 4
+texture_under = ExtResource("1_133jy")
+texture_progress = ExtResource("1_133jy")
+tint_under = Color(0.6814234, 0.6814234, 0.6814234, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=326618333]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_q2xer")

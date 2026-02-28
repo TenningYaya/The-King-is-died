@@ -21,6 +21,7 @@ enum BuildingType { PRODUCTION, COMBAT }
 @export var amount_per_cycle: int = 1
 @export var production_time: float = 2.0
 @export var max_production: int = 100
+@export var minion_scene: PackedScene 
 
 @export_group("搬迁惩罚配置")
 @export var move_penalty_multiplier: float = 0.5

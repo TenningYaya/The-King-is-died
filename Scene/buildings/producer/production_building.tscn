@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://cs7473lfyhaex"]
 
 [ext_resource type="Script" uid="uid://cwy3sp5kjws12" path="res://scripts/buildings/producer_building.gd" id="1_kj3mx"]
-[ext_resource type="Texture2D" uid="uid://mauom8xw2hfv" path="res://art_assets/buildings/elixir_spring.jpg" id="2_avp2u"]
 [ext_resource type="Texture2D" uid="uid://1oh6ldhxsl27" path="res://icon.svg" id="3_4xp6y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dvdb5"]
@@ -14,7 +13,6 @@ script = ExtResource("1_kj3mx")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=163179081]
 scale = Vector2(0.12, 0.12)
-texture = ExtResource("2_avp2u")
 
 [node name="UIContainer" type="Control" parent="." unique_id=291208325]
 layout_mode = 3
@@ -24,15 +22,15 @@ offset_top = -79.0
 offset_right = 78.0
 offset_bottom = -39.0
 
-[node name="ProgressBar" type="TextureProgressBar" parent="UIContainer" unique_id=876486887]
+[node name="ProgressBar" type="TextureProgressBar" parent="UIContainer" unique_id=959271549]
 layout_mode = 0
 offset_right = 128.0
 offset_bottom = 128.0
-scale = Vector2(0.32, 0.32)
+scale = Vector2(0.34, 0.34)
 fill_mode = 4
 texture_under = ExtResource("3_4xp6y")
 texture_progress = ExtResource("3_4xp6y")
-tint_under = Color(0.63539076, 0.63539076, 0.6353907, 1)
+tint_under = Color(0.70131457, 0.70131457, 0.70131457, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=262455899]
 position = Vector2(0, 0.5)

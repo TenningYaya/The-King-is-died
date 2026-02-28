@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="BuildingData" format=3 uid="uid://b71qb5sy6i1ki"]
+
+[ext_resource type="Texture2D" uid="uid://48r16hy2orjm" path="res://art_assets/buildings/origin_pavilion.png" id="1_qyqt4"]
+[ext_resource type="Script" uid="uid://dai8darcd7q2w" path="res://scripts/buildings/building_data.gd" id="2_5enil"]
+[ext_resource type="PackedScene" uid="uid://ds7qlt13y0rsv" path="res://Scene/Combat/Unit_Tank.tscn" id="2_bgcaf"]
+
+[resource]
+script = ExtResource("2_5enil")
+icon = ExtResource("1_qyqt4")
+building_name = "Origin_Pavilion"
+type = 1
+base_scene_path = "uid://cs2uw4cq2noiw"
+product_type = "talisman_cultivator"
+production_time = 5.0
+max_production = 1
+minion_scene = ExtResource("2_bgcaf")
+metadata/_custom_type_script = "uid://dai8darcd7q2w"

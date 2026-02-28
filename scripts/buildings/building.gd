@@ -14,12 +14,12 @@ var is_moving: bool = false
 var original_pos: Vector2
 
 @onready var progress_pie = $UIContainer/ProgressBar
+@export var target_display_size: Vector2 = Vector2(110, 110) # 你希望建筑在地图上显示的像素大小
 
 func _ready():
 	add_to_group("buildings")
 	if data:
-		if has_node("Sprite2D") and data.icon:
-			$Sprite2D.texture = data.icon
+		_setup_visuals()
 		
 		if progress_pie:
 			progress_pie.value = 0
@@ -120,3 +120,20 @@ func get_current_speed_multiplier() -> float:
 	if is_under_penalty:
 		return data.move_penalty_multiplier
 	return 1.0
+
+func _setup_visuals():
+	if has_node("Sprite2D") and data.icon:
+		var sprite = $Sprite2D
+		sprite.texture = data.icon
+		
+		# --- 核心缩放逻辑 ---
+		var tex_size = data.icon.get_size() # 获取原始图片的像素大小
+		if tex_size.x > 0 and tex_size.y > 0:
+			# 计算缩放比例：目标尺寸 / 原始尺寸
+			var scale_factor_x = target_display_size.x / tex_size.x
+			var scale_factor_y = target_display_size.y / tex_size.y
+			
+			# 取最小值进行等比例缩放，防止拉伸变形
+			var final_scale = min(scale_factor_x, scale_factor_y)
+			sprite.scale = Vector2(final_scale, final_scale)
+		# ------------------

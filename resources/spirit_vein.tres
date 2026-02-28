@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dai8darcd7q2w" path="res://scripts/buildings/building_data.gd" id="1_cyop6"]
 [ext_resource type="Texture2D" uid="uid://dqxw76lik1krk" path="res://art_assets/buildings/mystic_iron_ore.jpg" id="1_qcxbg"]
+[ext_resource type="PackedScene" uid="uid://ds7qlt13y0rsv" path="res://Scene/Combat/Unit_Tank.tscn" id="2_6mrvj"]
 
 [resource]
 script = ExtResource("1_cyop6")
@@ -11,4 +12,5 @@ base_scene_path = "uid://cs7473lfyhaex"
 product_type = "aether_crystal"
 production_time = 1.0
 max_production = 500
+minion_scene = ExtResource("2_6mrvj")
 metadata/_custom_type_script = "uid://dai8darcd7q2w"

@@ -38,7 +38,6 @@ func _input(event):
 	if is_dragging and event is InputEventMouseButton:
 		# 只要监听到左键松开（not event.pressed）
 		if event.button_index == MOUSE_BUTTON_LEFT and not event.pressed:
-			print("监听到全局松手！")
 			_on_release()
 			
 func _on_release():
@@ -46,8 +45,6 @@ func _on_release():
 	if current_slot:
 		_start_working()
 	else:
-		# 不能放置：直接消失，由于没调用 consume_blueprint，库存不会减
-		print("放置无效，蓝图已回退")
 		queue_free()
 
 func _start_working():

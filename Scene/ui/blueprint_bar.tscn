@@ -110,21 +110,21 @@ text = "Elixir Spring"
 layout_mode = 2
 text = "Mystic Iron Ore"
 
-[node name="Sword Monument" type="Button" parent="Control/TestButtons" unique_id=752687089]
+[node name="sword_monument" type="Button" parent="Control/TestButtons" unique_id=752687089]
 layout_mode = 2
 text = "Sword Monument"
 
-[node name="Martial Arena" type="Button" parent="Control/TestButtons" unique_id=1984965031]
+[node name="martial_arena" type="Button" parent="Control/TestButtons" unique_id=1984965031]
 layout_mode = 2
 text = "Martial Arena"
 
-[node name="Origin Pavilion" type="Button" parent="Control/TestButtons" unique_id=194490723]
+[node name="origin_pavilion" type="Button" parent="Control/TestButtons" unique_id=194490723]
 layout_mode = 2
 text = "Origin Pavilion"
 
-[node name="Alchemy Lab" type="Button" parent="Control/TestButtons" unique_id=637811562]
+[node name="alchemy_lab" type="Button" parent="Control/TestButtons" unique_id=637811562]
 layout_mode = 2
 text = "Alchemy Lab"
 
-[node name="Market" type="Button" parent="Control/TestButtons" unique_id=594028050]
+[node name="market" type="Button" parent="Control/TestButtons" unique_id=594028050]
 layout_mode = 2

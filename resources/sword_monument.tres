@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="BuildingData" format=3 uid="uid://dgkw82g7k2vja"]
+
+[ext_resource type="Texture2D" uid="uid://crgxur5eqtadv" path="res://art_assets/buildings/sword_monument.jpg" id="1_gdua3"]
+[ext_resource type="Script" uid="uid://dai8darcd7q2w" path="res://scripts/buildings/building_data.gd" id="1_kxybd"]
+[ext_resource type="PackedScene" uid="uid://ds7qlt13y0rsv" path="res://Scene/Combat/Unit_Tank.tscn" id="2_q27pm"]
+
+[resource]
+script = ExtResource("1_kxybd")
+icon = ExtResource("1_gdua3")
+building_name = "SwordMonument"
+type = 1
+base_scene_path = "uid://cs2uw4cq2noiw"
+product_type = "sword_cultivator"
+amount_per_cycle = 3
+production_time = 5.0
+max_production = 0
+minion_scene = ExtResource("2_q27pm")
+metadata/_custom_type_script = "uid://dai8darcd7q2w"

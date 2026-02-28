@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="BuildingData" format=3 uid="uid://ckwdg32ave4hd"]
+
+[ext_resource type="Script" uid="uid://dai8darcd7q2w" path="res://scripts/buildings/building_data.gd" id="1_5jyar"]
+[ext_resource type="Texture2D" uid="uid://c6av4da6xabdr" path="res://art_assets/buildings/martial_arena.jpg" id="1_lifu4"]
+
+[resource]
+script = ExtResource("1_5jyar")
+icon = ExtResource("1_lifu4")
+building_name = "MartialArena"
+type = 1
+base_scene_path = "uid://cs2uw4cq2noiw"
+product_type = "body_cultivator"
+amount_per_cycle = 3
+production_time = 5.0
+max_production = 0
+metadata/_custom_type_script = "uid://dai8darcd7q2w"
