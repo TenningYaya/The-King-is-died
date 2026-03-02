@@ -125,8 +125,8 @@ offset_bottom = 82.0
 
 [node name="TimeControl" parent="." unique_id=835025454 instance=ExtResource("8_tujvx")]
 offset_left = 1380.0
-offset_top = 16.0
+offset_top = 98.0
 offset_right = 1786.0
-offset_bottom = 80.0
+offset_bottom = 162.0
 
 [node name="PauseMenu" parent="." unique_id=1743093916 instance=ExtResource("9_tujvx")]

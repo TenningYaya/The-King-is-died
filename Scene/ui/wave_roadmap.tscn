@@ -1,0 +1,121 @@
+[gd_scene format=3 uid="uid://c2020v0l52fk"]
+
+[ext_resource type="Script" uid="uid://eb3vb0gt64cg" path="res://Scene/ui/wave_roadmap.gd" id="1_4s0qg"]
+[ext_resource type="Texture2D" uid="uid://0nm0vgyqbxuy" path="res://art_assets/ui/Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_Bar01a.png" id="1_un0xt"]
+[ext_resource type="Texture2D" uid="uid://d100dka7c23a2" path="res://art_assets/ui/Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_Fill01a.png" id="2_k0fcl"]
+[ext_resource type="Texture2D" uid="uid://d3ad327ohce7u" path="res://art_assets/ui/Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_IconEnergy01d.png" id="3_7kkdb"]
+[ext_resource type="Texture2D" uid="uid://dgd8xx6x8i6cp" path="res://art_assets/ui/Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_IconEnergy01a.png" id="4_4s0qg"]
+[ext_resource type="Texture2D" uid="uid://cjr8g60oybsrq" path="res://art_assets/ui/Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_BookPageLeft01a.png" id="5_b72yi"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dw4vo"]
+texture = ExtResource("5_b72yi")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
+[node name="WaveRoadmap" type="Control" unique_id=1937857851]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4s0qg")
+
+[node name="TimerBar" type="TextureProgressBar" parent="." unique_id=1016412003]
+texture_filter = 2
+custom_minimum_size = Vector2(800, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -400.0
+offset_top = 30.0
+offset_right = 400.0
+offset_bottom = 60.0
+grow_horizontal = 2
+step = 0.01
+nine_patch_stretch = true
+stretch_margin_left = 10
+stretch_margin_top = 2
+stretch_margin_right = 10
+stretch_margin_bottom = 2
+texture_under = ExtResource("1_un0xt")
+texture_progress = ExtResource("2_k0fcl")
+
+[node name="Markers" type="Control" parent="TimerBar" unique_id=2123688315]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Point1" type="TextureButton" parent="TimerBar/Markers" unique_id=1571973427]
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 0.25
+anchor_right = 0.25
+anchor_bottom = 0.25
+offset_right = 7.800003
+offset_bottom = 15.0
+texture_normal = ExtResource("3_7kkdb")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Point2" type="TextureButton" parent="TimerBar/Markers" unique_id=1968104586]
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.25
+anchor_right = 0.5
+anchor_bottom = 0.25
+offset_right = 7.800003
+offset_bottom = 15.0
+texture_normal = ExtResource("3_7kkdb")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Point3" type="TextureButton" parent="TimerBar/Markers" unique_id=1358431825]
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.75
+anchor_top = 0.25
+anchor_right = 0.75
+anchor_bottom = 0.25
+offset_right = 7.800003
+offset_bottom = 15.0
+texture_normal = ExtResource("3_7kkdb")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Point4" type="TextureButton" parent="TimerBar/Markers" unique_id=1071040783]
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.975
+anchor_top = 0.2
+anchor_right = 0.975
+anchor_bottom = 0.25
+offset_right = 7.800003
+offset_bottom = 15.0
+texture_normal = ExtResource("4_4s0qg")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="MonsterTooltip" type="PanelContainer" parent="." unique_id=1047823213]
+layout_mode = 0
+offset_right = 50.0
+offset_bottom = 100.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_dw4vo")
+
+[node name="ContentContainer" type="VBoxContainer" parent="MonsterTooltip" unique_id=597353271]
+custom_minimum_size = Vector2(50, 100)
+layout_mode = 2
+alignment = 1
