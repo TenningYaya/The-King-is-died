@@ -55,6 +55,10 @@ func _process(_delta: float) -> void:
 
 #负责管各种input（左键按住拖动和右键旋转）
 func _input(event: InputEvent) -> void:
+	# ✅ 如果鼠标在任何 UI 上，直接别处理
+	if get_viewport().gui_get_hovered_control() != null:
+		return
+	
 	if event.is_action_pressed("drag_gaze"):
 		# ✅ 优先让 building 的 Shift+拖动生效
 		if Input.is_key_pressed(KEY_SHIFT) and _mouse_over_building():
@@ -244,3 +248,4 @@ func _mouse_over_building() -> bool:
 		if c and c.is_in_group("buildings"):
 			return true
 	return false
+	
