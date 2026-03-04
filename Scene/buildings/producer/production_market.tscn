@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://bvm5flnoabotw"]
+
+[ext_resource type="Script" uid="uid://xdesq40gsl5g" path="res://scripts/buildings/producer_market.gd" id="1_hbdac"]
+[ext_resource type="Texture2D" uid="uid://1oh6ldhxsl27" path="res://icon.svg" id="1_jdq6o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hbdac"]
+size = Vector2(116, 117)
+
+[node name="Market" type="Area2D" unique_id=1876513871]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_hbdac")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=153305542]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=384215148]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_hbdac")
+
+[node name="UIContainer" type="Control" parent="." unique_id=1284177499]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 38.0
+offset_top = -79.0
+offset_right = 82.0
+offset_bottom = -36.0
+mouse_filter = 2
+
+[node name="ProgressBar" type="TextureProgressBar" parent="UIContainer" unique_id=1544139321]
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 128.0
+scale = Vector2(0.34, 0.34)
+mouse_filter = 2
+fill_mode = 4
+texture_under = ExtResource("1_jdq6o")
+texture_progress = ExtResource("1_jdq6o")
+tint_under = Color(0.70131457, 0.70131457, 0.70131457, 1)
+
+[node name="SelectButton" type="Button" parent="UIContainer" unique_id=1540760497]
+layout_mode = 0
+offset_left = -60.0
+offset_top = -2.0
+offset_right = -15.0
+offset_bottom = 43.0
+mouse_filter = 1
+
+[node name="ResourceList" type="VBoxContainer" parent="UIContainer" unique_id=610161533]
+layout_mode = 0
+offset_left = -58.0
+offset_top = 58.0
+offset_right = -18.0
+offset_bottom = 98.0
+mouse_filter = 2

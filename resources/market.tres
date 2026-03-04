@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="BuildingData" format=3 uid="uid://m4a7soemmvrq"]
+
+[ext_resource type="Texture2D" uid="uid://wvwr2ao0ag3e" path="res://art_assets/buildings/market.png" id="1_4lpqn"]
+[ext_resource type="Script" uid="uid://dai8darcd7q2w" path="res://scripts/buildings/building_data.gd" id="1_aul5h"]
+
+[resource]
+script = ExtResource("1_aul5h")
+icon = ExtResource("1_4lpqn")
+building_name = "Market"
+type = 2
+base_scene_path = "uid://bvm5flnoabotw"
+product_type = "sprite_stone"
+max_production = 0
+metadata/_custom_type_script = "uid://dai8darcd7q2w"

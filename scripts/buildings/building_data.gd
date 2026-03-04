@@ -3,7 +3,7 @@ extends Resource
 class_name BuildingData
 
 # 用于 UI 页签筛选的枚举
-enum BuildingType { PRODUCTION, COMBAT }
+enum BuildingType { PRODUCTION, COMBAT, MARKET }
 
 @export_group("视觉配置")
 @export var icon: Texture2D # 蓝图图标、Slot 图标、建筑图标共用
