@@ -46,21 +46,22 @@ func _physics_process(_delta):
 	old_progress = current_progress
 
 func _spawn_minion():
-	# ✅ 核心修复：直接从 data 资源中读取配置好的士兵场景
 	if data == null or data.minion_scene == null:
-		print("[%s] 错误：在 .tres 资源文件的 'minion_scene' 槽位中未发现士兵场景！" % name)
+		print("[%s] 错误：未发现士兵场景！" % name)
 		return
-		
-	# 实例化士兵
+
 	var minion = data.minion_scene.instantiate()
-	
-	# 将单位放入世界层 (通常是 Game 节点，也就是建筑的父级)
 	get_parent().add_child(minion)
-	
-	# 初始位置设为建筑中心
-	minion.global_position = self.global_position
-	
-	# 记录到数组中
+
+	# 寻找出生点节点
+	var spawn_point = get_tree().get_first_node_in_group("spawn_point")
+	if spawn_point:
+		minion.global_position = spawn_point.global_position
+	else:
+		# 找不到出生点就退回建筑旁边
+		minion.global_position = self.global_position + Vector2(50, 0)
+		print("[%s] 警告：场景中没有找到 spawn_point 组的节点" % name)
+
 	active_minions.append(minion)
 	print("[%s] 成功召唤单位，当前场内: %d/%d" % [data.building_name, active_minions.size(), data.amount_per_cycle])
 
