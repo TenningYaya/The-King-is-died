@@ -15,8 +15,13 @@
 [ext_resource type="PackedScene" uid="uid://bfwvu1fjj5oav" path="res://Scene/ui/time_control.tscn" id="8_tujvx"]
 [ext_resource type="Texture2D" uid="uid://kl437qu2soav" path="res://art_assets/buildings/alchemy_lab.jpg" id="9_hqtje"]
 [ext_resource type="PackedScene" uid="uid://b1vdm2dchhc2i" path="res://Scene/ui/pause_menu.tscn" id="9_tujvx"]
-[ext_resource type="Script" uid="uid://tqfstski4omi" path="res://Scene/EnemySpawner.gd" id="10_2j816"]
+[ext_resource type="Script" uid="uid://tqfstski4omi" path="res://scripts/Combat/EnemySpawner.gd" id="10_2j816"]
 [ext_resource type="PackedScene" uid="uid://duptcluexkt70" path="res://Scene/Combat/Enemy_Tank.tscn" id="11_g3fkh"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_bxrg2"]
+vertices = PackedVector2Array(1903.9375, 27.960938, 1900.0469, 710.85156, 798.1328, 695.1406, 806.8672, 24.03125)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(797, 14, 1914, 18, 1910, 721, 788, 705)])
 
 [node name="Game" type="Node2D" unique_id=1503047627]
 
@@ -152,12 +157,16 @@ script = null
 position = Vector2(967, 420)
 
 [node name="EnemySpawner" type="Node2D" parent="." unique_id=216947881 node_paths=PackedStringArray("spawn_points")]
+position = Vector2(739, 382)
 script = ExtResource("10_2j816")
 enemy_scenes = Dictionary[String, PackedScene]({
-"mage": ExtResource("11_g3fkh"),
 "tank": ExtResource("11_g3fkh")
 })
 spawn_points = [NodePath("../EnemySpawnPoint")]
 
-[node name="EnemySpawnPoint" type="Node2D" parent="." unique_id=348989186]
-position = Vector2(1743, 423)
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1959168487]
+position = Vector2(-48, 18)
+navigation_polygon = SubResource("NavigationPolygon_bxrg2")
+
+[node name="EnemySpawnPoint" type="Marker2D" parent="." unique_id=425003417]
+position = Vector2(1754, 434)

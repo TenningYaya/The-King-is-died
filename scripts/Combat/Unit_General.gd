@@ -1,12 +1,16 @@
 class_name Unit_General
 extends CharacterBody2D
 
-#  basic group
+# ─────────────────────────────────────────
+#  枚举
+# ─────────────────────────────────────────
 enum Faction { PLAYER, ENEMY }
 enum AttackType { SINGLE, AOE }
 enum AttackPreference { NEAREST, LOWEST_HP, HIGHEST_HP, FRONTMOST, STRUCTURE }
 
+# ─────────────────────────────────────────
 #  基础数值（在子类中用 @export 覆盖）
+# ─────────────────────────────────────────
 @export var faction: Faction = Faction.PLAYER
 
 @export_group("战斗数值")
@@ -21,20 +25,28 @@ enum AttackPreference { NEAREST, LOWEST_HP, HIGHEST_HP, FRONTMOST, STRUCTURE }
 @export_group("移动")
 @export var move_speed: float = 80.0
 
+# ─────────────────────────────────────────
 #  全局共享攻击速度（可在 ProjectSettings 或 Autoload 里统一管理）
+# ─────────────────────────────────────────
 const ATTACK_INTERVAL: float = 0.5             # 0.5s = 2次/s
 
+# ─────────────────────────────────────────
 #  运行时状态
+# ─────────────────────────────────────────
 var current_hp: float
 var attack_timer: float = 0.0
 var current_target: Unit_General = null
 var is_dead: bool = false
 
+# ─────────────────────────────────────────
 #  节点引用（子类场景里需有对应节点名）
+# ─────────────────────────────────────────
 @onready var nav_agent: NavigationAgent2D = get_node_or_null("NavigationAgent2D")
 @onready var attack_area: Area2D = get_node_or_null("AttackArea")
 
+# ─────────────────────────────────────────
 #  初始化
+# ─────────────────────────────────────────
 func _ready() -> void:
 	current_hp = max_hp
 	_setup_attack_area()
@@ -47,8 +59,9 @@ func _setup_attack_area() -> void:
 	if shape and shape.shape is CircleShape2D:
 		(shape.shape as CircleShape2D).radius = attack_range
 
-
+# ─────────────────────────────────────────
 #  主循环
+# ─────────────────────────────────────────
 func _physics_process(delta: float) -> void:
 	if is_dead:
 		return
@@ -58,7 +71,7 @@ func _physics_process(delta: float) -> void:
 	current_target = _find_target()
 	var dist = global_position.distance_to(current_target.global_position) if current_target else -1.0
 	var in_range = _in_attack_range(current_target) if current_target else false
-	#print("[%s] 目标:%s 距离:%.1f 射程:%.1f 在射程内:%s attack_timer:%.2f" % [name, current_target, dist, attack_range, in_range, attack_timer])
+	print("[%s] 目标:%s 距离:%.1f 射程:%.1f 在射程内:%s attack_timer:%.2f" % [name, current_target, dist, attack_range, in_range, attack_timer])
 
 	if current_target and _in_attack_range(current_target):
 		# 在射程内：停止移动，尝试攻击
@@ -72,17 +85,21 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
-
+# ─────────────────────────────────────────
 #  寻路移动
+# ─────────────────────────────────────────
 func _move_toward_target(_delta: float) -> void:
 	if current_target == null:
 		velocity = Vector2.ZERO
 		return
 	nav_agent.target_position = current_target.global_position
 	var next_pos: Vector2 = nav_agent.get_next_path_position()
+	print("[%s] 当前位置:%s 目标位置:%s 下一步:%s 速度:%s" % [name, global_position, current_target.global_position, next_pos, velocity])
 	velocity = (next_pos - global_position).normalized() * move_speed
 
+# ─────────────────────────────────────────
 #  目标搜索
+# ─────────────────────────────────────────
 func _find_target() -> Unit_General:
 	# STRUCTURE 偏好：优先找城墙，找不到再找最近的敌人
 	if attack_preference == AttackPreference.STRUCTURE:
@@ -137,13 +154,17 @@ func _apply_preference(candidates: Array[Unit_General]) -> Unit_General:
 			candidates.sort_custom(func(a, b): return a.global_position.x * sign_val > b.global_position.x * sign_val)
 	return candidates[0]
 
+# ─────────────────────────────────────────
 #  射程判断
+# ─────────────────────────────────────────
 func _in_attack_range(target: Unit_General) -> bool:
 	return global_position.distance_to(target.global_position) <= attack_range
 
+# ─────────────────────────────────────────
 #  攻击执行
+# ─────────────────────────────────────────
 func _perform_attack(target: Unit_General) -> void:
-	#print("[%s] 攻击 [%s]，目标剩余血量：%.1f" % [name, target.name, target.current_hp])
+	print("[%s] 攻击 [%s]，目标剩余血量：%.1f" % [name, target.name, target.current_hp])
 	if projectile_scene:
 		_fire_projectile(target)
 	else:
@@ -170,12 +191,14 @@ func _fire_projectile(target: Unit_General) -> void:
 	if proj.has_method("init"):
 		proj.init(target, attack_damage, faction)
 
+# ─────────────────────────────────────────
 #  受伤 / 死亡
+# ─────────────────────────────────────────
 func take_damage(amount: float) -> void:
 	if is_dead:
 		return
 	current_hp -= amount
-	#print("[%s] 受到 %.1f 伤害，剩余血量：%.1f / %.1f" % [name, amount, current_hp, max_hp])
+	print("[%s] 受到 %.1f 伤害，剩余血量：%.1f / %.1f" % [name, amount, current_hp, max_hp])
 	_on_damage_override(amount)
 	if current_hp <= 0.0:
 		_die()
@@ -186,7 +209,9 @@ func _die() -> void:
 	_on_death_override()
 	queue_free()
 
+# ─────────────────────────────────────────
 #  子类扩展钩子（override 这些而不是覆盖核心方法）
+# ─────────────────────────────────────────
 func _on_ready_override() -> void: pass
 func _on_attack_override(_target: Unit_General) -> void: pass
 func _on_damage_override(_amount: float) -> void: pass
