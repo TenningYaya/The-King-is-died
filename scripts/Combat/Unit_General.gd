@@ -43,14 +43,26 @@ var is_dead: bool = false
 # ─────────────────────────────────────────
 @onready var nav_agent: NavigationAgent2D = get_node_or_null("NavigationAgent2D")
 @onready var attack_area: Area2D = get_node_or_null("AttackArea")
+@onready var hp_bar: ProgressBar = get_node_or_null("ProgressBar")
 
 # ─────────────────────────────────────────
 #  初始化
 # ─────────────────────────────────────────
 func _ready() -> void:
-	current_hp = max_hp
 	_setup_attack_area()
-	_on_ready_override()   # 供子类扩展
+	_on_ready_override()
+	current_hp = max_hp
+	_setup_hp_bar()
+
+func _setup_hp_bar() -> void:
+	if hp_bar == null:
+		return
+	hp_bar.max_value = max_hp
+	hp_bar.value = max_hp
+	# 友方绿色，敌方红色
+	var style := StyleBoxFlat.new()
+	style.bg_color = Color.GREEN if faction == Faction.PLAYER else Color.RED
+	hp_bar.add_theme_stylebox_override("fill", style)
 
 func _setup_attack_area() -> void:
 	if attack_area == null:
@@ -184,12 +196,20 @@ func _deal_aoe_damage() -> void:
 			unit.take_damage(attack_damage)
 
 func _fire_projectile(target: Unit_General) -> void:
-	# 弹体逻辑由单独脚本处理，此处仅实例化并传递目标
+	if projectile_scene == null:
+		push_error("[%s] projectile_scene 为空" % name)
+		return
 	var proj = projectile_scene.instantiate()
+	if proj == null:
+		push_error("[%s] 弹体实例化失败" % name)
+		return
+	print("[%s] 弹体类型: %s" % [name, proj.get_class()])
 	get_tree().current_scene.add_child(proj)
 	proj.global_position = global_position
 	if proj.has_method("init"):
 		proj.init(target, attack_damage, faction)
+	else:
+		push_error("[%s] 弹体没有 init 方法" % name)
 
 # ─────────────────────────────────────────
 #  受伤 / 死亡
@@ -198,6 +218,8 @@ func take_damage(amount: float) -> void:
 	if is_dead:
 		return
 	current_hp -= amount
+	if hp_bar:
+		hp_bar.value = current_hp
 	print("[%s] 受到 %.1f 伤害，剩余血量：%.1f / %.1f" % [name, amount, current_hp, max_hp])
 	_on_damage_override(amount)
 	if current_hp <= 0.0:
