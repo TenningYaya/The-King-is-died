@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://b2p6v53amipmk"]
+
+[ext_resource type="Script" uid="uid://dkbx2q58alxxm" path="res://Scene/ui/button_sell_blueprint.gd" id="1_obeye"]
+
+[node name="ButtonSellBlueprint" type="Button" unique_id=2104570196]
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("1_obeye")

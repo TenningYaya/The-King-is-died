@@ -5,6 +5,32 @@ extends Button
 @onready var label_node = $CountLabel
 
 var current_data: BuildingData = null
+var is_in_sell_mode: bool = false
+
+func _ready():
+	# 🔴 关键：加入分组，以便 SellButton 能批量控制所有格子
+	add_to_group("blueprint_slots")
+	
+	# 连接鼠标移入移出信号，处理高亮
+	mouse_entered.connect(_on_mouse_entered)
+	mouse_exited.connect(_on_mouse_exited)
+	
+# --- 供 SellButton 调用函数 ---
+func enter_sell_mode():
+	is_in_sell_mode = true
+
+func exit_sell_mode():
+	is_in_sell_mode = false
+	modulate = Color(1, 1, 1) # 恢复原色
+
+# --- 视觉高亮 ---
+func _on_mouse_entered():
+	if is_in_sell_mode and current_data:
+		# 变红高亮，表示“回收”
+		modulate = Color(2, 0.5, 0.5) 
+
+func _on_mouse_exited():
+	modulate = Color(1, 1, 1)
 
 func clear_slot():
 	current_data = null
