@@ -162,11 +162,20 @@ script = ExtResource("10_2j816")
 enemy_scenes = Dictionary[String, PackedScene]({
 "tank": ExtResource("11_g3fkh")
 })
-spawn_points = [NodePath("../EnemySpawnPoint")]
+spawn_points = [NodePath("../EnemySpawnPoint"), NodePath("../EnemySpawnPoint2"), NodePath("../EnemySpawnPoint3"), NodePath("../EnemySpawnPoint4")]
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1959168487]
 position = Vector2(-48, 18)
 navigation_polygon = SubResource("NavigationPolygon_bxrg2")
 
 [node name="EnemySpawnPoint" type="Marker2D" parent="." unique_id=425003417]
-position = Vector2(1754, 434)
+position = Vector2(1745, 409)
+
+[node name="EnemySpawnPoint2" type="Marker2D" parent="." unique_id=1225165584]
+position = Vector2(1785, 478)
+
+[node name="EnemySpawnPoint3" type="Marker2D" parent="." unique_id=802858200]
+position = Vector2(1743, 325)
+
+[node name="EnemySpawnPoint4" type="Marker2D" parent="." unique_id=1520395630]
+position = Vector2(1777, 265)

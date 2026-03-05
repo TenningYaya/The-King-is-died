@@ -9,6 +9,8 @@ extends Node2D
 # 刷怪点，在场景里放 Marker2D 然后拖进来
 @export var spawn_points: Array[Node2D] = []
 
+var _current_spawn_index: int = 0
+
 # ─────────────────────────────────────────
 #  波次数据
 # ─────────────────────────────────────────
@@ -43,18 +45,32 @@ func _process(delta: float) -> void:
 func _spawn_wave(spawn_list: Dictionary) -> void:
 	for enemy_type in spawn_list.keys():
 		for i in range(spawn_list[enemy_type]):
-			_spawn_single(enemy_type)
+			_spawn_single_enemy(enemy_type)
 
-func _spawn_single(enemy_type: String) -> void:
+# 记录当前应该在哪个点生成（索引从 0 开始）
+
+
+func _spawn_single_enemy(enemy_type: String) -> void:
+	# 1. 安全检查
 	if not enemy_scenes.has(enemy_type) or enemy_scenes[enemy_type] == null:
-		push_error("EnemySpawner: 未找到敌人类型 -> " + enemy_type)
+		push_error("EnemySpawner: 无法生成敌人，未找到类型 -> " + enemy_type)
 		return
-
-	var enemy = enemy_scenes[enemy_type].instantiate()
-	get_tree().current_scene.add_child(enemy)
-
+		
+	var scene: PackedScene = enemy_scenes[enemy_type]
+	var enemy_instance = scene.instantiate()
+	
+	# 2. 核心逻辑：按顺序选择生成点
 	if spawn_points.size() > 0:
-		var offset = Vector2(randf_range(-30, 30), randf_range(-30, 30))
-		enemy.global_position = spawn_points.pick_random().global_position + offset
+		# 按照计数器的索引选择点位
+		# 使用 % spawn_points.size() 是为了防止索引溢出（万一怪比点多，会循环回第一个点）
+		var target_point = spawn_points[_current_spawn_index % spawn_points.size()]
+		enemy_instance.global_position = target_point.global_position
+		
+		# 3. 递增计数器，为下一个敌人做准备
+		_current_spawn_index += 1
 	else:
-		enemy.global_position = global_position
+		# 备选方案：如果没有配置点位，则生成在自身位置
+		enemy_instance.global_position = self.global_position
+		
+	# 将生成的敌人加入场景树
+	add_child(enemy_instance)
