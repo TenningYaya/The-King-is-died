@@ -15,7 +15,6 @@ collision_mask = 2
 script = ExtResource("1_utx3u")
 faction = 1
 max_hp = 30.0
-attack_damage = 30.0
 attack_range = 300.0
 attack_aoe_radius = 100.0
 attack_type = 1
