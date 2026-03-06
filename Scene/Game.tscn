@@ -19,8 +19,8 @@
 [ext_resource type="PackedScene" uid="uid://duptcluexkt70" path="res://Scene/Combat/Enemy_Tank.tscn" id="11_g3fkh"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_bxrg2"]
-vertices = PackedVector2Array(1903.9375, 27.960938, 1900.0469, 710.85156, 798.1328, 695.1406, 806.8672, 24.03125)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+vertices = PackedVector2Array(1903.9375, 27.960938, 1900.0469, 710.85156, 798.1328, 695.1406, 802.34375, 372.02344, 806.8672, 24.03125)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 0, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(797, 14, 1914, 18, 1910, 721, 788, 705)])
 
 [node name="Game" type="Node2D" unique_id=1503047627]
@@ -133,7 +133,7 @@ metadata/_custom_type_script = "uid://bx385egptpnpx"
 
 [node name="ResourceBar" parent="." unique_id=298767585 instance=ExtResource("6_cohtu")]
 
-[node name="BlueprintUI" parent="." unique_id=55262024 instance=ExtResource("7_48ymf")]
+[node name="BlueprintUI" parent="." unique_id=55262024 groups=["blueprint_manager"] instance=ExtResource("7_48ymf")]
 
 [node name="Wall" parent="." unique_id=1173008175 instance=ExtResource("6_48ymf")]
 position = Vector2(833, 403)
@@ -162,20 +162,22 @@ script = ExtResource("10_2j816")
 enemy_scenes = Dictionary[String, PackedScene]({
 "tank": ExtResource("11_g3fkh")
 })
-spawn_points = [NodePath("../EnemySpawnPoint"), NodePath("../EnemySpawnPoint2"), NodePath("../EnemySpawnPoint3"), NodePath("../EnemySpawnPoint4")]
+spawn_points = [NodePath("../EnemySpawnPoints/EnemySpawnPoint"), NodePath("../EnemySpawnPoints/EnemySpawnPoint2"), NodePath("../EnemySpawnPoints/EnemySpawnPoint3"), NodePath("../EnemySpawnPoints/EnemySpawnPoint4")]
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1959168487]
 position = Vector2(-48, 18)
 navigation_polygon = SubResource("NavigationPolygon_bxrg2")
 
-[node name="EnemySpawnPoint" type="Marker2D" parent="." unique_id=425003417]
+[node name="EnemySpawnPoints" type="Node" parent="." unique_id=972995255]
+
+[node name="EnemySpawnPoint" type="Marker2D" parent="EnemySpawnPoints" unique_id=425003417]
 position = Vector2(1745, 409)
 
-[node name="EnemySpawnPoint2" type="Marker2D" parent="." unique_id=1225165584]
+[node name="EnemySpawnPoint2" type="Marker2D" parent="EnemySpawnPoints" unique_id=1225165584]
 position = Vector2(1785, 478)
 
-[node name="EnemySpawnPoint3" type="Marker2D" parent="." unique_id=802858200]
+[node name="EnemySpawnPoint3" type="Marker2D" parent="EnemySpawnPoints" unique_id=802858200]
 position = Vector2(1743, 325)
 
-[node name="EnemySpawnPoint4" type="Marker2D" parent="." unique_id=1520395630]
+[node name="EnemySpawnPoint4" type="Marker2D" parent="EnemySpawnPoints" unique_id=1520395630]
 position = Vector2(1777, 265)

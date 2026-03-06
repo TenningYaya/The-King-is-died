@@ -49,6 +49,13 @@ func display(data: BuildingData, count: int):
 func _gui_input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed and current_data:
+			# 分支 1：出售模式
+			if is_in_sell_mode:
+				_execute_sell()
+				accept_event() # 拦截点击，不触发背景的“退出模式”逻辑
+				return
+
+			# 分支 2：原有的放置逻辑 (保持不变)
 			var bp_manager = owner 
 			if bp_manager and bp_manager.has_method("start_placing_blueprint"):
 				bp_manager.start_placing_blueprint(current_data)
@@ -57,3 +64,20 @@ func _gui_input(event):
 				# 这会让按钮以为你已经“松开了”，从而把鼠标控制权还给世界
 				release_focus() 
 				button_pressed = false
+
+func _execute_sell():
+	# 1. 玩家获得 Q-Coin (sell_value)
+	var manager = get_tree().get_first_node_in_group("level_manager")
+	if manager:
+		manager.add_resource("q_coin", current_data.sell_value)
+	
+	# 2. 调用管理器扣除蓝图数量
+	# 假设你的 BlueprintUI 节点也在 blueprint_manager 分组
+	var bp_ui = get_tree().get_first_node_in_group("blueprint_manager")
+	if bp_ui and bp_ui.has_method("consume_blueprint"):
+		bp_ui.consume_blueprint(current_data)
+	
+	# 3. 通知 SellButton 恢复正常鼠标
+	var sell_btn = get_tree().get_first_node_in_group("sell_button_node")
+	if sell_btn:
+		sell_btn.reset_mode()
