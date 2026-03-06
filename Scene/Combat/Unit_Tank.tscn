@@ -4,26 +4,36 @@
 [ext_resource type="Texture2D" uid="uid://bjnf3bqet1dlw" path="res://art_assets/Unit/warpgal-run-3-aim-big.png" id="1_re8yu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kjgma"]
-size = Vector2(118, 148)
+size = Vector2(57, 54)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_762ar"]
 
 [node name="UnitTank" type="CharacterBody2D" unique_id=422876923 groups=["player_units"]]
 script = ExtResource("1_kjgma")
-attack_range = 150.0
+attack_range = 100.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1163316575]
+position = Vector2(9.536743e-07, 1.0000019)
+scale = Vector2(0.2916667, 0.28125)
 texture = ExtResource("1_re8yu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=35597690]
-position = Vector2(-6, 15)
+position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_kjgma")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1059610 groups=["player_units"]]
 
 [node name="AttackArea" type="Area2D" parent="." unique_id=1387313981]
+position = Vector2(3, -12)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=2031735190]
-position = Vector2(97, 0)
+position = Vector2(30, -19)
 scale = Vector2(1, 0.9599999)
 shape = SubResource("CircleShape2D_762ar")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=742440916]
+offset_left = -40.0
+offset_top = -40.0
+offset_right = 35.0
+offset_bottom = -35.0
+show_percentage = false

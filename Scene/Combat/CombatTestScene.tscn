@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://duptcluexkt70" path="res://Scene/Combat/Enemy_Tank.tscn" id="2_8qpqg"]
 [ext_resource type="PackedScene" uid="uid://ds7qlt13y0rsv" path="res://Scene/Combat/Unit_Tank.tscn" id="3_5v58d"]
 [ext_resource type="PackedScene" uid="uid://bf3vu14x5n1ds" path="res://Scene/Combat/Wall.tscn" id="4_5v58d"]
+[ext_resource type="PackedScene" uid="uid://gj80dsafogu0" path="res://Scene/Combat/Enemy_Mage.tscn" id="5_8uau8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8f4ix"]
 texture = ExtResource("1_8f4ix")
@@ -8056,6 +8057,8 @@ vertices = PackedVector2Array(1051.9531, 175.74219, 1550.1172, 453.59375, 1190.8
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5, 6)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(1.1634072, -20.150719, 1.6037347, -20.150719, 2.2075284, -51.370144, 2.235509, -73.36565, 1.593426, -116.2214, 1.239986, -116.93093, 0.6347196, -84.43435, 0.6170476, -59.033092), PackedVector2Array(822, 143, 368, 446, 370, 563, 744, 825, 1195, 859, 1566, 451, 1055, 166)])
 
+[sub_resource type="PackedScene" id="PackedScene_8uau8"]
+
 [node name="CombatTestScene" type="Node2D" unique_id=201573654]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=844719258]
@@ -8071,13 +8074,23 @@ position = Vector2(960, 540)
 texture = ExtResource("1_8f4ix")
 
 [node name="UnitTank" parent="." unique_id=364362264 instance=ExtResource("3_5v58d")]
-position = Vector2(707, 450)
+position = Vector2(1068, 461)
 attack_damage = 100.0
+projectile_scene = SubResource("PackedScene_8uau8")
 move_speed = 200.0
 
 [node name="UnitTank2" parent="." unique_id=422876923 instance=ExtResource("2_8qpqg")]
-position = Vector2(1246, 460)
+position = Vector2(1174, 504)
 attack_preference = 4
 
 [node name="Wall" parent="." unique_id=313594495 instance=ExtResource("4_5v58d")]
 position = Vector2(962, 454)
+
+[node name="UnitTank3" parent="." unique_id=216863847 instance=ExtResource("5_8uau8")]
+position = Vector2(1289, 553)
+
+[node name="UnitTank4" parent="." unique_id=1860275870 instance=ExtResource("5_8uau8")]
+position = Vector2(1287, 456)
+
+[node name="UnitTank5" parent="." unique_id=1810921244 instance=ExtResource("3_5v58d")]
+position = Vector2(1071, 523)
