@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://do4dkx5h4d88v"]
+
+[ext_resource type="Texture2D" uid="uid://c5nrvsdvlt1h0" path="res://art_assets/ui/button_demolish.jpg" id="1_de581"]
+[ext_resource type="Script" uid="uid://1wn2p5ej12q1" path="res://scripts/ui/button_demolish.gd" id="2_0li8q"]
+
+[node name="ButtonDemolish" type="Button" unique_id=2048028039]
+offset_right = 59.0
+offset_bottom = 61.0
+icon = ExtResource("1_de581")
+expand_icon = true
+script = ExtResource("2_0li8q")

@@ -12,18 +12,38 @@ var is_under_penalty: bool = false
 
 var is_moving: bool = false
 var original_pos: Vector2
+var is_in_demolish_mode: bool = false
 
 @onready var progress_pie = $UIContainer/ProgressBar
 @export var target_display_size: Vector2 = Vector2(110, 110) # 你希望建筑在地图上显示的像素大小
 
 func _ready():
 	add_to_group("buildings")
+	input_pickable = true 
+	mouse_entered.connect(_on_mouse_entered)
+	mouse_exited.connect(_on_mouse_exited)
 	if data:
 		_setup_visuals()
 		
 		if progress_pie:
 			progress_pie.value = 0
-			
+
+# 被 DemolishButton 远程调用
+func enter_demolish_mode():
+	is_in_demolish_mode = true
+
+func exit_demolish_mode():
+	is_in_demolish_mode = false
+	modulate = Color(1, 1, 1) # 恢复原色
+
+func _on_mouse_entered():
+	if is_in_demolish_mode:
+		# 高亮显示：比如变蓝或变白发光
+		modulate = Color(2.0, 0.5, 0.5)
+
+func _on_mouse_exited():
+	modulate = Color(1, 1, 1)
+	
 func _process(delta):
 	if not is_active or data == null:
 		return
@@ -74,6 +94,11 @@ func _input_event(_viewport, event, _shape_idx):
 				get_viewport().set_input_as_handled()
 			elif not event.pressed and is_moving:
 				_stop_moving()
+	if is_in_demolish_mode and event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			_execute_demolish()
+			# 阻止点击穿透到地块或背景
+			get_viewport().set_input_as_handled()
 
 func _start_moving():
 	is_moving = true
@@ -136,4 +161,27 @@ func _setup_visuals():
 			# 取最小值进行等比例缩放，防止拉伸变形
 			var final_scale = min(scale_factor_x, scale_factor_y)
 			sprite.scale = Vector2(final_scale, final_scale)
-		# ------------------
+
+func _execute_demolish():
+	# 1. 特殊逻辑检查：如果是灵力泉 (elixir_spring)
+	if data and data.building_name == "ElixirSpring":
+		_return_blueprint()
+	
+	# 2. 清理地块占用状态
+	if current_slot:
+		current_slot.set_meta("is_occupied", false)
+	
+	# 3. 退出拆除模式并销毁建筑
+	var dem_btn = get_tree().get_first_node_in_group("demolish_button_node")
+	if dem_btn:
+		dem_btn.reset_mode()
+	
+	print("建筑已拆除: ", name)
+	queue_free()
+
+func _return_blueprint():
+	# 找到蓝图管理器并增加一个灵力泉蓝图
+	var bp_ui = get_tree().get_first_node_in_group("blueprint_manager")
+	if bp_ui and bp_ui.has_method("add_blueprint"):
+		bp_ui.add_blueprint(self.data)
+		print("已返还灵力泉蓝图")

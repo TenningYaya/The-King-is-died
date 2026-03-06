@@ -1,4 +1,4 @@
-# 挂载在 BlueprintUI (CanvasLayer) 上
+# level_blueprint_manager.gd
 extends CanvasLayer
 
 enum FilterType { ALL, PRODUCTION, COMBAT }
