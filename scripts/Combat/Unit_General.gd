@@ -178,22 +178,26 @@ func _in_attack_range(target: Unit_General) -> bool:
 func _perform_attack(target: Unit_General) -> void:
 	print("[%s] 攻击 [%s]，目标剩余血量：%.1f" % [name, target.name, target.current_hp])
 	if projectile_scene:
-		_fire_projectile(target)
-	else:
-		_melee_attack(target)
-	_on_attack_override(target)   # 供子类扩展
+		_fire_projectile(target)  # 纯视觉
+	_melee_attack(target)  # 伤害始终在这里结算
+	_on_attack_override(target)
 
 func _melee_attack(target: Unit_General) -> void:
 	match attack_type:
 		AttackType.SINGLE:
 			target.take_damage(attack_damage)
 		AttackType.AOE:
-			_deal_aoe_damage()
+			_deal_aoe_damage(target.global_position)
 
-func _deal_aoe_damage() -> void:
+func _deal_aoe_damage(center: Vector2) -> void:
+	var hit_count := 0
 	for unit in _get_enemies_in_scene():
-		if global_position.distance_to(unit.global_position) <= attack_aoe_radius:
+		var d := center.distance_to(unit.global_position)
+		print("[AOE] 检测单位:%s 距离:%.1f 半径:%.1f" % [unit.name, d, attack_aoe_radius])
+		if d <= attack_aoe_radius:
 			unit.take_damage(attack_damage)
+			hit_count += 1
+	print("[AOE] 共命中 %d 个单位" % hit_count)
 
 func _fire_projectile(target: Unit_General) -> void:
 	if projectile_scene == null:

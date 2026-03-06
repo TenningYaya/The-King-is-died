@@ -9,13 +9,14 @@ size = Vector2(70, 72)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_762ar"]
 
-[node name="UnitTank" type="CharacterBody2D" unique_id=422876923 groups=["enemy_units"]]
+[node name="EnemyMage" type="CharacterBody2D" unique_id=422876923 groups=["enemy_units"]]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_utx3u")
 faction = 1
 max_hp = 30.0
-attack_damage = 30.0
-attack_range = 200.0
-attack_aoe_radius = 20.0
+attack_range = 300.0
+attack_aoe_radius = 100.0
 attack_type = 1
 projectile_scene = ExtResource("2_fvvsg")
 

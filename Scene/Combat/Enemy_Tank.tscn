@@ -4,11 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://dadd2x050boc1" path="res://art_assets/Unit/warpgal-stand-aim-big.png" id="2_pojax"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kjgma"]
-size = Vector2(70, 72)
+size = Vector2(65, 63)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_762ar"]
 
-[node name="UnitTank" type="CharacterBody2D" unique_id=422876923 groups=["enemy_units"]]
+[node name="EnemyTank" type="CharacterBody2D" unique_id=422876923 groups=["enemy_units"]]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_pojax")
 faction = 1
 attack_range = 100.0
@@ -19,7 +21,7 @@ scale = Vector2(0.3645833, 0.3645833)
 texture = ExtResource("2_pojax")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=35597690]
-position = Vector2(-3, -3)
+position = Vector2(-0.5, 1.5)
 shape = SubResource("RectangleShape2D_kjgma")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1059610]
