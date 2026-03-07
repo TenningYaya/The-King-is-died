@@ -1,3 +1,4 @@
+#level_resource_manager.gd
 extends Node
 class_name LevelResourceManager
 

@@ -1,5 +1,6 @@
 #对于5*5的完整地块，本script统一称为field。
 #对于每个单独格子，本script统一称为grid。
+#gaze.gd
 extends Node2D
 class_name GazeController
 

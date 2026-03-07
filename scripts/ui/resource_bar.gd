@@ -35,3 +35,25 @@ func _update_label_text(res_id: String, amount: int):
 	if labels.has(res_id) and labels[res_id] != null:
 		labels[res_id].text = str(amount)
 		
+# 在 _on_button_pressed 函数中编写逻辑
+func _on_button_pressed():
+	# 1. 获取资源管理器
+	var manager = get_tree().get_first_node_in_group("level_manager")
+	
+	if manager:
+		# 2. 遍历你字典里所有的资源 ID
+		for res_id in labels.keys():
+			# 计算需要增加到 999 的差值
+			var current_val = manager.get_amount(res_id)
+			var difference = 999 - current_val
+			
+			# 调用管理器的增加函数（这样会自动触发信号并更新 UI）
+			if difference > 0:
+				manager.add_resource(res_id, difference)
+			elif difference < 0:
+				# 如果当前已经超过 999，想强制变回 999 可以用 consume
+				manager.consume_resource(res_id, abs(difference))
+				
+		print("测试：所有资源已设为 999")
+	else:
+		push_error("测试按钮错误：找不到 level_manager")
