@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://do8xgvq4ry37i"]
+
+[ext_resource type="Script" uid="uid://cj8mwu7ivs627" path="res://scripts/ui/gaze_upgrade.gd" id="1_cslux"]
+[ext_resource type="Texture2D" uid="uid://chdjyil7nc1db" path="res://art_assets/gaze/gaze_icon.png" id="2_66nq2"]
+[ext_resource type="Texture2D" uid="uid://bl74pkfqpslh6" path="res://art_assets/ui/button_upgrade_gaze.png" id="3_keb6l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cslux"]
+
+[node name="GazeUpgradeUi" type="VBoxContainer" unique_id=270773122]
+offset_right = 109.0
+offset_bottom = 54.0
+alignment = 2
+script = ExtResource("1_cslux")
+
+[node name="RequirementPopup" type="PanelContainer" parent="." unique_id=1535484485]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_vertical = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_cslux")
+
+[node name="RequirementsList" type="HBoxContainer" parent="RequirementPopup" unique_id=1363804259]
+layout_mode = 2
+alignment = 1
+
+[node name="MainHBox" type="HBoxContainer" parent="." unique_id=2081510212]
+layout_mode = 2
+size_flags_vertical = 8
+mouse_filter = 0
+
+[node name="GazeIcon" type="TextureRect" parent="MainHBox" unique_id=1486936731]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("2_66nq2")
+expand_mode = 1
+
+[node name="LevelLabel" type="Label" parent="MainHBox" unique_id=604425129]
+layout_mode = 2
+
+[node name="UpgradeButton" type="TextureButton" parent="MainHBox" unique_id=578441884]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture_normal = ExtResource("3_keb6l")
+texture_disabled = ExtResource("3_keb6l")
+ignore_texture_size = true
+stretch_mode = 0

@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://duptcluexkt70" path="res://Scene/Combat/Enemy_Tank.tscn" id="11_g3fkh"]
 [ext_resource type="PackedScene" uid="uid://do4dkx5h4d88v" path="res://Scene/ui/button_demolish.tscn" id="18_kfjtm"]
 [ext_resource type="PackedScene" uid="uid://b2p6v53amipmk" path="res://Scene/ui/button_sell_blueprint.tscn" id="19_1e3q2"]
+[ext_resource type="PackedScene" uid="uid://do8xgvq4ry37i" path="res://Scene/ui/button_gaze_upgrade.tscn" id="20_1e3q2"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_bxrg2"]
 vertices = PackedVector2Array(1903.9375, 27.960938, 1900.0469, 710.85156, 798.1328, 695.1406, 802.34375, 372.02344, 806.8672, 24.03125)
@@ -195,3 +196,9 @@ offset_left = 33.0
 offset_top = 907.0
 offset_right = 98.0
 offset_bottom = 971.0
+
+[node name="GazeUpgradeUi" parent="." unique_id=1442738214 instance=ExtResource("20_1e3q2")]
+offset_left = 957.0
+offset_top = 812.0
+offset_right = 1066.0
+offset_bottom = 916.0
