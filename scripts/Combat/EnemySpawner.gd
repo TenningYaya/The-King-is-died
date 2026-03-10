@@ -1,76 +1,70 @@
 class_name EnemySpawner
 extends Node2D
 
-# ─────────────────────────────────────────
-#  配置（在 Inspector 里设置）
-# ─────────────────────────────────────────
-# key: 敌人类型字符串（如 "tank"），value: 对应场景
 @export var enemy_scenes: Dictionary[String, PackedScene] = {}
-# 刷怪点，在场景里放 Marker2D 然后拖进来
 @export var spawn_points: Array[Node2D] = []
 
 var _current_spawn_index: int = 0
+var current_wave_index: int = 0
+var timer: float = 0.0
+var waiting_for_next_wave: bool = false
 
-# ─────────────────────────────────────────
-#  波次数据
-# ─────────────────────────────────────────
+# 修改波次数据：spawn_time 现在代表“前一波清空后等待的时间”
 var waves: Array[Dictionary] = [
-	{ "spawn_time": 0, "spawn_list": { "tank": 2 } },
-	{ "spawn_time": 25.0, "spawn_list": { "tank": 1 } },
-	{ "spawn_time": 30.0, "spawn_list": { "tank": 1 } }
+	{ "spawn_time": 20.0, "spawn_list": { "tank": 2 } },
+	{ "spawn_time": 10.0, "spawn_list": { "tank": 1 } },
+	{ "spawn_time": 10.0, "spawn_list": { "tank": 3 } }
 ]
 
-# ─────────────────────────────────────────
-#  状态
-# ─────────────────────────────────────────
-var current_time: float = 0.0
-var current_wave_index: int = 0
-
-# ─────────────────────────────────────────
-#  主循环
-# ─────────────────────────────────────────
 func _process(delta: float) -> void:
 	if current_wave_index >= waves.size():
 		return
 
-	current_time += delta
+	# 核心逻辑：如果场上没怪了，开始倒计时
+	if _get_enemy_count() == 0:
+		if not waiting_for_next_wave and current_wave_index > 0:
+			# 刚刚清空完一波，发放奖励
+			_on_wave_completed()
+			waiting_for_next_wave = true
+			timer = 0.0 # 重置计时器开始等待下波间隔
+		
+		timer += delta
+		
+		# 如果达到了配置的等待时间
+		if timer >= waves[current_wave_index]["spawn_time"]:
+			_spawn_wave(waves[current_wave_index]["spawn_list"])
+			current_wave_index += 1
+			waiting_for_next_wave = false
+			timer = 0.0
 
-	while current_wave_index < waves.size() and current_time >= waves[current_wave_index]["spawn_time"]:
-		_spawn_wave(waves[current_wave_index]["spawn_list"])
-		current_wave_index += 1
+# 发放奖励
+func _on_wave_completed() -> void:
+	ResourceManager.add_currency(10)
+	print("波次完成！获得10特殊货币。当前：", ResourceManager.special_currency)
 
-# ─────────────────────────────────────────
-#  生成逻辑
-# ─────────────────────────────────────────
+# 获取当前存活敌人数量
+func _get_enemy_count() -> int:
+	# 假设你的敌人都在特定的 Group 里，或者直接统计子节点
+	# 如果你的敌人生成后是 add_child(enemy_instance)，可以用下面这行：
+	return get_child_count() 
+
 func _spawn_wave(spawn_list: Dictionary) -> void:
 	for enemy_type in spawn_list.keys():
 		for i in range(spawn_list[enemy_type]):
 			_spawn_single_enemy(enemy_type)
 
-# 记录当前应该在哪个点生成（索引从 0 开始）
-
-
 func _spawn_single_enemy(enemy_type: String) -> void:
-	# 1. 安全检查
 	if not enemy_scenes.has(enemy_type) or enemy_scenes[enemy_type] == null:
-		push_error("EnemySpawner: 无法生成敌人，未找到类型 -> " + enemy_type)
 		return
 		
 	var scene: PackedScene = enemy_scenes[enemy_type]
 	var enemy_instance = scene.instantiate()
 	
-	# 2. 核心逻辑：按顺序选择生成点
 	if spawn_points.size() > 0:
-		# 按照计数器的索引选择点位
-		# 使用 % spawn_points.size() 是为了防止索引溢出（万一怪比点多，会循环回第一个点）
 		var target_point = spawn_points[_current_spawn_index % spawn_points.size()]
 		enemy_instance.global_position = target_point.global_position
-		
-		# 3. 递增计数器，为下一个敌人做准备
 		_current_spawn_index += 1
 	else:
-		# 备选方案：如果没有配置点位，则生成在自身位置
 		enemy_instance.global_position = self.global_position
 		
-	# 将生成的敌人加入场景树
 	add_child(enemy_instance)
