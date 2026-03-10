@@ -15,6 +15,7 @@ func _on_production_finished():
 		# 调用管理器的 add_resource 方法，这会触发 level_resource_changed 信号
 		# 从而让 ResourceBar UI 自动更新
 		manager.add_resource(data.product_type, data.amount_per_cycle)
+		show_production_popup(data.product_type, 1)
 	else:
 		push_error("ProducerBuilding错误：找不到带有 'level_manager' 分组的节点！")
 	

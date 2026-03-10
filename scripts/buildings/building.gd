@@ -16,6 +16,7 @@ var is_in_demolish_mode: bool = false
 
 @onready var progress_pie = $UIContainer/ProgressBar
 @export var target_display_size: Vector2 = Vector2(110, 110) # 你希望建筑在地图上显示的像素大小
+@export var popup_scene: PackedScene = preload("res://Scene/ui/production_popup.tscn")
 
 func _ready():
 	add_to_group("buildings")
@@ -185,3 +186,22 @@ func _return_blueprint():
 	if bp_ui and bp_ui.has_method("add_blueprint"):
 		bp_ui.add_blueprint(self.data)
 		print("已返还灵力泉蓝图")
+
+func show_production_popup(res_id: String, amount: int):
+	var manager = get_tree().get_first_node_in_group("level_manager")
+	if not manager: return
+	
+	# 实例化提示 UI
+	var popup = popup_scene.instantiate()
+	add_child(popup)
+	
+	# 计算初始位置：建筑图标的正中心
+	var sprite_size = $Sprite2D.texture.get_size() * $Sprite2D.scale
+	popup.position = Vector2(-popup.size.x / 2, -popup.size.y / 2) # 居中
+	
+	# 获取图标并启动动画
+	var icon_tex = manager.get_resource_icon(res_id)
+	# 飘动距离：建筑中心到建筑顶部的距离（y 轴一半）
+	var travel_distance = sprite_size.y / 2
+	
+	popup.start_animation(icon_tex, amount, travel_distance)

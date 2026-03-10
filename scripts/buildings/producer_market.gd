@@ -63,7 +63,7 @@ func _on_cycle_finished():
 	if manager:
 		# 产出 Spirit Stone
 		manager.add_resource("spirit_stone", 1)
-		print("市场交易完成：获得 1 Spirit Stone")
+		show_production_popup("spirit_stone", 1)
 	
 	# 重点：旧周期结束，现在更新为玩家选的新资源
 	if current_target_resource != next_target_resource:
@@ -103,17 +103,13 @@ func _build_resource_menu():
 	
 	# 2. 检查管理器资源
 	var manager = get_tree().get_first_node_in_group("level_manager")
-	if not manager:
-		print("[市场排查] 警告：找不到 level_manager 组！")
-	else:
-		print("[市场排查] 管理器当前资源字典: ", manager.current_resources)
-		for res_id in manager.current_resources.keys():
-			if res_id == "spirit_stone" or res_id == "q_coin":
-				continue 
-			
-			# 暂时移除库存判定，强制显示所有资源进行排查
-			var icon = manager.get_resource_icon(res_id)
-			_add_menu_item(res_id, icon, res_id)
+	for res_id in manager.current_resources.keys():
+		if res_id == "spirit_stone" or res_id == "q_coin":
+			continue 
+		
+		# 暂时移除库存判定，强制显示所有资源进行排查
+		var icon = manager.get_resource_icon(res_id)
+		_add_menu_item(res_id, icon, res_id)
 
 func _add_menu_item(label: String, icon: Texture2D, res_id: String):
 	var btn = Button.new()

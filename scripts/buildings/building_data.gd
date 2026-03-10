@@ -17,7 +17,7 @@ enum BuildingType { PRODUCTION, COMBAT, MARKET }
 @export var sell_value: int = 5
 
 @export_group("生产配置")
-@export var product_type: String = "小麦"
+@export var product_type: String = "spirit_stone"
 @export var amount_per_cycle: int = 1
 @export var production_time: float = 2.0
 @export var max_production: int = 100
