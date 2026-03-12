@@ -103,4 +103,5 @@ scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_xonuh")
 animation = &"Idle"
 autoplay = "Idle"
-frame_progress = 0.06933629
+frame_progress = 0.878913
+flip_h = true
