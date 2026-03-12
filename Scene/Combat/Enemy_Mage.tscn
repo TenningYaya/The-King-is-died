@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://gj80dsafogu0"]
 
 [ext_resource type="Script" uid="uid://cpggpd68uqqu0" path="res://scripts/Combat/Enemy_Tank.gd" id="1_utx3u"]
-[ext_resource type="Texture2D" uid="uid://dadd2x050boc1" path="res://art_assets/Unit/warpgal-stand-aim-big.png" id="2_5byon"]
 [ext_resource type="PackedScene" uid="uid://cwi7pn4c8c4v7" path="res://Scene/Combat/Projectile.tscn" id="2_fvvsg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kjgma"]
@@ -19,11 +18,6 @@ attack_range = 300.0
 attack_aoe_radius = 100.0
 attack_type = 1
 projectile_scene = ExtResource("2_fvvsg")
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1163316575]
-position = Vector2(-3.0000012, -2.9999983)
-scale = Vector2(0.3645833, 0.3645833)
-texture = ExtResource("2_5byon")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=35597690]
 position = Vector2(-3, -3)
@@ -44,3 +38,5 @@ offset_top = -40.0
 offset_right = 35.0
 offset_bottom = -35.0
 show_percentage = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2130221941]

@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://duptcluexkt70" path="res://Scene/Combat/Enemy_Tank.tscn" id="2_8qpqg"]
 [ext_resource type="PackedScene" uid="uid://ds7qlt13y0rsv" path="res://Scene/Combat/Unit_Tank.tscn" id="3_5v58d"]
 [ext_resource type="PackedScene" uid="uid://bf3vu14x5n1ds" path="res://Scene/Combat/Wall.tscn" id="4_5v58d"]
-[ext_resource type="PackedScene" uid="uid://gj80dsafogu0" path="res://Scene/Combat/Enemy_Mage.tscn" id="5_8uau8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8f4ix"]
 texture = ExtResource("1_8f4ix")
@@ -8075,16 +8074,7 @@ texture = ExtResource("1_8f4ix")
 position = Vector2(962, 454)
 
 [node name="EnemyTank" parent="." unique_id=422876923 instance=ExtResource("2_8qpqg")]
-position = Vector2(1444, 465)
-
-[node name="EnemyMage" parent="." unique_id=2102068964 instance=ExtResource("5_8uau8")]
-position = Vector2(1347, 508)
+position = Vector2(1252, 449)
 
 [node name="UnitTank" parent="." unique_id=518830794 instance=ExtResource("3_5v58d")]
 position = Vector2(1091, 487)
-
-[node name="UnitTank2" parent="." unique_id=2072950719 instance=ExtResource("3_5v58d")]
-position = Vector2(1091, 429)
-
-[node name="UnitTank3" parent="." unique_id=1465492273 instance=ExtResource("3_5v58d")]
-position = Vector2(1092, 548)
