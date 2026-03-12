@@ -147,6 +147,7 @@ offset_top = -24.0
 offset_right = 1891.0
 
 [node name="TimeControl" parent="." unique_id=835025454 instance=ExtResource("8_tujvx")]
+visible = false
 offset_left = 1398.0
 offset_top = -33.0
 offset_right = 1804.0

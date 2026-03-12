@@ -5,11 +5,18 @@
 [ext_resource type="Script" uid="uid://bl7lscddse5ko" path="res://scripts/ui/blueprint_filter.gd" id="1_rlm7m"]
 [ext_resource type="PackedScene" uid="uid://e27owbe3qpni" path="res://Scene/ui/blueprint_slot.tscn" id="1_rmctn"]
 [ext_resource type="PackedScene" uid="uid://cbxiq5h01n5uc" path="res://Scene/buildings/blueprint.tscn" id="3_eqi16"]
+[ext_resource type="PackedScene" uid="uid://bfwvu1fjj5oav" path="res://Scene/ui/time_control.tscn" id="4_b6ffr"]
 
 [node name="BlueprintUI" type="CanvasLayer" unique_id=55262024]
 script = ExtResource("1_hhnae")
 slot_scene = ExtResource("1_rmctn")
 common_blueprint_scene = ExtResource("3_eqi16")
+
+[node name="TimeControl" parent="." unique_id=835025454 instance=ExtResource("4_b6ffr")]
+offset_left = 1544.0
+offset_top = 26.0
+offset_right = 1874.0
+offset_bottom = 71.0
 
 [node name="Control" type="Control" parent="." unique_id=469888182]
 layout_mode = 3
