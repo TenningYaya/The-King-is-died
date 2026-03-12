@@ -1,17 +1,18 @@
 [gd_scene format=3 uid="uid://cwi7pn4c8c4v7"]
 
 [ext_resource type="Script" uid="uid://ciioqj11bqocn" path="res://scripts/Combat/Projectile.gd" id="1_8mdvq"]
-[ext_resource type="Texture2D" uid="uid://48r16hy2orjm" path="res://art_assets/buildings/origin_pavilion.png" id="1_kjvst"]
+[ext_resource type="Texture2D" uid="uid://d03xb3xa5qean" path="res://art_assets/Unit/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Arrow(Projectile)/Arrow01(100x100).png" id="2_8mdvq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8mdvq"]
+radius = 66.666664
 
 [node name="Projectile" type="Area2D" unique_id=1813624176]
 script = ExtResource("1_8mdvq")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=331048808]
 position = Vector2(-5.9604645e-08, -1.1920929e-07)
-scale = Vector2(0.023999996, 0.023999996)
-texture = ExtResource("1_kjvst")
+scale = Vector2(2, 2)
+texture = ExtResource("2_8mdvq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1509901217]
 scale = Vector2(0.3, 0.3)
