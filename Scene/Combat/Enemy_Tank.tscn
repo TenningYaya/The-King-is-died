@@ -131,7 +131,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_wg1cc")
 }],
 "loop": true,
-"name": &"Attack",
+"name": &"attack",
 "speed": 5.0
 }, {
 "frames": [{
@@ -147,8 +147,8 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_v0smv")
 }],
-"loop": true,
-"name": &"Death",
+"loop": false,
+"name": &"death",
 "speed": 5.0
 }, {
 "frames": [{
@@ -171,7 +171,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_lbh77")
 }],
 "loop": true,
-"name": &"Idle",
+"name": &"idle",
 "speed": 5.0
 }, {
 "frames": [{
@@ -200,7 +200,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_mp7dg")
 }],
 "loop": true,
-"name": &"Walk",
+"name": &"walk",
 "speed": 5.0
 }]
 
@@ -241,7 +241,8 @@ show_percentage = false
 texture_filter = 1
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_xonuh")
-animation = &"Death"
-autoplay = "Attack"
-frame_progress = 0.6341996
+animation = &"death"
+autoplay = "attack"
+frame = 3
+frame_progress = 1.0
 flip_h = true

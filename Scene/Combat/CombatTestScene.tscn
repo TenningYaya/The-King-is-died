@@ -8075,7 +8075,7 @@ texture = ExtResource("1_8f4ix")
 position = Vector2(962, 454)
 
 [node name="EnemyTank" parent="." unique_id=422876923 instance=ExtResource("2_8qpqg")]
-position = Vector2(1245, 487)
+position = Vector2(1444, 465)
 
 [node name="EnemyMage" parent="." unique_id=2102068964 instance=ExtResource("5_8uau8")]
 position = Vector2(1347, 508)

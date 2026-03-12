@@ -44,6 +44,7 @@ var is_dead: bool = false
 @onready var nav_agent: NavigationAgent2D = get_node_or_null("NavigationAgent2D")
 @onready var attack_area: Area2D = get_node_or_null("AttackArea")
 @onready var hp_bar: ProgressBar = get_node_or_null("ProgressBar")
+@onready var anim: AnimatedSprite2D = get_node_or_null("AnimatedSprite2D")
 
 # ─────────────────────────────────────────
 #  初始化
@@ -86,14 +87,23 @@ func _physics_process(delta: float) -> void:
 	print("[%s] 目标:%s 距离:%.1f 射程:%.1f 在射程内:%s attack_timer:%.2f" % [name, current_target, dist, attack_range, in_range, attack_timer])
 
 	if current_target and _in_attack_range(current_target):
-		# 在射程内：停止移动，尝试攻击
 		velocity = Vector2.ZERO
 		if attack_timer <= 0.0:
 			attack_timer = ATTACK_INTERVAL
+			_play_anim("attack")
 			_perform_attack(current_target)
+		elif not _is_playing("attack"):
+			_play_anim("idle")
 	else:
-		# 不在射程内：向目标移动
 		_move_toward_target(delta)
+		if velocity.length() > 0:
+			_play_anim("walk")
+		else:
+			_play_anim("idle")
+
+	# 根据移动方向翻转sprite
+	if anim and velocity.x != 0:
+		anim.flip_h = velocity.x < 0
 
 	move_and_slide()
 
@@ -232,8 +242,23 @@ func take_damage(amount: float) -> void:
 func _die() -> void:
 	is_dead = true
 	print("[%s] 已死亡" % name)
+	_play_anim("death")
 	_on_death_override()
+	# 等死亡动画播完再删除
+	if anim:
+		await anim.animation_finished
 	queue_free()
+
+# ─────────────────────────────────────────
+#  动画辅助
+# ─────────────────────────────────────────
+func _play_anim(anim_name: String) -> void:
+	if anim and anim.sprite_frames and anim.sprite_frames.has_animation(anim_name):
+		if anim.animation != anim_name:
+			anim.play(anim_name)
+
+func _is_playing(anim_name: String) -> bool:
+	return anim != null and anim.animation == anim_name and anim.is_playing()
 
 # ─────────────────────────────────────────
 #  子类扩展钩子（override 这些而不是覆盖核心方法）
