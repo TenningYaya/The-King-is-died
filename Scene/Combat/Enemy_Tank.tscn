@@ -2,11 +2,68 @@
 
 [ext_resource type="Script" uid="uid://cpggpd68uqqu0" path="res://scripts/Combat/Enemy_Tank.gd" id="1_pojax"]
 [ext_resource type="Texture2D" uid="uid://dadd2x050boc1" path="res://art_assets/Unit/warpgal-stand-aim-big.png" id="2_pojax"]
+[ext_resource type="Texture2D" uid="uid://dv5hmhf7l7w3a" path="res://art_assets/Unit/Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Soldier/Soldier/Soldier-Idle.png" id="3_i0d2r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kjgma"]
 size = Vector2(65, 63)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_762ar"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ugxhw"]
+atlas = ExtResource("3_i0d2r")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4813c"]
+atlas = ExtResource("3_i0d2r")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vciiu"]
+atlas = ExtResource("3_i0d2r")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_drhgk"]
+atlas = ExtResource("3_i0d2r")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5pnpt"]
+atlas = ExtResource("3_i0d2r")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lbh77"]
+atlas = ExtResource("3_i0d2r")
+region = Rect2(500, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xonuh"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ugxhw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4813c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vciiu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_drhgk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5pnpt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lbh77")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"Walk",
+"speed": 5.0
+}]
 
 [node name="EnemyTank" type="CharacterBody2D" unique_id=422876923 groups=["enemy_units"]]
 collision_layer = 2
@@ -16,6 +73,7 @@ faction = 1
 attack_range = 100.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1163316575]
+visible = false
 position = Vector2(-3.0000012, -2.9999983)
 scale = Vector2(0.3645833, 0.3645833)
 texture = ExtResource("2_pojax")
@@ -39,3 +97,9 @@ offset_top = -40.0
 offset_right = 35.0
 offset_bottom = -35.0
 show_percentage = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1004040179]
+sprite_frames = SubResource("SpriteFrames_xonuh")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.080596015
