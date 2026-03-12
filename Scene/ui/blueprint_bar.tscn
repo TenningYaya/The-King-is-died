@@ -13,18 +13,18 @@ slot_scene = ExtResource("1_rmctn")
 common_blueprint_scene = ExtResource("3_eqi16")
 
 [node name="TimeControl" parent="." unique_id=835025454 instance=ExtResource("4_b6ffr")]
-offset_left = 1544.0
-offset_top = 26.0
-offset_right = 1874.0
-offset_bottom = 71.0
+offset_left = 1468.0
+offset_top = -19.0
+offset_right = 1798.0
+offset_bottom = 26.0
 
 [node name="Control" type="Control" parent="." unique_id=469888182]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 29.0
-offset_top = 734.0
-offset_right = 69.0
-offset_bottom = 774.0
+offset_left = 39.0
+offset_top = 700.0
+offset_right = 79.0
+offset_bottom = 740.0
 mouse_filter = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control" unique_id=754640073]
