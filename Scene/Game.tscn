@@ -24,9 +24,9 @@
 [ext_resource type="Script" uid="uid://cxpg1n5oqju86" path="res://scripts/store and q money/CurrencyUI.gd" id="22_0mc8i"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_bxrg2"]
-vertices = PackedVector2Array(1903.9375, 27.960938, 1900.0469, 710.85156, 798.1328, 695.1406, 802.34375, 372.02344, 806.8672, 24.03125)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 0, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(797, 14, 1914, 18, 1910, 721, 788, 705)])
+vertices = PackedVector2Array(1904.1406, 33.929688, 1912.8516, 639.9922, 756.03906, 639, 758.9531, 26.0625)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(749, 16, 1914, 24, 1923, 650, 746, 649)])
 
 [node name="Game" type="Node2D" unique_id=1503047627]
 
@@ -136,24 +136,21 @@ resource_icons = Dictionary[String, Texture2D]({
 })
 metadata/_custom_type_script = "uid://bx385egptpnpx"
 
-[node name="ResourceBar" parent="." unique_id=298767585 instance=ExtResource("6_cohtu")]
-
 [node name="BlueprintUI" parent="." unique_id=55262024 groups=["blueprint_manager"] instance=ExtResource("7_48ymf")]
 
 [node name="Wall" parent="." unique_id=1173008175 instance=ExtResource("6_48ymf")]
-position = Vector2(833, 403)
+position = Vector2(658, 379)
 
 [node name="PauseButton" parent="." unique_id=1851983709 instance=ExtResource("7_cohtu")]
-offset_left = 1836.0
-offset_top = 18.0
-offset_right = 1900.0
-offset_bottom = 82.0
+offset_left = 1827.0
+offset_top = -24.0
+offset_right = 1891.0
 
 [node name="TimeControl" parent="." unique_id=835025454 instance=ExtResource("8_tujvx")]
-offset_left = 1380.0
-offset_top = 98.0
-offset_right = 1786.0
-offset_bottom = 162.0
+offset_left = 1398.0
+offset_top = -33.0
+offset_right = 1804.0
+offset_bottom = 31.0
 script = null
 
 [node name="PauseMenu" parent="." unique_id=1743093916 instance=ExtResource("9_tujvx")]
@@ -220,3 +217,8 @@ expand_mode = 3
 layout_mode = 2
 text = "0"
 script = ExtResource("22_0mc8i")
+
+[node name="ResourceBar" parent="." unique_id=298767585 instance=ExtResource("6_cohtu")]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=213039517]
+position = Vector2(938, 502)

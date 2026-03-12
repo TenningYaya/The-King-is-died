@@ -13,10 +13,10 @@ script = ExtResource("1_ke2c8")
 [node name="Background" type="NinePatchRect" parent="." unique_id=22803245]
 anchors_preset = 10
 anchor_right = 1.0
-offset_left = 1371.0
-offset_top = 794.0
-offset_right = -19.0
-offset_bottom = 1064.0
+offset_left = 1287.0
+offset_top = 738.0
+offset_right = -103.0
+offset_bottom = 1008.0
 grow_horizontal = 2
 texture = ExtResource("2_pd6es")
 patch_margin_left = 10
@@ -172,10 +172,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Button" type="Button" parent="." unique_id=1501281393]
-offset_left = 1216.0
-offset_top = 801.0
-offset_right = 1362.0
-offset_bottom = 832.0
+offset_left = 1132.0
+offset_top = 745.0
+offset_right = 1278.0
+offset_bottom = 776.0
 text = "Add 999 Resource"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
