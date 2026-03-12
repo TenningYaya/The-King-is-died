@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://xohgmd3qdtav" path="res://Scene/ui/blueprint_bar.tscn" id="7_48ymf"]
 [ext_resource type="PackedScene" uid="uid://c2wapnlwhs1yw" path="res://Scene/ui/pause_button.tscn" id="7_cohtu"]
 [ext_resource type="Texture2D" uid="uid://wvwr2ao0ag3e" path="res://art_assets/buildings/market.png" id="8_3jynh"]
-[ext_resource type="PackedScene" uid="uid://bfwvu1fjj5oav" path="res://Scene/ui/time_control.tscn" id="8_tujvx"]
 [ext_resource type="Texture2D" uid="uid://kl437qu2soav" path="res://art_assets/buildings/alchemy_lab.jpg" id="9_hqtje"]
 [ext_resource type="PackedScene" uid="uid://b1vdm2dchhc2i" path="res://Scene/ui/pause_menu.tscn" id="9_tujvx"]
 [ext_resource type="Script" uid="uid://tqfstski4omi" path="res://scripts/Combat/EnemySpawner.gd" id="10_2j816"]
@@ -145,14 +144,6 @@ position = Vector2(658, 379)
 offset_left = 1827.0
 offset_top = -24.0
 offset_right = 1891.0
-
-[node name="TimeControl" parent="." unique_id=835025454 instance=ExtResource("8_tujvx")]
-visible = false
-offset_left = 1398.0
-offset_top = -33.0
-offset_right = 1804.0
-offset_bottom = 31.0
-script = null
 
 [node name="PauseMenu" parent="." unique_id=1743093916 instance=ExtResource("9_tujvx")]
 
