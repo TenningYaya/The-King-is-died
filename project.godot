@@ -22,6 +22,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 ResourceManager="*uid://cq7fggd15kqp6"
+SaveManager="*uid://dxcgq2lywtlu1"
 
 [display]
 

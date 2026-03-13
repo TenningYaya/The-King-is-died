@@ -53,3 +53,20 @@ func get_resource_icon(id: String) -> Texture2D:
 # 获取特定资源当前数量
 func get_amount(id: String) -> int:
 	return current_resources.get(id, 0)
+
+# --- 新增：为存档系统准备数据 ---
+# 这个函数把内存里的数据“拍扁”成一个纯粹的字典，方便 JSON 转换
+func get_save_data() -> Dictionary:
+	return {
+		"current_resources": current_resources
+		# 以后可以在这里加更多属于这个管理器的变量
+	}
+
+# --- 新增：从读取的数据中恢复 ---
+# 这个函数接收一个字典，并把里面的值赋给当前的变量
+func load_save_data(data: Dictionary):
+	if data.has("current_resources"):
+		current_resources = data["current_resources"]
+		# 重要：数据恢复后，通知 UI 刷新显示
+		for res_id in current_resources:
+			level_resource_changed.emit(res_id, current_resources[res_id])

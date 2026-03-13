@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://bvxbigfylao7k"]
+
+[ext_resource type="Script" uid="uid://b4c78xvdr286h" path="res://scripts/system/main_menu.gd" id="1_pp0ei"]
+[ext_resource type="Texture2D" uid="uid://du84hjfy4oaam" path="res://art_assets/background/bcg_mainmenu.jpg" id="2_ut2dw"]
+
+[node name="MainMenu" type="CanvasLayer" unique_id=209288309]
+script = ExtResource("1_pp0ei")
+
+[node name="Control" type="Control" parent="." unique_id=1455533588]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=134877396]
+modulate = Color(0.5354209, 0.5354209, 0.5354209, 1)
+layout_mode = 0
+offset_right = 1927.0
+offset_bottom = 1081.0
+texture = ExtResource("2_ut2dw")
+
+[node name="Label" type="Label" parent="Control" unique_id=844970736]
+layout_mode = 0
+offset_left = 426.0
+offset_top = 182.0
+offset_right = 1509.0
+offset_bottom = 332.0
+theme_override_font_sizes/font_size = 100
+text = "The Ancestor's Sight"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=726758898]
+layout_mode = 0
+offset_left = 605.0
+offset_top = 355.0
+offset_right = 1253.0
+offset_bottom = 993.0
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="New" type="Button" parent="Control/VBoxContainer" unique_id=1886467197]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "New Game"
+
+[node name="Load" type="Button" parent="Control/VBoxContainer" unique_id=340369317]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Load Game"
+
+[node name="Settings" type="Button" parent="Control/VBoxContainer" unique_id=1535920591]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Settings"
+
+[node name="Credits" type="Button" parent="Control/VBoxContainer" unique_id=2113702344]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Credits"
+
+[node name="Quit" type="Button" parent="Control/VBoxContainer" unique_id=532476075]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Quit"
+
+[connection signal="pressed" from="Control/VBoxContainer/New" to="." method="_on_new_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Load" to="." method="_on_load_pressed"]
