@@ -10,6 +10,10 @@ icon = ExtResource("1_gdua3")
 building_name = "SwordMonument"
 type = 1
 base_scene_path = "uid://cs2uw4cq2noiw"
+cost = Dictionary[int, int]({
+2: 30,
+3: 30
+})
 product_type = "sword_cultivator"
 amount_per_cycle = 3
 production_time = 5.0

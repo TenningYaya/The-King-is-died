@@ -8,5 +8,9 @@ script = ExtResource("1_u7yqm")
 icon = ExtResource("1_pqf0l")
 building_name = "MysticIronOre"
 base_scene_path = "uid://cs7473lfyhaex"
+cost = Dictionary[int, int]({
+1: 50,
+2: 50
+})
 product_type = "mystic_iron"
 metadata/_custom_type_script = "uid://dai8darcd7q2w"

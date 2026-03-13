@@ -10,6 +10,10 @@ icon = ExtResource("1_qyqt4")
 building_name = "Origin_Pavilion"
 type = 1
 base_scene_path = "uid://cs2uw4cq2noiw"
+cost = Dictionary[int, int]({
+2: 50,
+4: 100
+})
 product_type = "talisman_cultivator"
 production_time = 5.0
 max_production = 1

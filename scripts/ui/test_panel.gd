@@ -20,7 +20,6 @@ func _on_test_button_pressed(b_name: String):
 			
 			if bp_manager and bp_manager.has_method("add_blueprint"):
 				bp_manager.add_blueprint(data)
-				print("发号器：成功调用 BlueprintUI 上的管理器发放 - ", b_name)
 			else:
 				# 保底方案：如果 owner 不行，尝试 get_parent()
 				bp_manager = get_parent()

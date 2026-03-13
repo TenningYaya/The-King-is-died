@@ -13,7 +13,6 @@ func _pressed():
 	if bp_manager and bp_manager.has_method("change_filter"):
 		# 转换为整数传递给 Manager
 		bp_manager.change_filter(int(filter_to_set))
-		print("已切换页签至: ", filter_to_set)
 	else:
 		# 如果找不到，尝试通过路径找（保底方案）
 		var manual_find = get_tree().current_scene.find_child("BlueprintUI", true, false)

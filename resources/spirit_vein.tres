@@ -9,6 +9,9 @@ script = ExtResource("1_cyop6")
 icon = ExtResource("1_qcxbg")
 building_name = "SpiritVein"
 base_scene_path = "uid://cs7473lfyhaex"
+cost = Dictionary[int, int]({
+0: 50
+})
 product_type = "aether_crystal"
 production_time = 1.0
 max_production = 500

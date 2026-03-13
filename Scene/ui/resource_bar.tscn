@@ -171,11 +171,19 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button" type="Button" parent="." unique_id=1501281393]
+[node name="999" type="Button" parent="." unique_id=1501281393]
 offset_left = 1132.0
 offset_top = 745.0
 offset_right = 1278.0
 offset_bottom = 776.0
 text = "Add 999 Resource"
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="99" type="Button" parent="." unique_id=1609076134]
+offset_left = 1137.0
+offset_top = 781.0
+offset_right = 1274.0
+offset_bottom = 812.0
+text = "Add 99 Resource"
+
+[connection signal="pressed" from="999" to="." method="_on_999button_pressed"]
+[connection signal="pressed" from="99" to="." method="_on_99button_pressed"]

@@ -10,6 +10,10 @@ icon = ExtResource("1_g6nwg")
 building_name = "AlchemyLab"
 type = 1
 base_scene_path = "uid://cs2uw4cq2noiw"
+cost = Dictionary[int, int]({
+1: 100,
+4: 100
+})
 product_type = "alchemy_ultivator"
 amount_per_cycle = 3
 production_time = 5.0
