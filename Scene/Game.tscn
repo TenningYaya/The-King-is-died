@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d3ylqyij3fkit"]
 
 [ext_resource type="PackedScene" uid="uid://jfqlwaedgf0u" path="res://Scene/Gaze.tscn" id="1_5kiuu"]
+[ext_resource type="Script" uid="uid://dsgk2um5ncu6l" path="res://scripts/level/level_game_scene.gd" id="1_hqtje"]
 [ext_resource type="PackedScene" uid="uid://c4cb7fh3c203h" path="res://Scene/tile.tscn" id="2_mopgc"]
 [ext_resource type="Texture2D" uid="uid://mauom8xw2hfv" path="res://art_assets/buildings/elixir_spring.jpg" id="4_bxrg2"]
 [ext_resource type="Texture2D" uid="uid://dgcnn1mulc0ai" path="res://art_assets/buildings/herb_garden.png" id="5_ilbig"]
@@ -28,6 +29,7 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(749, 16, 1914, 24, 1923, 650, 746, 649)])
 
 [node name="Game" type="Node2D" unique_id=1503047627]
+script = ExtResource("1_hqtje")
 
 [node name="Gaze" parent="." unique_id=511512720 groups=["gaze_controller"] instance=ExtResource("1_5kiuu")]
 position = Vector2(123, 79)
@@ -123,7 +125,7 @@ position = Vector2(420, 60)
 [node name="Tile5" parent="CollisionSets/CollisionSetsHorizontal5" unique_id=180275249 groups=["slots"] instance=ExtResource("2_mopgc")]
 position = Vector2(541, 60)
 
-[node name="LevelResourceManager" type="Node" parent="." unique_id=1377458719 groups=["level_manager"]]
+[node name="LevelResourceManager" type="Node" parent="." unique_id=1377458719 groups=["level_manager", "save_required"]]
 script = ExtResource("6_3xgnh")
 resource_icons = Dictionary[String, Texture2D]({
 "aether_crystal": ExtResource("6_kfjtm"),

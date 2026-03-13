@@ -67,3 +67,11 @@ func start_placing_blueprint(data: BuildingData):
 		# 关键：生成即激活拖拽，且位置立即同步
 		preview.is_dragging = true
 		preview.global_position = preview.get_global_mouse_position()
+
+
+func _on_save_button_pressed() -> void:
+	SaveManager.save_game()
+
+
+func _on_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scene/system/main_menu.tscn")

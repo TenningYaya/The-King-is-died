@@ -27,6 +27,11 @@ var current_resources = {
 	"q_coin": 0
 }
 
+func _ready():
+	var my_data = GamedataManager.get_data_for_node(name)
+	if not my_data.is_empty():
+		load_save_data(my_data)
+		
 # 增加资源（由建筑实体调用）
 func add_resource(id: String, amount: int):
 	if current_resources.has(id):
