@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://jfqlwaedgf0u"]
 
-[ext_resource type="Script" uid="uid://bd7utdoboys41" path="res://scripts/gaze/gaze.gd" id="1_c541u"]
+[ext_resource type="Script" uid="uid://bd7utdoboys41" path="res://scripts/Gaze/gaze.gd" id="1_c541u"]
 
 [node name="Gaze" type="Node2D" unique_id=511512720]
 script = ExtResource("1_c541u")

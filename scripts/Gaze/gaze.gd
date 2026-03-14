@@ -42,13 +42,22 @@ var width := 1
 var height := 1
 # 
 func _ready() -> void:
-	# ✅ 让 sprite 以纹理中心为旋转中心（自转）
+	# 1. 【通用初始化】无论读档还是新游戏，这些都得运行
 	sprite.centered = true
 	sprite.position = Vector2.ZERO
-
-	level = clampi(start_level, min_level, max_level)
-	refresh_level()
-	set_top_left(Vector2.ZERO)
+	
+	# 2. 【尝试恢复数据】
+	var my_data = GamedataManager.get_data_for_node(name)
+	
+	if my_data and not my_data.is_empty():
+		# 如果有存档，走读档逻辑（里面会调用 refresh_level 和 set_top_left）
+		load_save_data(my_data)
+	else:
+		# 3. 【新游戏默认值】没有存档才执行这些
+		level = clampi(start_level, min_level, max_level)
+		rotation_degree = 0
+		refresh_level()
+		set_top_left(Vector2.ZERO)
 
 func _process(_delta: float) -> void:
 	if dragging and not Input.is_action_pressed("drag_gaze"):
@@ -250,3 +259,31 @@ func _mouse_over_building() -> bool:
 			return true
 	return false
 	
+func get_save_data() -> Dictionary:
+	return {
+		"level": level,
+		"rotation_degree": rotation_degree,
+		"top_left_x": get_top_left().x,
+		"top_left_y": get_top_left().y
+	}
+
+# --- 读档：全自动系统会分发数据到这里 ---
+func load_save_data(data: Dictionary):
+	if data.is_empty(): return
+	
+	# 还原等级和旋转
+	level = data.get("level", start_level)
+	rotation_degree = data.get("rotation_degree", 0)
+	
+	# 核心：必须先刷新形状和贴图，再设置位置
+	# 因为 set_top_left 需要知道当前等级和角度下的形状尺寸（pixel_size）
+	refresh_level() 
+	
+	# 还原位置
+	var tl = Vector2(data.get("top_left_x", 0.0), data.get("top_left_y", 0.0))
+	set_top_left(tl)
+	
+	# 如果 UI 没自动更新，这里可以手动刷一下
+	var ui = get_tree().get_first_node_in_group("gaze_upgrade_ui")
+	if ui and ui.has_method("_update_display"):
+		ui._update_display()

@@ -205,3 +205,19 @@ func show_production_popup(res_id: String, amount: int):
 	var travel_distance = sprite_size.y / 2
 	
 	popup.start_animation(icon_tex, amount, travel_distance)
+
+func get_save_data() -> Dictionary:
+	return {
+		"node_name": name,
+		"res_path": data.resource_path,
+		"pos_x": global_position.x,
+		"pos_y": global_position.y,
+		"progress": current_progress,
+		"is_active": is_active,
+		# --- 补全：寿命、惩罚状态、剩余时间 ---
+		"total_produced": get("total_produced") if "total_produced" in self else 0,
+		"is_under_penalty": is_under_penalty,
+		"penalty_timer": penalty_timer,
+		# 市场特有配置
+		"market_target": get("current_target_resource") if has_method("_run_market_logic") else ""
+	}

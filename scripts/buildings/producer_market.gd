@@ -1,4 +1,4 @@
-# market_building.gd
+# producer_market.gd
 extends Building
 class_name MarketBuilding
 
@@ -9,13 +9,21 @@ var current_target_resource: String = "" # 这一轮正在换的
 var next_target_resource: String = ""    # 玩家刚刚点的（下一轮生效）
 
 func _ready():
-	super._ready()
-	resource_list.hide()
+	super._ready() # 运行基类的视觉设置
+	
+	# 确保即便是在加载出的实例中，也能找到这些节点
+	if has_node("UIContainer/ResourceList"):
+		resource_list = $UIContainer/ResourceList
+		resource_list.hide()
+	
+	if has_node("UIContainer/SelectButton"):
+		select_button = $UIContainer/SelectButton
+		# 如果还没连上信号，手动连一下
+		if not select_button.pressed.is_connected(_on_select_button_pressed):
+			select_button.pressed.connect(_on_select_button_pressed)
+	
 	_update_main_button_ui()
 	
-	if select_button:
-		select_button.pressed.connect(_on_select_button_pressed)
-
 func _process(delta):
 	if not is_active or data == null:
 		return
@@ -72,22 +80,15 @@ func _on_cycle_finished():
 
 # --- UI 交互 ---
 func _on_select_button_pressed():
-	print("\n[市场排查] 点击了主按钮")
-	
-	# 检查节点是否存在
 	if not resource_list:
-		push_error("[市场排查] 错误：找不到 ResourceList 节点！")
 		return
 
 	resource_list.visible = !resource_list.visible
-	print("[市场排查] 菜单可见性设为: ", resource_list.visible)
 	
 	if resource_list.visible:
 		_build_resource_menu()
 		# 强制 UI 刷新布局
 		resource_list.force_update_transform()
-		print("[市场排查] 菜单全局位置: ", resource_list.global_position)
-		print("[市场排查] 菜单尺寸: ", resource_list.size)
 
 func _build_resource_menu():
 	# 清空旧按钮
@@ -95,10 +96,8 @@ func _build_resource_menu():
 	for child in resource_list.get_children():
 		child.queue_free()
 		count += 1
-	print("[市场排查] 清理了旧按钮数量: ", count)
 	
 	# 1. 强制添加测试按钮
-	print("[市场排查] 正在尝试添加测试按钮...")
 	_add_menu_item("TEST", null, "test_id")
 	
 	# 2. 检查管理器资源
@@ -126,7 +125,6 @@ func _add_menu_item(label: String, icon: Texture2D, res_id: String):
 	# ------------------
 	btn.pressed.connect(func(): _on_resource_picked(res_id))
 	resource_list.add_child(btn)
-	print("[市场排查] 已添加按钮: ", label)
 	
 func _on_resource_picked(res_id: String):
 	next_target_resource = res_id

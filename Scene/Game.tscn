@@ -22,6 +22,10 @@
 [ext_resource type="PackedScene" uid="uid://do8xgvq4ry37i" path="res://Scene/ui/button_gaze_upgrade.tscn" id="20_1e3q2"]
 [ext_resource type="Texture2D" uid="uid://dq50vf41x73e3" path="res://art_assets/q money/Q币.jpg" id="21_hqtje"]
 [ext_resource type="Script" uid="uid://cxpg1n5oqju86" path="res://scripts/store and q money/CurrencyUI.gd" id="22_0mc8i"]
+[ext_resource type="Script" uid="uid://htykhra2fbhu" path="res://scripts/buildings/building_manager.gd" id="23_hjrqo"]
+[ext_resource type="PackedScene" uid="uid://cs7473lfyhaex" path="res://Scene/buildings/producer/production_building.tscn" id="24_ghk2r"]
+[ext_resource type="PackedScene" uid="uid://bvm5flnoabotw" path="res://Scene/buildings/producer/production_market.tscn" id="25_mw7jm"]
+[ext_resource type="PackedScene" uid="uid://cs2uw4cq2noiw" path="res://Scene/buildings/combat_building.tscn" id="26_1mx4w"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_bxrg2"]
 vertices = PackedVector2Array(1904.1406, 33.929688, 1912.8516, 639.9922, 756.03906, 639, 758.9531, 26.0625)
@@ -31,8 +35,10 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(749, 16, 1914, 24, 1923
 [node name="Game" type="Node2D" unique_id=1503047627]
 script = ExtResource("1_hqtje")
 
-[node name="Gaze" parent="." unique_id=511512720 groups=["gaze_controller"] instance=ExtResource("1_5kiuu")]
+[node name="Gaze" parent="." unique_id=511512720 groups=["gaze_controller", "save_required"] instance=ExtResource("1_5kiuu")]
 position = Vector2(123, 79)
+
+[node name="Structures" type="Node" parent="." unique_id=1055881442]
 
 [node name="CollisionSets" type="Node2D" parent="." unique_id=1721479888]
 
@@ -137,9 +143,9 @@ resource_icons = Dictionary[String, Texture2D]({
 })
 metadata/_custom_type_script = "uid://bx385egptpnpx"
 
-[node name="BlueprintUI" parent="." unique_id=55262024 groups=["blueprint_manager"] instance=ExtResource("7_48ymf")]
+[node name="BlueprintUI" parent="." unique_id=55262024 groups=["blueprint_manager", "save_required"] instance=ExtResource("7_48ymf")]
 
-[node name="Wall" parent="." unique_id=1173008175 instance=ExtResource("6_48ymf")]
+[node name="Wall" parent="." unique_id=1173008175 groups=["save_required"] instance=ExtResource("6_48ymf")]
 position = Vector2(658, 379)
 
 [node name="PauseButton" parent="." unique_id=1851983709 instance=ExtResource("7_cohtu")]
@@ -212,7 +218,13 @@ layout_mode = 2
 text = "0"
 script = ExtResource("22_0mc8i")
 
-[node name="ResourceBar" parent="." unique_id=298767585 instance=ExtResource("6_cohtu")]
+[node name="ResourceBar" parent="." unique_id=298767585 groups=["save_required"] instance=ExtResource("6_cohtu")]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=213039517]
 position = Vector2(938, 502)
+
+[node name="BuildingManager" type="Node" parent="." unique_id=1601191085 groups=["save_required"]]
+script = ExtResource("23_hjrqo")
+production_scene = ExtResource("24_ghk2r")
+market_scene = ExtResource("25_mw7jm")
+combat_scene = ExtResource("26_1mx4w")

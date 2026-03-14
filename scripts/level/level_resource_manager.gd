@@ -37,7 +37,6 @@ func add_resource(id: String, amount: int):
 	if current_resources.has(id):
 		current_resources[id] += amount
 		level_resource_changed.emit(id, current_resources[id])
-		#print("局内资源更新 | ", id, ": ", current_resources[id])
 	else:
 		push_warning("尝试增加未定义的局内资源: " + id)
 

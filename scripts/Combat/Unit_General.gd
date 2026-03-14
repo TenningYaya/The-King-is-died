@@ -37,7 +37,7 @@ var current_hp: float
 var attack_timer: float = 0.0
 var current_target: Unit_General = null
 var is_dead: bool = false
-
+var creator_building_name: String = ""
 # ─────────────────────────────────────────
 #  节点引用（子类场景里需有对应节点名）
 # ─────────────────────────────────────────
@@ -84,7 +84,7 @@ func _physics_process(delta: float) -> void:
 	current_target = _find_target()
 	var dist = global_position.distance_to(current_target.global_position) if current_target else -1.0
 	var in_range = _in_attack_range(current_target) if current_target else false
-	print("[%s] 目标:%s 距离:%.1f 射程:%.1f 在射程内:%s attack_timer:%.2f" % [name, current_target, dist, attack_range, in_range, attack_timer])
+	#print("[%s] 目标:%s 距离:%.1f 射程:%.1f 在射程内:%s attack_timer:%.2f" % [name, current_target, dist, attack_range, in_range, attack_timer])
 
 	if current_target and _in_attack_range(current_target):
 		velocity = Vector2.ZERO
@@ -116,7 +116,7 @@ func _move_toward_target(_delta: float) -> void:
 		return
 	nav_agent.target_position = current_target.global_position
 	var next_pos: Vector2 = nav_agent.get_next_path_position()
-	print("[%s] 当前位置:%s 目标位置:%s 下一步:%s 速度:%s" % [name, global_position, current_target.global_position, next_pos, velocity])
+	#print("[%s] 当前位置:%s 目标位置:%s 下一步:%s 速度:%s" % [name, global_position, current_target.global_position, next_pos, velocity])
 	velocity = (next_pos - global_position).normalized() * move_speed
 
 # ─────────────────────────────────────────
@@ -186,7 +186,7 @@ func _in_attack_range(target: Unit_General) -> bool:
 #  攻击执行
 # ─────────────────────────────────────────
 func _perform_attack(target: Unit_General) -> void:
-	print("[%s] 攻击 [%s]，目标剩余血量：%.1f" % [name, target.name, target.current_hp])
+	#print("[%s] 攻击 [%s]，目标剩余血量：%.1f" % [name, target.name, target.current_hp])
 	if projectile_scene:
 		_fire_projectile(target)  # 纯视觉
 	_melee_attack(target)  # 伤害始终在这里结算
@@ -203,7 +203,7 @@ func _deal_aoe_damage(center: Vector2) -> void:
 	var hit_count := 0
 	for unit in _get_enemies_in_scene():
 		var d := center.distance_to(unit.global_position)
-		print("[AOE] 检测单位:%s 距离:%.1f 半径:%.1f" % [unit.name, d, attack_aoe_radius])
+		#print("[AOE] 检测单位:%s 距离:%.1f 半径:%.1f" % [unit.name, d, attack_aoe_radius])
 		if d <= attack_aoe_radius:
 			unit.take_damage(attack_damage)
 			hit_count += 1
@@ -234,14 +234,14 @@ func take_damage(amount: float) -> void:
 	current_hp -= amount
 	if hp_bar:
 		hp_bar.value = current_hp
-	print("[%s] 受到 %.1f 伤害，剩余血量：%.1f / %.1f" % [name, amount, current_hp, max_hp])
+	#print("[%s] 受到 %.1f 伤害，剩余血量：%.1f / %.1f" % [name, amount, current_hp, max_hp])
 	_on_damage_override(amount)
 	if current_hp <= 0.0:
 		_die()
 
 func _die() -> void:
 	is_dead = true
-	print("[%s] 已死亡" % name)
+	#print("[%s] 已死亡" % name)
 	_play_anim("death")
 	_on_death_override()
 	# 等死亡动画播完再删除
@@ -267,3 +267,33 @@ func _on_ready_override() -> void: pass
 func _on_attack_override(_target: Unit_General) -> void: pass
 func _on_damage_override(_amount: float) -> void: pass
 func _on_death_override() -> void: pass
+
+func get_save_data() -> Dictionary:
+	return {
+		"scene_path": scene_file_path,  # 核心：知道自己是剑士还是弓箭手
+		"pos_x": global_position.x,
+		"pos_y": global_position.y,
+		"hp": current_hp,
+		"max_hp": max_hp,
+		"creator_name": creator_building_name, # 核心：记录是哪个建筑生的
+		"faction": faction,
+		"flip_h": anim.flip_h if anim else false
+	}
+
+func load_save_data(data: Dictionary) -> void:
+	var px = float(data.get("pos_x", 0.0))
+	var py = float(data.get("pos_y", 0.0))
+	global_position = Vector2(px, py)
+	max_hp = data.get("max_hp", 100.0)
+	current_hp = data.get("hp", max_hp)
+	faction = data.get("faction", Faction.PLAYER)
+	
+	# --- 还原归属建筑名字 ---
+	creator_building_name = data.get("creator_name", "")
+	
+	# 更新 UI
+	if hp_bar:
+		hp_bar.max_value = max_hp
+		hp_bar.value = current_hp
+	if anim:
+		anim.flip_h = data.get("flip_h", false)

@@ -20,7 +20,6 @@ func setup_blueprint(building_data: BuildingData):
 	
 	# 视觉：保持原色，仅设置透明度
 	modulate = Color(1, 1, 1, 0.7) 
-	print("[蓝图调试] setup_blueprint 执行，开始初始校验...")
 	update_affordability()
 
 func _ready():
@@ -30,7 +29,6 @@ func _ready():
 	resource_manager = get_tree().get_first_node_in_group("level_manager")
 	
 	if resource_manager:
-		print("[蓝图调试] 成功找到资源管理器，连接信号...")
 		resource_manager.level_resource_changed.connect(_on_global_resource_changed)
 		# 强制初始检查
 		update_affordability()
@@ -107,10 +105,6 @@ func _start_working():
 	queue_free()
 
 func _handle_build_failed():
-	print("建造失败：资源在最后一刻被抢走了！")
-	# 视觉反馈：可以加一个小红字提示
-	# FloatingText.spawn("资源不足！", global_position)
-	
 	queue_free()
 	
 func _on_area_entered(area):
@@ -123,7 +117,6 @@ func _on_area_exited(area):
 
 			
 func _on_global_resource_changed(_id, _amount):
-	print("[蓝图调试] 收到资源变动信号: ", _id, " 变为 ", _amount)
 	update_affordability()
 
 func update_affordability():
@@ -152,9 +145,6 @@ func _check_resources_sufficient() -> bool:
 		
 		# 3. 打印详细信息
 		if owned < needed:
-			print("资源校验失败 | 资源: %s | 拥有: %d | 需求: %d -> [ 不足 ]" % [res_id, owned, needed])
 			return false
-		else:
-			print("资源校验通过 | 资源: %s | 拥有: %d | 需求: %d -> [ 足够 ]" % [res_id, owned, needed])
 			
 	return true

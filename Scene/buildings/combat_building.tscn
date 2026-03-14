@@ -7,6 +7,8 @@
 size = Vector2(116, 115)
 
 [node name="CombatBuilding" type="Area2D" unique_id=762521563]
+collision_layer = 4
+collision_mask = 2
 script = ExtResource("1_cjbx4")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1815181641]

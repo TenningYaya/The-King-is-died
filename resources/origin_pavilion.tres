@@ -15,7 +15,8 @@ cost = Dictionary[int, int]({
 4: 100
 })
 product_type = "talisman_cultivator"
+amount_per_cycle = 3
 production_time = 5.0
-max_production = 1
+max_production = 0
 minion_scene = ExtResource("2_bgcaf")
 metadata/_custom_type_script = "uid://dai8darcd7q2w"

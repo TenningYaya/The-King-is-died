@@ -1,3 +1,4 @@
+#gaze_upgrade.gd
 extends VBoxContainer
 
 # --- 配置：三次升级所需的具体材料 ---

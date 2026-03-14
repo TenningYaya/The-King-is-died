@@ -1,4 +1,4 @@
-# FilterButton.gd
+# blueprint_filter.gd
 extends Button
 
 # 定义本地枚举，确保与 BlueprintManager 一致

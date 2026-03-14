@@ -7,8 +7,7 @@ var active_minions: Array = []
 
 func _ready():
 	super._ready() # 这会运行基类的图标设置和缩放逻辑
-	print("战斗建筑数据加载成功: ", data.building_name if data else "无数据")
-	
+
 	# 确保在场单位上限至少为 1 (复用 BuildingData 中的 amount_per_cycle)
 	if data and data.amount_per_cycle <= 0:
 		data.amount_per_cycle = 1
@@ -51,6 +50,7 @@ func _spawn_minion():
 		return
 
 	var minion = data.minion_scene.instantiate()
+	minion.creator_building_name = str(get_path())
 	get_parent().add_child(minion)
 
 	# 寻找出生点节点
@@ -69,3 +69,16 @@ func _cleanup_minions():
 	# 过滤掉已经被 queue_free() 的节点（即被打死的单位）
 	# 只要这里过滤掉一个，上面的 _tick_production 就会检测到 size < limit，从而自动重启进度条补兵
 	active_minions = active_minions.filter(func(m): return is_instance_valid(m))
+
+func get_save_data() -> Dictionary:
+	# 1. 先拿父类存好的位置、进度、惩罚状态等
+	var dict = super.get_save_data()
+	
+	# 2. 存入当前活着的士兵的名字（用于读档后“找妈妈”的校验）
+	var minion_names = []
+	for m in active_minions:
+		if is_instance_valid(m):
+			minion_names.append(m.name)
+	
+	dict["minion_names"] = minion_names
+	return dict
