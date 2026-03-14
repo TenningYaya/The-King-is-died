@@ -14,7 +14,7 @@ extends Node2D
 func _ready():
 	if GamedataManager.is_loading_save:
 		# 1. 强制等一帧，确保 BuildingManager 盖完了房
-		await get_tree().process_frame 
+		#await get_tree().process_frame 
 		
 		# 2. 塞兵逻辑（这里面不用写 is_active = true 了）
 		SaveManager.load_game_from_dict(GamedataManager.full_save_dict)

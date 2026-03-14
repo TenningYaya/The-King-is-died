@@ -50,24 +50,29 @@ func _execute_loading_logic(data: Dictionary):
 		# 给小兵灌入属性
 		unit.load_save_data(u_info)
 		
-		# 3. 握手环节
-		var target_id = unit.creator_building_name
-		if target_id != "":
-			# 尝试搜索建筑
-			var creator = get_tree().current_scene.find_child(target_id, true, false)
+			# 3. 握手环节
+		var target_name = unit.creator_building_name
+		if target_name != "":
+			# 💡 技巧：去放置建筑的那个容器（Structures）里找这个名字
+			var structures = get_tree().current_scene.find_child("Structures", true, false)
+			var creator = null
+			
+			if structures:
+				creator = structures.find_child(target_name, true, false)
+			
+			# 如果容器里没找到，再全场找一次（双保险）
 			if not creator:
-				creator = get_node_or_null(target_id)
+				creator = get_tree().current_scene.find_child(target_name, true, false)
 				
-			# --- 核心修复：只有 creator 真正存在时才操作 ---
-			if creator != null:
-				if creator is CombatBuilding:
-					if not unit in creator.active_minions:
-						creator.active_minions.append(unit)
-						creator.is_active = true  # 找到了才解冻
-						print("  ✅ 关联成功: %s -> %s" % [unit.name, creator.name])
+			if creator != null and creator is CombatBuilding:
+				if not unit in creator.active_minions:
+					creator.active_minions.append(unit)
+					# 激活生产
+					if creator.has_method("set_active_status"):
+						creator.set_active_status(true)
+					print("  ✅ 关联成功: ", unit.name, " -> ", creator.name)
 			else:
-				# 找不到就打印，不要再尝试给 creator 赋值了！
-				print("  ❌ 关联失败：找不到名为 %s 的建筑" % str(target_id))
+				print("  ❌ 关联失败：找不到名为 " + target_name + " 的建筑")
 
 	print("--- [SaveManager] 动态单位补全完成 ---\n")
 

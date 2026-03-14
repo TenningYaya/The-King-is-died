@@ -50,7 +50,7 @@ func _spawn_minion():
 		return
 
 	var minion = data.minion_scene.instantiate()
-	minion.creator_building_name = str(get_path())
+	minion.creator_building_name = self.name
 	get_parent().add_child(minion)
 
 	# 寻找出生点节点

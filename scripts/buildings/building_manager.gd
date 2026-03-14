@@ -89,7 +89,7 @@ func _spawn_saved_building(info: Dictionary):
 		new_b.call_deferred("_update_main_button_ui")
 	if new_b is CombatBuilding:
 		new_b.active_minions = [] # 强行清空，等待 SaveManager 补人
-		new_b.is_active = false
+		#new_b.is_active = false
 		
 	_rebind_slot(new_b)
 
@@ -101,32 +101,3 @@ func _rebind_slot(b: Building):
 		if a.is_in_group("slots"):
 			b.set_initial_slot(a)
 			break
-
-func _input(event):
-	if event is InputEventKey and event.pressed and event.keycode == KEY_L:
-		print("\n========== [读档数据完整性检查] ==========")
-		var buildings = get_tree().get_nodes_in_group("buildings")
-		
-		if buildings.size() == 0:
-			print("警告：场上没有检测到任何建筑！(检查分组是否正确)")
-			return
-			
-		for b in buildings:
-			if is_instance_valid(b):
-				# 检查变量是否存在，防止战斗建筑报错
-				var current_produced = b.get("total_produced") if "total_produced" in b else "N/A"
-				var max_limit = "无上限"
-				
-				# 尝试从 data 资源里获取上限设置
-				if b.get("data") and "max_production" in b.data:
-					max_limit = str(b.data.max_production)
-				
-				print("建筑: %-15s | 当前累计产量: %-5s | 设定上限: %-5s" % [b.name, str(current_produced), max_limit])
-				
-				# 顺便检查一下搬迁惩罚，这也是你关心的
-				if "is_under_penalty" in b:
-					print("  └─ 搬迁状态: %s | 剩余时间: %.2f 秒" % [
-						"惩罚中" if b.is_under_penalty else "正常", 
-						b.penalty_timer
-					])
-		print("==========================================\n")
