@@ -64,3 +64,4 @@ text = "Quit"
 
 [connection signal="pressed" from="Control/VBoxContainer/New" to="." method="_on_new_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer/Load" to="." method="_on_load_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

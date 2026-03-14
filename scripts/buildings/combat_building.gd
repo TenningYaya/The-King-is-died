@@ -44,27 +44,49 @@ var old_progress: float = 0.0
 func _physics_process(_delta):
 	old_progress = current_progress
 
+#这个代码会导致小兵弹射起飞
+#func _spawn_minion():
+	#if data == null or data.minion_scene == null:
+		#print("[%s] 错误：未发现士兵场景！" % name)
+		#return
+#
+	#var minion = data.minion_scene.instantiate()
+	#minion.creator_building_name = self.name
+	#get_parent().add_child(minion)
+#
+	## 寻找出生点节点
+	#var spawn_point = get_tree().get_first_node_in_group("spawn_point")
+	#if spawn_point:
+		#minion.global_position = spawn_point.global_position
+	#else:
+		## 找不到出生点就退回建筑旁边
+		#minion.global_position = self.global_position + Vector2(50, 0)
+		#print("[%s] 警告：场景中没有找到 spawn_point 组的节点" % name)
+#
+	#active_minions.append(minion)
+	#print("[%s] 成功召唤单位，当前场内: %d/%d" % [data.building_name, active_minions.size(), data.amount_per_cycle])
+
 func _spawn_minion():
 	if data == null or data.minion_scene == null:
-		print("[%s] 错误：未发现士兵场景！" % name)
 		return
 
 	var minion = data.minion_scene.instantiate()
 	minion.creator_building_name = self.name
+	
+	# 重点：先 add_child，再设置位置，这是一个好习惯
 	get_parent().add_child(minion)
 
-	# 寻找出生点节点
+	var spawn_pos = self.global_position + Vector2(50, 0) # 默认位置
 	var spawn_point = get_tree().get_first_node_in_group("spawn_point")
 	if spawn_point:
-		minion.global_position = spawn_point.global_position
-	else:
-		# 找不到出生点就退回建筑旁边
-		minion.global_position = self.global_position + Vector2(50, 0)
-		print("[%s] 警告：场景中没有找到 spawn_point 组的节点" % name)
+		spawn_pos = spawn_point.global_position
+	
+	# 【修复方案】加入随机偏移，防止物理挤压起飞
+	var offset = Vector2(randf_range(-20, 20), randf_range(-20, 20))
+	minion.global_position = spawn_pos + offset
 
 	active_minions.append(minion)
-	print("[%s] 成功召唤单位，当前场内: %d/%d" % [data.building_name, active_minions.size(), data.amount_per_cycle])
-
+	
 func _cleanup_minions():
 	# 过滤掉已经被 queue_free() 的节点（即被打死的单位）
 	# 只要这里过滤掉一个，上面的 _tick_production 就会检测到 size < limit，从而自动重启进度条补兵

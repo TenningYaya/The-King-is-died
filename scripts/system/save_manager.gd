@@ -2,6 +2,8 @@
 extends Node
 const SAVE_PATH = "user://savegame.json"
 
+signal save_finished
+
 # --- 存档逻辑 ---
 func save_game():
 	var full_data = {}
@@ -24,6 +26,7 @@ func save_game():
 	file.store_line(JSON.stringify(full_data, "\t"))
 	file.close()
 	print("存档成功！已记录 %d 个动态单位" % dynamic_units_data.size())
+	save_finished.emit()
 
 func _execute_loading_logic(data: Dictionary):
 	print("\n--- [SaveManager] 开始补全动态单位 ---")

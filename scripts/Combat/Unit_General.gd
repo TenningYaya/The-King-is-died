@@ -76,6 +76,10 @@ func _setup_attack_area() -> void:
 #  主循环
 # ─────────────────────────────────────────
 func _physics_process(delta: float) -> void:
+	# 【强制拦截】只要时间停止，不仅不走逻辑，连速度都强制归零
+	if Engine.time_scale <= 0:
+		velocity = Vector2.ZERO
+		return
 	if is_dead:
 		return
 
@@ -101,10 +105,15 @@ func _physics_process(delta: float) -> void:
 		else:
 			_play_anim("idle")
 
-	# 根据移动方向翻转sprite
+	# 根据移动方向翻转spritae
 	if anim and velocity.x != 0:
 		anim.flip_h = velocity.x < 0
 
+# 【核心修复】限制最大速度，防止物理弹射起飞
+	var max_allowed_speed = move_speed * 2.0
+	if velocity.length() > max_allowed_speed:
+		velocity = velocity.normalized() * max_allowed_speed
+		
 	move_and_slide()
 
 # ─────────────────────────────────────────

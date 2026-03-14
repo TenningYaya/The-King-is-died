@@ -7,7 +7,7 @@ var inventory: Dictionary = {}
 
 @export var slot_scene: PackedScene
 @onready var grid_container = $Control/HBoxContainer/BlueprintsSlots
-
+@onready var save_popup = $BackMainWindow
 # 必须在 Inspector 中把 Blueprint.tscn 拖入这个槽位
 @export var common_blueprint_scene: PackedScene 
 
@@ -117,5 +117,5 @@ func _on_save_button_pressed() -> void:
 	SaveManager.save_game()
 
 
-func _on_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scene/system/main_menu.tscn")
+func _on_exit_button_pressed() -> void:
+	save_popup.open()

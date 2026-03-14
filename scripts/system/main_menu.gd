@@ -37,3 +37,7 @@ func _on_load_pressed() -> void:
 		get_tree().change_scene_to_file("res://Scene/Game.tscn")
 	else:
 		print("存档格式错误！")
+
+
+func _on_quit_pressed() -> void:
+	get_tree().quit()

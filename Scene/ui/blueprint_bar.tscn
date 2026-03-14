@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://e27owbe3qpni" path="res://Scene/ui/blueprint_slot.tscn" id="1_rmctn"]
 [ext_resource type="PackedScene" uid="uid://cbxiq5h01n5uc" path="res://Scene/buildings/blueprint.tscn" id="3_eqi16"]
 [ext_resource type="PackedScene" uid="uid://bfwvu1fjj5oav" path="res://Scene/ui/time_control.tscn" id="4_b6ffr"]
-[ext_resource type="Texture2D" uid="uid://bf7h8nu4eviha" path="res://art_assets/ui/save_icon.png" id="7_h1qn1"]
+[ext_resource type="PackedScene" uid="uid://ci1elc40c14mt" path="res://Scene/ui/back_main_window.tscn" id="7_h1qn1"]
 
 [node name="BlueprintUI" type="CanvasLayer" unique_id=55262024]
 script = ExtResource("1_hhnae")
@@ -137,17 +137,14 @@ text = "Alchemy Lab"
 [node name="market" type="Button" parent="Control/TestButtons" unique_id=594028050]
 layout_mode = 2
 
-[node name="SaveButton" type="TextureButton" parent="." unique_id=1028389851]
-offset_left = 1346.0
-offset_top = -31.0
-offset_right = 1434.0
-offset_bottom = 61.0
-texture_normal = ExtResource("7_h1qn1")
-texture_pressed = ExtResource("7_h1qn1")
-ignore_texture_size = true
-stretch_mode = 0
+[node name="SaveButton" type="Button" parent="." unique_id=148902364]
+offset_left = 1359.0
+offset_top = -14.0
+offset_right = 1424.0
+offset_bottom = 46.0
+text = "Save"
 
-[node name="Button" type="Button" parent="." unique_id=709699290]
+[node name="ExitButton" type="Button" parent="." unique_id=709699290]
 offset_left = 1249.0
 offset_top = -17.0
 offset_right = 1314.0
@@ -155,5 +152,8 @@ offset_bottom = 48.0
 text = "Quit to
 main"
 
+[node name="BackMainWindow" parent="." unique_id=821999516 instance=ExtResource("7_h1qn1")]
+visible = false
+
 [connection signal="pressed" from="SaveButton" to="." method="_on_save_button_pressed"]
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
