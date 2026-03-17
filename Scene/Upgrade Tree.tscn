@@ -1,3 +1,10 @@
 [gd_scene format=3 uid="uid://b7l5xvcum6dwp"]
 
 [node name="UpgradeTree" type="Node2D" unique_id=1772393412]
+
+[node name="Button" type="Button" parent="." unique_id=587984806]
+offset_left = 594.0
+offset_top = 491.0
+offset_right = 696.24
+offset_bottom = 562.0
+text = "Upgrade"
