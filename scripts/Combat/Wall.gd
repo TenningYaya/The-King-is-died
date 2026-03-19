@@ -19,4 +19,4 @@ func _physics_process(_delta: float) -> void:
 	pass
 
 func _on_death_override() -> void:
-	get_tree().change_scene_to_file("res://scenes/game_over.tscn")
+	get_tree().change_scene_to_file("res://Scene/system/gameover_lose.tscn")

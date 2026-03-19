@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://e6gak17e6f8e"]
+
+[ext_resource type="Script" uid="uid://dj4vkrfcqnuuh" path="res://scripts/system/gameover_lose.gd" id="1_v8o5t"]
+
+[node name="GameOver" type="CanvasLayer" unique_id=744370658]
+script = ExtResource("1_v8o5t")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=43897822]
+offset_right = 1929.0
+offset_bottom = 1077.0
+color = Color(0.92290366, 0.93835986, 0.649176, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1477438341]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=2102536497]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1983830991]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7804876, 0.00056794286, 0.7987843, 1)
+theme_override_font_sizes/font_size = 100
+text = "YOU LOSE"
+
+[node name="RestartButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1775193895]
+layout_mode = 2
+theme_override_font_sizes/font_size = 70
+text = "Restart"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]

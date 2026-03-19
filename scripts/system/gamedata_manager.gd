@@ -27,3 +27,16 @@ func get_data_for_node(node_name: String) -> Dictionary:
 	if is_loading_save and full_save_dict.has(node_name):
 		return full_save_dict[node_name]
 	return {}
+
+func start_new_game():
+	# 1. 删除存档文件
+	var save_path = "user://savegame.json"
+	if FileAccess.file_exists(save_path):
+		DirAccess.remove_absolute(save_path)
+	
+	# 2. 重置数据
+	full_save_dict = {}
+	is_loading_save = false
+	
+	# 3. 切换场景 (确保路径正确)
+	get_tree().change_scene_to_file("res://Scene/Game.tscn")
