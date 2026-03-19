@@ -152,6 +152,12 @@ offset_bottom = 48.0
 text = "Quit to
 main"
 
+[node name="Overlay" type="ColorRect" parent="." unique_id=1441127706]
+offset_top = -60.0
+offset_right = 1978.0
+offset_bottom = 1069.0
+color = Color(0, 0, 0, 0.46666667)
+
 [node name="BackMainWindow" parent="." unique_id=821999516 instance=ExtResource("7_h1qn1")]
 visible = false
 
