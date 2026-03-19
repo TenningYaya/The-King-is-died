@@ -167,7 +167,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_v3rom")
 }],
-"loop": true,
+"loop": false,
 "name": &"death",
 "speed": 5.0
 }, {
@@ -231,8 +231,6 @@ script = ExtResource("1_utx3u")
 faction = 1
 max_hp = 30.0
 attack_range = 300.0
-attack_aoe_radius = 100.0
-attack_type = 1
 projectile_scene = ExtResource("2_fvvsg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=35597690]
@@ -259,5 +257,5 @@ show_percentage = false
 texture_filter = 1
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_utx3u")
-animation = &"attack"
+animation = &"death"
 flip_h = true
