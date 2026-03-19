@@ -231,8 +231,6 @@ script = ExtResource("1_utx3u")
 faction = 1
 max_hp = 30.0
 attack_range = 300.0
-attack_aoe_radius = 100.0
-attack_type = 1
 projectile_scene = ExtResource("2_fvvsg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=35597690]

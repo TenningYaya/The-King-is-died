@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://kmn1hu6coy2t"]
 
-[ext_resource type="Script" uid="uid://cpggpd68uqqu0" path="res://scripts/Combat/Enemy_Tank.gd" id="1_e3sbv"]
-[ext_resource type="PackedScene" uid="uid://cwi7pn4c8c4v7" path="res://Scene/Combat/Projectile.tscn" id="2_6l47t"]
+[ext_resource type="Script" uid="uid://bk1nfn1daoatn" path="res://scripts/Combat/unit_mage.gd" id="1_epvya"]
 [ext_resource type="Texture2D" uid="uid://bpx2bqytp27eh" path="res://art_assets/Unit/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Wizard/Wizard/Wizard-Attack01.png" id="3_e3sbv"]
 [ext_resource type="Texture2D" uid="uid://dfx3lqssn4124" path="res://art_assets/Unit/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Wizard/Wizard/Wizard-DEATH.png" id="4_6l47t"]
 [ext_resource type="Texture2D" uid="uid://bndwxe2rb6cv1" path="res://art_assets/Unit/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Wizard/Wizard/Wizard-Idle.png" id="5_qn4e2"]
@@ -206,12 +205,7 @@ animations = [{
 [node name="EnemyMage" type="CharacterBody2D" unique_id=422876923 groups=["enemy_units"]]
 collision_layer = 2
 collision_mask = 2
-script = ExtResource("1_e3sbv")
-max_hp = 30.0
-attack_range = 300.0
-attack_aoe_radius = 100.0
-attack_type = 1
-projectile_scene = ExtResource("2_6l47t")
+script = ExtResource("1_epvya")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=35597690]
 position = Vector2(-3, -3)
