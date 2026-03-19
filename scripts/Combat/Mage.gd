@@ -1,4 +1,4 @@
-class_name Unit_Mage
+class_name Mage
 extends Unit_General
 
 func _on_ready_override() -> void:
