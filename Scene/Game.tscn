@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://dgcnn1mulc0ai" path="res://art_assets/buildings/herb_garden.png" id="5_ilbig"]
 [ext_resource type="Script" uid="uid://bx385egptpnpx" path="res://scripts/level/level_resource_manager.gd" id="6_3xgnh"]
 [ext_resource type="PackedScene" uid="uid://bf3vu14x5n1ds" path="res://Scene/Combat/Wall.tscn" id="6_48ymf"]
-[ext_resource type="PackedScene" uid="uid://dno43pe6wjeqf" path="res://Scene/ui/resource_bar.tscn" id="6_cohtu"]
 [ext_resource type="Texture2D" uid="uid://drygoq6ig2tky" path="res://art_assets/buildings/spirit_vein.jpg" id="6_kfjtm"]
 [ext_resource type="Texture2D" uid="uid://dqxw76lik1krk" path="res://art_assets/buildings/mystic_iron_ore.jpg" id="7_1e3q2"]
 [ext_resource type="PackedScene" uid="uid://xohgmd3qdtav" path="res://Scene/ui/blueprint_bar.tscn" id="7_48ymf"]
@@ -217,8 +216,6 @@ expand_mode = 3
 layout_mode = 2
 text = "0"
 script = ExtResource("22_0mc8i")
-
-[node name="ResourceBar" parent="." unique_id=298767585 groups=["save_required"] instance=ExtResource("6_cohtu")]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=213039517]
 position = Vector2(938, 502)
