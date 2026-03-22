@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://dgd8xx6x8i6cp" path="res://art_assets/ui/Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_IconEnergy01a.png" id="4_4s0qg"]
 [ext_resource type="Texture2D" uid="uid://cjr8g60oybsrq" path="res://art_assets/ui/Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_BookPageLeft01a.png" id="5_b72yi"]
 
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dw4vo"]
 texture = ExtResource("5_b72yi")
 texture_margin_left = 10.0
@@ -22,11 +21,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_4s0qg")
 
 [node name="TimerBar" type="TextureProgressBar" parent="." unique_id=1016412003]
 texture_filter = 2
-custom_minimum_size = Vector2(800, 30)
+custom_minimum_size = Vector2(1200, 40)
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -54,7 +54,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Point1" type="TextureButton" parent="TimerBar/Markers" unique_id=1571973427]
-custom_minimum_size = Vector2(15, 15)
+custom_minimum_size = Vector2(25, 25)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.25
@@ -68,7 +68,7 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="Point2" type="TextureButton" parent="TimerBar/Markers" unique_id=1968104586]
-custom_minimum_size = Vector2(15, 15)
+custom_minimum_size = Vector2(25, 25)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -82,7 +82,7 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="Point3" type="TextureButton" parent="TimerBar/Markers" unique_id=1358431825]
-custom_minimum_size = Vector2(15, 15)
+custom_minimum_size = Vector2(25, 25)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.75
@@ -96,7 +96,7 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="Point4" type="TextureButton" parent="TimerBar/Markers" unique_id=1071040783]
-custom_minimum_size = Vector2(15, 15)
+custom_minimum_size = Vector2(25, 25)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.975

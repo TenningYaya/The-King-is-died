@@ -148,9 +148,10 @@ metadata/_custom_type_script = "uid://bx385egptpnpx"
 position = Vector2(658, 379)
 
 [node name="PauseButton" parent="." unique_id=1851983709 instance=ExtResource("7_cohtu")]
-offset_left = 1827.0
-offset_top = -24.0
-offset_right = 1891.0
+offset_left = 21.0
+offset_top = -38.0
+offset_right = 85.0
+offset_bottom = 26.0
 
 [node name="PauseMenu" parent="." unique_id=1743093916 instance=ExtResource("9_tujvx")]
 
