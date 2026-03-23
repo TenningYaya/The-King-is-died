@@ -1,15 +1,10 @@
 [gd_scene format=3 uid="uid://v37xi2qhxo2m"]
 
 [ext_resource type="Texture2D" uid="uid://yydqkde2t4tj" path="res://art_assets/Unit/loading_45.tga" id="1_8f4ix"]
-[ext_resource type="PackedScene" uid="uid://duptcluexkt70" path="res://Scene/Combat/enemy_scene/Enemy_Tank.tscn" id="2_8qpqg"]
-[ext_resource type="PackedScene" uid="uid://ds7qlt13y0rsv" path="res://Scene/Combat/player_scene/Unit_Tank.tscn" id="3_5v58d"]
 [ext_resource type="PackedScene" uid="uid://bf3vu14x5n1ds" path="res://Scene/Combat/Wall.tscn" id="4_5v58d"]
 [ext_resource type="PackedScene" uid="uid://gj80dsafogu0" path="res://Scene/Combat/enemy_scene/Enemy_Mage.tscn" id="5_8uau8"]
 [ext_resource type="PackedScene" uid="uid://eotjp8xr7ypi" path="res://Scene/Combat/player_scene/Unit_Cleric.tscn" id="5_ddgrp"]
-[ext_resource type="PackedScene" uid="uid://bcbb67y0b57cy" path="res://Scene/Combat/enemy_scene/Enemy_Assassin.tscn" id="6_73850"]
 [ext_resource type="PackedScene" uid="uid://kmn1hu6coy2t" path="res://Scene/Combat/player_scene/Unit_Mage.tscn" id="6_ddgrp"]
-[ext_resource type="PackedScene" uid="uid://i5yi4715o47o" path="res://Scene/Combat/enemy_scene/Enemy_Boss.tscn" id="7_73850"]
-[ext_resource type="PackedScene" uid="uid://cr3veyftgvoeu" path="res://Scene/Combat/player_scene/Unit_Assassin.tscn" id="9_rke7h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8f4ix"]
 texture = ExtResource("1_8f4ix")
@@ -8087,21 +8082,3 @@ position = Vector2(841, 473)
 
 [node name="PlayerCleric" parent="." unique_id=1783519575 instance=ExtResource("5_ddgrp")]
 position = Vector2(880, 561)
-
-[node name="EnemyAssassin" parent="." unique_id=1644765296 instance=ExtResource("6_73850")]
-position = Vector2(1143, 472)
-
-[node name="EnemyBoss" parent="." unique_id=483135812 instance=ExtResource("7_73850")]
-position = Vector2(1077, 514)
-
-[node name="PlayerTank" parent="." unique_id=970659012 instance=ExtResource("3_5v58d")]
-position = Vector2(943, 505)
-
-[node name="PlayerTank2" parent="." unique_id=2137242059 instance=ExtResource("3_5v58d")]
-position = Vector2(960, 447)
-
-[node name="PlayerTank3" parent="." unique_id=1244729925 instance=ExtResource("9_rke7h")]
-position = Vector2(914, 390)
-
-[node name="EnemyTank" parent="." unique_id=1209810571 instance=ExtResource("2_8qpqg")]
-position = Vector2(1155, 568)

@@ -129,7 +129,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"attack",
-"speed": 5.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -201,8 +201,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="UnitTank" type="CharacterBody2D" unique_id=422876923 groups=["player_units"]]
+[node name="PlayerMage" type="CharacterBody2D" unique_id=422876923 groups=["player_units"]]
 script = ExtResource("1_epvya")
+attack_damage = 20.0
 attack_range = 300.0
 attack_aoe_radius = 100.0
 attack_type = 1

@@ -227,7 +227,8 @@ collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_utx3u")
 faction = 1
-max_hp = 30.0
+max_hp = 200.0
+attack_damage = 15.0
 attack_range = 300.0
 projectile_scene = ExtResource("2_fvvsg")
 
@@ -249,5 +250,5 @@ show_percentage = false
 texture_filter = 1
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_utx3u")
-animation = &"death"
+animation = &"attack"
 flip_h = true
