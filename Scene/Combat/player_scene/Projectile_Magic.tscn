@@ -1,22 +1,22 @@
 [gd_scene format=3 uid="uid://1m3y06dkpdig"]
 
-[ext_resource type="Script" uid="uid://ciioqj11bqocn" path="res://scripts/Combat/Projectile.gd" id="1_1v45d"]
-[ext_resource type="Texture2D" uid="uid://31kab4uoqslf" path="res://art_assets/Unit/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Wizard/Magic(projectile)/Wizard-Attack02_Effect.png" id="2_1v45d"]
+[ext_resource type="Script" uid="uid://ciioqj11bqocn" path="res://scripts/Combat/Projectile.gd" id="1_6wd3q"]
+[ext_resource type="Texture2D" uid="uid://31kab4uoqslf" path="res://art_assets/Unit/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Wizard/Magic(projectile)/Wizard-Attack02_Effect.png" id="2_yg8ia"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yo3ic"]
-atlas = ExtResource("2_1v45d")
+atlas = ExtResource("2_yg8ia")
 region = Rect2(0, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kfx8p"]
-atlas = ExtResource("2_1v45d")
+atlas = ExtResource("2_yg8ia")
 region = Rect2(100, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cq2x4"]
-atlas = ExtResource("2_1v45d")
+atlas = ExtResource("2_yg8ia")
 region = Rect2(200, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ndbni"]
-atlas = ExtResource("2_1v45d")
+atlas = ExtResource("2_yg8ia")
 region = Rect2(300, 0, 100, 100)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bgw22"]
@@ -43,7 +43,7 @@ animations = [{
 radius = 66.666664
 
 [node name="Projectile" type="Area2D" unique_id=1813624176]
-script = ExtResource("1_1v45d")
+script = ExtResource("1_6wd3q")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=977428796]
 sprite_frames = SubResource("SpriteFrames_bgw22")

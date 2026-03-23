@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://gj80dsafogu0"]
 
 [ext_resource type="Script" uid="uid://cpggpd68uqqu0" path="res://scripts/Combat/Enemy_Tank.gd" id="1_utx3u"]
-[ext_resource type="PackedScene" uid="uid://cwi7pn4c8c4v7" path="res://Scene/Combat/Projectile.tscn" id="2_fvvsg"]
+[ext_resource type="PackedScene" uid="uid://cwi7pn4c8c4v7" path="res://Scene/Combat/enemy_scene/Projectile.tscn" id="2_fvvsg"]
 [ext_resource type="Texture2D" uid="uid://dwsn12x8u4atm" path="res://art_assets/Unit/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Skeleton Archer/Skeleton Archer/Skeleton Archer-Attack.png" id="3_6jt6p"]
 [ext_resource type="Texture2D" uid="uid://cjt4vn3etg7qs" path="res://art_assets/Unit/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Skeleton Archer/Skeleton Archer/Skeleton Archer-Death.png" id="4_i3jai"]
 [ext_resource type="Texture2D" uid="uid://ba4ioerw7g1qe" path="res://art_assets/Unit/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Skeleton Archer/Skeleton Archer/Skeleton Archer-Idle.png" id="5_ixd3e"]
@@ -9,8 +9,6 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kjgma"]
 size = Vector2(70, 72)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_762ar"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5usku"]
 atlas = ExtResource("3_6jt6p")
@@ -235,16 +233,10 @@ projectile_scene = ExtResource("2_fvvsg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=35597690]
 position = Vector2(-3, -3)
+scale = Vector2(0.7, 0.7)
 shape = SubResource("RectangleShape2D_kjgma")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1059610]
-
-[node name="AttackArea" type="Area2D" parent="." unique_id=1387313981]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=2031735190]
-position = Vector2(25, -2)
-scale = Vector2(1, 0.9599999)
-shape = SubResource("CircleShape2D_762ar")
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=1413704591]
 offset_left = -40.0
@@ -255,7 +247,7 @@ show_percentage = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2130221941]
 texture_filter = 1
-scale = Vector2(3, 3)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_utx3u")
 animation = &"death"
 flip_h = true

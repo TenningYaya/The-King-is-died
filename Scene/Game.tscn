@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d3ylqyij3fkit"]
 
 [ext_resource type="PackedScene" uid="uid://jfqlwaedgf0u" path="res://Scene/Gaze.tscn" id="1_5kiuu"]
-[ext_resource type="Script" uid="uid://dsgk2um5ncu6l" path="res://scripts/level/level_game_scene.gd" id="1_hqtje"]
+[ext_resource type="Script" path="res://scripts/level/level_game_scene.gd" id="1_hqtje"]
 [ext_resource type="PackedScene" uid="uid://c4cb7fh3c203h" path="res://Scene/tile.tscn" id="2_mopgc"]
 [ext_resource type="Texture2D" uid="uid://mauom8xw2hfv" path="res://art_assets/buildings/elixir_spring.jpg" id="4_bxrg2"]
 [ext_resource type="Texture2D" uid="uid://dgcnn1mulc0ai" path="res://art_assets/buildings/herb_garden.png" id="5_ilbig"]
@@ -15,17 +15,18 @@
 [ext_resource type="Texture2D" uid="uid://kl437qu2soav" path="res://art_assets/buildings/alchemy_lab.jpg" id="9_hqtje"]
 [ext_resource type="PackedScene" uid="uid://b1vdm2dchhc2i" path="res://Scene/ui/pause_menu.tscn" id="9_tujvx"]
 [ext_resource type="Script" uid="uid://tqfstski4omi" path="res://scripts/Combat/EnemySpawner.gd" id="10_2j816"]
-[ext_resource type="PackedScene" uid="uid://duptcluexkt70" path="res://Scene/Combat/Enemy_Tank.tscn" id="11_g3fkh"]
+[ext_resource type="PackedScene" uid="uid://duptcluexkt70" path="res://Scene/Combat/enemy_scene/Enemy_Tank.tscn" id="11_g3fkh"]
 [ext_resource type="PackedScene" uid="uid://do4dkx5h4d88v" path="res://Scene/ui/button_demolish.tscn" id="18_kfjtm"]
-[ext_resource type="PackedScene" uid="uid://b2p6v53amipmk" path="res://Scene/ui/button_sell_blueprint.tscn" id="19_1e3q2"]
-[ext_resource type="PackedScene" uid="uid://do8xgvq4ry37i" path="res://Scene/ui/button_gaze_upgrade.tscn" id="20_1e3q2"]
+[ext_resource type="PackedScene" path="res://Scene/ui/button_sell_blueprint.tscn" id="19_1e3q2"]
+[ext_resource type="PackedScene" path="res://Scene/ui/button_gaze_upgrade.tscn" id="20_1e3q2"]
 [ext_resource type="Texture2D" uid="uid://dq50vf41x73e3" path="res://art_assets/q money/Q币.jpg" id="21_hqtje"]
 [ext_resource type="Script" uid="uid://cxpg1n5oqju86" path="res://scripts/store and q money/CurrencyUI.gd" id="22_0mc8i"]
-[ext_resource type="Script" uid="uid://htykhra2fbhu" path="res://scripts/buildings/building_manager.gd" id="23_hjrqo"]
+[ext_resource type="Script" path="res://scripts/buildings/building_manager.gd" id="23_hjrqo"]
 [ext_resource type="PackedScene" uid="uid://cs7473lfyhaex" path="res://Scene/buildings/producer/production_building.tscn" id="24_ghk2r"]
 [ext_resource type="PackedScene" uid="uid://bvm5flnoabotw" path="res://Scene/buildings/producer/production_market.tscn" id="25_mw7jm"]
 [ext_resource type="PackedScene" uid="uid://cs2uw4cq2noiw" path="res://Scene/buildings/combat_building.tscn" id="26_1mx4w"]
 [ext_resource type="PackedScene" uid="uid://cc5n01itk08si" path="res://Scene/ui/shop_scene.tscn" id="26_hjrqo"]
+
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_bxrg2"]
 vertices = PackedVector2Array(1904.1406, 33.929688, 1912.8516, 639.9922, 756.03906, 639, 758.9531, 26.0625)

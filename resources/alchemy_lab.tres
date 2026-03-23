@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dai8darcd7q2w" path="res://scripts/buildings/building_data.gd" id="1_14i6v"]
 [ext_resource type="Texture2D" uid="uid://kl437qu2soav" path="res://art_assets/buildings/alchemy_lab.jpg" id="1_g6nwg"]
-[ext_resource type="PackedScene" uid="uid://ds7qlt13y0rsv" path="res://Scene/Combat/Unit_Tank.tscn" id="2_88vqa"]
+[ext_resource type="PackedScene" uid="uid://ds7qlt13y0rsv" path="res://Scene/Combat/player_scene/Unit_Tank.tscn" id="2_88vqa"]
+
 
 [resource]
 script = ExtResource("1_14i6v")

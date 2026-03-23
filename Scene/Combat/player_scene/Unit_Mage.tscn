@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://kmn1hu6coy2t"]
 
 [ext_resource type="Script" uid="uid://bk1nfn1daoatn" path="res://scripts/Combat/Mage.gd" id="1_epvya"]
-[ext_resource type="PackedScene" uid="uid://1m3y06dkpdig" path="res://Scene/Combat/Projectile_Magic.tscn" id="2_e3sbv"]
+[ext_resource type="PackedScene" uid="uid://1m3y06dkpdig" path="res://Scene/Combat/player_scene/Projectile_Magic.tscn" id="2_e3sbv"]
 [ext_resource type="Texture2D" uid="uid://bpx2bqytp27eh" path="res://art_assets/Unit/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Wizard/Wizard/Wizard-Attack01.png" id="3_e3sbv"]
 [ext_resource type="Texture2D" uid="uid://dfx3lqssn4124" path="res://art_assets/Unit/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Wizard/Wizard/Wizard-DEATH.png" id="4_6l47t"]
 [ext_resource type="Texture2D" uid="uid://bndwxe2rb6cv1" path="res://art_assets/Unit/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Wizard/Wizard/Wizard-Idle.png" id="5_qn4e2"]
@@ -9,8 +9,6 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kjgma"]
 size = Vector2(57, 54)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_762ar"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6l47t"]
 atlas = ExtResource("3_e3sbv")
@@ -212,17 +210,10 @@ projectile_scene = ExtResource("2_e3sbv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=35597690]
 position = Vector2(-0.5, 0)
+scale = Vector2(0.7, 0.7)
 shape = SubResource("RectangleShape2D_kjgma")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1059610 groups=["player_units"]]
-
-[node name="AttackArea" type="Area2D" parent="." unique_id=1387313981]
-position = Vector2(3, -12)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=2031735190]
-position = Vector2(30, -19)
-scale = Vector2(1, 0.9599999)
-shape = SubResource("CircleShape2D_762ar")
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=742440916]
 offset_left = -40.0
@@ -233,6 +224,6 @@ show_percentage = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1452797174]
 texture_filter = 1
-scale = Vector2(3, 3)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_re8yu")
 animation = &"attack"

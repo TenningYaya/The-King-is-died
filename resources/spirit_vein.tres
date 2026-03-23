@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dai8darcd7q2w" path="res://scripts/buildings/building_data.gd" id="1_cyop6"]
 [ext_resource type="Texture2D" uid="uid://dqxw76lik1krk" path="res://art_assets/buildings/mystic_iron_ore.jpg" id="1_qcxbg"]
-[ext_resource type="PackedScene" uid="uid://ds7qlt13y0rsv" path="res://Scene/Combat/Unit_Tank.tscn" id="2_6mrvj"]
+[ext_resource type="PackedScene" uid="uid://ds7qlt13y0rsv" path="res://Scene/Combat/player_scene/Unit_Tank.tscn" id="2_6mrvj"]
+
 
 [resource]
 script = ExtResource("1_cyop6")
