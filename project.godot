@@ -25,6 +25,7 @@ ResourceManager="*uid://cq7fggd15kqp6"
 SaveManager="*uid://dxcgq2lywtlu1"
 GamedataManager="*uid://cyr3ax6dku5wa"
 DialogueManager="*uid://c3rodes2l3gxb"
+UpgradeManager="*uid://c2ren3kdf8wvl"
 
 [display]
 
@@ -42,6 +43,7 @@ enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 player_units=""
 enemy_units=""
 structures=""
+upgrade_buttons=""
 
 [input]
 

@@ -47,6 +47,11 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Load Game"
 
+[node name="Upgrade" type="Button" parent="Control/VBoxContainer" unique_id=104180333]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Upgrade"
+
 [node name="Settings" type="Button" parent="Control/VBoxContainer" unique_id=1535920591]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
@@ -64,4 +69,5 @@ text = "Quit"
 
 [connection signal="pressed" from="Control/VBoxContainer/New" to="." method="_on_new_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer/Load" to="." method="_on_load_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Upgrade" to="." method="_on_upgrade_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

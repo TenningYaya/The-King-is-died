@@ -1,10 +1,80 @@
 [gd_scene format=3 uid="uid://b7l5xvcum6dwp"]
 
-[node name="UpgradeTree" type="Node2D" unique_id=1772393412]
+[ext_resource type="Script" uid="uid://cdjgc5geo24fu" path="res://scripts/UpgradeTree/UpgradeButton.gd" id="1_6tde5"]
+[ext_resource type="Script" uid="uid://cjytx0bkt0mkj" path="res://scripts/UpgradeTree/home.gd" id="2_pebc6"]
 
-[node name="Button" type="Button" parent="." unique_id=587984806]
-offset_left = 594.0
-offset_top = 491.0
-offset_right = 696.24
-offset_bottom = 562.0
-text = "Upgrade"
+[node name="UpgradeTree" type="Control" unique_id=1458230802]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="UnitAttackUpgrade2" type="Button" parent="." unique_id=1217309827 groups=["upgrade_buttons"]]
+layout_mode = 0
+offset_left = 850.0
+offset_top = 530.0
+offset_right = 1007.0
+offset_bottom = 601.0
+text = "UnitAttackUpgrade"
+script = ExtResource("1_6tde5")
+upgrade_key = "attack_2"
+required_button_path = NodePath("../UnitAttackUpgrade")
+max_level = 4
+flat_per_level = 100.0
+
+[node name="LevelLabel" type="Label" parent="UnitAttackUpgrade2" unique_id=2061804666]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 43.0
+offset_right = 87.0
+offset_bottom = 66.0
+pivot_offset = Vector2(-2161, -586)
+text = "LV2"
+
+[node name="DescLabel" type="Label" parent="UnitAttackUpgrade2" unique_id=1304636165]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 43.0
+offset_right = 156.0
+offset_bottom = 66.0
+pivot_offset = Vector2(-2161, -586)
+text = "Atk"
+
+[node name="UnitAttackUpgrade" type="Button" parent="." unique_id=23770035 groups=["upgrade_buttons"]]
+layout_mode = 0
+offset_left = 851.0
+offset_top = 638.0
+offset_right = 1008.0
+offset_bottom = 709.0
+text = "UnitAttackUpgrade"
+script = ExtResource("1_6tde5")
+max_level = 4
+flat_per_level = 10.0
+
+[node name="LevelLabel" type="Label" parent="UnitAttackUpgrade" unique_id=1433608664]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 43.0
+offset_right = 87.0
+offset_bottom = 66.0
+pivot_offset = Vector2(-2161, -586)
+text = "LV1"
+
+[node name="DescLabel" type="Label" parent="UnitAttackUpgrade" unique_id=1914778334]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 43.0
+offset_right = 156.0
+offset_bottom = 66.0
+pivot_offset = Vector2(-2161, -586)
+text = "Atk"
+
+[node name="Home" type="Button" parent="." unique_id=425978690]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 8.0
+offset_right = 97.0
+offset_bottom = 53.0
+text = "Home"
+script = ExtResource("2_pebc6")
+
+[connection signal="pressed" from="Home" to="UnitAttackUpgrade2" method="_on_home_pressed"]
+[connection signal="pressed" from="Home" to="Home" method="_on_pressed"]
