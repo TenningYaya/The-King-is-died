@@ -24,6 +24,7 @@ config/icon="res://icon.svg"
 ResourceManager="*uid://cq7fggd15kqp6"
 SaveManager="*uid://dxcgq2lywtlu1"
 GamedataManager="*uid://cyr3ax6dku5wa"
+DialogueManager="*uid://c3rodes2l3gxb"
 
 [display]
 
@@ -31,6 +32,10 @@ window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/window_width_override=1920
 window/size/window_height_override=1080
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
 [global_group]
 
@@ -50,3 +55,7 @@ rotate_gaze={
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":2,"position":Vector2(107, 18),"global_position":Vector2(116, 66),"factor":1.0,"button_index":2,"canceled":false,"pressed":true,"double_click":false,"script":null)
 ]
 }
+
+[internationalization]
+
+locale/translations_pot_files=PackedStringArray("res://scripts/dialog/dialog.dialogue")

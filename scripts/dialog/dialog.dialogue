@@ -1,0 +1,18 @@
+#~ start
+#Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
+#Nathan: Here are some choices.
+#- First one
+#	Nathan: You picked the first one.
+#- Second one
+#	Nathan: You picked the second one.
+#- Start again => start
+#- End the conversation => END
+#Nathan: For more information see the online documentation.
+#=> END
+~ start
+宗门弟子: 老祖求您快出山吧！魔族打上门来了！！！
+你: 魔族？我这才闭关了多久？怎么回事？？？
+宗门弟子: 回禀老祖，自您闭关后进入了末法时代，世间灵气衰竭，尽管宗主与长老们尽力维持，却也无法阻止。恰逢魔族入侵，各位长老已相继战死。
+宗门弟子: 求老祖指挥大局！！！
+你: 怎会如此！待我开启宗门大阵！
+宗门弟子: 大阵只有两百的防御，幸而我宗三面环山，魔族只会从[wave]东面[/wave]攻来。
