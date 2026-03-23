@@ -208,6 +208,7 @@ attack_range = 100.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=35597690]
 position = Vector2(-0.5, 0)
+scale = Vector2(0.7, 0.7)
 shape = SubResource("RectangleShape2D_kjgma")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1059610 groups=["player_units"]]
@@ -229,6 +230,6 @@ show_percentage = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1452797174]
 texture_filter = 1
-scale = Vector2(3, 3)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_re8yu")
 animation = &"walk"
