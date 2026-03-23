@@ -219,7 +219,7 @@ text = "0"
 script = ExtResource("22_0mc8i")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=213039517]
-position = Vector2(938, 502)
+position = Vector2(961, 481)
 
 [node name="BuildingManager" type="Node" parent="." unique_id=1601191085 groups=["save_required"]]
 script = ExtResource("23_hjrqo")
