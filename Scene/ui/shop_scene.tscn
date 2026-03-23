@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://wvwr2ao0ag3e" path="res://art_assets/buildings/market.png" id="5_vs0ps"]
 [ext_resource type="Texture2D" uid="uid://docy75ofkpcam" path="res://art_assets/ui/Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_Popup01a.png" id="6_5upiv"]
 [ext_resource type="Texture2D" uid="uid://dbx3koa02scmf" path="res://art_assets/ui/Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites Animated/UI_TravelBook_Button01a_1.png" id="7_fsnlw"]
-[ext_resource type="Texture2D" uid="uid://d2xbxqnbvmw4m" path="res://art_assets/ui/Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_GamepadDPadUp01a.png" id="8_3553a"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pdjv4"]
 
@@ -334,14 +333,4 @@ theme_override_font_sizes/font_size = 32
 text = "结束购买
 "
 
-[node name="HideButton" type="TextureButton" parent="." unique_id=477862406]
-offset_left = 1793.0
-offset_top = 23.0
-offset_right = 1880.0
-offset_bottom = 97.0
-texture_normal = ExtResource("8_3553a")
-ignore_texture_size = true
-stretch_mode = 5
-
 [connection signal="pressed" from="FinishButton" to="." method="_on_finish_button_pressed"]
-[connection signal="pressed" from="HideButton" to="." method="_on_hide_button_pressed"]

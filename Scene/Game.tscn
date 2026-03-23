@@ -230,4 +230,5 @@ market_scene = ExtResource("25_mw7jm")
 combat_scene = ExtResource("26_1mx4w")
 
 [node name="ShopScene" parent="." unique_id=1459319748 instance=ExtResource("26_hjrqo")]
+process_mode = 2
 visible = false

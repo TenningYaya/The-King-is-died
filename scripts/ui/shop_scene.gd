@@ -67,8 +67,6 @@ func _on_buy_pressed(card, price):
 		if sold_out: sold_out.show()
 		if buy_btn: buy_btn.disabled = true
 
-func _on_hide_button_pressed() -> void:
-	shop_content.hide()
 
 func _on_finish_button_pressed() -> void:
 	print("点击了finish按钮")
