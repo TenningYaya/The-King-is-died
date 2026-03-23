@@ -31,6 +31,8 @@ texture = ExtResource("6_5upiv")
 texture = ExtResource("7_fsnlw")
 
 [node name="ShopScene" type="CanvasLayer" unique_id=1459319748]
+process_mode = 3
+layer = 100
 script = ExtResource("1_mbbgs")
 
 [node name="ScreenMask" type="TextureRect" parent="." unique_id=516477577]
@@ -39,6 +41,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 0
 texture = ExtResource("2_mognu")
 expand_mode = 1
 
@@ -55,6 +58,7 @@ offset_right = 960.0
 offset_bottom = 540.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 
 [node name="MainHBox" type="HBoxContainer" parent="MainContainer" unique_id=275214699]
 layout_mode = 1
@@ -74,6 +78,7 @@ custom_minimum_size = Vector2(300, 300)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+mouse_filter = 2
 texture = ExtResource("3_gm1dj")
 expand_mode = 1
 stretch_mode = 5
@@ -320,8 +325,7 @@ text = "Buy"
 icon = ExtResource("7_fsnlw")
 icon_alignment = 1
 
-[node name="FinishButton" type="Button" parent="MainContainer" unique_id=1758801501]
-layout_mode = 0
+[node name="FinishButton" type="Button" parent="." unique_id=1758801501]
 offset_left = 85.0
 offset_top = 943.0
 offset_right = 291.0
@@ -330,8 +334,7 @@ theme_override_font_sizes/font_size = 32
 text = "结束购买
 "
 
-[node name="HideButton" type="TextureButton" parent="MainContainer" unique_id=477862406]
-layout_mode = 0
+[node name="HideButton" type="TextureButton" parent="." unique_id=477862406]
 offset_left = 1793.0
 offset_top = 23.0
 offset_right = 1880.0
@@ -340,5 +343,5 @@ texture_normal = ExtResource("8_3553a")
 ignore_texture_size = true
 stretch_mode = 5
 
-[connection signal="pressed" from="MainContainer/FinishButton" to="." method="_on_finish_button_pressed"]
-[connection signal="pressed" from="MainContainer/HideButton" to="." method="_on_hide_button_pressed"]
+[connection signal="pressed" from="FinishButton" to="." method="_on_finish_button_pressed"]
+[connection signal="pressed" from="HideButton" to="." method="_on_hide_button_pressed"]
