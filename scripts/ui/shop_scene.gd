@@ -71,4 +71,5 @@ func _on_hide_button_pressed() -> void:
 	shop_content.hide()
 
 func _on_finish_button_pressed() -> void:
+	get_tree().paused = false
 	self.queue_free()

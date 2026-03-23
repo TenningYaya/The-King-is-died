@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://dbx3koa02scmf" path="res://art_assets/ui/Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites Animated/UI_TravelBook_Button01a_1.png" id="7_fsnlw"]
 [ext_resource type="Texture2D" uid="uid://d2xbxqnbvmw4m" path="res://art_assets/ui/Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_GamepadDPadUp01a.png" id="8_3553a"]
 
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pdjv4"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d1met"]
