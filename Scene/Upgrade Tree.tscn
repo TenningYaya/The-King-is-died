@@ -7,17 +7,75 @@
 layout_mode = 3
 anchors_preset = 0
 
+[node name="UnitHpUpgrade1" type="Button" parent="." unique_id=1887134192 groups=["upgrade_buttons"]]
+layout_mode = 0
+offset_left = 637.0
+offset_top = 395.0
+offset_right = 794.0
+offset_bottom = 466.0
+text = "UnitAttackUpgrade"
+script = ExtResource("1_6tde5")
+upgrade_key = "hp_1"
+flat_per_level = 20.0
+
+[node name="LevelLabel" type="Label" parent="UnitHpUpgrade1" unique_id=1079318144]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 43.0
+offset_right = 87.0
+offset_bottom = 66.0
+pivot_offset = Vector2(-2161, -586)
+text = "LV1"
+
+[node name="DescLabel" type="Label" parent="UnitHpUpgrade1" unique_id=422248138]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 43.0
+offset_right = 156.0
+offset_bottom = 66.0
+pivot_offset = Vector2(-2161, -586)
+text = "Atk"
+
+[node name="UnitAttackUpgrade3" type="Button" parent="." unique_id=1041066990 groups=["upgrade_buttons"]]
+layout_mode = 0
+offset_left = 836.0
+offset_top = 49.0
+offset_right = 993.0
+offset_bottom = 120.0
+text = "UnitAttackUpgrade"
+script = ExtResource("1_6tde5")
+upgrade_key = "attack_3"
+required_button_path = NodePath("../UnitAttackUpgrade2")
+percent_per_level = 0.05
+
+[node name="LevelLabel" type="Label" parent="UnitAttackUpgrade3" unique_id=1571958664]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 43.0
+offset_right = 87.0
+offset_bottom = 66.0
+pivot_offset = Vector2(-2161, -586)
+text = "LV1"
+
+[node name="DescLabel" type="Label" parent="UnitAttackUpgrade3" unique_id=116507961]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 43.0
+offset_right = 156.0
+offset_bottom = 66.0
+pivot_offset = Vector2(-2161, -586)
+text = "Atk"
+
 [node name="UnitAttackUpgrade2" type="Button" parent="." unique_id=1217309827 groups=["upgrade_buttons"]]
 layout_mode = 0
-offset_left = 850.0
-offset_top = 530.0
-offset_right = 1007.0
-offset_bottom = 601.0
+offset_left = 835.0
+offset_top = 164.0
+offset_right = 992.0
+offset_bottom = 235.0
 text = "UnitAttackUpgrade"
 script = ExtResource("1_6tde5")
 upgrade_key = "attack_2"
 required_button_path = NodePath("../UnitAttackUpgrade")
-max_level = 4
 flat_per_level = 100.0
 
 [node name="LevelLabel" type="Label" parent="UnitAttackUpgrade2" unique_id=2061804666]
@@ -40,13 +98,12 @@ text = "Atk"
 
 [node name="UnitAttackUpgrade" type="Button" parent="." unique_id=23770035 groups=["upgrade_buttons"]]
 layout_mode = 0
-offset_left = 851.0
-offset_top = 638.0
-offset_right = 1008.0
-offset_bottom = 709.0
+offset_left = 833.0
+offset_top = 278.0
+offset_right = 990.0
+offset_bottom = 349.0
 text = "UnitAttackUpgrade"
 script = ExtResource("1_6tde5")
-max_level = 4
 flat_per_level = 10.0
 
 [node name="LevelLabel" type="Label" parent="UnitAttackUpgrade" unique_id=1433608664]
@@ -75,6 +132,184 @@ offset_right = 97.0
 offset_bottom = 53.0
 text = "Home"
 script = ExtResource("2_pebc6")
+
+[node name="UnitHpUpgrade2" type="Button" parent="." unique_id=2014081649 groups=["upgrade_buttons"]]
+layout_mode = 0
+offset_left = 406.0
+offset_top = 394.0
+offset_right = 563.0
+offset_bottom = 465.0
+text = "UnitAttackUpgrade"
+script = ExtResource("1_6tde5")
+upgrade_key = "hp_2"
+required_button_path = NodePath("../UnitHpUpgrade1")
+flat_per_level = 40.0
+
+[node name="LevelLabel" type="Label" parent="UnitHpUpgrade2" unique_id=1242950589]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 43.0
+offset_right = 87.0
+offset_bottom = 66.0
+pivot_offset = Vector2(-2161, -586)
+text = "LV1"
+
+[node name="DescLabel" type="Label" parent="UnitHpUpgrade2" unique_id=1359420952]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 43.0
+offset_right = 156.0
+offset_bottom = 66.0
+pivot_offset = Vector2(-2161, -586)
+text = "Atk"
+
+[node name="UnitHpUpgrade3" type="Button" parent="." unique_id=146472770 groups=["upgrade_buttons"]]
+layout_mode = 0
+offset_left = 166.0
+offset_top = 397.0
+offset_right = 323.0
+offset_bottom = 468.0
+text = "UnitAttackUpgrade"
+script = ExtResource("1_6tde5")
+upgrade_key = "hp_3"
+required_button_path = NodePath("../UnitHpUpgrade2")
+percent_per_level = 0.05
+
+[node name="LevelLabel" type="Label" parent="UnitHpUpgrade3" unique_id=593598963]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 43.0
+offset_right = 87.0
+offset_bottom = 66.0
+pivot_offset = Vector2(-2161, -586)
+text = "LV1"
+
+[node name="DescLabel" type="Label" parent="UnitHpUpgrade3" unique_id=1833636939]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 43.0
+offset_right = 156.0
+offset_bottom = 66.0
+pivot_offset = Vector2(-2161, -586)
+text = "Atk"
+
+[node name="ResourceSpeed" type="Button" parent="." unique_id=888798829 groups=["upgrade_buttons"]]
+layout_mode = 0
+offset_left = 829.0
+offset_top = 518.0
+offset_right = 986.0
+offset_bottom = 589.0
+text = "UnitAttackUpgrade"
+script = ExtResource("1_6tde5")
+upgrade_key = "resource_speed_1"
+percent_per_level = 0.1
+
+[node name="LevelLabel" type="Label" parent="ResourceSpeed" unique_id=1719886776]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 43.0
+offset_right = 87.0
+offset_bottom = 66.0
+pivot_offset = Vector2(-2161, -586)
+text = "LV1"
+
+[node name="DescLabel" type="Label" parent="ResourceSpeed" unique_id=1971247808]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 43.0
+offset_right = 156.0
+offset_bottom = 66.0
+pivot_offset = Vector2(-2161, -586)
+text = "Atk"
+
+[node name="ResourceSpeed2" type="Button" parent="." unique_id=722614468 groups=["upgrade_buttons"]]
+layout_mode = 0
+offset_left = 827.0
+offset_top = 631.0
+offset_right = 984.0
+offset_bottom = 702.0
+text = "UnitAttackUpgrade"
+script = ExtResource("1_6tde5")
+upgrade_key = "resource_speed_2"
+required_button_path = NodePath("../ResourceSpeed")
+percent_per_level = 0.2
+
+[node name="LevelLabel" type="Label" parent="ResourceSpeed2" unique_id=626474472]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 43.0
+offset_right = 87.0
+offset_bottom = 66.0
+pivot_offset = Vector2(-2161, -586)
+text = "LV1"
+
+[node name="DescLabel" type="Label" parent="ResourceSpeed2" unique_id=1589375258]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 43.0
+offset_right = 156.0
+offset_bottom = 66.0
+pivot_offset = Vector2(-2161, -586)
+text = "Atk"
+
+[node name="ResourceAmount" type="Button" parent="." unique_id=826368179 groups=["upgrade_buttons"]]
+layout_mode = 0
+offset_left = 1041.0
+offset_top = 404.0
+offset_right = 1198.0
+offset_bottom = 475.0
+text = "UnitAttackUpgrade"
+script = ExtResource("1_6tde5")
+upgrade_key = "resource_amount_1"
+flat_per_level = 1.0
+
+[node name="LevelLabel" type="Label" parent="ResourceAmount" unique_id=895975302]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 43.0
+offset_right = 87.0
+offset_bottom = 66.0
+pivot_offset = Vector2(-2161, -586)
+text = "LV1"
+
+[node name="DescLabel" type="Label" parent="ResourceAmount" unique_id=920433913]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 43.0
+offset_right = 156.0
+offset_bottom = 66.0
+pivot_offset = Vector2(-2161, -586)
+text = "Atk"
+
+[node name="ResourceAmount2" type="Button" parent="." unique_id=768715514 groups=["upgrade_buttons"]]
+layout_mode = 0
+offset_left = 1252.0
+offset_top = 408.0
+offset_right = 1409.0
+offset_bottom = 479.0
+text = "UnitAttackUpgrade"
+script = ExtResource("1_6tde5")
+upgrade_key = "resource_amount_1"
+required_button_path = NodePath("../ResourceAmount")
+flat_per_level = 1.0
+
+[node name="LevelLabel" type="Label" parent="ResourceAmount2" unique_id=100912246]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 43.0
+offset_right = 87.0
+offset_bottom = 66.0
+pivot_offset = Vector2(-2161, -586)
+text = "LV1"
+
+[node name="DescLabel" type="Label" parent="ResourceAmount2" unique_id=1196135611]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 43.0
+offset_right = 156.0
+offset_bottom = 66.0
+pivot_offset = Vector2(-2161, -586)
+text = "Atk"
 
 [connection signal="pressed" from="Home" to="UnitAttackUpgrade2" method="_on_home_pressed"]
 [connection signal="pressed" from="Home" to="Home" method="_on_pressed"]
