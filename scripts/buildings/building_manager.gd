@@ -5,8 +5,9 @@ extends Node
 @export var market_scene: PackedScene
 @export var combat_scene: PackedScene
 
+
 # 你存放所有建筑实例的父节点（建议在场景里专门搞一个 Node2D 叫 Structures）
-@onready var structure_container = get_node("/root/Game/Structures") 
+@onready var structure_container = get_node("/root/Game/Structures")
 
 func _ready():
 	# 2. 主动认领数据

@@ -1,4 +1,5 @@
 # level_blueprint_manager.gd
+class_name LevelBlueprintManager
 extends CanvasLayer
 
 enum FilterType { ALL, PRODUCTION, COMBAT }

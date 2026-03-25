@@ -1,0 +1,323 @@
+[gd_scene format=3 uid="uid://dwyka17gkpfh4"]
+
+[ext_resource type="Script" uid="uid://cc1yfpqr450gy" path="res://scripts/ui/reward.gd" id="1_xsigu"]
+[ext_resource type="Texture2D" uid="uid://cr5aj7wtnbdj6" path="res://art_assets/ui/Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_BookCover01a.png" id="2_mo7dv"]
+[ext_resource type="Texture2D" uid="uid://b473yaehllnfe" path="res://art_assets/ui/fba2f98b8829c88ea9aee63b1a4951df.png" id="3_idm73"]
+[ext_resource type="Texture2D" uid="uid://muywxcmw7fue" path="res://art_assets/ui/Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_Frame01a.png" id="4_dvx1r"]
+[ext_resource type="Texture2D" uid="uid://wvwr2ao0ag3e" path="res://art_assets/buildings/market.png" id="5_i4fhm"]
+[ext_resource type="Texture2D" uid="uid://docy75ofkpcam" path="res://art_assets/ui/Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_Popup01a.png" id="6_qdgkc"]
+[ext_resource type="Texture2D" uid="uid://dbx3koa02scmf" path="res://art_assets/ui/Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites Animated/UI_TravelBook_Button01a_1.png" id="7_7q6jh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4thjl"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ygc7f"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+texture = ExtResource("4_dvx1r")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_83ke0"]
+texture = ExtResource("4_dvx1r")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qcno3"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+texture = ExtResource("6_qdgkc")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k8hkr"]
+texture = ExtResource("7_7q6jh")
+
+[node name="Reward" type="CanvasLayer" unique_id=983007215]
+script = ExtResource("1_xsigu")
+
+[node name="ScreenMask" type="TextureRect" parent="." unique_id=1844035659]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+texture = ExtResource("2_mo7dv")
+expand_mode = 1
+
+[node name="MainContainer" type="Control" parent="." unique_id=125906116]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -540.0
+offset_right = 960.0
+offset_bottom = 540.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="MainHBox" type="HBoxContainer" parent="MainContainer" unique_id=1338967404]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = -50.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+
+[node name="ShopIllust" type="TextureRect" parent="MainContainer/MainHBox" unique_id=26446959]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+texture = ExtResource("3_idm73")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="RightContent" type="HBoxContainer" parent="MainContainer/MainHBox" unique_id=2120627106]
+layout_mode = 2
+size_flags_vertical = 4
+size_flags_stretch_ratio = 3.0
+theme_override_constants/separation = 80
+
+[node name="Option1" type="PanelContainer" parent="MainContainer/MainHBox/RightContent" unique_id=533243115]
+custom_minimum_size = Vector2(250, 800)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_4thjl")
+
+[node name="CardContent" type="VBoxContainer" parent="MainContainer/MainHBox/RightContent/Option1" unique_id=1236703827]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="NameBg" type="PanelContainer" parent="MainContainer/MainHBox/RightContent/Option1/CardContent" unique_id=1581949468]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ygc7f")
+
+[node name="ItemName" type="Label" parent="MainContainer/MainHBox/RightContent/Option1/CardContent/NameBg" unique_id=1434637374]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 32
+text = "Item1"
+horizontal_alignment = 1
+
+[node name="IconBg" type="PanelContainer" parent="MainContainer/MainHBox/RightContent/Option1/CardContent" unique_id=1620499878]
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_83ke0")
+
+[node name="ItemIcon" type="TextureRect" parent="MainContainer/MainHBox/RightContent/Option1/CardContent/IconBg" unique_id=761787037]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("5_i4fhm")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="DescBg" type="PanelContainer" parent="MainContainer/MainHBox/RightContent/Option1/CardContent" unique_id=2134167850]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_qcno3")
+
+[node name="Description" type="Label" parent="MainContainer/MainHBox/RightContent/Option1/CardContent/DescBg" unique_id=386827806]
+custom_minimum_size = Vector2(200, 350)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/line_spacing = 5
+theme_override_font_sizes/font_size = 24
+text = "
+是动画哦说的好四点后四年冬季撒旦奴扫黄少的红四阿含第卅活动i四点后死啊好的"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="ChoseButton" type="Button" parent="MainContainer/MainHBox/RightContent/Option1/CardContent" unique_id=1681087129]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_k8hkr")
+text = "Chose"
+icon = ExtResource("7_7q6jh")
+icon_alignment = 1
+
+[node name="Option2" type="PanelContainer" parent="MainContainer/MainHBox/RightContent" unique_id=1055194944]
+custom_minimum_size = Vector2(250, 800)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_4thjl")
+
+[node name="CardContent" type="VBoxContainer" parent="MainContainer/MainHBox/RightContent/Option2" unique_id=2092334199]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="NameBg" type="PanelContainer" parent="MainContainer/MainHBox/RightContent/Option2/CardContent" unique_id=1840776701]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ygc7f")
+
+[node name="ItemName" type="Label" parent="MainContainer/MainHBox/RightContent/Option2/CardContent/NameBg" unique_id=72800395]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 32
+text = "Item1"
+horizontal_alignment = 1
+
+[node name="IconBg" type="PanelContainer" parent="MainContainer/MainHBox/RightContent/Option2/CardContent" unique_id=1397383856]
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_83ke0")
+
+[node name="ItemIcon" type="TextureRect" parent="MainContainer/MainHBox/RightContent/Option2/CardContent/IconBg" unique_id=716600250]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("5_i4fhm")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="DescBg" type="PanelContainer" parent="MainContainer/MainHBox/RightContent/Option2/CardContent" unique_id=1278449964]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_qcno3")
+
+[node name="Description" type="Label" parent="MainContainer/MainHBox/RightContent/Option2/CardContent/DescBg" unique_id=1611261769]
+custom_minimum_size = Vector2(200, 350)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/line_spacing = 5
+theme_override_font_sizes/font_size = 24
+text = "
+是动画哦说的好四点后四年冬季撒旦奴扫黄少的红四阿含第卅活动i四点后死啊好的"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="ChoseButton" type="Button" parent="MainContainer/MainHBox/RightContent/Option2/CardContent" unique_id=822713802]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_k8hkr")
+text = "Chose"
+icon = ExtResource("7_7q6jh")
+icon_alignment = 1
+
+[node name="Option3" type="PanelContainer" parent="MainContainer/MainHBox/RightContent" unique_id=1559558676]
+custom_minimum_size = Vector2(250, 800)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_4thjl")
+
+[node name="CardContent" type="VBoxContainer" parent="MainContainer/MainHBox/RightContent/Option3" unique_id=341418934]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="NameBg" type="PanelContainer" parent="MainContainer/MainHBox/RightContent/Option3/CardContent" unique_id=806151888]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ygc7f")
+
+[node name="ItemName" type="Label" parent="MainContainer/MainHBox/RightContent/Option3/CardContent/NameBg" unique_id=196842968]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 32
+text = "Item1"
+horizontal_alignment = 1
+
+[node name="IconBg" type="PanelContainer" parent="MainContainer/MainHBox/RightContent/Option3/CardContent" unique_id=1030318933]
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_83ke0")
+
+[node name="ItemIcon" type="TextureRect" parent="MainContainer/MainHBox/RightContent/Option3/CardContent/IconBg" unique_id=288806716]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("5_i4fhm")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="DescBg" type="PanelContainer" parent="MainContainer/MainHBox/RightContent/Option3/CardContent" unique_id=1589202301]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_qcno3")
+
+[node name="Description" type="Label" parent="MainContainer/MainHBox/RightContent/Option3/CardContent/DescBg" unique_id=536590442]
+custom_minimum_size = Vector2(200, 350)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/line_spacing = 5
+theme_override_font_sizes/font_size = 24
+text = "
+是动画哦说的好四点后四年冬季撒旦奴扫黄少的红四阿含第卅活动i四点后死啊好的"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="ChoseButton" type="Button" parent="MainContainer/MainHBox/RightContent/Option3/CardContent" unique_id=47838552]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_k8hkr")
+text = "Chose"
+icon = ExtResource("7_7q6jh")
+icon_alignment = 1
+
+[node name="Option4" type="PanelContainer" parent="MainContainer/MainHBox/RightContent" unique_id=1836739667]
+custom_minimum_size = Vector2(250, 800)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_4thjl")
+
+[node name="CardContent" type="VBoxContainer" parent="MainContainer/MainHBox/RightContent/Option4" unique_id=1961129275]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="NameBg" type="PanelContainer" parent="MainContainer/MainHBox/RightContent/Option4/CardContent" unique_id=976532999]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ygc7f")
+
+[node name="ItemName" type="Label" parent="MainContainer/MainHBox/RightContent/Option4/CardContent/NameBg" unique_id=696401779]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 32
+text = "Item1"
+horizontal_alignment = 1
+
+[node name="IconBg" type="PanelContainer" parent="MainContainer/MainHBox/RightContent/Option4/CardContent" unique_id=777804950]
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_83ke0")
+
+[node name="ItemIcon" type="TextureRect" parent="MainContainer/MainHBox/RightContent/Option4/CardContent/IconBg" unique_id=1299204412]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("5_i4fhm")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="DescBg" type="PanelContainer" parent="MainContainer/MainHBox/RightContent/Option4/CardContent" unique_id=565489743]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_qcno3")
+
+[node name="Description" type="Label" parent="MainContainer/MainHBox/RightContent/Option4/CardContent/DescBg" unique_id=231215272]
+custom_minimum_size = Vector2(200, 350)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/line_spacing = 5
+theme_override_font_sizes/font_size = 24
+text = "
+是动画哦说的好四点后四年冬季撒旦奴扫黄少的红四阿含第卅活动i四点后死啊好的"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="ChoseButton" type="Button" parent="MainContainer/MainHBox/RightContent/Option4/CardContent" unique_id=1537408465]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_k8hkr")
+text = "Chose"
+icon = ExtResource("7_7q6jh")
+icon_alignment = 1
