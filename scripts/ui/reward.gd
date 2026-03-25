@@ -35,7 +35,7 @@ func _setup_card(card, data):
 	var name_lbl = card.find_child("ItemName", true, false)
 	var icon_tex = card.find_child("ItemIcon", true, false)
 	var desc_lbl = card.find_child("Description", true, false)
-	var select_btn = card.find_child("BuyButton", true, false)
+	var select_btn = card.find_child("ChoseButton", true, false)
 	var sold_out = card.find_child("SoldOutOverlay", true, false)
 
 	if name_lbl:
@@ -106,5 +106,6 @@ func _grant_reward(item_name: String) -> void:
 		push_error("Blueprint Manager 没有 add_blueprint 方法")
 	
 func _close_reward_ui() -> void:
+	print("点击了finish按钮")
 	self.visible = false
 	get_tree().paused = false
