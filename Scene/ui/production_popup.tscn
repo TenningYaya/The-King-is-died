@@ -21,7 +21,7 @@ mouse_filter = 2
 expand_mode = 1
 
 [node name="AmountLabel" type="Label" parent="." unique_id=1040789850]
-modulate = Color(0, 0.8775144, 0.56523186, 1)
+modulate = Color(0.85807556, 0.07985916, 0.3441158, 1)
 layout_mode = 0
 offset_left = 25.0
 offset_top = 1.0

@@ -1,8 +1,29 @@
 [gd_scene format=3 uid="uid://o3mrcxlilo2l"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_x4iov"]
-load_path = "res://.godot/imported/UI_TravelBook_FrameSelect01a.png-514c93703375cae96ca90e874da8e4db.ctex"
+[ext_resource type="Texture2D" uid="uid://bgep1w4t5j02a" path="res://art_assets/ui/mainmenubutton1.webp" id="1_exeua"]
+[ext_resource type="Texture2D" uid="uid://bm35foo4xne12" path="res://art_assets/ui/mainmenubutton2.webp" id="2_qdghk"]
 
-[node name="MainMenuButton" type="TextureButton" unique_id=829349312]
-texture_normal = SubResource("CompressedTexture2D_x4iov")
-ignore_texture_size = true
+[node name="New" type="TextureButton" unique_id=357304590]
+texture_normal = ExtResource("1_exeua")
+texture_pressed = ExtResource("2_qdghk")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="." unique_id=1862026079]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -269.0
+offset_top = -87.0
+offset_right = 269.0
+offset_bottom = 87.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 50
+text = "New Game"
+horizontal_alignment = 1
+vertical_alignment = 1

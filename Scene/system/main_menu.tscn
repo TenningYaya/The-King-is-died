@@ -1,19 +1,11 @@
 [gd_scene format=3 uid="uid://bvxbigfylao7k"]
 
 [ext_resource type="Script" uid="uid://b4c78xvdr286h" path="res://scripts/system/main_menu.gd" id="1_pp0ei"]
-[ext_resource type="Texture2D" uid="uid://ctuggwv4nfqxg" path="res://art_assets/background/bcg_mainmenu1.jpg" id="2_pp0ei"]
+[ext_resource type="Texture2D" uid="uid://bgep1w4t5j02a" path="res://art_assets/ui/mainmenubutton1.webp" id="2_ut2dw"]
+[ext_resource type="Texture2D" uid="uid://bm35foo4xne12" path="res://art_assets/ui/mainmenubutton2.webp" id="3_wy3g2"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ut2dw"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wy3g2"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4gtwd"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rcdh4"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_edfkr"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_542xb"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4gtwd"]
+load_path = "res://.godot/imported/bcg_mainmenu1.jpg-c21ea66e643f86432422811be49de834.ctex"
 
 [node name="MainMenu" type="CanvasLayer" unique_id=209288309]
 script = ExtResource("1_pp0ei")
@@ -25,11 +17,10 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="TextureRect" type="TextureRect" parent="Control" unique_id=134877396]
-modulate = Color(0.92273736, 0.9227374, 0.92273736, 1)
 layout_mode = 0
 offset_right = 1927.0
 offset_bottom = 1081.0
-texture = ExtResource("2_pp0ei")
+texture = SubResource("CompressedTexture2D_4gtwd")
 
 [node name="Label" type="Label" parent="Control" unique_id=844970736]
 layout_mode = 0
@@ -51,17 +42,11 @@ offset_bottom = 993.0
 theme_override_constants/separation = 30
 alignment = 1
 
-[node name="New" type="Button" parent="Control/VBoxContainer" unique_id=1886467197]
-modulate = Color(0.27314225, 0.27314225, 0.27314222, 1)
+[node name="New" type="TextureButton" parent="Control/VBoxContainer" unique_id=175805107]
 layout_mode = 2
-theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = SubResource("StyleBoxFlat_ut2dw")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_wy3g2")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_4gtwd")
-theme_override_styles/hover = SubResource("StyleBoxFlat_rcdh4")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_edfkr")
-theme_override_styles/focus = SubResource("StyleBoxFlat_542xb")
-text = "New Game"
+texture_normal = ExtResource("2_ut2dw")
+texture_pressed = ExtResource("3_wy3g2")
+stretch_mode = 0
 
 [node name="Load" type="Button" parent="Control/VBoxContainer" unique_id=340369317]
 modulate = Color(0.27450982, 0.27450982, 0.27450982, 1)
