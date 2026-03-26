@@ -4,7 +4,7 @@ extends Control
 # 每一项的格式：[怪物图片路径, 怪物数量]
 var wave_monster_data = {
 	"Point1": [
-		["res://art_assets/buildings/herb_garden.png", 3],
+		["tank", 3],
 		["res://art_assets/buildings/spirit_vein.jpg", 2]
 	],
 	"Point2": [
