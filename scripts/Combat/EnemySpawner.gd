@@ -14,9 +14,19 @@ var waiting_for_next_wave: bool = false
 var _debug_timer: float = 0.0
 
 var waves: Array[Dictionary] = [
-	{ "spawn_time": 20.0, "spawn_list": { "tank": 2 } },
-	{ "spawn_time": 10.0, "spawn_list": { "tank": 1 } },
-	{ "spawn_time": 10.0, "spawn_list": { "tank": 3 } }
+	{ "spawn_time": 90.0, "spawn_list": { "tank": 1 } },
+	{ "spawn_time": 60.0, "spawn_list": { "tank": 2 } },
+	{ "spawn_time": 60.0, "spawn_list": { "tank": 3 } },
+	{ "spawn_time": 60.0, "spawn_list": { "tank": 1 , "mage":2 } },
+	{ "spawn_time": 60.0, "spawn_list": { "tank": 3 , "mage":3 } },
+	{ "spawn_time": 60.0, "spawn_list": { "assassin": 2 } },
+	{ "spawn_time": 60.0, "spawn_list": { "tank": 3 , "assassin":3 } },
+	{ "spawn_time": 60.0, "spawn_list": { "tank": 2 , "assassin":2 , "mage":3 } },
+	{ "spawn_time": 60.0, "spawn_list": { "tank": 2 , "assassin":2 , "mage":3 } },
+	{ "spawn_time": 60.0, "spawn_list": { "tank": 2 , "assassin":2 , "mage":3 } },
+	{ "spawn_time": 60.0, "spawn_list": { "tank": 2 , "assassin":2 , "mage":3 } },
+	{ "spawn_time": 60.0, "spawn_list": { "tank": 2 , "assassin":2 , "mage":3 } },
+	{ "spawn_time": 60.0, "spawn_list": { "boss": 1 } }
 ]
 
 func _ready() -> void:
