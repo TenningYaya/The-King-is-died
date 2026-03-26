@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://o3mrcxlilo2l"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_x4iov"]
+load_path = "res://.godot/imported/UI_TravelBook_FrameSelect01a.png-514c93703375cae96ca90e874da8e4db.ctex"
+
+[node name="MainMenuButton" type="TextureButton" unique_id=829349312]
+texture_normal = SubResource("CompressedTexture2D_x4iov")
+ignore_texture_size = true

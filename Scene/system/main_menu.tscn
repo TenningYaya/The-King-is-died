@@ -3,6 +3,18 @@
 [ext_resource type="Script" uid="uid://b4c78xvdr286h" path="res://scripts/system/main_menu.gd" id="1_pp0ei"]
 [ext_resource type="Texture2D" uid="uid://ctuggwv4nfqxg" path="res://art_assets/background/bcg_mainmenu1.jpg" id="2_pp0ei"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ut2dw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wy3g2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4gtwd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rcdh4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_edfkr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_542xb"]
+
 [node name="MainMenu" type="CanvasLayer" unique_id=209288309]
 script = ExtResource("1_pp0ei")
 
@@ -25,7 +37,8 @@ offset_left = 426.0
 offset_top = 182.0
 offset_right = 1509.0
 offset_bottom = 332.0
-theme_override_colors/font_color = Color(1, 1, 0.47000003, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 100
 text = "The Ancestor's Sight"
 
@@ -39,34 +52,49 @@ theme_override_constants/separation = 30
 alignment = 1
 
 [node name="New" type="Button" parent="Control/VBoxContainer" unique_id=1886467197]
+modulate = Color(0.27314225, 0.27314225, 0.27314222, 1)
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_ut2dw")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_wy3g2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4gtwd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rcdh4")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_edfkr")
+theme_override_styles/focus = SubResource("StyleBoxFlat_542xb")
 text = "New Game"
 
 [node name="Load" type="Button" parent="Control/VBoxContainer" unique_id=340369317]
+modulate = Color(0.27450982, 0.27450982, 0.27450982, 1)
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Load Game"
 
+[node name="Settings" type="Button" parent="Control/VBoxContainer" unique_id=1535920591]
+modulate = Color(0.27450982, 0.27450982, 0.27450982, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Settings"
+flat = true
+
+[node name="Credits" type="Button" parent="Control/VBoxContainer" unique_id=2113702344]
+modulate = Color(0.27450982, 0.27450982, 0.27450982, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Credits"
+flat = true
+
 [node name="Upgrade" type="Button" parent="Control/VBoxContainer" unique_id=104180333]
+visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Upgrade"
 
-[node name="Settings" type="Button" parent="Control/VBoxContainer" unique_id=1535920591]
-layout_mode = 2
-theme_override_font_sizes/font_size = 50
-text = "Settings"
-
-[node name="Credits" type="Button" parent="Control/VBoxContainer" unique_id=2113702344]
-layout_mode = 2
-theme_override_font_sizes/font_size = 50
-text = "Credits"
-
 [node name="Quit" type="Button" parent="Control/VBoxContainer" unique_id=532476075]
+modulate = Color(0.27450982, 0.27450982, 0.27450982, 1)
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Quit"
+flat = true
 
 [connection signal="pressed" from="Control/VBoxContainer/New" to="." method="_on_new_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer/Load" to="." method="_on_load_pressed"]
