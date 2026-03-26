@@ -30,6 +30,7 @@ texture = ExtResource("6_qdgkc")
 texture = ExtResource("7_7q6jh")
 
 [node name="Reward" type="CanvasLayer" unique_id=983007215]
+process_mode = 3
 script = ExtResource("1_xsigu")
 
 [node name="ScreenMask" type="TextureRect" parent="." unique_id=1844035659]
