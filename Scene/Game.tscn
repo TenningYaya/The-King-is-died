@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d3ylqyij3fkit"]
 
 [ext_resource type="PackedScene" uid="uid://jfqlwaedgf0u" path="res://Scene/Gaze.tscn" id="1_5kiuu"]
-[ext_resource type="Script" path="res://scripts/level/level_game_scene.gd" id="1_hqtje"]
+[ext_resource type="Script" uid="uid://dsgk2um5ncu6l" path="res://scripts/level/level_game_scene.gd" id="1_hqtje"]
 [ext_resource type="Texture2D" uid="uid://q8b1wtnn1vqt" path="res://art_assets/background/bcg_game.webp" id="2_1mx4w"]
 [ext_resource type="PackedScene" uid="uid://c4cb7fh3c203h" path="res://Scene/tile.tscn" id="2_mopgc"]
 [ext_resource type="Texture2D" uid="uid://c8ageqiqbfoug" path="res://art_assets/product_resource/asther crystal.webp" id="5_ghk2r"]
@@ -152,6 +152,15 @@ metadata/_custom_type_script = "uid://bx385egptpnpx"
 
 [node name="BlueprintUI" parent="." unique_id=55262024 groups=["blueprint_manager", "save_required"] instance=ExtResource("7_48ymf")]
 
+[node name="RewardButton" type="Button" parent="BlueprintUI" unique_id=1573200763]
+offset_left = 1805.0
+offset_top = 628.0
+offset_right = 1877.0
+offset_bottom = 700.0
+theme_override_constants/icon_max_width = 64
+icon = ExtResource("25_ghk2r")
+icon_alignment = 1
+
 [node name="Wall" parent="." unique_id=1173008175 groups=["save_required"] instance=ExtResource("6_48ymf")]
 position = Vector2(658, 379)
 
@@ -172,7 +181,7 @@ enemy_scenes = Dictionary[String, PackedScene]({
 spawn_points = [NodePath("../EnemySpawnPoints/EnemySpawnPoint"), NodePath("../EnemySpawnPoints/EnemySpawnPoint2"), NodePath("../EnemySpawnPoints/EnemySpawnPoint3"), NodePath("../EnemySpawnPoints/EnemySpawnPoint4")]
 shop_ui = NodePath("../ShopScene")
 reward_ui = NodePath("../Reward")
-reward_button = NodePath("../RewardButton")
+reward_button = NodePath("../BlueprintUI/RewardButton")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1959168487]
 position = Vector2(-48, 18)
@@ -224,15 +233,6 @@ production_scene = ExtResource("24_ghk2r")
 market_scene = ExtResource("25_mw7jm")
 combat_scene = ExtResource("26_1mx4w")
 
-[node name="RewardButton" type="Button" parent="." unique_id=1573200763]
-offset_left = 1807.0
-offset_top = 639.0
-offset_right = 1879.0
-offset_bottom = 711.0
-theme_override_constants/icon_max_width = 64
-icon = ExtResource("25_ghk2r")
-icon_alignment = 1
-
 [node name="Reward" parent="." unique_id=983007215 instance=ExtResource("26_ghk2r")]
 visible = false
 
@@ -247,5 +247,5 @@ blueprint_manager = NodePath("../BlueprintUI")
 [node name="Gaze" parent="." unique_id=511512720 groups=["gaze_controller", "save_required"] instance=ExtResource("1_5kiuu")]
 position = Vector2(123, 79)
 
-[node name="Node2D" type="Node2D" parent="." unique_id=2011956737]
+[node name="Dialogue" type="Node2D" parent="." unique_id=2011956737]
 script = ExtResource("28_1mx4w")
