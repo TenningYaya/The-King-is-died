@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://bvxbigfylao7k"]
 
 [ext_resource type="Script" uid="uid://b4c78xvdr286h" path="res://scripts/system/main_menu.gd" id="1_pp0ei"]
-[ext_resource type="Texture2D" uid="uid://du84hjfy4oaam" path="res://art_assets/background/bcg_mainmenu.jpg" id="2_ut2dw"]
+[ext_resource type="Texture2D" uid="uid://ctuggwv4nfqxg" path="res://art_assets/background/bcg_mainmenu1.jpg" id="2_pp0ei"]
+[ext_resource type="AudioStream" uid="uid://c0jneu2xnvtrr" path="res://audio/Ancestor’s Sight.mp3" id="3_ut2dw"]
 
 [node name="MainMenu" type="CanvasLayer" unique_id=209288309]
 script = ExtResource("1_pp0ei")
@@ -13,11 +14,11 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="TextureRect" type="TextureRect" parent="Control" unique_id=134877396]
-modulate = Color(0.5354209, 0.5354209, 0.5354209, 1)
+modulate = Color(0.92273736, 0.9227374, 0.92273736, 1)
 layout_mode = 0
 offset_right = 1927.0
 offset_bottom = 1081.0
-texture = ExtResource("2_ut2dw")
+texture = ExtResource("2_pp0ei")
 
 [node name="Label" type="Label" parent="Control" unique_id=844970736]
 layout_mode = 0
@@ -25,6 +26,7 @@ offset_left = 426.0
 offset_top = 182.0
 offset_right = 1509.0
 offset_bottom = 332.0
+theme_override_colors/font_color = Color(1, 1, 0.47000003, 1)
 theme_override_font_sizes/font_size = 100
 text = "The Ancestor's Sight"
 
@@ -66,6 +68,10 @@ text = "Credits"
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Quit"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="." unique_id=2001191248]
+stream = ExtResource("3_ut2dw")
+autoplay = true
 
 [connection signal="pressed" from="Control/VBoxContainer/New" to="." method="_on_new_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer/Load" to="." method="_on_load_pressed"]

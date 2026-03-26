@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c0jneu2xnvtrr"
+path="res://.godot/imported/Ancestor’s Sight.mp3-053d9a670f2ec9dfdc6541cbc6f96677.mp3str"
+
+[deps]
+
+source_file="res://audio/Ancestor’s Sight.mp3"
+dest_files=["res://.godot/imported/Ancestor’s Sight.mp3-053d9a670f2ec9dfdc6541cbc6f96677.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4
