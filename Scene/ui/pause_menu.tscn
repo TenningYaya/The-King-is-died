@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cutwhnqcsf167" path="res://art_assets/ui/slider/slider_normal.png" id="5_j0e1t"]
 [ext_resource type="PackedScene" uid="uid://kqx4twth4his" path="res://Scene/ui/normal_button.tscn" id="5_v63ll"]
 [ext_resource type="Texture2D" uid="uid://bjf2wnj1yegrg" path="res://art_assets/ui/slider/slider_hover.png" id="6_f6x7j"]
-[ext_resource type="PackedScene" uid="uid://ci1elc40c14mt" path="res://Scene/ui/back_main_window.tscn" id="8_f6x7j"]
+[ext_resource type="Script" uid="uid://cl5smtaua34wt" path="res://scripts/ui/back_main_window.gd" id="8_f6x7j"]
 
 [sub_resource type="Theme" id="Theme_j0e1t"]
 
@@ -56,6 +56,7 @@ patch_margin_right = 20
 patch_margin_bottom = 20
 
 [node name="CloseBtn" type="TextureButton" parent="ScreenOverlay/MenuBox" unique_id=1147125322]
+texture_filter = 1
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 1
 anchors_preset = 1
@@ -110,14 +111,114 @@ offset_bottom = 431.0
 button_text = "Quit"
 
 [node name="Overlay" type="ColorRect" parent="." unique_id=822993399]
+visible = false
 offset_top = -60.0
 offset_right = 1978.0
 offset_bottom = 1069.0
 color = Color(0, 0, 0, 0.46666667)
 
-[node name="BackMainWindow" parent="." unique_id=821999516 instance=ExtResource("8_f6x7j")]
-visible = false
+[node name="BackMainWindow" type="PanelContainer" parent="." unique_id=821999516]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -520.75
+offset_top = -214.0
+offset_right = 520.75
+offset_bottom = 214.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("8_f6x7j")
+
+[node name="ScreenOverlay" type="TextureRect" parent="BackMainWindow" unique_id=2140467590]
+layout_mode = 2
+texture = ExtResource("1_cokpm")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="MenuBox" type="NinePatchRect" parent="BackMainWindow/ScreenOverlay" unique_id=1706093981]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = 30.0
+offset_right = -55.0
+offset_bottom = -37.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_7xpis")
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+
+[node name="MarginContainer" type="MarginContainer" parent="BackMainWindow/ScreenOverlay/MenuBox" unique_id=1426622928]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BackMainWindow/ScreenOverlay/MenuBox/MarginContainer" unique_id=1527453075]
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="QuestionLabel" type="Label" parent="BackMainWindow/ScreenOverlay/MenuBox/MarginContainer/VBoxContainer" unique_id=1846465890]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 49
+text = "Save current progress before exit?"
+horizontal_alignment = 1
+
+[node name="ButtonContainer" type="HBoxContainer" parent="BackMainWindow/ScreenOverlay/MenuBox/MarginContainer/VBoxContainer" unique_id=1122632059]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 80
+alignment = 1
+
+[node name="SaveButton" type="Button" parent="BackMainWindow/ScreenOverlay/MenuBox/MarginContainer/VBoxContainer/ButtonContainer" unique_id=1013866721]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Save & Quit"
+
+[node name="NoSaveButton" type="Button" parent="BackMainWindow/ScreenOverlay/MenuBox/MarginContainer/VBoxContainer/ButtonContainer" unique_id=1356941612]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Quit anyway"
+
+[node name="Control" type="Control" parent="BackMainWindow" unique_id=196644794]
+process_mode = 3
+layout_mode = 2
+mouse_filter = 2
+
+[node name="CloseBtn" type="TextureButton" parent="BackMainWindow/Control" unique_id=2088203918]
+process_mode = 3
+texture_filter = 1
+layout_mode = 0
+offset_left = 949.74994
+offset_top = -23.000015
+offset_right = 981.2407
+offset_bottom = 9.830811
+scale = Vector2(2.985, 2.985)
+texture_normal = ExtResource("4_vgx5q")
+ignore_texture_size = true
+stretch_mode = 3
 
 [connection signal="value_changed" from="ScreenOverlay/HSlider" to="." method="_on_h_slider_value_changed"]
 [connection signal="pressed" from="ScreenOverlay/Continue" to="." method="close_menu"]
 [connection signal="pressed" from="ScreenOverlay/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="BackMainWindow/ScreenOverlay/MenuBox/MarginContainer/VBoxContainer/ButtonContainer/SaveButton" to="BackMainWindow" method="_on_save_pressed"]
+[connection signal="pressed" from="BackMainWindow/ScreenOverlay/MenuBox/MarginContainer/VBoxContainer/ButtonContainer/NoSaveButton" to="BackMainWindow" method="_on_no_save_pressed"]
+[connection signal="pressed" from="BackMainWindow/Control/CloseBtn" to="BackMainWindow" method="_on_close_pressed"]

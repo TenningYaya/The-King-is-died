@@ -84,9 +84,8 @@ layout_mode = 2
 [node name="BlueprintBar" type="Control" parent="." unique_id=469888182]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 39.0
 offset_top = 700.0
-offset_right = 79.0
+offset_right = 40.0
 offset_bottom = 740.0
 mouse_filter = 2
 
@@ -190,9 +189,9 @@ offset_bottom = 26.0
 icon = ExtResource("15_55qeq")
 
 [node name="GazeUpgradeUi" type="VBoxContainer" parent="." unique_id=270773122]
-offset_left = 900.0
+offset_left = 850.0
 offset_top = 850.0
-offset_right = 1109.0
+offset_right = 1059.0
 offset_bottom = 1004.0
 alignment = 2
 script = ExtResource("16_t0nuv")

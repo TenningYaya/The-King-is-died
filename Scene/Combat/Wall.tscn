@@ -318,7 +318,7 @@ animation = &"hit"
 frame_progress = 0.42506856
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=395842887]
-position = Vector2(350, 400)
+position = Vector2(317, 339)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("4_qg0o5")
 

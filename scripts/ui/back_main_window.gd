@@ -13,6 +13,21 @@ func _ready():
 	process_mode = PROCESS_MODE_ALWAYS
 	overlay.process_mode = PROCESS_MODE_ALWAYS
 
+	# ... 原有代码
+	# 强制让这个亮的 X 号排在最前面，无视任何遮挡
+	$Control/CloseBtn.z_index = 100 
+	# 或者尝试这个，看看到底是谁在接收点击
+	print("亮的X号当前的过滤模式是: ", $Control/CloseBtn.mouse_filter)
+# 找到那个亮的 X 号
+	var bright_x = $Control/CloseBtn
+	
+	# 【强制重连】不管面板连没连，代码里硬连一次
+	if bright_x.pressed.is_connected(_on_close_pressed):
+		bright_x.pressed.disconnect(_on_close_pressed) # 先断开旧的
+	bright_x.pressed.connect(_on_close_pressed)     # 再连上新的
+	
+	print("【道法加固】信号已强制连接至: ", bright_x.get_path())
+	
 func open():
 	pre_popup_speed = Engine.time_scale
 	Engine.time_scale = 0.0
@@ -21,13 +36,14 @@ func open():
 	show()
 
 func _on_close_pressed():
-	Engine.time_scale = pre_popup_speed
+	print("点了")
 	overlay.hide()
 	hide()
 	
 func _on_save_pressed():
 	SaveManager.save_game()
 	Engine.time_scale = 1.0
+	get_tree().paused = false
 	get_tree().call_deferred("change_scene_to_file", "res://Scene/system/main_menu.tscn")
 	hide()
 
