@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d3ylqyij3fkit"]
 
 [ext_resource type="PackedScene" uid="uid://jfqlwaedgf0u" path="res://Scene/Gaze.tscn" id="1_5kiuu"]
-[ext_resource type="Script" uid="uid://dsgk2um5ncu6l" path="res://scripts/level/level_game_scene.gd" id="1_hqtje"]
+[ext_resource type="Script" path="res://scripts/level/level_game_scene.gd" id="1_hqtje"]
 [ext_resource type="Texture2D" uid="uid://q8b1wtnn1vqt" path="res://art_assets/background/bcg_game.webp" id="2_1mx4w"]
 [ext_resource type="PackedScene" uid="uid://c4cb7fh3c203h" path="res://Scene/tile.tscn" id="2_mopgc"]
 [ext_resource type="Texture2D" uid="uid://c8ageqiqbfoug" path="res://art_assets/product_resource/aether_crystal.webp" id="5_ghk2r"]
@@ -151,6 +151,8 @@ resource_icons = Dictionary[String, Texture2D]({
 metadata/_custom_type_script = "uid://bx385egptpnpx"
 
 [node name="BlueprintUI" parent="." unique_id=55262024 groups=["blueprint_manager", "save_required"] instance=ExtResource("7_48ymf")]
+offset = Vector2(0, 40)
+transform = Transform2D(1, 0, 0, 1, 0, 40)
 
 [node name="RewardButton" type="Button" parent="BlueprintUI" unique_id=1573200763]
 offset_left = 1805.0

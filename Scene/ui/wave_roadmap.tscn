@@ -23,6 +23,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_4s0qg")
+total_time = 810.0
 
 [node name="TimerBar" type="TextureProgressBar" parent="." unique_id=1016412003]
 texture_filter = 2
@@ -54,6 +55,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Point1" type="TextureButton" parent="TimerBar/Markers" unique_id=1571973427]
+visible = false
 custom_minimum_size = Vector2(25, 25)
 layout_mode = 1
 anchors_preset = -1
@@ -68,6 +70,7 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="Point2" type="TextureButton" parent="TimerBar/Markers" unique_id=1968104586]
+visible = false
 custom_minimum_size = Vector2(25, 25)
 layout_mode = 1
 anchors_preset = -1
@@ -82,6 +85,7 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="Point3" type="TextureButton" parent="TimerBar/Markers" unique_id=1358431825]
+visible = false
 custom_minimum_size = Vector2(25, 25)
 layout_mode = 1
 anchors_preset = -1
