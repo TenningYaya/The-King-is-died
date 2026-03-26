@@ -48,7 +48,7 @@ func _setup_card(card, data):
 		desc_lbl.text = data[2]
 
 	if select_btn:
-		select_btn.text = "选择"
+		select_btn.text = "Chose"
 		
 		if select_btn.pressed.is_connected(_on_select_pressed):
 			select_btn.pressed.disconnect(_on_select_pressed)
