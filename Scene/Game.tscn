@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://drygoq6ig2tky" path="res://art_assets/buildings/spirit_vein.jpg" id="6_kfjtm"]
 [ext_resource type="Texture2D" uid="uid://dqxw76lik1krk" path="res://art_assets/buildings/mystic_iron_ore.jpg" id="7_1e3q2"]
 [ext_resource type="PackedScene" uid="uid://xohgmd3qdtav" path="res://Scene/ui/blueprint_bar.tscn" id="7_48ymf"]
-[ext_resource type="PackedScene" uid="uid://c2wapnlwhs1yw" path="res://Scene/ui/pause_button.tscn" id="7_cohtu"]
 [ext_resource type="Texture2D" uid="uid://wvwr2ao0ag3e" path="res://art_assets/buildings/market.png" id="8_3jynh"]
 [ext_resource type="Texture2D" uid="uid://kl437qu2soav" path="res://art_assets/buildings/alchemy_lab.jpg" id="9_hqtje"]
 [ext_resource type="PackedScene" uid="uid://b1vdm2dchhc2i" path="res://Scene/ui/pause_menu.tscn" id="9_tujvx"]
@@ -23,6 +22,7 @@
 [ext_resource type="Script" uid="uid://cxpg1n5oqju86" path="res://scripts/store and q money/CurrencyUI.gd" id="22_0mc8i"]
 [ext_resource type="Script" uid="uid://htykhra2fbhu" path="res://scripts/buildings/building_manager.gd" id="23_hjrqo"]
 [ext_resource type="PackedScene" uid="uid://cs7473lfyhaex" path="res://Scene/buildings/producer/production_building.tscn" id="24_ghk2r"]
+[ext_resource type="Texture2D" uid="uid://b6igh8b028wcf" path="res://art_assets/ui/rewards.png" id="25_ghk2r"]
 [ext_resource type="PackedScene" uid="uid://bvm5flnoabotw" path="res://Scene/buildings/producer/production_market.tscn" id="25_mw7jm"]
 [ext_resource type="PackedScene" uid="uid://cs2uw4cq2noiw" path="res://Scene/buildings/combat_building.tscn" id="26_1mx4w"]
 [ext_resource type="PackedScene" uid="uid://dwyka17gkpfh4" path="res://Scene/ui/reward.tscn" id="26_ghk2r"]
@@ -149,18 +149,12 @@ metadata/_custom_type_script = "uid://bx385egptpnpx"
 [node name="Wall" parent="." unique_id=1173008175 groups=["save_required"] instance=ExtResource("6_48ymf")]
 position = Vector2(658, 379)
 
-[node name="PauseButton" parent="." unique_id=1851983709 instance=ExtResource("7_cohtu")]
-offset_left = 21.0
-offset_top = -38.0
-offset_right = 85.0
-offset_bottom = 26.0
-
 [node name="PauseMenu" parent="." unique_id=1743093916 instance=ExtResource("9_tujvx")]
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=120020792 groups=["spawn_point"]]
 position = Vector2(967, 420)
 
-[node name="EnemySpawner" type="Node2D" parent="." unique_id=216947881 node_paths=PackedStringArray("spawn_points", "shop_ui")]
+[node name="EnemySpawner" type="Node2D" parent="." unique_id=216947881 node_paths=PackedStringArray("spawn_points", "shop_ui", "reward_ui", "reward_button")]
 position = Vector2(739, 382)
 script = ExtResource("10_2j816")
 enemy_scenes = Dictionary[String, PackedScene]({
@@ -168,6 +162,8 @@ enemy_scenes = Dictionary[String, PackedScene]({
 })
 spawn_points = [NodePath("../EnemySpawnPoints/EnemySpawnPoint"), NodePath("../EnemySpawnPoints/EnemySpawnPoint2"), NodePath("../EnemySpawnPoints/EnemySpawnPoint3"), NodePath("../EnemySpawnPoints/EnemySpawnPoint4")]
 shop_ui = NodePath("../ShopScene")
+reward_ui = NodePath("../Reward")
+reward_button = NodePath("../RewardButton")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1959168487]
 position = Vector2(-48, 18)
@@ -229,6 +225,15 @@ script = ExtResource("23_hjrqo")
 production_scene = ExtResource("24_ghk2r")
 market_scene = ExtResource("25_mw7jm")
 combat_scene = ExtResource("26_1mx4w")
+
+[node name="RewardButton" type="Button" parent="." unique_id=1573200763]
+offset_left = 1807.0
+offset_top = 639.0
+offset_right = 1879.0
+offset_bottom = 711.0
+theme_override_constants/icon_max_width = 64
+icon = ExtResource("25_ghk2r")
+icon_alignment = 1
 
 [node name="Reward" parent="." unique_id=983007215 instance=ExtResource("26_ghk2r")]
 visible = false

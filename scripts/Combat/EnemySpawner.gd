@@ -4,6 +4,8 @@ extends Node2D
 @export var enemy_scenes: Dictionary[String, PackedScene] = {}
 @export var spawn_points: Array[Node2D] = []
 @export var shop_ui: CanvasLayer
+@export var reward_ui: CanvasLayer     # 挂载了 reward.gd 的奖励界面
+@export var reward_button: BaseButton  # 你准备好的奖励按钮 (Button 或 TextureButton)
 
 var _current_spawn_index: int = 0
 var current_wave_index: int = 0
@@ -15,6 +17,13 @@ var waves: Array[Dictionary] = [
 	{ "spawn_time": 10.0, "spawn_list": { "tank": 1 } },
 	{ "spawn_time": 10.0, "spawn_list": { "tank": 3 } }
 ]
+
+func _ready() -> void:
+	# 确保按钮初始状态是隐藏的，并连接点击信号
+	if reward_button:
+		reward_button.visible = false
+		if not reward_button.pressed.is_connected(_on_reward_button_pressed):
+			reward_button.pressed.connect(_on_reward_button_pressed)
 
 func _process(delta: float) -> void:
 	if current_wave_index >= waves.size():
@@ -37,13 +46,30 @@ func _process(delta: float) -> void:
 func _on_wave_completed() -> void:
 	ResourceManager.add_currency(10)
 	
-	# 检测第二波结束
+	# 1. 每一波结束，显示主界面上的奖励按钮
+	if reward_button:
+		reward_button.visible = true
+	else:
+		push_error("未找到 reward_button 节点")
+	
+	# 2. 如果是第二波结束，额外弹出商店界面并暂停
 	if current_wave_index == 2:
 		if shop_ui:
 			shop_ui.visible = true
 			get_tree().paused = true # 暂停游戏
 		else:
-			push_error("未找到名为 ShopScene 的节点")
+			push_error("未找到 shop_ui 节点")
+
+# 当玩家点击主界面上的奖励按钮时触发
+func _on_reward_button_pressed() -> void:
+	if reward_ui:
+		if reward_ui.has_method("refresh_rewards"):
+			reward_ui.refresh_rewards()
+		reward_ui.visible = true
+		get_tree().paused = true # 打开奖励界面时暂停游戏
+		reward_button.visible = false # 领奖界面打开后，隐藏按钮
+	else:
+		push_error("未找到 reward_ui 节点")
 
 func _get_enemy_count() -> int:
 	return get_child_count() 
