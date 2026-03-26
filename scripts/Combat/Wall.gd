@@ -3,7 +3,7 @@ extends Unit_General
 
 # --- 节点引用 ---
 @onready var shield_anim: AnimatedSprite2D = $AnimatedSprite2D
-@onready var hp_label: Label = $HPLabel
+@onready var hp_label: Label = $Sprite2D/HPLabel
 var is_playing_hit: bool = false
 
 func _on_ready_override() -> void:

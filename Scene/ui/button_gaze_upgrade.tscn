@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cj8mwu7ivs627" path="res://scripts/ui/gaze_upgrade.gd" id="1_cslux"]
 [ext_resource type="Texture2D" uid="uid://chdjyil7nc1db" path="res://art_assets/gaze/gaze_icon.png" id="2_66nq2"]
-[ext_resource type="Texture2D" uid="uid://bl74pkfqpslh6" path="res://art_assets/ui/button_upgrade_gaze.png" id="3_keb6l"]
+[ext_resource type="Texture2D" uid="uid://bl74pkfqpslh6" path="res://art_assets/ui/past_version/button_upgrade_gaze.png" id="3_keb6l"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cslux"]
 

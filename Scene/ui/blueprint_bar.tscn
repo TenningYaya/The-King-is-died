@@ -15,6 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://bsunis37tgtul" path="res://art_assets/ui/button/demolish_1.webp" id="10_qo8sw"]
 [ext_resource type="Script" uid="uid://1wn2p5ej12q1" path="res://scripts/ui/button_demolish.gd" id="11_t0nuv"]
 [ext_resource type="Texture2D" uid="uid://cj3bxd7ctphwj" path="res://art_assets/ui/cursor/demolish_3.png" id="12_s7yhu"]
+[ext_resource type="Texture2D" uid="uid://dy3vdoxafh8w2" path="res://art_assets/ui/button/Save.png" id="14_m2vxj"]
+[ext_resource type="Texture2D" uid="uid://b0f7j2icl0h2o" path="res://art_assets/ui/button/Quit.png" id="15_55qeq"]
 [ext_resource type="Script" uid="uid://cj8mwu7ivs627" path="res://scripts/ui/gaze_upgrade.gd" id="16_t0nuv"]
 [ext_resource type="Texture2D" uid="uid://cvk6hrdkjbq8h" path="res://art_assets/ui/gaze_upgrade.webp" id="17_t0nuv"]
 [ext_resource type="Texture2D" uid="uid://dnlgpdcq5jusx" path="res://art_assets/ui/button/upgrade.webp" id="18_m2vxj"]
@@ -180,15 +182,14 @@ offset_left = 100.0
 offset_top = -36.0
 offset_right = 165.0
 offset_bottom = 24.0
-text = "Save"
+icon = ExtResource("14_m2vxj")
 
 [node name="ExitButton" type="Button" parent="." unique_id=709699290]
 offset_left = 193.0
 offset_top = -39.0
 offset_right = 258.0
 offset_bottom = 26.0
-text = "Quit to
-main"
+icon = ExtResource("15_55qeq")
 
 [node name="GazeUpgradeUi" type="VBoxContainer" parent="." unique_id=270773122]
 offset_left = 900.0
