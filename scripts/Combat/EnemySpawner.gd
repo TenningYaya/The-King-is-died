@@ -10,7 +10,6 @@ extends Node2D
 var _current_spawn_index: int = 0
 var current_wave_index: int = 0
 var timer: float = 0.0
-var waiting_for_next_wave: bool = false
 var _debug_timer: float = 0.0
 
 var waves: Array[Dictionary] = [
@@ -42,40 +41,24 @@ func _process(delta: float) -> void:
 	_debug_timer -= delta
 	if _debug_timer <= 0.0:
 		_debug_timer = 1.0
-		print("wave:%d enemy_count:%d timer:%.1f waiting:%s 子节点列表:%s" % [
-			current_wave_index,
-			_get_enemy_count(),
-			timer,
-			waiting_for_next_wave,
-			get_children().map(func(c): return c.name)
-		])
+		print("wave:%d timer:%.1f" % [current_wave_index, timer])
 
-	if _get_enemy_count() == 0:
-		if not waiting_for_next_wave and current_wave_index > 0:
+	timer += delta
+	if timer >= waves[current_wave_index]["spawn_time"]:
+		if current_wave_index > 0:
 			_on_wave_completed()
-			waiting_for_next_wave = true
-			timer = 0.0
-
-		timer += delta
-
-		if timer >= waves[current_wave_index]["spawn_time"]:
-			_spawn_wave(waves[current_wave_index]["spawn_list"])
-			current_wave_index += 1
-			waiting_for_next_wave = false
-			timer = 0.0
+		_spawn_wave(waves[current_wave_index]["spawn_list"])
+		current_wave_index += 1
+		timer = 0.0
 
 func _on_wave_completed() -> void:
 	ResourceManager.add_currency(10)
 	if reward_button:
 		reward_button.visible = true
-	else:
-		push_error("未找到 reward_button 节点")
 	if current_wave_index == 2:
 		if shop_ui:
 			shop_ui.visible = true
 			get_tree().paused = true
-		else:
-			push_error("未找到 shop_ui 节点")
 
 func _on_reward_button_pressed() -> void:
 	if reward_ui:
@@ -84,11 +67,6 @@ func _on_reward_button_pressed() -> void:
 		reward_ui.visible = true
 		get_tree().paused = true
 		reward_button.visible = false
-	else:
-		push_error("未找到 reward_ui 节点")
-
-func _get_enemy_count() -> int:
-	return get_tree().get_nodes_in_group("active_enemies").size()
 
 func _spawn_wave(spawn_list: Dictionary) -> void:
 	for enemy_type in spawn_list.keys():
@@ -98,12 +76,8 @@ func _spawn_wave(spawn_list: Dictionary) -> void:
 func _spawn_single_enemy(enemy_type: String) -> void:
 	if not enemy_scenes.has(enemy_type) or enemy_scenes[enemy_type] == null:
 		return
-
-	var scene: PackedScene = enemy_scenes[enemy_type]
-	var enemy_instance = scene.instantiate()
+	var enemy_instance = enemy_scenes[enemy_type].instantiate()
 	add_child(enemy_instance)
-	enemy_instance.add_to_group("active_enemies")
-
 	if spawn_points.size() > 0:
 		var target_point = spawn_points[_current_spawn_index % spawn_points.size()]
 		var offset = Vector2(randf_range(-30, 30), randf_range(-30, 30))
