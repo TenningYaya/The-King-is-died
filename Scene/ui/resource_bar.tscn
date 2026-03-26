@@ -34,8 +34,8 @@ patch_margin_bottom = 17
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Background" unique_id=191133415]
 layout_mode = 0
-offset_left = -159.0
-offset_top = -75.0
+offset_left = -124.0
+offset_top = -58.0
 offset_right = 616.0
 offset_bottom = 315.0
 texture = ExtResource("2_uvk0f")
@@ -47,13 +47,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -340.0
-offset_top = -117.0
-offset_right = 225.0
-offset_bottom = 83.0
+offset_left = -311.0
+offset_top = -105.0
+offset_right = 254.0
+offset_bottom = 95.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/h_separation = 15
+theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 20
 columns = 4
 
@@ -65,7 +65,7 @@ size_flags_vertical = 4
 alignment = 1
 
 [node name="TextureRect2" type="TextureRect" parent="Background/GridContainer/ElixirItem" unique_id=1549038704]
-custom_minimum_size = Vector2(70, 70)
+custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
@@ -89,7 +89,7 @@ size_flags_vertical = 4
 alignment = 1
 
 [node name="TextureRect2" type="TextureRect" parent="Background/GridContainer/HerbItem" unique_id=1598915694]
-custom_minimum_size = Vector2(70, 70)
+custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
@@ -113,7 +113,7 @@ size_flags_vertical = 4
 alignment = 1
 
 [node name="TextureRect2" type="TextureRect" parent="Background/GridContainer/CrystalItem" unique_id=2138683348]
-custom_minimum_size = Vector2(70, 70)
+custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
@@ -137,7 +137,7 @@ size_flags_vertical = 4
 alignment = 1
 
 [node name="TextureRect2" type="TextureRect" parent="Background/GridContainer/IronItem" unique_id=995721676]
-custom_minimum_size = Vector2(70, 70)
+custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
@@ -161,7 +161,7 @@ size_flags_vertical = 4
 alignment = 1
 
 [node name="TextureRect2" type="TextureRect" parent="Background/GridContainer/StoneItem" unique_id=2038578690]
-custom_minimum_size = Vector2(70, 70)
+custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
@@ -185,7 +185,7 @@ size_flags_vertical = 4
 alignment = 1
 
 [node name="TextureRect2" type="TextureRect" parent="Background/GridContainer/CoinItem" unique_id=340168756]
-custom_minimum_size = Vector2(70, 70)
+custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
