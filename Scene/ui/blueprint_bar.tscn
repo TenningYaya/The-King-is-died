@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://dnlgpdcq5jusx" path="res://art_assets/ui/button/upgrade.webp" id="18_m2vxj"]
 [ext_resource type="Texture2D" uid="uid://btpypob3sgb43" path="res://art_assets/ui/button/upgrade_disabled_2.webp" id="19_t0nuv"]
 [ext_resource type="PackedScene" uid="uid://casddr1rqpyw6" path="res://Scene/ui/cost_tooltip.tscn" id="22_55qeq"]
+[ext_resource type="Script" uid="uid://djh4uv0x4iswg" path="res://scripts/system/mouse_debugger.gd" id="23_6py5g"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cslux"]
 
@@ -43,7 +44,7 @@ offset_bottom = 20.0
 offset_left = 764.0
 offset_top = 393.0
 offset_right = 911.0
-offset_bottom = 681.0
+offset_bottom = 708.0
 mouse_filter = 2
 script = ExtResource("1_rkeu6")
 
@@ -81,6 +82,8 @@ text = "Alchemy Lab"
 
 [node name="market" type="Button" parent="TestButtons" unique_id=594028050]
 layout_mode = 2
+size_flags_vertical = 3
+text = "Market"
 
 [node name="BlueprintBar" type="Control" parent="." unique_id=469888182]
 layout_mode = 3
@@ -252,6 +255,13 @@ offset_left = 309.0
 offset_top = 645.0
 offset_right = 349.0
 offset_bottom = 685.0
+
+[node name="MouseDebugger" type="Control" parent="." unique_id=1310618310]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("23_6py5g")
 
 [connection signal="pressed" from="HBoxContainer/SaveButton" to="." method="_on_save_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
