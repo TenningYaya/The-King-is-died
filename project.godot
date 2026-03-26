@@ -26,6 +26,7 @@ SaveManager="*uid://dxcgq2lywtlu1"
 GamedataManager="*uid://cyr3ax6dku5wa"
 DialogueManager="*uid://c3rodes2l3gxb"
 UpgradeManager="*uid://c2ren3kdf8wvl"
+AudioManager="*uid://c84gdvsgduf5k"
 
 [display]
 

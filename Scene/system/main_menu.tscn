@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://b4c78xvdr286h" path="res://scripts/system/main_menu.gd" id="1_pp0ei"]
 [ext_resource type="Texture2D" uid="uid://ctuggwv4nfqxg" path="res://art_assets/background/bcg_mainmenu1.jpg" id="2_pp0ei"]
-[ext_resource type="AudioStream" uid="uid://c0jneu2xnvtrr" path="res://audio/Ancestor’s Sight.mp3" id="3_ut2dw"]
 
 [node name="MainMenu" type="CanvasLayer" unique_id=209288309]
 script = ExtResource("1_pp0ei")
@@ -68,10 +67,6 @@ text = "Credits"
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Quit"
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="." unique_id=2001191248]
-stream = ExtResource("3_ut2dw")
-autoplay = true
 
 [connection signal="pressed" from="Control/VBoxContainer/New" to="." method="_on_new_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer/Load" to="." method="_on_load_pressed"]
