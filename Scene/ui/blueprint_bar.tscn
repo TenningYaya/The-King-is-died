@@ -190,25 +190,10 @@ offset_bottom = 26.0
 text = "Quit to
 main"
 
-[node name="Overlay" type="ColorRect" parent="." unique_id=1441127706]
-offset_top = -60.0
-offset_right = 1978.0
-offset_bottom = 1069.0
-color = Color(0, 0, 0, 0.46666667)
-
-[node name="BackMainWindow" parent="." unique_id=821999516 instance=ExtResource("7_h1qn1")]
-visible = false
-
-[node name="WaveRoadmap" parent="." unique_id=1937857851 instance=ExtResource("9_53uil")]
-offset_left = 45.0
-offset_top = -66.0
-offset_right = 45.0
-offset_bottom = -66.0
-
 [node name="GazeUpgradeUi" type="VBoxContainer" parent="." unique_id=270773122]
 offset_left = 900.0
 offset_top = 850.0
-offset_right = 1059.0
+offset_right = 1109.0
 offset_bottom = 1004.0
 alignment = 2
 script = ExtResource("16_t0nuv")
@@ -247,6 +232,21 @@ texture_normal = ExtResource("18_m2vxj")
 texture_disabled = ExtResource("19_t0nuv")
 ignore_texture_size = true
 stretch_mode = 0
+
+[node name="Overlay" type="ColorRect" parent="." unique_id=1441127706]
+offset_top = -60.0
+offset_right = 1978.0
+offset_bottom = 1069.0
+color = Color(0, 0, 0, 0.46666667)
+
+[node name="BackMainWindow" parent="." unique_id=821999516 instance=ExtResource("7_h1qn1")]
+visible = false
+
+[node name="WaveRoadmap" parent="." unique_id=1937857851 instance=ExtResource("9_53uil")]
+offset_left = 45.0
+offset_top = -66.0
+offset_right = 45.0
+offset_bottom = -66.0
 
 [connection signal="pressed" from="SaveButton" to="." method="_on_save_button_pressed"]
 [connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

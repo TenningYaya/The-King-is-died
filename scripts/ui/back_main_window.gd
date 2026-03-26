@@ -33,5 +33,6 @@ func _on_save_pressed():
 
 func _on_no_save_pressed():
 	Engine.time_scale = 1.0
+	get_tree().paused = false
 	get_tree().change_scene_to_file("res://Scene/system/main_menu.tscn")
 	hide()

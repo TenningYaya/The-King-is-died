@@ -1,8 +1,14 @@
+#pause_menu.gd
 extends CanvasLayer
 
 @onready var menu_box = $ScreenOverlay/MenuBox
 @onready var close_btn = $ScreenOverlay/MenuBox/CloseBtn
 @onready var _master_bus_index = AudioServer.get_bus_index("Master")
+@onready var volume = $ScreenOverlay/HSlider
+
+# --- 新增引用 ---
+@onready var quit_btn = $ScreenOverlay/Quit
+@onready var back_confirm_window = $BackMainWindow
 
 func _ready():
 	# 初始隐藏菜单
@@ -10,8 +16,13 @@ func _ready():
 	# 点击窗口右上角的 X 关闭菜单
 	close_btn.pressed.connect(close_menu)
 	var current_db = AudioServer.get_bus_volume_db(_master_bus_index)
-	$HSlider.value = db_to_linear(current_db) # 将分贝转回 0-1 的线性值
-
+	volume.value = db_to_linear(current_db) # 将分贝转回 0-1 的线性值
+	
+func _on_quit_pressed():
+	# 唤醒确认弹窗
+	if back_confirm_window:
+		back_confirm_window.open()
+		
 func _input(event):
 	# 检测按下 ESC 键
 	if event.is_action_pressed("ui_cancel") or (event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE):
