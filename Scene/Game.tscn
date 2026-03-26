@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d3ylqyij3fkit"]
 
 [ext_resource type="PackedScene" uid="uid://jfqlwaedgf0u" path="res://Scene/Gaze.tscn" id="1_5kiuu"]
-[ext_resource type="Script" uid="uid://dsgk2um5ncu6l" path="res://scripts/level/level_game_scene.gd" id="1_hqtje"]
+[ext_resource type="Script" path="res://scripts/level/level_game_scene.gd" id="1_hqtje"]
 [ext_resource type="Texture2D" uid="uid://q8b1wtnn1vqt" path="res://art_assets/background/bcg_game.webp" id="2_1mx4w"]
 [ext_resource type="PackedScene" uid="uid://c4cb7fh3c203h" path="res://Scene/tile.tscn" id="2_mopgc"]
 [ext_resource type="Texture2D" uid="uid://c8ageqiqbfoug" path="res://art_assets/product_resource/asther crystal.webp" id="5_ghk2r"]
@@ -16,6 +16,9 @@
 [ext_resource type="Script" uid="uid://tqfstski4omi" path="res://scripts/Combat/EnemySpawner.gd" id="10_2j816"]
 [ext_resource type="Texture2D" uid="uid://bbunl2i540nyy" path="res://art_assets/product_resource/spirit stone.webp" id="10_10r1t"]
 [ext_resource type="PackedScene" uid="uid://duptcluexkt70" path="res://Scene/Combat/enemy_scene/Enemy_Tank.tscn" id="11_g3fkh"]
+[ext_resource type="PackedScene" uid="uid://gj80dsafogu0" path="res://Scene/Combat/enemy_scene/Enemy_Mage.tscn" id="16_0yiub"]
+[ext_resource type="PackedScene" uid="uid://i5yi4715o47o" path="res://Scene/Combat/enemy_scene/Enemy_Boss.tscn" id="17_10r1t"]
+[ext_resource type="PackedScene" uid="uid://bcbb67y0b57cy" path="res://Scene/Combat/enemy_scene/Enemy_Assassin.tscn" id="18_vmjmr"]
 [ext_resource type="PackedScene" uid="uid://do8xgvq4ry37i" path="res://Scene/ui/button_gaze_upgrade.tscn" id="20_1e3q2"]
 [ext_resource type="Texture2D" uid="uid://dq50vf41x73e3" path="res://art_assets/q money/Q币.jpg" id="21_hqtje"]
 [ext_resource type="Script" uid="uid://cxpg1n5oqju86" path="res://scripts/store and q money/CurrencyUI.gd" id="22_0mc8i"]
@@ -161,6 +164,9 @@ position = Vector2(967, 420)
 position = Vector2(739, 382)
 script = ExtResource("10_2j816")
 enemy_scenes = Dictionary[String, PackedScene]({
+"assassin": ExtResource("18_vmjmr"),
+"boss": ExtResource("17_10r1t"),
+"mage": ExtResource("16_0yiub"),
 "tank": ExtResource("11_g3fkh")
 })
 spawn_points = [NodePath("../EnemySpawnPoints/EnemySpawnPoint"), NodePath("../EnemySpawnPoints/EnemySpawnPoint2"), NodePath("../EnemySpawnPoints/EnemySpawnPoint3"), NodePath("../EnemySpawnPoints/EnemySpawnPoint4")]
