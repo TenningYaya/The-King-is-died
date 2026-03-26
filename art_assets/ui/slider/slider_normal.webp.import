@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://daf74gbmexoyf"
-path="res://.godot/imported/demolish_2.webp-a5a5185a0e954db218b7b91a7bb5d059.ctex"
+uid="uid://ctovv2l1mlyk0"
+path="res://.godot/imported/slider_normal.webp-23582e276d12799f2d1cdb04758bf037.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art_assets/ui/demolish_2.webp"
-dest_files=["res://.godot/imported/demolish_2.webp-a5a5185a0e954db218b7b91a7bb5d059.ctex"]
+source_file="res://art_assets/ui/slider/slider_normal.webp"
+dest_files=["res://.godot/imported/slider_normal.webp-23582e276d12799f2d1cdb04758bf037.ctex"]
 
 [params]
 

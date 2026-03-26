@@ -2,12 +2,15 @@ extends CanvasLayer
 
 @onready var menu_box = $ScreenOverlay/MenuBox
 @onready var close_btn = $ScreenOverlay/MenuBox/CloseBtn
+@onready var _master_bus_index = AudioServer.get_bus_index("Master")
 
 func _ready():
 	# 初始隐藏菜单
 	hide()
 	# 点击窗口右上角的 X 关闭菜单
 	close_btn.pressed.connect(close_menu)
+	var current_db = AudioServer.get_bus_volume_db(_master_bus_index)
+	$HSlider.value = db_to_linear(current_db) # 将分贝转回 0-1 的线性值
 
 func _input(event):
 	# 检测按下 ESC 键
@@ -27,3 +30,16 @@ func close_menu():
 	hide()
 	# 关闭菜单，游戏恢复运行
 	get_tree().paused = false
+
+func _on_h_slider_value_changed(value: float) -> void:
+	# 核心黑科技：linear_to_db
+	# 音量不能直接用百分比加减，必须用这个函数转成符合人类听觉的分贝(dB)
+	var db_value = linear_to_db(value)
+	
+	AudioServer.set_bus_volume_db(_master_bus_index, db_value)
+	
+	# 如果拉到最左边，直接静音防止杂音
+	if value <= 0.05:
+		AudioServer.set_bus_mute(_master_bus_index, true)
+	else:
+		AudioServer.set_bus_mute(_master_bus_index, false)

@@ -4,20 +4,32 @@
 [ext_resource type="Texture2D" uid="uid://cr5aj7wtnbdj6" path="res://art_assets/ui/Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_BookCover01a.png" id="1_cokpm"]
 [ext_resource type="Texture2D" uid="uid://docy75ofkpcam" path="res://art_assets/ui/Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_Popup01a.png" id="2_7xpis"]
 [ext_resource type="Texture2D" uid="uid://u2axjphr0m6b" path="res://art_assets/ui/Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_IconCross01a.png" id="4_vgx5q"]
+[ext_resource type="Texture2D" uid="uid://cutwhnqcsf167" path="res://art_assets/ui/slider/slider_normal.png" id="5_j0e1t"]
+[ext_resource type="PackedScene" uid="uid://kqx4twth4his" path="res://Scene/ui/normal_button.tscn" id="5_v63ll"]
+[ext_resource type="Texture2D" uid="uid://bjf2wnj1yegrg" path="res://art_assets/ui/slider/slider_hover.png" id="6_f6x7j"]
+
+[sub_resource type="Theme" id="Theme_j0e1t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f6x7j"]
+bg_color = Color(0.6583916, 0.26732484, 0.85554826, 1)
+border_width_top = 10
+border_width_bottom = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y8a0d"]
+bg_color = Color(0.42673352, 0.6269334, 0.7672408, 1)
 
 [node name="PauseMenu" type="CanvasLayer" unique_id=1743093916]
 process_mode = 3
 layer = 10
-visible = false
 script = ExtResource("1_7xpis")
 
 [node name="ScreenOverlay" type="TextureRect" parent="." unique_id=475909854]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 279.0
+offset_left = 336.0
 offset_top = 192.0
-offset_right = -344.0
+offset_right = -442.0
 offset_bottom = -171.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -54,3 +66,44 @@ grow_horizontal = 0
 texture_normal = ExtResource("4_vgx5q")
 ignore_texture_size = true
 stretch_mode = 5
+
+[node name="HSlider" type="HSlider" parent="." unique_id=2043342919]
+offset_left = 640.0
+offset_top = 360.0
+offset_right = 1316.0
+offset_bottom = 460.0
+theme = SubResource("Theme_j0e1t")
+theme_override_icons/grabber = ExtResource("5_j0e1t")
+theme_override_icons/grabber_highlight = ExtResource("6_f6x7j")
+theme_override_styles/slider = SubResource("StyleBoxFlat_f6x7j")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_y8a0d")
+max_value = 1.0
+step = 0.01
+value = 0.8
+
+[node name="Label" type="Label" parent="HSlider" unique_id=1533002861]
+layout_mode = 0
+offset_left = -210.0
+offset_top = 24.0
+offset_right = -63.0
+offset_bottom = 79.0
+theme_override_colors/font_color = Color(0.010918124, 0.16949904, 0.5243763, 1)
+theme_override_font_sizes/font_size = 40
+text = "Volume"
+
+[node name="Continue" parent="." unique_id=357304590 instance=ExtResource("5_v63ll")]
+offset_left = 759.0
+offset_top = 667.0
+offset_right = 1089.0
+offset_bottom = 774.0
+button_text = "Continue"
+
+[node name="Quit" parent="." unique_id=2099660001 instance=ExtResource("5_v63ll")]
+offset_left = 758.0
+offset_top = 516.0
+offset_right = 1088.0
+offset_bottom = 623.0
+button_text = "Quit"
+
+[connection signal="value_changed" from="HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="pressed" from="Continue" to="." method="close_menu"]

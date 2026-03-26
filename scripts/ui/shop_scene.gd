@@ -2,15 +2,15 @@ extends CanvasLayer
 
 # 1. 物品池
 var item_pool = [
-	["草药园", "res://art_assets/buildings/herb_garden.png", "每秒产出 2 药草", 100],
-	["灵泉", "res://art_assets/buildings/elixir_spring.jpg", "每秒产出 2 灵精", 150],
-	["灵铁矿", "res://art_assets/buildings/mystic_iron_ore.jpg", "每秒产出 2 灵铁", 120],
-	["灵气脉", "res://art_assets/buildings/spirit_vein.jpg", "每秒产出 2 灵气", 200],
-	["步兵营", "res://icon.svg", "招募近战单位", 180],
-	["弓兵营", "res://icon.svg", "招募远程单位", 220],
-	["骑兵营", "res://icon.svg", "招募冲锋单位", 250],
-	["法师塔", "res://icon.svg", "招募魔法单位", 300],
-	["市场", "res://art_assets/buildings/market.png", "用于资源交换", 150]
+	["Herb Garden", "res://art_assets/buildings/final_buildings/Herb Garden.webp", "Produces 2 Herbs per second", 100],
+	["Spirit Vein", "res://art_assets/buildings/final_buildings/Spirit Vein.webp", "Produces 2 Spirit Stones per second", 150],
+	["Elixir Spring", "res://art_assets/buildings/final_buildings/Elixir Spring.webp", "Produces 2 Elixirs per second", 120],
+	["Mystic Iron Ore", "res://art_assets/buildings/final_buildings/Mystic Iron Ore.webp", "Produces 2 Mystic Irons per second", 200],
+	["Martial Arena", "res://art_assets/buildings/final_buildings/martial_arena.webp", "Recruit Body Cultivators (Tank)", 180],
+	["Sword Monument", "res://art_assets/buildings/final_buildings/sword_monument.webp", "Recruit Sword Cultivators (Assassin)", 220],
+	["Origin Pavilion", "res://art_assets/buildings/final_buildings/origin_pavilion.webp", "Recruit Talisman Cultivators (Mage)", 250],
+	["Alchemy Lab", "res://art_assets/buildings/final_buildings/alchemy_lab.webp", "Recruit Alchemy Cultivators (Priest)", 300],
+	["Market", "res://art_assets/buildings/final_buildings/Market.webp", "Used for resource exchange", 150]
 ]
 
 # 2. 修正后的节点引用
@@ -47,7 +47,7 @@ func _setup_card(card, data):
 	
 	if buy_btn:
 		var price = data[3]
-		buy_btn.text = "购买 " + str(price) + " Q币"
+		buy_btn.text = "BUY (" + str(price) + " coin)"
 		buy_btn.disabled = (current_q_money < price)
 		
 		if buy_btn.pressed.is_connected(_on_buy_pressed):

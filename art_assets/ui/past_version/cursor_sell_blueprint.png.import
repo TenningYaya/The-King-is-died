@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsunis37tgtul"
-path="res://.godot/imported/demolish_1.webp-7b53bcc6224b511bb8dfc1f29f2d30c4.ctex"
+uid="uid://bpvjdsgnhdw77"
+path="res://.godot/imported/cursor_sell_blueprint.png-69e7eb577c722d35267e5fb35a33d444.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art_assets/ui/demolish_1.webp"
-dest_files=["res://.godot/imported/demolish_1.webp-7b53bcc6224b511bb8dfc1f29f2d30c4.ctex"]
+source_file="res://art_assets/ui/past_version/cursor_sell_blueprint.png"
+dest_files=["res://.godot/imported/cursor_sell_blueprint.png-69e7eb577c722d35267e5fb35a33d444.ctex"]
 
 [params]
 

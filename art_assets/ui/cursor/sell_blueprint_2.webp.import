@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpvjdsgnhdw77"
-path="res://.godot/imported/cursor_sell_blueprint.png-1b05d4895e971bf10e543fa815051ee3.ctex"
+uid="uid://blfdwhjn3g6q5"
+path="res://.godot/imported/sell_blueprint_2.webp-16bbad83cde0a9e8953dba9f4543b9a2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art_assets/ui/cursor_sell_blueprint.png"
-dest_files=["res://.godot/imported/cursor_sell_blueprint.png-1b05d4895e971bf10e543fa815051ee3.ctex"]
+source_file="res://art_assets/ui/cursor/sell_blueprint_2.webp"
+dest_files=["res://.godot/imported/sell_blueprint_2.webp-16bbad83cde0a9e8953dba9f4543b9a2.ctex"]
 
 [params]
 

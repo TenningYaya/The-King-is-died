@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5nrvsdvlt1h0"
-path="res://.godot/imported/button_demolish.jpg-ba245a410827153562e817910dfdf873.ctex"
+uid="uid://d1xk3u7wvx4lt"
+path="res://.godot/imported/sell_bluprint_1.webp-74a4f774a4c1b7909b836c5039394a6f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art_assets/ui/button_demolish.jpg"
-dest_files=["res://.godot/imported/button_demolish.jpg-ba245a410827153562e817910dfdf873.ctex"]
+source_file="res://art_assets/ui/button/sell_bluprint_1.webp"
+dest_files=["res://.godot/imported/sell_bluprint_1.webp-74a4f774a4c1b7909b836c5039394a6f.ctex"]
 
 [params]
 

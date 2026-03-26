@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://o3mrcxlilo2l"]
 
-[ext_resource type="Texture2D" uid="uid://cx04t6u3i7vwf" path="res://art_assets/ui/main_menu_normal.webp" id="1_exeua"]
-[ext_resource type="Texture2D" uid="uid://uf6e76hu2g2n" path="res://art_assets/ui/main_menu_pressed.webp" id="2_qdghk"]
+[ext_resource type="Texture2D" uid="uid://cx04t6u3i7vwf" path="res://art_assets/ui/button/main_menu_normal.webp" id="1_exeua"]
+[ext_resource type="Texture2D" uid="uid://uf6e76hu2g2n" path="res://art_assets/ui/button/main_menu_pressed.webp" id="2_qdghk"]
 [ext_resource type="Script" uid="uid://cdl5h8k7dttdg" path="res://scripts/ui/main_menu_button.gd" id="3_qdghk"]
 
 [node name="New" type="TextureButton" unique_id=357304590]

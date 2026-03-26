@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://docy75ofkpcam" path="res://art_assets/ui/Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_Popup01a.png" id="6_qdgkc"]
 [ext_resource type="Texture2D" uid="uid://dbx3koa02scmf" path="res://art_assets/ui/Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites Animated/UI_TravelBook_Button01a_1.png" id="7_7q6jh"]
 
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4thjl"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ygc7f"]

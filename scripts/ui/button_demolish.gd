@@ -1,7 +1,7 @@
 # button_demolish.gd
 extends Button
 
-@export var demolish_cursor: Texture2D = preload("res://art_assets/ui/button_sell_blueprint.png") # 找个“锤子”图标
+@export var demolish_cursor: Texture2D
 
 func _ready():
 	add_to_group("demolish_button_node")

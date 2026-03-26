@@ -2,15 +2,15 @@ extends CanvasLayer
 
 # 1. 奖励池
 var item_pool = [
-	["仙草圃", "res://art_assets/buildings/herb_garden.png", "每秒产出 2 药草"],
-	["灵脉", "res://art_assets/buildings/spirit_vein.jpg", "每秒产出 2 灵精"],
-	["不老泉", "res://art_assets/buildings/elixir_spring.jpg", "每秒产出 2 灵铁"],
-	["玄铁矿", "res://art_assets/buildings/mystic_iron_ore.jpg", "每秒产出 2 灵气"],
-	["演武台", "res://art_assets/buildings/martial_arena.jpg", "招募近战单位"],
-	["万剑碑", "res://art_assets/buildings/sword_monument.jpg", "招募远程单位"],
-	["抱元阁", "res://art_assets/buildings/origin_pavilion.png", "招募AOE"],
-	["炼丹房", "res://art_assets/buildings/alchemy_lab.jpg", "招募奶"],
-	["市场", "res://art_assets/buildings/market.png", "用于资源交换"]
+	["Herb Garden", "res://art_assets/buildings/final_buildings/Herb Garden.webp", "Produces 1 Herbs per second"],
+	["Spirit Vein", "res://art_assets/buildings/final_buildings/Spirit Vein.webp", "Produces 1 Spirit Stones per second"],
+	["Elixir Spring", "res://art_assets/buildings/final_buildings/Elixir Spring.webp", "Produces 1 Elixirs per second"],
+	["Mystic Iron Ore", "res://art_assets/buildings/final_buildings/Mystic Iron Ore.webp", "Produces 1 Mystic Irons per second"],
+	["Martial Arena", "res://art_assets/buildings/final_buildings/martial_arena.webp", "Recruit Body Cultivators"],
+	["Sword Monument", "res://art_assets/buildings/final_buildings/sword_monument.webp", "Recruit Sword Cultivators"],
+	["Origin Pavilion", "res://art_assets/buildings/final_buildings/origin_pavilion.webp", "Recruit Talisman Cultivators"],
+	["Alchemy Lab", "res://art_assets/buildings/final_buildings/alchemy_lab.webp", "Recruit Alchemy Cultivators"],
+	["Market", "res://art_assets/buildings/final_buildings/Market.webp", "Used for resource exchange"]
 ]
 
 @onready var right_content = $MainContainer/MainHBox/RightContent
@@ -65,16 +65,17 @@ func _on_select_pressed(data):
 	_close_reward_ui()
 
 func _grant_reward(item_name: String) -> void:
+	# 映射表同步改为英文 Key
 	var reward_map := {
-		"仙草圃": "res://resources/herb_garden.tres",
-		"灵脉": "res://resources/spirit_vein.tres",
-		"不老泉": "res://resources/elixir_spring.tres",
-		"玄铁矿": "res://resources/mystic_iron_ore.tres",
-		"演武台": "res://resources/martial_arena.tres",
-		"万剑碑": "res://resources/sword_monument.tres",
-		"抱元阁": "res://resources/origin_pavilion.tres",
-		"炼丹房": "res://resources/alchemy_lab.tres",
-		"市场": "res://resources/market.tres"
+		"Herb Garden": "res://resources/herb_garden.tres",
+		"Spirit Vein": "res://resources/spirit_vein.tres",
+		"Elixir Spring": "res://resources/elixir_spring.tres",
+		"Mystic Iron Ore": "res://resources/mystic_iron_ore.tres",
+		"Martial Arena": "res://resources/martial_arena.tres",
+		"Sword Monument": "res://resources/sword_monument.tres",
+		"Origin Pavilion": "res://resources/origin_pavilion.tres",
+		"Alchemy Lab": "res://resources/alchemy_lab.tres",
+		"Market": "res://resources/market.tres"
 	}
 
 	if not reward_map.has(item_name):

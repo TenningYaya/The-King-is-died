@@ -1,7 +1,7 @@
 # button_sell_blueprint.gd
 extends Button
 
-@export var sell_cursor: Texture2D = preload("res://art_assets/ui/button_sell_blueprint.png")
+@export var sell_cursor: Texture2D
 
 func _ready():
 	add_to_group("sell_button_node")
