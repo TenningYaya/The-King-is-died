@@ -1,5 +1,5 @@
 extends Node
-#
+
 #@export var dialog: DialogueResource
 #var tutorial_running := false
 #

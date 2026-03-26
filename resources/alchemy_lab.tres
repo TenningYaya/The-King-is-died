@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dai8darcd7q2w" path="res://scripts/buildings/building_data.gd" id="1_14i6v"]
 [ext_resource type="Texture2D" uid="uid://bwmvk3bkd2ljj" path="res://art_assets/buildings/final_buildings/alchemy_lab.webp" id="1_88vqa"]
-[ext_resource type="PackedScene" uid="uid://ds7qlt13y0rsv" path="res://Scene/Combat/player_scene/Unit_Tank.tscn" id="2_88vqa"]
+[ext_resource type="PackedScene" uid="uid://eotjp8xr7ypi" path="res://Scene/Combat/player_scene/Unit_Cleric.tscn" id="2_88vqa"]
 
 [resource]
 script = ExtResource("1_14i6v")

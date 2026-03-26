@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dmowsdjkx6drp" path="res://art_assets/buildings/final_buildings/origin_pavilion.webp" id="1_bgcaf"]
 [ext_resource type="Script" uid="uid://dai8darcd7q2w" path="res://scripts/buildings/building_data.gd" id="2_5enil"]
-[ext_resource type="PackedScene" uid="uid://ds7qlt13y0rsv" path="res://Scene/Combat/player_scene/Unit_Tank.tscn" id="2_bgcaf"]
+[ext_resource type="PackedScene" uid="uid://kmn1hu6coy2t" path="res://Scene/Combat/player_scene/Unit_Mage.tscn" id="2_bgcaf"]
 
 [resource]
 script = ExtResource("2_5enil")
