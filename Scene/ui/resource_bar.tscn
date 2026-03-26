@@ -3,6 +3,11 @@
 [ext_resource type="Script" uid="uid://cjeexr3ii4105" path="res://scripts/ui/resource_bar.gd" id="1_ke2c8"]
 [ext_resource type="Texture2D" uid="uid://cr5aj7wtnbdj6" path="res://art_assets/ui/Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_BookCover01a.png" id="2_pd6es"]
 [ext_resource type="Texture2D" uid="uid://mauom8xw2hfv" path="res://art_assets/buildings/elixir_spring.jpg" id="3_rojot"]
+[ext_resource type="Texture2D" uid="uid://c1lyyoae7o3s1" path="res://art_assets/product_resource/elixir.webp" id="3_uvk0f"]
+[ext_resource type="Texture2D" uid="uid://cd2lq8mgtuyhk" path="res://art_assets/product_resource/herb.webp" id="4_6yfhn"]
+[ext_resource type="Texture2D" uid="uid://buow7nt8oof6w" path="res://art_assets/product_resource/mystic iron.webp" id="6_fjudx"]
+[ext_resource type="Texture2D" uid="uid://bbunl2i540nyy" path="res://art_assets/product_resource/spirit stone.webp" id="7_c54qp"]
+[ext_resource type="Texture2D" uid="uid://cxksjqrl8qp74" path="res://art_assets/product_resource/Q coin.webp" id="8_00epb"]
 
 [sub_resource type="SystemFont" id="SystemFont_74428"]
 subpixel_positioning = 0
@@ -50,7 +55,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
-texture = ExtResource("3_rojot")
+texture = ExtResource("3_uvk0f")
 expand_mode = 1
 
 [node name="ElixirLabel" type="Label" parent="Background/GridContainer/ElixirItem" unique_id=2138412763]
@@ -73,7 +78,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
-texture = ExtResource("3_rojot")
+texture = ExtResource("4_6yfhn")
 expand_mode = 1
 
 [node name="HerbLabel" type="Label" parent="Background/GridContainer/HerbItem" unique_id=1587003811]
@@ -119,7 +124,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
-texture = ExtResource("3_rojot")
+texture = ExtResource("6_fjudx")
 expand_mode = 1
 
 [node name="IronLabel" type="Label" parent="Background/GridContainer/IronItem" unique_id=269700884]
@@ -142,7 +147,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
-texture = ExtResource("3_rojot")
+texture = ExtResource("7_c54qp")
 expand_mode = 1
 
 [node name="StoneLabel" type="Label" parent="Background/GridContainer/StoneItem" unique_id=1256274898]
@@ -165,7 +170,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
-texture = ExtResource("3_rojot")
+texture = ExtResource("8_00epb")
 expand_mode = 1
 
 [node name="CoinLabel" type="Label" parent="Background/GridContainer/CoinItem" unique_id=1919632589]
