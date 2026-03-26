@@ -8,9 +8,13 @@
 [ext_resource type="PackedScene" uid="uid://bfwvu1fjj5oav" path="res://Scene/ui/time_control.tscn" id="4_b6ffr"]
 [ext_resource type="PackedScene" uid="uid://dno43pe6wjeqf" path="res://Scene/ui/resource_bar.tscn" id="4_g8vxn"]
 [ext_resource type="PackedScene" uid="uid://ci1elc40c14mt" path="res://Scene/ui/back_main_window.tscn" id="7_h1qn1"]
-[ext_resource type="PackedScene" uid="uid://b2p6v53amipmk" path="res://Scene/ui/button_sell_blueprint.tscn" id="8_i3mbt"]
+[ext_resource type="Texture2D" uid="uid://d1xk3u7wvx4lt" path="res://art_assets/ui/button/sell_bluprint_1.webp" id="7_s7yhu"]
+[ext_resource type="Script" uid="uid://dkbx2q58alxxm" path="res://scripts/ui/button_sell_blueprint.gd" id="8_g5nr5"]
 [ext_resource type="PackedScene" uid="uid://c2020v0l52fk" path="res://Scene/ui/wave_roadmap.tscn" id="9_53uil"]
-[ext_resource type="PackedScene" uid="uid://do4dkx5h4d88v" path="res://Scene/ui/button_demolish.tscn" id="9_i7mdb"]
+[ext_resource type="Texture2D" uid="uid://dc4hpia2vj1o0" path="res://art_assets/ui/cursor/sell_blueprint_2.png" id="9_s7yhu"]
+[ext_resource type="Texture2D" uid="uid://bsunis37tgtul" path="res://art_assets/ui/button/demolish_1.webp" id="10_qo8sw"]
+[ext_resource type="Script" uid="uid://1wn2p5ej12q1" path="res://scripts/ui/button_demolish.gd" id="11_t0nuv"]
+[ext_resource type="Texture2D" uid="uid://cj3bxd7ctphwj" path="res://art_assets/ui/cursor/demolish_3.png" id="12_s7yhu"]
 
 [node name="BlueprintUI" type="CanvasLayer" unique_id=55262024]
 script = ExtResource("1_hhnae")
@@ -18,6 +22,7 @@ slot_scene = ExtResource("1_rmctn")
 common_blueprint_scene = ExtResource("3_eqi16")
 
 [node name="ResourceBar" parent="." unique_id=298767585 instance=ExtResource("4_g8vxn")]
+mouse_filter = 2
 
 [node name="TimeControl" parent="." unique_id=835025454 instance=ExtResource("4_b6ffr")]
 offset_left = 1605.0
@@ -99,6 +104,26 @@ layout_mode = 2
 [node name="BlueprintSlot10" parent="Control/HBoxContainer/BlueprintsSlots" unique_id=905347712 instance=ExtResource("1_rmctn")]
 layout_mode = 2
 
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/HBoxContainer" unique_id=42780979]
+custom_minimum_size = Vector2(100, 200)
+layout_mode = 2
+
+[node name="ButtonSellBlueprint" type="Button" parent="Control/HBoxContainer/VBoxContainer" unique_id=2104570196]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+icon = ExtResource("7_s7yhu")
+expand_icon = true
+script = ExtResource("8_g5nr5")
+sell_cursor = ExtResource("9_s7yhu")
+
+[node name="ButtonDemolish" type="Button" parent="Control/HBoxContainer/VBoxContainer" unique_id=2048028039]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+icon = ExtResource("10_qo8sw")
+expand_icon = true
+script = ExtResource("11_t0nuv")
+demolish_cursor = ExtResource("12_s7yhu")
+
 [node name="TestButtons" type="VBoxContainer" parent="Control" unique_id=1318161386]
 visible = false
 layout_mode = 0
@@ -158,17 +183,6 @@ offset_right = 258.0
 offset_bottom = 26.0
 text = "Quit to
 main"
-
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=42780979]
-custom_minimum_size = Vector2(100, 200)
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="ButtonSellBlueprint" parent="VBoxContainer" unique_id=2104570196 instance=ExtResource("8_i3mbt")]
-layout_mode = 2
-
-[node name="ButtonDemolish" parent="VBoxContainer" unique_id=2048028039 instance=ExtResource("9_i7mdb")]
-layout_mode = 2
 
 [node name="Overlay" type="ColorRect" parent="." unique_id=1441127706]
 offset_top = -60.0

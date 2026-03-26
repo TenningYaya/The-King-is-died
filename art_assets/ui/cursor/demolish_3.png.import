@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqxw76lik1krk"
-path="res://.godot/imported/mystic_iron_ore.jpg-237baa6558e621bbfc1572232a8e29f5.ctex"
+uid="uid://cj3bxd7ctphwj"
+path="res://.godot/imported/demolish_3.png-57c5aa3100e30a70d3a8bc3d48c049a0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art_assets/buildings/final_buildings/mystic_iron_ore.jpg"
-dest_files=["res://.godot/imported/mystic_iron_ore.jpg-237baa6558e621bbfc1572232a8e29f5.ctex"]
+source_file="res://art_assets/ui/cursor/demolish_3.png"
+dest_files=["res://.godot/imported/demolish_3.png-57c5aa3100e30a70d3a8bc3d48c049a0.ctex"]
 
 [params]
 
