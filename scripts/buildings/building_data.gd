@@ -95,3 +95,8 @@ static func get_resource_id_name(type_index: int) -> String:
 	# ResourceType.keys() 会返回 ["elixir", "herb", ...]
 	# 使用索引拿到对应的键名，然后转为小写以防万一
 	return ResourceType.keys()[type_index].to_lower()
+
+static func get_resource_icon_path(type_index: int) -> String:
+	var res_name = get_resource_id_name(type_index)
+	# 这里的路径请改为您存放图标的实际文件夹路径
+	return "res://art_assets/icons/resources/%s.png" % res_name

@@ -32,9 +32,7 @@ func _ready():
 		resource_manager.level_resource_changed.connect(_on_global_resource_changed)
 		# 强制初始检查
 		update_affordability()
-	else:
-		print("[蓝图调试] 警告：未能找到 level_manager 组！检查场景节点设置。")
-		
+	
 func _process(_delta):
 	if is_dragging:
 		global_position = get_global_mouse_position()

@@ -36,7 +36,6 @@ func open():
 	show()
 
 func _on_close_pressed():
-	print("点了")
 	overlay.hide()
 	hide()
 	

@@ -80,17 +80,25 @@ func _gui_input(event):
 				release_focus() 
 				button_pressed = false
 
-# --- 视觉高亮修复 ---
 func _on_mouse_entered():
-	print("鼠标进来了！")
-	print("是否在出售模式: ", is_in_sell_mode)
-	print("是否有建筑数据: ", current_data != null)
-	
 	if is_in_sell_mode and current_data:
-		modulate = Color(2, 0.5, 0.5) 
+		modulate = Color(2, 0.5, 0.5)
+	
+	# --- 【新增】悬停显示 Tooltip ---
+	if current_data:
+		var tooltip = get_tree().get_first_node_in_group("tooltip_ui")
+		if tooltip:
+			tooltip.update_display(current_data)
+			tooltip.show()
 
 func _on_mouse_exited():
+	# --- 您原有的逻辑 ---
 	modulate = Color(1, 1, 1)
+	
+	# --- 【新增】隐藏 Tooltip ---
+	var tooltip = get_tree().get_first_node_in_group("tooltip_ui")
+	if tooltip:
+		tooltip.hide()
 
 func clear_slot():
 	current_data = null

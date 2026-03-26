@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bbunl2i540nyy"
-path="res://.godot/imported/spirit stone.webp-35018207092179eeabe56363e32ce3cf.ctex"
+path="res://.godot/imported/spirit_stone.webp-c635b4c2ee25713edd99ae29fa188e57.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art_assets/product_resource/spirit stone.webp"
-dest_files=["res://.godot/imported/spirit stone.webp-35018207092179eeabe56363e32ce3cf.ctex"]
+source_file="res://art_assets/product_resource/spirit_stone.webp"
+dest_files=["res://.godot/imported/spirit_stone.webp-c635b4c2ee25713edd99ae29fa188e57.ctex"]
 
 [params]
 

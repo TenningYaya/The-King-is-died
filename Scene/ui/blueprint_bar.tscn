@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://cvk6hrdkjbq8h" path="res://art_assets/ui/gaze_upgrade.webp" id="17_t0nuv"]
 [ext_resource type="Texture2D" uid="uid://dnlgpdcq5jusx" path="res://art_assets/ui/button/upgrade.webp" id="18_m2vxj"]
 [ext_resource type="Texture2D" uid="uid://btpypob3sgb43" path="res://art_assets/ui/button/upgrade_disabled_2.webp" id="19_t0nuv"]
+[ext_resource type="PackedScene" uid="uid://casddr1rqpyw6" path="res://Scene/ui/cost_tooltip.tscn" id="22_55qeq"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cslux"]
 
@@ -245,6 +246,12 @@ icon = ExtResource("14_m2vxj")
 [node name="ExitButton" type="Button" parent="HBoxContainer" unique_id=709699290]
 layout_mode = 2
 icon = ExtResource("15_55qeq")
+
+[node name="CostTooltip" parent="." unique_id=1624179468 groups=["tooltip_ui"] instance=ExtResource("22_55qeq")]
+offset_left = 309.0
+offset_top = 645.0
+offset_right = 349.0
+offset_bottom = 685.0
 
 [connection signal="pressed" from="HBoxContainer/SaveButton" to="." method="_on_save_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

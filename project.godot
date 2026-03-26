@@ -46,6 +46,7 @@ enemy_units=""
 structures=""
 upgrade_buttons=""
 blueprint_slot=""
+tooltip_ui=""
 
 [input]
 

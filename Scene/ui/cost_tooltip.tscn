@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://casddr1rqpyw6"]
+
+[ext_resource type="Script" uid="uid://ccwhomhnsb5sm" path="res://cost_tooltip.gd" id="1_oe4qr"]
+[ext_resource type="FontFile" uid="uid://cx34bvrh8vf80" path="res://fonts/Stacked pixel.ttf" id="2_r7rrn"]
+
+[node name="CostTooltip" type="PanelContainer" unique_id=1624179468]
+top_level = true
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+script = ExtResource("1_oe4qr")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1977400991]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1900034917]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1414229034]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1465872105]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1670474137]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_r7rrn")
+theme_override_font_sizes/font_size = 80
+horizontal_alignment = 1
