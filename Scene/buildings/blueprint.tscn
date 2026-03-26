@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cbxiq5h01n5uc"]
 
 [ext_resource type="Script" uid="uid://ba50vbnilk2mx" path="res://scripts/buildings/blueprint.gd" id="1_rmgg5"]
-[ext_resource type="Texture2D" uid="uid://mauom8xw2hfv" path="res://art_assets/buildings/elixir_spring.jpg" id="2_wrv05"]
+[ext_resource type="Texture2D" uid="uid://mauom8xw2hfv" path="res://art_assets/buildings/past_version/elixir_spring.jpg" id="2_wrv05"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lkr8q"]
 size = Vector2(113, 112)

@@ -4,9 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://cr5aj7wtnbdj6" path="res://art_assets/ui/Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_BookCover01a.png" id="2_mognu"]
 [ext_resource type="Texture2D" uid="uid://b473yaehllnfe" path="res://art_assets/ui/fba2f98b8829c88ea9aee63b1a4951df.png" id="3_gm1dj"]
 [ext_resource type="Texture2D" uid="uid://muywxcmw7fue" path="res://art_assets/ui/Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_Frame01a.png" id="4_rf4kl"]
-[ext_resource type="Texture2D" uid="uid://wvwr2ao0ag3e" path="res://art_assets/buildings/market.png" id="5_vs0ps"]
+[ext_resource type="Texture2D" uid="uid://wvwr2ao0ag3e" path="res://art_assets/buildings/past_version/market.png" id="5_vs0ps"]
 [ext_resource type="Texture2D" uid="uid://docy75ofkpcam" path="res://art_assets/ui/Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_Popup01a.png" id="6_5upiv"]
 [ext_resource type="Texture2D" uid="uid://dbx3koa02scmf" path="res://art_assets/ui/Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites Animated/UI_TravelBook_Button01a_1.png" id="7_fsnlw"]
+
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pdjv4"]
 

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="BuildingData" format=3 uid="uid://dgkw82g7k2vja"]
 
 [ext_resource type="Script" uid="uid://dai8darcd7q2w" path="res://scripts/buildings/building_data.gd" id="1_kxybd"]
-[ext_resource type="Texture2D" uid="uid://c0ums0u5c7h5p" path="res://art_assets/buildings/sword_monument.webp" id="1_q27pm"]
+[ext_resource type="Texture2D" uid="uid://c0ums0u5c7h5p" path="res://art_assets/buildings/final_buildings/sword_monument.webp" id="1_q27pm"]
 [ext_resource type="PackedScene" uid="uid://ds7qlt13y0rsv" path="res://Scene/Combat/player_scene/Unit_Tank.tscn" id="2_q27pm"]
 
 [resource]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wvwr2ao0ag3e"
-path="res://.godot/imported/market.png-5c040244c8f2632462aa72651bd44e6a.ctex"
+uid="uid://dtnloxtctg3o0"
+path="res://.godot/imported/tile.webp-69ec02df74f77ca6097b17f24195598b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art_assets/buildings/market.png"
-dest_files=["res://.godot/imported/market.png-5c040244c8f2632462aa72651bd44e6a.ctex"]
+source_file="res://art_assets/tile/tile.webp"
+dest_files=["res://.godot/imported/tile.webp-69ec02df74f77ca6097b17f24195598b.ctex"]
 
 [params]
 

@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://b2p6v53amipmk"]
 
-[ext_resource type="Texture2D" uid="uid://bpvjdsgnhdw77" path="res://art_assets/ui/cursor_sell_blueprint.png" id="1_8gi83"]
+[ext_resource type="Texture2D" uid="uid://d1xk3u7wvx4lt" path="res://art_assets/ui/sell_bluprint_1.webp" id="1_5edtp"]
 [ext_resource type="Script" uid="uid://dkbx2q58alxxm" path="res://scripts/ui/button_sell_blueprint.gd" id="1_obeye"]
+[ext_resource type="Texture2D" uid="uid://blfdwhjn3g6q5" path="res://art_assets/ui/sell_blueprint_2.webp" id="3_8n7cn"]
 
 [node name="ButtonSellBlueprint" type="Button" unique_id=2104570196]
 offset_right = 65.0
 offset_bottom = 64.0
-icon = ExtResource("1_8gi83")
+icon = ExtResource("1_5edtp")
 expand_icon = true
 script = ExtResource("1_obeye")
+sell_cursor = ExtResource("3_8n7cn")

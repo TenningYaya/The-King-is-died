@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cv4t0sc18tfpu"
-path="res://.godot/imported/Herb Garden.webp-d380539a22eccb739756608313e921cf.ctex"
+uid="uid://blfdwhjn3g6q5"
+path="res://.godot/imported/sell_blueprint_2.webp-00dae7b106e6359eaec1bbfd4d60cdb2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art_assets/buildings/Herb Garden.webp"
-dest_files=["res://.godot/imported/Herb Garden.webp-d380539a22eccb739756608313e921cf.ctex"]
+source_file="res://art_assets/ui/sell_blueprint_2.webp"
+dest_files=["res://.godot/imported/sell_blueprint_2.webp-00dae7b106e6359eaec1bbfd4d60cdb2.ctex"]
 
 [params]
 

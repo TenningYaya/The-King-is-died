@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drygoq6ig2tky"
-path="res://.godot/imported/spirit_vein.jpg-13a5363aac1f06532d16dae672179254.ctex"
+uid="uid://dnxnntyvtfpce"
+path="res://.godot/imported/Spirit Vein.webp-43203271e177dd76905b84e8831b5063.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art_assets/buildings/spirit_vein.jpg"
-dest_files=["res://.godot/imported/spirit_vein.jpg-13a5363aac1f06532d16dae672179254.ctex"]
+source_file="res://art_assets/buildings/final_buildings/Spirit Vein.webp"
+dest_files=["res://.godot/imported/Spirit Vein.webp-43203271e177dd76905b84e8831b5063.ctex"]
 
 [params]
 

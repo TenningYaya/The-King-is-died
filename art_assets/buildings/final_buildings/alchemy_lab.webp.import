@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://kl437qu2soav"
-path="res://.godot/imported/alchemy_lab.jpg-e9dd960358e222b8c73dc77b9c4e73c7.ctex"
+uid="uid://bwmvk3bkd2ljj"
+path="res://.godot/imported/alchemy_lab.webp-e1da4f11ae205f47c97103765de03e88.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art_assets/buildings/alchemy_lab.jpg"
-dest_files=["res://.godot/imported/alchemy_lab.jpg-e9dd960358e222b8c73dc77b9c4e73c7.ctex"]
+source_file="res://art_assets/buildings/final_buildings/alchemy_lab.webp"
+dest_files=["res://.godot/imported/alchemy_lab.webp-e1da4f11ae205f47c97103765de03e88.ctex"]
 
 [params]
 

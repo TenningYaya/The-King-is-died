@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0ums0u5c7h5p"
-path="res://.godot/imported/sword_monument.webp-a6155b3e79438b50c68c91325b1dd232.ctex"
+uid="uid://mauom8xw2hfv"
+path="res://.godot/imported/elixir_spring.jpg-7eb9eae2ad5562903c0729b7bf7378b7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art_assets/buildings/sword_monument.webp"
-dest_files=["res://.godot/imported/sword_monument.webp-a6155b3e79438b50c68c91325b1dd232.ctex"]
+source_file="res://art_assets/buildings/past_version/elixir_spring.jpg"
+dest_files=["res://.godot/imported/elixir_spring.jpg-7eb9eae2ad5562903c0729b7bf7378b7.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d08mlrdb81lu7"
-path="res://.godot/imported/Mystic Iron Ore.webp-4f78a386f36013bee9bcaeaff30e5e3d.ctex"
+uid="uid://cv4t0sc18tfpu"
+path="res://.godot/imported/Herb Garden.webp-84041c99ab51becd46b1eb7871cfba5c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art_assets/buildings/Mystic Iron Ore.webp"
-dest_files=["res://.godot/imported/Mystic Iron Ore.webp-4f78a386f36013bee9bcaeaff30e5e3d.ctex"]
+source_file="res://art_assets/buildings/final_buildings/Herb Garden.webp"
+dest_files=["res://.godot/imported/Herb Garden.webp-84041c99ab51becd46b1eb7871cfba5c.ctex"]
 
 [params]
 

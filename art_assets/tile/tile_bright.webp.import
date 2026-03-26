@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvcttl35uuoc1"
-path="res://.godot/imported/martial_arena.webp-ca02eb1c28043737e8bfd67268d20097.ctex"
+uid="uid://befi64w0okvp5"
+path="res://.godot/imported/tile_bright.webp-0eac640d92bbeb05964056c093efc54f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art_assets/buildings/martial_arena.webp"
-dest_files=["res://.godot/imported/martial_arena.webp-ca02eb1c28043737e8bfd67268d20097.ctex"]
+source_file="res://art_assets/tile/tile_bright.webp"
+dest_files=["res://.godot/imported/tile_bright.webp-0eac640d92bbeb05964056c093efc54f.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dmowsdjkx6drp"
-path="res://.godot/imported/origin_pavilion.webp-f5f385fc2a93d25f4235868b2510140f.ctex"
+path="res://.godot/imported/origin_pavilion.webp-b5007fb10afe40e916c7e734306f1e5c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art_assets/buildings/origin_pavilion.webp"
-dest_files=["res://.godot/imported/origin_pavilion.webp-f5f385fc2a93d25f4235868b2510140f.ctex"]
+source_file="res://art_assets/buildings/final_buildings/origin_pavilion.webp"
+dest_files=["res://.godot/imported/origin_pavilion.webp-b5007fb10afe40e916c7e734306f1e5c.ctex"]
 
 [params]
 

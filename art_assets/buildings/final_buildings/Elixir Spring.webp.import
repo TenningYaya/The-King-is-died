@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6av4da6xabdr"
-path="res://.godot/imported/martial_arena.jpg-5de05d9d47e99d4e57a53bf58cbd8568.ctex"
+uid="uid://cyd4g1p53n8ee"
+path="res://.godot/imported/Elixir Spring.webp-5bb81e803a7ec55073b3539eb6d25610.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art_assets/buildings/martial_arena.jpg"
-dest_files=["res://.godot/imported/martial_arena.jpg-5de05d9d47e99d4e57a53bf58cbd8568.ctex"]
+source_file="res://art_assets/buildings/final_buildings/Elixir Spring.webp"
+dest_files=["res://.godot/imported/Elixir Spring.webp-5bb81e803a7ec55073b3539eb6d25610.ctex"]
 
 [params]
 

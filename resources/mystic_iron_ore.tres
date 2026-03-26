@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="BuildingData" format=3 uid="uid://gk1itjr45wc1"]
 
-[ext_resource type="Texture2D" uid="uid://d08mlrdb81lu7" path="res://art_assets/buildings/Mystic Iron Ore.webp" id="1_pqf0l"]
+[ext_resource type="Texture2D" uid="uid://d08mlrdb81lu7" path="res://art_assets/buildings/final_buildings/Mystic Iron Ore.webp" id="1_pqf0l"]
 [ext_resource type="Script" uid="uid://dai8darcd7q2w" path="res://scripts/buildings/building_data.gd" id="1_u7yqm"]
 
 [resource]

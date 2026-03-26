@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mauom8xw2hfv"
-path="res://.godot/imported/elixir_spring.jpg-fd32f86cf0c7e175381d1fe121e9e534.ctex"
+uid="uid://dgcnn1mulc0ai"
+path="res://.godot/imported/herb_garden.png-6af46d80cd7f38bd82a05d73bbdc2806.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art_assets/buildings/elixir_spring.jpg"
-dest_files=["res://.godot/imported/elixir_spring.jpg-fd32f86cf0c7e175381d1fe121e9e534.ctex"]
+source_file="res://art_assets/buildings/past_version/herb_garden.png"
+dest_files=["res://.godot/imported/herb_garden.png-6af46d80cd7f38bd82a05d73bbdc2806.ctex"]
 
 [params]
 

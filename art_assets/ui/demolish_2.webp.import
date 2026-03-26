@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://48r16hy2orjm"
-path="res://.godot/imported/origin_pavilion.png-32d7546633fbf15f429c355736cbac0b.ctex"
+uid="uid://daf74gbmexoyf"
+path="res://.godot/imported/demolish_2.webp-a5a5185a0e954db218b7b91a7bb5d059.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art_assets/buildings/origin_pavilion.png"
-dest_files=["res://.godot/imported/origin_pavilion.png-32d7546633fbf15f429c355736cbac0b.ctex"]
+source_file="res://art_assets/ui/demolish_2.webp"
+dest_files=["res://.godot/imported/demolish_2.webp-a5a5185a0e954db218b7b91a7bb5d059.ctex"]
 
 [params]
 

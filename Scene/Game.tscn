@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://jfqlwaedgf0u" path="res://Scene/Gaze.tscn" id="1_5kiuu"]
 [ext_resource type="Script" uid="uid://dsgk2um5ncu6l" path="res://scripts/level/level_game_scene.gd" id="1_hqtje"]
+[ext_resource type="Texture2D" uid="uid://q8b1wtnn1vqt" path="res://art_assets/background/bcg_game.webp" id="2_1mx4w"]
 [ext_resource type="PackedScene" uid="uid://c4cb7fh3c203h" path="res://Scene/tile.tscn" id="2_mopgc"]
 [ext_resource type="Texture2D" uid="uid://c8ageqiqbfoug" path="res://art_assets/product_resource/asther crystal.webp" id="5_ghk2r"]
 [ext_resource type="Script" uid="uid://bx385egptpnpx" path="res://scripts/level/level_resource_manager.gd" id="6_3xgnh"]
@@ -37,8 +38,10 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(749, 16, 1841, 17, 1848
 [node name="Game" type="Node2D" unique_id=1503047627]
 script = ExtResource("1_hqtje")
 
-[node name="Gaze" parent="." unique_id=511512720 groups=["gaze_controller", "save_required"] instance=ExtResource("1_5kiuu")]
-position = Vector2(123, 79)
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1619091709]
+position = Vector2(958.9999, 482.49997)
+scale = Vector2(1.5564514, 1.5601718)
+texture = ExtResource("2_1mx4w")
 
 [node name="Structures" type="Node" parent="." unique_id=1055881442]
 
@@ -246,3 +249,6 @@ visible = false
 [node name="InitialBuilding" type="Node2D" parent="." unique_id=937275556 node_paths=PackedStringArray("blueprint_manager")]
 script = ExtResource("28_mw7jm")
 blueprint_manager = NodePath("../BlueprintUI")
+
+[node name="Gaze" parent="." unique_id=511512720 groups=["gaze_controller", "save_required"] instance=ExtResource("1_5kiuu")]
+position = Vector2(123, 79)

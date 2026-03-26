@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgcnn1mulc0ai"
-path="res://.godot/imported/herb_garden.png-69a8fa190f65f8f81d94f9eafcf5ee90.ctex"
+uid="uid://c0ums0u5c7h5p"
+path="res://.godot/imported/sword_monument.webp-572648a2ae469cbad088ae2bc402d9a2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art_assets/buildings/herb_garden.png"
-dest_files=["res://.godot/imported/herb_garden.png-69a8fa190f65f8f81d94f9eafcf5ee90.ctex"]
+source_file="res://art_assets/buildings/final_buildings/sword_monument.webp"
+dest_files=["res://.godot/imported/sword_monument.webp-572648a2ae469cbad088ae2bc402d9a2.ctex"]
 
 [params]
 

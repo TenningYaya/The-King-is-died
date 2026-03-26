@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crgxur5eqtadv"
-path="res://.godot/imported/sword_monument.jpg-cc19036df11590dc358b4d4df079cab8.ctex"
+uid="uid://kl437qu2soav"
+path="res://.godot/imported/alchemy_lab.jpg-a21799f78e14e0806b16bbb75a3db481.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art_assets/buildings/sword_monument.jpg"
-dest_files=["res://.godot/imported/sword_monument.jpg-cc19036df11590dc358b4d4df079cab8.ctex"]
+source_file="res://art_assets/buildings/past_version/alchemy_lab.jpg"
+dest_files=["res://.godot/imported/alchemy_lab.jpg-a21799f78e14e0806b16bbb75a3db481.ctex"]
 
 [params]
 

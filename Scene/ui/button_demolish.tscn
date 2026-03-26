@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://do4dkx5h4d88v"]
 
-[ext_resource type="Texture2D" uid="uid://c5nrvsdvlt1h0" path="res://art_assets/ui/button_demolish.jpg" id="1_de581"]
+[ext_resource type="Texture2D" uid="uid://bsunis37tgtul" path="res://art_assets/ui/demolish_1.webp" id="1_0li8q"]
 [ext_resource type="Script" uid="uid://1wn2p5ej12q1" path="res://scripts/ui/button_demolish.gd" id="2_0li8q"]
+[ext_resource type="Texture2D" uid="uid://daf74gbmexoyf" path="res://art_assets/ui/demolish_2.webp" id="3_np8ap"]
 
 [node name="ButtonDemolish" type="Button" unique_id=2048028039]
 offset_right = 59.0
 offset_bottom = 61.0
-icon = ExtResource("1_de581")
+icon = ExtResource("1_0li8q")
 expand_icon = true
 script = ExtResource("2_0li8q")
+demolish_cursor = ExtResource("3_np8ap")
