@@ -55,10 +55,10 @@ func _on_wave_completed() -> void:
 	ResourceManager.add_currency(10)
 	if reward_button:
 		reward_button.visible = true
-	if current_wave_index == 2:
-		if shop_ui:
-			shop_ui.visible = true
-			get_tree().paused = true
+	#if current_wave_index == 2:
+		#if shop_ui:
+			#shop_ui.visible = true
+			#get_tree().paused = true
 
 func _on_reward_button_pressed() -> void:
 	if reward_ui:

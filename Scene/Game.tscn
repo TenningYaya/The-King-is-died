@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d3ylqyij3fkit"]
 
 [ext_resource type="PackedScene" uid="uid://jfqlwaedgf0u" path="res://Scene/Gaze.tscn" id="1_5kiuu"]
-[ext_resource type="Script" path="res://scripts/level/level_game_scene.gd" id="1_hqtje"]
+[ext_resource type="Script" uid="uid://dsgk2um5ncu6l" path="res://scripts/level/level_game_scene.gd" id="1_hqtje"]
 [ext_resource type="Texture2D" uid="uid://q8b1wtnn1vqt" path="res://art_assets/background/bcg_game.webp" id="2_1mx4w"]
 [ext_resource type="PackedScene" uid="uid://c4cb7fh3c203h" path="res://Scene/tile.tscn" id="2_mopgc"]
 [ext_resource type="Texture2D" uid="uid://c8ageqiqbfoug" path="res://art_assets/product_resource/aether_crystal.webp" id="5_ghk2r"]
@@ -211,6 +211,7 @@ offset_right = 1066.0
 offset_bottom = 916.0
 
 [node name="CurrencyDisplay" type="HBoxContainer" parent="." unique_id=1728488012]
+visible = false
 offset_left = 1099.0
 offset_top = 872.0
 offset_right = 1149.0
