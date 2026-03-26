@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c2020v0l52fk"]
 
-[ext_resource type="Script" uid="uid://eb3vb0gt64cg" path="res://scripts/ui/wave_roadmap.gd" id="1_4s0qg"]
+[ext_resource type="Script" path="res://scripts/ui/wave_roadmap.gd" id="1_4s0qg"]
 [ext_resource type="Texture2D" uid="uid://0nm0vgyqbxuy" path="res://art_assets/ui/Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_Bar01a.png" id="1_un0xt"]
 [ext_resource type="Texture2D" uid="uid://d100dka7c23a2" path="res://art_assets/ui/Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_Fill01a.png" id="2_k0fcl"]
 [ext_resource type="Texture2D" uid="uid://q7ihhwytuqp8" path="res://art_assets/ui/roadmap_monster.webp" id="4_4s0qg"]
@@ -19,10 +19,13 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -5.0
+offset_bottom = -5.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_4s0qg")
+total_time = 600.0
 
 [node name="TimerBar" type="TextureProgressBar" parent="." unique_id=1016412003]
 texture_filter = 2
