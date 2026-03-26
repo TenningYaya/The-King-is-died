@@ -165,7 +165,6 @@ func _return_blueprint():
 	var bp_ui = get_tree().get_first_node_in_group("blueprint_manager")
 	if bp_ui and bp_ui.has_method("add_blueprint"):
 		bp_ui.add_blueprint(self.data)
-		print("已返还灵力泉蓝图")
 
 func show_production_popup(res_id: String, amount: int):
 	var manager = get_tree().get_first_node_in_group("level_manager")

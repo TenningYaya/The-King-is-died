@@ -3,17 +3,17 @@
 [ext_resource type="PackedScene" uid="uid://jfqlwaedgf0u" path="res://Scene/Gaze.tscn" id="1_5kiuu"]
 [ext_resource type="Script" uid="uid://dsgk2um5ncu6l" path="res://scripts/level/level_game_scene.gd" id="1_hqtje"]
 [ext_resource type="PackedScene" uid="uid://c4cb7fh3c203h" path="res://Scene/tile.tscn" id="2_mopgc"]
-[ext_resource type="Texture2D" uid="uid://mauom8xw2hfv" path="res://art_assets/buildings/elixir_spring.jpg" id="4_bxrg2"]
-[ext_resource type="Texture2D" uid="uid://dgcnn1mulc0ai" path="res://art_assets/buildings/herb_garden.png" id="5_ilbig"]
+[ext_resource type="Texture2D" uid="uid://c8ageqiqbfoug" path="res://art_assets/product_resource/asther crystal.webp" id="5_ghk2r"]
 [ext_resource type="Script" uid="uid://bx385egptpnpx" path="res://scripts/level/level_resource_manager.gd" id="6_3xgnh"]
 [ext_resource type="PackedScene" uid="uid://bf3vu14x5n1ds" path="res://Scene/Combat/Wall.tscn" id="6_48ymf"]
-[ext_resource type="Texture2D" uid="uid://drygoq6ig2tky" path="res://art_assets/buildings/spirit_vein.jpg" id="6_kfjtm"]
-[ext_resource type="Texture2D" uid="uid://dqxw76lik1krk" path="res://art_assets/buildings/mystic_iron_ore.jpg" id="7_1e3q2"]
+[ext_resource type="Texture2D" uid="uid://c1lyyoae7o3s1" path="res://art_assets/product_resource/elixir.webp" id="6_mw7jm"]
+[ext_resource type="Texture2D" uid="uid://cd2lq8mgtuyhk" path="res://art_assets/product_resource/herb.webp" id="7_1mx4w"]
 [ext_resource type="PackedScene" uid="uid://xohgmd3qdtav" path="res://Scene/ui/blueprint_bar.tscn" id="7_48ymf"]
-[ext_resource type="Texture2D" uid="uid://wvwr2ao0ag3e" path="res://art_assets/buildings/market.png" id="8_3jynh"]
-[ext_resource type="Texture2D" uid="uid://kl437qu2soav" path="res://art_assets/buildings/alchemy_lab.jpg" id="9_hqtje"]
+[ext_resource type="Texture2D" uid="uid://buow7nt8oof6w" path="res://art_assets/product_resource/mystic iron.webp" id="8_65ldo"]
+[ext_resource type="Texture2D" uid="uid://cxksjqrl8qp74" path="res://art_assets/product_resource/Q coin.webp" id="9_0yiub"]
 [ext_resource type="PackedScene" uid="uid://b1vdm2dchhc2i" path="res://Scene/ui/pause_menu.tscn" id="9_tujvx"]
 [ext_resource type="Script" uid="uid://tqfstski4omi" path="res://scripts/Combat/EnemySpawner.gd" id="10_2j816"]
+[ext_resource type="Texture2D" uid="uid://bbunl2i540nyy" path="res://art_assets/product_resource/spirit stone.webp" id="10_10r1t"]
 [ext_resource type="PackedScene" uid="uid://duptcluexkt70" path="res://Scene/Combat/enemy_scene/Enemy_Tank.tscn" id="11_g3fkh"]
 [ext_resource type="PackedScene" uid="uid://do4dkx5h4d88v" path="res://Scene/ui/button_demolish.tscn" id="18_kfjtm"]
 [ext_resource type="PackedScene" uid="uid://b2p6v53amipmk" path="res://Scene/ui/button_sell_blueprint.tscn" id="19_1e3q2"]
@@ -135,12 +135,12 @@ position = Vector2(541, 60)
 [node name="LevelResourceManager" type="Node" parent="." unique_id=1377458719 groups=["level_manager", "save_required"]]
 script = ExtResource("6_3xgnh")
 resource_icons = Dictionary[String, Texture2D]({
-"aether_crystal": ExtResource("6_kfjtm"),
-"elixir": ExtResource("4_bxrg2"),
-"herb": ExtResource("5_ilbig"),
-"mystic_iron": ExtResource("7_1e3q2"),
-"q_coin": ExtResource("9_hqtje"),
-"spirit_stone": ExtResource("8_3jynh")
+"aether_crystal": ExtResource("5_ghk2r"),
+"elixir": ExtResource("6_mw7jm"),
+"herb": ExtResource("7_1mx4w"),
+"mystic_iron": ExtResource("8_65ldo"),
+"q_coin": ExtResource("9_0yiub"),
+"spirit_stone": ExtResource("10_10r1t")
 })
 metadata/_custom_type_script = "uid://bx385egptpnpx"
 
