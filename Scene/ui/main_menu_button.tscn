@@ -1,28 +1,33 @@
 [gd_scene format=3 uid="uid://o3mrcxlilo2l"]
 
-[ext_resource type="Texture2D" uid="uid://bgep1w4t5j02a" path="res://art_assets/ui/mainmenubutton1.webp" id="1_exeua"]
-[ext_resource type="Texture2D" uid="uid://bm35foo4xne12" path="res://art_assets/ui/mainmenubutton2.webp" id="2_qdghk"]
+[ext_resource type="Texture2D" uid="uid://cx04t6u3i7vwf" path="res://art_assets/ui/main_menu_normal.webp" id="1_exeua"]
+[ext_resource type="Texture2D" uid="uid://uf6e76hu2g2n" path="res://art_assets/ui/main_menu_pressed.webp" id="2_qdghk"]
+[ext_resource type="Script" uid="uid://cdl5h8k7dttdg" path="res://scripts/ui/main_menu_button.gd" id="3_qdghk"]
 
 [node name="New" type="TextureButton" unique_id=357304590]
-texture_normal = ExtResource("1_exeua")
-texture_pressed = ExtResource("2_qdghk")
+offset_right = 571.0
+offset_bottom = 154.0
+texture_normal = ExtResource("2_qdghk")
+texture_pressed = ExtResource("1_exeua")
+ignore_texture_size = true
 stretch_mode = 0
+script = ExtResource("3_qdghk")
 
 [node name="Label" type="Label" parent="." unique_id=1862026079]
-modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -269.0
-offset_top = -87.0
-offset_right = 269.0
-offset_bottom = 87.0
+offset_left = -269.5
+offset_top = -69.0
+offset_right = 268.5
+offset_bottom = 56.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.00054902746, 0.063616805, 0.35275498, 1)
 theme_override_font_sizes/font_size = 50
 text = "New Game"
 horizontal_alignment = 1

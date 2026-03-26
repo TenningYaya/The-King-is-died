@@ -1,8 +1,7 @@
 [gd_scene format=3 uid="uid://bvxbigfylao7k"]
 
 [ext_resource type="Script" uid="uid://b4c78xvdr286h" path="res://scripts/system/main_menu.gd" id="1_pp0ei"]
-[ext_resource type="Texture2D" uid="uid://bgep1w4t5j02a" path="res://art_assets/ui/mainmenubutton1.webp" id="2_ut2dw"]
-[ext_resource type="Texture2D" uid="uid://bm35foo4xne12" path="res://art_assets/ui/mainmenubutton2.webp" id="3_wy3g2"]
+[ext_resource type="PackedScene" uid="uid://o3mrcxlilo2l" path="res://Scene/ui/main_menu_button.tscn" id="2_pp0ei"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4gtwd"]
 load_path = "res://.godot/imported/bcg_mainmenu1.jpg-c21ea66e643f86432422811be49de834.ctex"
@@ -24,64 +23,60 @@ texture = SubResource("CompressedTexture2D_4gtwd")
 
 [node name="Label" type="Label" parent="Control" unique_id=844970736]
 layout_mode = 0
-offset_left = 426.0
-offset_top = 182.0
-offset_right = 1509.0
-offset_bottom = 332.0
+offset_left = 677.0
+offset_top = 18.0
+offset_right = 1760.0
+offset_bottom = 295.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 100
-text = "The Ancestor's Sight"
+text = "The Ancestor's
+ Sight"
+horizontal_alignment = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=726758898]
 layout_mode = 0
-offset_left = 605.0
-offset_top = 355.0
-offset_right = 1253.0
-offset_bottom = 993.0
-theme_override_constants/separation = 30
+offset_left = 1250.0
+offset_top = 250.0
+offset_right = 1750.0
+offset_bottom = 1060.0
+theme_override_constants/separation = 12
 alignment = 1
 
-[node name="New" type="TextureButton" parent="Control/VBoxContainer" unique_id=175805107]
+[node name="New" parent="Control/VBoxContainer" unique_id=357304590 instance=ExtResource("2_pp0ei")]
+custom_minimum_size = Vector2(500, 120)
 layout_mode = 2
-texture_normal = ExtResource("2_ut2dw")
-texture_pressed = ExtResource("3_wy3g2")
-stretch_mode = 0
+button_text = "New Game"
 
-[node name="Load" type="Button" parent="Control/VBoxContainer" unique_id=340369317]
-modulate = Color(0.27450982, 0.27450982, 0.27450982, 1)
+[node name="Load" parent="Control/VBoxContainer" unique_id=1869255971 instance=ExtResource("2_pp0ei")]
+custom_minimum_size = Vector2(500, 120)
 layout_mode = 2
-theme_override_font_sizes/font_size = 50
-text = "Load Game"
+button_text = "Load Game"
 
-[node name="Settings" type="Button" parent="Control/VBoxContainer" unique_id=1535920591]
-modulate = Color(0.27450982, 0.27450982, 0.27450982, 1)
+[node name="Settings" parent="Control/VBoxContainer" unique_id=578293273 instance=ExtResource("2_pp0ei")]
+custom_minimum_size = Vector2(500, 120)
 layout_mode = 2
-theme_override_font_sizes/font_size = 50
-text = "Settings"
-flat = true
+button_text = "Settings"
 
-[node name="Credits" type="Button" parent="Control/VBoxContainer" unique_id=2113702344]
-modulate = Color(0.27450982, 0.27450982, 0.27450982, 1)
+[node name="Credits" parent="Control/VBoxContainer" unique_id=1325882637 instance=ExtResource("2_pp0ei")]
+custom_minimum_size = Vector2(500, 120)
 layout_mode = 2
-theme_override_font_sizes/font_size = 50
-text = "Credits"
-flat = true
+button_text = "Credits"
 
 [node name="Upgrade" type="Button" parent="Control/VBoxContainer" unique_id=104180333]
 visible = false
+custom_minimum_size = Vector2(500, 120)
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Upgrade"
 
-[node name="Quit" type="Button" parent="Control/VBoxContainer" unique_id=532476075]
-modulate = Color(0.27450982, 0.27450982, 0.27450982, 1)
+[node name="Quit" parent="Control/VBoxContainer" unique_id=1385538370 instance=ExtResource("2_pp0ei")]
+custom_minimum_size = Vector2(500, 120)
 layout_mode = 2
-theme_override_font_sizes/font_size = 50
-text = "Quit"
-flat = true
+button_text = "Quit"
 
 [connection signal="pressed" from="Control/VBoxContainer/New" to="." method="_on_new_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer/Load" to="." method="_on_load_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer/Upgrade" to="." method="_on_upgrade_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

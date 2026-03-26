@@ -45,3 +45,7 @@ func _on_quit_pressed() -> void:
 
 func _on_upgrade_pressed() -> void:
 	get_tree().change_scene_to_file('res://Scene/Upgrade Tree.tscn')
+
+
+func _on_settings_pressed() -> void:
+	pass # Replace with function body.
