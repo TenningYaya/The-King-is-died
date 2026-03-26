@@ -26,7 +26,9 @@
 [ext_resource type="PackedScene" uid="uid://cs2uw4cq2noiw" path="res://Scene/buildings/combat_building.tscn" id="26_1mx4w"]
 [ext_resource type="PackedScene" uid="uid://dwyka17gkpfh4" path="res://Scene/ui/reward.tscn" id="26_ghk2r"]
 [ext_resource type="PackedScene" uid="uid://cc5n01itk08si" path="res://Scene/ui/shop_scene.tscn" id="26_hjrqo"]
+[ext_resource type="Script" uid="uid://bn8vhp34jly7x" path="res://scripts/dialog/dialogManager.gd" id="28_1mx4w"]
 [ext_resource type="Script" uid="uid://dk4ghcukvb465" path="res://scripts/buildings/initial_building.gd" id="28_mw7jm"]
+[ext_resource type="Resource" uid="uid://dmq1w4ecbvit8" path="res://scripts/dialog/dialog.dialogue" id="29_65ldo"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_bxrg2"]
 vertices = PackedVector2Array(1831.1016, 26.992188, 1837.8828, 637.0078, 756.03906, 638.97656, 758.9531, 26)
@@ -239,3 +241,7 @@ blueprint_manager = NodePath("../BlueprintUI")
 
 [node name="Gaze" parent="." unique_id=511512720 groups=["gaze_controller", "save_required"] instance=ExtResource("1_5kiuu")]
 position = Vector2(123, 79)
+
+[node name="Node2D" type="Node2D" parent="." unique_id=2011956737]
+script = ExtResource("28_1mx4w")
+dialog = ExtResource("29_65ldo")
