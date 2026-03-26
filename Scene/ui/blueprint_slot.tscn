@@ -22,7 +22,7 @@ stretch_mode = 5
 [node name="CountLabel" type="Label" parent="." unique_id=1489096096]
 modulate = Color(0.8901961, 0.003921569, 0.003921569, 1)
 layout_mode = 0
-offset_left = 74.0
-offset_top = 4.0
-offset_right = 114.0
-offset_bottom = 27.0
+offset_left = 92.0
+offset_top = 5.0
+offset_right = 132.0
+offset_bottom = 28.0

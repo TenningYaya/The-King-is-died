@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="BuildingData" format=3 uid="uid://m4a7soemmvrq"]
 
-[ext_resource type="Texture2D" uid="uid://wvwr2ao0ag3e" path="res://art_assets/buildings/market.png" id="1_4lpqn"]
+[ext_resource type="Texture2D" uid="uid://dlrwtv3v5aq87" path="res://art_assets/buildings/Market.webp" id="1_4lpqn"]
 [ext_resource type="Script" uid="uid://dai8darcd7q2w" path="res://scripts/buildings/building_data.gd" id="1_aul5h"]
 
 [resource]

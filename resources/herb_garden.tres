@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="BuildingData" format=3 uid="uid://c8cu8kdl0hchx"]
 
-[ext_resource type="Texture2D" uid="uid://dgcnn1mulc0ai" path="res://art_assets/buildings/herb_garden.png" id="1_j82hb"]
+[ext_resource type="Texture2D" uid="uid://cv4t0sc18tfpu" path="res://art_assets/buildings/Herb Garden.webp" id="1_j82hb"]
 [ext_resource type="Script" uid="uid://dai8darcd7q2w" path="res://scripts/buildings/building_data.gd" id="1_nyxeu"]
 
 [resource]
