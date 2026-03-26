@@ -16,6 +16,9 @@
 [ext_resource type="Script" uid="uid://tqfstski4omi" path="res://scripts/Combat/EnemySpawner.gd" id="10_2j816"]
 [ext_resource type="Texture2D" uid="uid://bbunl2i540nyy" path="res://art_assets/product_resource/spirit stone.webp" id="10_10r1t"]
 [ext_resource type="PackedScene" uid="uid://duptcluexkt70" path="res://Scene/Combat/enemy_scene/Enemy_Tank.tscn" id="11_g3fkh"]
+[ext_resource type="PackedScene" uid="uid://gj80dsafogu0" path="res://Scene/Combat/enemy_scene/Enemy_Mage.tscn" id="16_10r1t"]
+[ext_resource type="PackedScene" uid="uid://i5yi4715o47o" path="res://Scene/Combat/enemy_scene/Enemy_Boss.tscn" id="17_vmjmr"]
+[ext_resource type="PackedScene" uid="uid://bcbb67y0b57cy" path="res://Scene/Combat/enemy_scene/Enemy_Assassin.tscn" id="18_yl8rb"]
 [ext_resource type="PackedScene" uid="uid://do8xgvq4ry37i" path="res://Scene/ui/button_gaze_upgrade.tscn" id="20_1e3q2"]
 [ext_resource type="Texture2D" uid="uid://dq50vf41x73e3" path="res://art_assets/q money/Q币.jpg" id="21_hqtje"]
 [ext_resource type="Script" uid="uid://cxpg1n5oqju86" path="res://scripts/store and q money/CurrencyUI.gd" id="22_0mc8i"]
@@ -158,12 +161,15 @@ position = Vector2(658, 379)
 visible = false
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=120020792 groups=["spawn_point"]]
-position = Vector2(967, 420)
+position = Vector2(761.282, 349.86844)
 
 [node name="EnemySpawner" type="Node2D" parent="." unique_id=216947881 node_paths=PackedStringArray("spawn_points", "shop_ui", "reward_ui", "reward_button")]
 position = Vector2(739, 382)
 script = ExtResource("10_2j816")
 enemy_scenes = Dictionary[String, PackedScene]({
+"assassin": ExtResource("18_yl8rb"),
+"boss": ExtResource("17_vmjmr"),
+"mage": ExtResource("16_10r1t"),
 "tank": ExtResource("11_g3fkh")
 })
 spawn_points = [NodePath("../EnemySpawnPoints/EnemySpawnPoint"), NodePath("../EnemySpawnPoints/EnemySpawnPoint2"), NodePath("../EnemySpawnPoints/EnemySpawnPoint3"), NodePath("../EnemySpawnPoints/EnemySpawnPoint4")]
@@ -190,6 +196,7 @@ position = Vector2(1737, 277)
 position = Vector2(1751, 188)
 
 [node name="GazeUpgradeUi" parent="." unique_id=1442738214 instance=ExtResource("20_1e3q2")]
+visible = false
 offset_left = 957.0
 offset_top = 812.0
 offset_right = 1066.0
@@ -239,12 +246,14 @@ process_mode = 2
 visible = false
 
 [node name="InitialBuilding" type="Node2D" parent="." unique_id=937275556 node_paths=PackedStringArray("blueprint_manager")]
+position = Vector2(2, -3)
 script = ExtResource("28_mw7jm")
 blueprint_manager = NodePath("../BlueprintUI")
 
 [node name="Gaze" parent="." unique_id=511512720 groups=["gaze_controller", "save_required"] instance=ExtResource("1_5kiuu")]
-position = Vector2(123, 79)
+position = Vector2(137, 243)
 
 [node name="Node2D" type="Node2D" parent="." unique_id=2011956737]
+position = Vector2(-141, 156)
 script = ExtResource("28_1mx4w")
 dialog = ExtResource("29_65ldo")
