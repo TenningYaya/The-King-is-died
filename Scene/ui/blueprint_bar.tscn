@@ -38,6 +38,49 @@ offset_top = -25.0
 offset_right = 1935.0
 offset_bottom = 20.0
 
+[node name="TestButtons" type="VBoxContainer" parent="." unique_id=1318161386]
+offset_left = 764.0
+offset_top = 393.0
+offset_right = 911.0
+offset_bottom = 681.0
+mouse_filter = 2
+script = ExtResource("1_rkeu6")
+
+[node name="herb_garden" type="Button" parent="TestButtons" unique_id=1471434081]
+layout_mode = 2
+text = "Herb Garden"
+
+[node name="spirit_vein" type="Button" parent="TestButtons" unique_id=553470608]
+layout_mode = 2
+text = "Spirit Vein"
+
+[node name="elixir_spring" type="Button" parent="TestButtons" unique_id=700923221]
+layout_mode = 2
+text = "Elixir Spring"
+
+[node name="mystic_iron_ore" type="Button" parent="TestButtons" unique_id=684325615]
+layout_mode = 2
+text = "Mystic Iron Ore"
+
+[node name="sword_monument" type="Button" parent="TestButtons" unique_id=752687089]
+layout_mode = 2
+text = "Sword Monument"
+
+[node name="martial_arena" type="Button" parent="TestButtons" unique_id=1984965031]
+layout_mode = 2
+text = "Martial Arena"
+
+[node name="origin_pavilion" type="Button" parent="TestButtons" unique_id=194490723]
+layout_mode = 2
+text = "Origin Pavilion"
+
+[node name="alchemy_lab" type="Button" parent="TestButtons" unique_id=637811562]
+layout_mode = 2
+text = "Alchemy Lab"
+
+[node name="market" type="Button" parent="TestButtons" unique_id=594028050]
+layout_mode = 2
+
 [node name="BlueprintBar" type="Control" parent="." unique_id=469888182]
 layout_mode = 3
 anchors_preset = 0
@@ -131,51 +174,6 @@ icon = ExtResource("10_qo8sw")
 expand_icon = true
 script = ExtResource("11_t0nuv")
 demolish_cursor = ExtResource("12_s7yhu")
-
-[node name="TestButtons" type="VBoxContainer" parent="BlueprintBar" unique_id=1318161386]
-visible = false
-layout_mode = 0
-offset_left = 725.0
-offset_top = 5.0
-offset_right = 872.0
-offset_bottom = 294.0
-mouse_filter = 2
-script = ExtResource("1_rkeu6")
-
-[node name="herb_garden" type="Button" parent="BlueprintBar/TestButtons" unique_id=1471434081]
-layout_mode = 2
-text = "Herb Garden"
-
-[node name="spirit_vein" type="Button" parent="BlueprintBar/TestButtons" unique_id=553470608]
-layout_mode = 2
-text = "Spirit Vein"
-
-[node name="elixir_spring" type="Button" parent="BlueprintBar/TestButtons" unique_id=700923221]
-layout_mode = 2
-text = "Elixir Spring"
-
-[node name="mystic_iron_ore" type="Button" parent="BlueprintBar/TestButtons" unique_id=684325615]
-layout_mode = 2
-text = "Mystic Iron Ore"
-
-[node name="sword_monument" type="Button" parent="BlueprintBar/TestButtons" unique_id=752687089]
-layout_mode = 2
-text = "Sword Monument"
-
-[node name="martial_arena" type="Button" parent="BlueprintBar/TestButtons" unique_id=1984965031]
-layout_mode = 2
-text = "Martial Arena"
-
-[node name="origin_pavilion" type="Button" parent="BlueprintBar/TestButtons" unique_id=194490723]
-layout_mode = 2
-text = "Origin Pavilion"
-
-[node name="alchemy_lab" type="Button" parent="BlueprintBar/TestButtons" unique_id=637811562]
-layout_mode = 2
-text = "Alchemy Lab"
-
-[node name="market" type="Button" parent="BlueprintBar/TestButtons" unique_id=594028050]
-layout_mode = 2
 
 [node name="SaveButton" type="Button" parent="." unique_id=148902364]
 offset_left = 100.0

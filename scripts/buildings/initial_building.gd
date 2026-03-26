@@ -54,5 +54,3 @@ func _give_initial_buildings() -> void:
 	blueprint_manager.add_blueprint(market)
 	
 	blueprint_manager.add_blueprint(martial_arena)
-	
-	print("[InitialBuilding] 初始建筑已通过代码直接加载并调用 add_blueprint 发放完毕！")
