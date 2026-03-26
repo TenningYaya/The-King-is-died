@@ -7,7 +7,7 @@ var current_filter = FilterType.ALL
 var inventory: Dictionary = {}
 
 @export var slot_scene: PackedScene
-@onready var grid_container = $Control/HBoxContainer/BlueprintsSlots
+@onready var grid_container = $BlueprintBar/HBoxContainer/BlueprintsSlots
 
 @onready var save_popup = $BackMainWindow
 # 必须在 Inspector 中把 Blueprint.tscn 拖入这个槽位

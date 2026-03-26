@@ -59,8 +59,10 @@ func _on_animation_finished() -> void:
 # --- UI 更新 ---
 func _update_hp_ui() -> void:
 	if hp_label:
-		# ceil 向上取整，只给玩家看整数血量
-		hp_label.text = str(ceil(current_hp))
+		# 1. 先用 ceil 向上取整 (返回 float)
+		# 2. 再用 int() 强转为整数 (去掉 .0)
+		# 3. 最后转为 str 赋值给 Label
+		hp_label.text = str(int(ceil(current_hp)))
 
 # --- 覆盖逻辑 ---
 func _physics_process(_delta: float) -> void:

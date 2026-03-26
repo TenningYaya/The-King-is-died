@@ -190,6 +190,7 @@ offset_bottom = 776.0
 text = "Add 999 Resource"
 
 [node name="99" type="Button" parent="." unique_id=1609076134]
+visible = false
 layout_mode = 0
 offset_left = 1137.0
 offset_top = 781.0

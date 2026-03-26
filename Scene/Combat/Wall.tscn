@@ -316,5 +316,9 @@ animation = &"hit"
 frame_progress = 0.42506856
 
 [node name="HPLabel" type="Label" parent="." unique_id=1735860095]
-offset_right = 40.0
-offset_bottom = 23.0
+modulate = Color(1.540184e-06, 0.7934128, 0.7967792, 1)
+offset_left = 4.455
+offset_top = -50.0
+offset_right = 44.455
+offset_bottom = -27.0
+theme_override_font_sizes/font_size = 30

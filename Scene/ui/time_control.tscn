@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://08c47lp2473c" path="res://scripts/ui/time_control.gd" id="1_mggev"]
 [ext_resource type="Texture2D" uid="uid://dgegcg3038470" path="res://art_assets/ui/Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_IconPause01a.png" id="1_ruv2l"]
-[ext_resource type="Texture2D" uid="uid://dsp7x3h7d4jqa" path="res://art_assets/ui/Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_IconStar01e.png" id="2_mggev"]
-[ext_resource type="Texture2D" uid="uid://dauqbhd8fjeah" path="res://art_assets/ui/Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_IconStar01c.png" id="3_pgip0"]
-[ext_resource type="Texture2D" uid="uid://bjsb11md727ju" path="res://art_assets/ui/Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_IconStar01a.png" id="4_jo45q"]
+[ext_resource type="Texture2D" uid="uid://jtf77xxv3w42" path="res://art_assets/ui/button/speed_1x.webp" id="3_mggev"]
+[ext_resource type="Texture2D" uid="uid://c6y67xstbfrch" path="res://art_assets/ui/button/speed_2x.webp" id="4_pgip0"]
+[ext_resource type="Texture2D" uid="uid://cmouk5c6ooa1g" path="res://art_assets/ui/button/speed_3x.webp" id="5_jo45q"]
 
 [node name="TimeControl" type="HBoxContainer" unique_id=835025454]
 size_flags_horizontal = 4
@@ -27,7 +27,7 @@ custom_minimum_size = Vector2(45, 45)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture_normal = ExtResource("2_mggev")
+texture_normal = ExtResource("3_mggev")
 ignore_texture_size = true
 stretch_mode = 5
 
@@ -35,7 +35,7 @@ stretch_mode = 5
 custom_minimum_size = Vector2(45, 45)
 layout_mode = 2
 size_flags_horizontal = 4
-texture_normal = ExtResource("3_pgip0")
+texture_normal = ExtResource("4_pgip0")
 ignore_texture_size = true
 stretch_mode = 5
 
@@ -44,6 +44,6 @@ custom_minimum_size = Vector2(45, 45)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture_normal = ExtResource("4_jo45q")
+texture_normal = ExtResource("5_jo45q")
 ignore_texture_size = true
 stretch_mode = 5

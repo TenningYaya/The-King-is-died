@@ -82,11 +82,12 @@ func _gui_input(event):
 
 # --- 视觉高亮修复 ---
 func _on_mouse_entered():
+	print("鼠标进来了！")
+	print("是否在出售模式: ", is_in_sell_mode)
+	print("是否有建筑数据: ", current_data != null)
+	
 	if is_in_sell_mode and current_data:
 		modulate = Color(2, 0.5, 0.5) 
-	elif not is_affordable:
-		# 买不起时移入也没反应
-		pass
 
 func _on_mouse_exited():
 	modulate = Color(1, 1, 1)
@@ -114,3 +115,13 @@ func _execute_sell():
 	var sell_btn = get_tree().get_first_node_in_group("sell_button_node")
 	if sell_btn:
 		sell_btn.reset_mode()
+
+func enter_sell_mode():
+	is_in_sell_mode = true
+	print(name, " 已进入出售模式")
+	# 可以在进入时给个淡淡的底色提示
+	modulate = Color(1, 0.8, 0.8) 
+
+func exit_sell_mode():
+	is_in_sell_mode = false
+	modulate = Color(1, 1, 1)
