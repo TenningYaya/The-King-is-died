@@ -27,6 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://cs2uw4cq2noiw" path="res://Scene/buildings/combat_building.tscn" id="26_1mx4w"]
 [ext_resource type="PackedScene" uid="uid://dwyka17gkpfh4" path="res://Scene/ui/reward.tscn" id="26_ghk2r"]
 [ext_resource type="PackedScene" uid="uid://cc5n01itk08si" path="res://Scene/ui/shop_scene.tscn" id="26_hjrqo"]
+[ext_resource type="Script" uid="uid://dk4ghcukvb465" path="res://scripts/buildings/initial_building.gd" id="28_mw7jm"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_bxrg2"]
 vertices = PackedVector2Array(1831.1016, 26.992188, 1837.8828, 637.0078, 756.03906, 638.97656, 758.9531, 26)
@@ -241,3 +242,7 @@ visible = false
 [node name="ShopScene" parent="." unique_id=1459319748 instance=ExtResource("26_hjrqo")]
 process_mode = 2
 visible = false
+
+[node name="InitialBuilding" type="Node2D" parent="." unique_id=937275556 node_paths=PackedStringArray("blueprint_manager")]
+script = ExtResource("28_mw7jm")
+blueprint_manager = NodePath("../BlueprintUI")
