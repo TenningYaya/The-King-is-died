@@ -127,10 +127,8 @@ func update_affordability():
 
 func _check_resources_sufficient() -> bool:
 	if not resource_manager or not data: return true
-	print("[调试] 当前建筑: ", data.building_name, " | Cost字典内容: ", data.cost, " | Size: ", data.cost.size())
 	
 	if data.cost.is_empty(): 
-		# print("此建筑无消耗，检查通过")
 		return true
 	
 	for res_index in data.cost.keys():

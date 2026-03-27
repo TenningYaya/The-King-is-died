@@ -23,6 +23,5 @@ func _on_production_finished():
 
 func _handle_limit_reached():
 	is_active = false
-	print("[%s] 产量已满，建筑准备拆除..." % data.building_name)
 	await get_tree().create_timer(0.5).timeout
 	queue_free()

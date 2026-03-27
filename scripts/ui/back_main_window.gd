@@ -17,7 +17,7 @@ func _ready():
 	# 强制让这个亮的 X 号排在最前面，无视任何遮挡
 	$Control/CloseBtn.z_index = 100 
 	# 或者尝试这个，看看到底是谁在接收点击
-	print("亮的X号当前的过滤模式是: ", $Control/CloseBtn.mouse_filter)
+
 # 找到那个亮的 X 号
 	var bright_x = $Control/CloseBtn
 	
@@ -25,8 +25,6 @@ func _ready():
 	if bright_x.pressed.is_connected(_on_close_pressed):
 		bright_x.pressed.disconnect(_on_close_pressed) # 先断开旧的
 	bright_x.pressed.connect(_on_close_pressed)     # 再连上新的
-	
-	print("【道法加固】信号已强制连接至: ", bright_x.get_path())
 	
 func open():
 	pre_popup_speed = Engine.time_scale

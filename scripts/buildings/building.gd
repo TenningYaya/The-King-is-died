@@ -4,14 +4,14 @@ class_name Building
 
 @export var data: BuildingData
 var current_slot: Area2D = null
+var original_pos: Vector2
 
 var current_progress: float = 0.0
-var is_active: bool = true
 var penalty_timer: float = 0.0
-var is_under_penalty: bool = false
 
+var is_active: bool = true
+var is_under_penalty: bool = false
 var is_moving: bool = false
-var original_pos: Vector2
 var is_in_demolish_mode: bool = false
 
 @onready var progress_pie = $UIContainer/ProgressBar
@@ -30,6 +30,7 @@ func _ready():
 
 func enter_demolish_mode():
 	is_in_demolish_mode = true
+	print(name, " 进入状态 is_in_demolish_mode 的状态是: ", is_in_demolish_mode)
 
 func exit_demolish_mode():
 	is_in_demolish_mode = false
@@ -56,7 +57,6 @@ func _update_penalty_timer(delta):
 		penalty_timer -= delta
 		if penalty_timer <= 0:
 			is_under_penalty = false
-			print("[%s] 效率恢复正常" % data.building_name)
 
 func _tick_production(delta):
 	var gaze_node = get_tree().get_first_node_in_group("gaze_controller")
@@ -80,19 +80,38 @@ func _tick_production(delta):
 func _on_production_finished():
 	pass
 
-func _input_event(_viewport, event, _shape_idx):
-	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT:
-			if event.pressed and Input.is_key_pressed(KEY_SHIFT):
-				_start_moving()
+func _input(event):
+	# 1. 只有在左键按下时才处理
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		
+		# --- 情况 A：拆除模式（强行矩形区域扫描） ---
+		if is_in_demolish_mode:
+			var mouse_pos = get_global_mouse_position()
+			
+			# 计算鼠标与建筑中心的偏移量
+			var diff = (mouse_pos - global_position).abs()
+			
+			# 判定：如果 X 和 Y 的偏移都在 60 像素以内（总边长 120）
+			if diff.x <= 60.0 and diff.y <= 60.0:
+				print("【正方形捕获】强制命中，执行爆破: ", name)
+				_execute_demolish()
+				# 斩断信号传播
 				get_viewport().set_input_as_handled()
-			elif not event.pressed and is_moving:
-				_stop_moving()
-	if is_in_demolish_mode and event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			_execute_demolish()
-			get_viewport().set_input_as_handled()
+				return
 
+# --- 情况 B：正常/搬迁模式（依赖物理碰撞） ---
+# 只有在非拆除模式下，才走这个精准物理判定
+func _input_event(_viewport, event, _shape_idx):
+	if is_in_demolish_mode: return # 拆除逻辑已在 _input 处理，这里直接无视
+
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+		if event.pressed and Input.is_key_pressed(KEY_SHIFT):
+			_start_moving()
+			get_viewport().set_input_as_handled()
+		elif not event.pressed and is_moving:
+			_stop_moving()
+			get_viewport().set_input_as_handled()
+			
 func _start_moving():
 	is_moving = true
 	original_pos = global_position
@@ -132,7 +151,6 @@ func _on_moved_to_new_slot():
 	if data:
 		penalty_timer = data.production_time * data.move_penalty_duration_factor
 		is_under_penalty = true
-		print("[%s] 搬迁完成，进入生产惩罚期" % data.building_name)
 
 func get_current_speed_multiplier() -> float:
 	if is_under_penalty:
@@ -158,7 +176,6 @@ func _execute_demolish():
 	var dem_btn = get_tree().get_first_node_in_group("demolish_button_node")
 	if dem_btn:
 		dem_btn.reset_mode()
-	print("建筑已拆除: ", name)
 	queue_free()
 
 func _return_blueprint():

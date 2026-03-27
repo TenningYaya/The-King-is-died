@@ -119,14 +119,12 @@ func _execute_sell():
 	if bp_ui and bp_ui.has_method("consume_blueprint"):
 		bp_ui.consume_blueprint(current_data)
 	
-	# 3. 通知 SellButton 恢复正常鼠标
 	var sell_btn = get_tree().get_first_node_in_group("sell_button_node")
 	if sell_btn:
 		sell_btn.reset_mode()
 
 func enter_sell_mode():
 	is_in_sell_mode = true
-	print(name, " 已进入出售模式")
 	# 可以在进入时给个淡淡的底色提示
 	modulate = Color(1, 0.8, 0.8) 
 

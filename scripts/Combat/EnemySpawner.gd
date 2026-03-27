@@ -41,7 +41,6 @@ func _process(delta: float) -> void:
 	_debug_timer -= delta
 	if _debug_timer <= 0.0:
 		_debug_timer = 1.0
-		print("wave:%d timer:%.1f" % [current_wave_index, timer])
 
 	timer += delta
 	if timer >= waves[current_wave_index]["spawn_time"]:

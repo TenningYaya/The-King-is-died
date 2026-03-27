@@ -22,9 +22,7 @@ func _tick_production(delta):
 	_debug_timer -= delta
 	if _debug_timer <= 0.0:
 		_debug_timer = 1.0
-		print("[%s] active_minions:%d 上限:%d current_progress:%.2f old_progress:%.2f" % [
-			name, active_minions.size(), data.amount_per_cycle, current_progress, old_progress
-		])
+	
 
 	if active_minions.size() >= data.amount_per_cycle:
 		if progress_pie:
@@ -59,7 +57,6 @@ func _spawn_minion():
 	var offset = Vector2(randf_range(-20, 20), randf_range(-20, 20))
 	minion.global_position = spawn_pos + offset
 	active_minions.append(minion)
-	print("[%s] 产兵成功，当前场内: %d/%d" % [name, active_minions.size(), data.amount_per_cycle])
 
 func _cleanup_minions():
 	active_minions = active_minions.filter(func(m): return is_instance_valid(m))
