@@ -17,25 +17,18 @@ func _ready():
 	if level_manager:
 		if not level_manager.level_resource_changed.is_connected(_on_resource_changed):
 			level_manager.level_resource_changed.connect(_on_resource_changed)
-
-		# 初始化普通资源显示（跳过 q_coin）
 		for res_id in labels.keys():
 			if res_id == "q_coin":
 				continue
-			var current_val = level_manager.get_amount(res_id)
-			_update_label_text(res_id, current_val)
+			_update_label_text(res_id, level_manager.get_amount(res_id))
 	else:
 		push_error("ResourceBar错误：找不到带有 'level_manager' 分组的节点！")
 
 	# 2. q_coin：连接 ResourceManager（autoload）
-	if ResourceManager:
-		if not ResourceManager.special_currency_changed.is_connected(_on_special_currency_changed):
-			ResourceManager.special_currency_changed.connect(_on_special_currency_changed)
-
-		# 初始化 q_coin 显示
-		_update_label_text("q_coin", ResourceManager.get_currency())
-	else:
-		push_error("ResourceBar错误：找不到 ResourceManager（autoload）！")
+	print("[ResourceBar] ResourceManager found, currency:", ResourceManager.get_currency())
+	if not ResourceManager.special_currency_changed.is_connected(_on_special_currency_changed):
+		ResourceManager.special_currency_changed.connect(_on_special_currency_changed)
+	_update_label_text("q_coin", ResourceManager.get_currency())
 
 	print("[ResourceBar] ready complete")
 
@@ -55,18 +48,13 @@ func _on_999button_pressed():
 		for res_id in labels.keys():
 			if res_id == "q_coin":
 				continue
-				
 			var current_val = level_manager.get_amount(res_id)
 			var difference = 999 - current_val
-			
 			if difference > 0:
 				level_manager.add_resource(res_id, difference)
 			elif difference < 0:
 				level_manager.consume_resource(res_id, abs(difference))
-		
-		# q_coin 单独处理
 		ResourceManager.set_currency(999)
-		
 		print("测试：所有资源已设为 999")
 	else:
 		push_error("测试按钮错误：找不到 level_manager")
@@ -76,18 +64,13 @@ func _on_99button_pressed():
 		for res_id in labels.keys():
 			if res_id == "q_coin":
 				continue
-				
 			var current_val = level_manager.get_amount(res_id)
 			var difference = 99 - current_val
-			
 			if difference > 0:
 				level_manager.add_resource(res_id, difference)
 			elif difference < 0:
 				level_manager.consume_resource(res_id, abs(difference))
-		
-		# q_coin 单独处理
 		ResourceManager.set_currency(99)
-		
 		print("测试：所有资源已设为 99")
 	else:
 		push_error("测试按钮错误：找不到 level_manager")
