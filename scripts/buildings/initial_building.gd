@@ -9,7 +9,7 @@ extends Node
 # --- 请在这里把路径替换成你项目里真实的 .tres 文件路径 ---
 const ELIXIR_SPRING_PATH = "res://resources/elixir_spring.tres"
 const HERB_GARDEN_PATH = "res://resources/herb_garden.tres"
-const MYSTIC_IRON_ORE_PATH = "res://resources/mystic_iron_ore.tres"
+const SPIRIT_VEIN_PATH = "res://resources/spirit_vein.tres"
 const MARTIAL_ARENA_PATH = "res://resources/martial_arena.tres"
 const MARKET_PATH = "res://resources/market.tres"
 
@@ -29,12 +29,12 @@ func _give_initial_buildings() -> void:
 	# 通过代码动态加载资源
 	var elixir_spring = load(ELIXIR_SPRING_PATH) as BuildingData
 	var herb_garden = load(HERB_GARDEN_PATH) as BuildingData
-	var mystic_iron_ore = load(MYSTIC_IRON_ORE_PATH) as BuildingData
+	var spirit_vein = load(SPIRIT_VEIN_PATH) as BuildingData
 	var martial_arena = load(MARTIAL_ARENA_PATH) as BuildingData
 	var market = load(MARKET_PATH) as BuildingData
 	
 	# 检查路径是否写对，文件是否成功加载
-	if not elixir_spring or not herb_garden or not mystic_iron_ore or not market or not martial_arena:
+	if not elixir_spring or not herb_garden or not spirit_vein or not market or not martial_arena:
 		push_error("[InitialBuilding] 错误：有建筑资源未能加载，请检查上方的 res:// 路径是否正确！")
 		return
 		
@@ -48,7 +48,7 @@ func _give_initial_buildings() -> void:
 		
 	# 给3个 mystic_iron_ore
 	for i in range(3):
-		blueprint_manager.add_blueprint(mystic_iron_ore)
+		blueprint_manager.add_blueprint(spirit_vein)
 		
 	# 给1个 market
 	blueprint_manager.add_blueprint(market)
