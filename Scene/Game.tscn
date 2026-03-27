@@ -230,7 +230,6 @@ script = ExtResource("28_mw7jm")
 blueprint_manager = NodePath("../BlueprintUI")
 
 [node name="Gaze" parent="." unique_id=511512720 groups=["gaze_controller", "save_required"] instance=ExtResource("1_5kiuu")]
-visible = false
 position = Vector2(123, 79)
 
 [node name="Dialogue" type="Node2D" parent="." unique_id=2011956737]
