@@ -1,6 +1,7 @@
 class_name Unit_General
 extends CharacterBody2D
 
+signal died
 # ─────────────────────────────────────────
 #  枚举
 # ─────────────────────────────────────────
@@ -251,6 +252,7 @@ func take_damage(amount: float) -> void:
 
 func _die() -> void:
 	is_dead = true
+	died.emit()
 	print("[%s] 已死亡" % name)
 	_play_anim("death")
 	_on_death_override()

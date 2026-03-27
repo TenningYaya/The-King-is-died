@@ -20,8 +20,6 @@
 [ext_resource type="PackedScene" uid="uid://i5yi4715o47o" path="res://Scene/Combat/enemy_scene/Enemy_Boss.tscn" id="17_10r1t"]
 [ext_resource type="PackedScene" uid="uid://bcbb67y0b57cy" path="res://Scene/Combat/enemy_scene/Enemy_Assassin.tscn" id="18_vmjmr"]
 [ext_resource type="PackedScene" uid="uid://do8xgvq4ry37i" path="res://Scene/ui/button_gaze_upgrade.tscn" id="20_1e3q2"]
-[ext_resource type="Texture2D" uid="uid://dq50vf41x73e3" path="res://art_assets/q money/Q币.jpg" id="21_hqtje"]
-[ext_resource type="Script" uid="uid://cxpg1n5oqju86" path="res://scripts/store and q money/CurrencyUI.gd" id="22_0mc8i"]
 [ext_resource type="Script" uid="uid://htykhra2fbhu" path="res://scripts/buildings/building_manager.gd" id="23_hjrqo"]
 [ext_resource type="PackedScene" uid="uid://cs7473lfyhaex" path="res://Scene/buildings/producer/production_building.tscn" id="24_ghk2r"]
 [ext_resource type="Texture2D" uid="uid://b6igh8b028wcf" path="res://art_assets/ui/rewards.png" id="25_ghk2r"]
@@ -209,23 +207,6 @@ offset_left = 957.0
 offset_top = 812.0
 offset_right = 1066.0
 offset_bottom = 916.0
-
-[node name="CurrencyDisplay" type="HBoxContainer" parent="." unique_id=1728488012]
-visible = false
-offset_left = 1099.0
-offset_top = 872.0
-offset_right = 1149.0
-offset_bottom = 917.0
-
-[node name="Icon" type="TextureRect" parent="CurrencyDisplay" unique_id=1762199005]
-layout_mode = 2
-texture = ExtResource("21_hqtje")
-expand_mode = 3
-
-[node name="CurrencyLabel" type="Label" parent="CurrencyDisplay" unique_id=803240193]
-layout_mode = 2
-text = "0"
-script = ExtResource("22_0mc8i")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=213039517]
 position = Vector2(961, 481)

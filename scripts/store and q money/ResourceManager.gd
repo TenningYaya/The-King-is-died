@@ -1,18 +1,37 @@
-# ResourceManager.gd (Autoload)
 extends Node
 
 signal special_currency_changed(new_amount)
 
-var special_currency: int = 0:
-	set(value):
-		special_currency = value
-		special_currency_changed.emit(special_currency)
+var _special_currency: int = 0
 
-func add_currency(amount: int):
-	special_currency += amount
+func add_currency(amount: int) -> void:
+	if amount <= 0:
+		return
+		
+	_special_currency += amount
+	special_currency_changed.emit(_special_currency)
+	
+	print("[ResourceManager] +", amount, " | current = ", _special_currency)
 
 func spend_currency(amount: int) -> bool:
-	if special_currency >= amount:
-		special_currency -= amount
-		return true # 购买成功
-	return false # 钱不够
+	if amount <= 0:
+		return true
+		
+	if _special_currency >= amount:
+		_special_currency -= amount
+		special_currency_changed.emit(_special_currency)
+		
+		print("[ResourceManager] -", amount, " | current = ", _special_currency)
+		return true
+	
+	print("[ResourceManager] spend failed. Need ", amount, ", current = ", _special_currency)
+	return false
+
+func set_currency(amount: int) -> void:
+	_special_currency = max(amount, 0)
+	special_currency_changed.emit(_special_currency)
+	
+	print("[ResourceManager] set = ", _special_currency)
+
+func get_currency() -> int:
+	return _special_currency
