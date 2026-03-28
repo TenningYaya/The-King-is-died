@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://kqx4twth4his" path="res://Scene/ui/normal_button.tscn" id="5_v63ll"]
 [ext_resource type="Texture2D" uid="uid://bjf2wnj1yegrg" path="res://art_assets/ui/slider/slider_hover.png" id="6_f6x7j"]
 [ext_resource type="Script" uid="uid://cl5smtaua34wt" path="res://scripts/ui/back_main_window.gd" id="8_f6x7j"]
+[ext_resource type="Texture2D" uid="uid://cm8vhdyfnw4jt" path="res://art_assets/tutorial_image.png" id="8_y8a0d"]
 
 [sub_resource type="Theme" id="Theme_j0e1t"]
 
@@ -71,10 +72,10 @@ stretch_mode = 5
 
 [node name="HSlider" type="HSlider" parent="ScreenOverlay" unique_id=2043342919]
 layout_mode = 0
-offset_left = 329.255
-offset_top = 168.0
-offset_right = 1005.255
-offset_bottom = 268.0
+offset_left = 316.0
+offset_top = 108.0
+offset_right = 992.0
+offset_bottom = 208.0
 theme = SubResource("Theme_j0e1t")
 theme_override_icons/grabber = ExtResource("5_j0e1t")
 theme_override_icons/grabber_highlight = ExtResource("6_f6x7j")
@@ -96,19 +97,39 @@ text = "Volume"
 
 [node name="Continue" parent="ScreenOverlay" unique_id=357304590 instance=ExtResource("5_v63ll")]
 layout_mode = 0
-offset_left = 376.445
-offset_top = 475.0
-offset_right = 731.0
-offset_bottom = 582.0
+offset_left = 375.0
+offset_top = 535.0
+offset_right = 729.555
+offset_bottom = 642.0
 button_text = "Continue"
 
 [node name="Quit" parent="ScreenOverlay" unique_id=2099660001 instance=ExtResource("5_v63ll")]
 layout_mode = 0
-offset_left = 376.445
-offset_top = 324.0
-offset_right = 731.0
-offset_bottom = 431.0
+offset_left = 375.0
+offset_top = 384.0
+offset_right = 729.555
+offset_bottom = 491.0
 button_text = "Quit"
+
+[node name="Tutorial" parent="ScreenOverlay" unique_id=1189500148 instance=ExtResource("5_v63ll")]
+layout_mode = 0
+offset_left = 378.0
+offset_top = 232.0
+offset_right = 732.55493
+offset_bottom = 339.0
+button_text = "Tutorial"
+
+[node name="TutorialImage" type="TextureRect" parent="ScreenOverlay" unique_id=1204543071]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.3458844
+anchor_top = -0.32496512
+anchor_right = 1.3345009
+anchor_bottom = 1.1799163
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_y8a0d")
+metadata/_edit_use_anchors_ = true
 
 [node name="Overlay" type="ColorRect" parent="." unique_id=822993399]
 visible = false
@@ -118,6 +139,7 @@ offset_bottom = 1069.0
 color = Color(0, 0, 0, 0.46666667)
 
 [node name="BackMainWindow" type="PanelContainer" parent="." unique_id=821999516]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -219,6 +241,7 @@ stretch_mode = 3
 [connection signal="value_changed" from="ScreenOverlay/HSlider" to="." method="_on_h_slider_value_changed"]
 [connection signal="pressed" from="ScreenOverlay/Continue" to="." method="close_menu"]
 [connection signal="pressed" from="ScreenOverlay/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="ScreenOverlay/Tutorial" to="." method="_on_tutorial_pressed"]
 [connection signal="pressed" from="BackMainWindow/ScreenOverlay/MenuBox/MarginContainer/VBoxContainer/ButtonContainer/SaveButton" to="BackMainWindow" method="_on_save_pressed"]
 [connection signal="pressed" from="BackMainWindow/ScreenOverlay/MenuBox/MarginContainer/VBoxContainer/ButtonContainer/NoSaveButton" to="BackMainWindow" method="_on_no_save_pressed"]
 [connection signal="pressed" from="BackMainWindow/Control/CloseBtn" to="BackMainWindow" method="_on_close_pressed"]

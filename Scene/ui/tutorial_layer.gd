@@ -27,6 +27,7 @@ var dialogue_lines = [
 var current_index = 0
 
 func _ready():
+	GamedataManager.is_tutorial_active = true
 	# 暂停游戏时间线
 	get_tree().paused = true
 	
@@ -69,6 +70,7 @@ func next_line():
 	show_dialogue()
 
 func end_tutorial():
+	GamedataManager.is_tutorial_active = false
 	# 恢复时间线，销毁引导UI
 	get_tree().paused = false
 	queue_free()

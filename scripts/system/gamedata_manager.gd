@@ -3,6 +3,7 @@ extends Node
 
 var full_save_dict: Dictionary = {}
 var is_loading_save = false # 一个开关：告诉游戏场景“这次进入是读档还是新开”
+var is_tutorial_active: bool = false
 
 func _ready():
 	if GamedataManager.is_loading_save:
