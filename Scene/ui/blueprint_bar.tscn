@@ -18,11 +18,13 @@
 [ext_resource type="Texture2D" uid="uid://dy3vdoxafh8w2" path="res://art_assets/ui/button/Save.png" id="14_m2vxj"]
 [ext_resource type="Texture2D" uid="uid://b0f7j2icl0h2o" path="res://art_assets/ui/button/Quit.png" id="15_55qeq"]
 [ext_resource type="Script" uid="uid://cj8mwu7ivs627" path="res://scripts/ui/gaze_upgrade.gd" id="16_t0nuv"]
+[ext_resource type="FontFile" uid="uid://cx34bvrh8vf80" path="res://fonts/Stacked pixel.ttf" id="17_4vti8"]
 [ext_resource type="Texture2D" uid="uid://cvk6hrdkjbq8h" path="res://art_assets/ui/gaze_upgrade.webp" id="17_t0nuv"]
 [ext_resource type="Texture2D" uid="uid://dnlgpdcq5jusx" path="res://art_assets/ui/button/upgrade.webp" id="18_m2vxj"]
 [ext_resource type="Texture2D" uid="uid://btpypob3sgb43" path="res://art_assets/ui/button/upgrade_disabled_2.webp" id="19_t0nuv"]
 [ext_resource type="PackedScene" uid="uid://casddr1rqpyw6" path="res://Scene/ui/cost_tooltip.tscn" id="22_55qeq"]
 [ext_resource type="Script" uid="uid://djh4uv0x4iswg" path="res://scripts/system/mouse_debugger.gd" id="23_6py5g"]
+[ext_resource type="Texture2D" uid="uid://copi7q06004h4" path="res://art_assets/ui/Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_IconGear01a.png" id="23_qqi5m"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cslux"]
 
@@ -32,15 +34,29 @@ slot_scene = ExtResource("1_rmctn")
 common_blueprint_scene = ExtResource("3_eqi16")
 
 [node name="ResourceBar" parent="." unique_id=298767585 instance=ExtResource("4_g8vxn")]
+offset_top = -77.0
+offset_bottom = -77.0
 mouse_filter = 2
 
 [node name="TimeControl" parent="." unique_id=835025454 instance=ExtResource("4_b6ffr")]
-offset_left = 1605.0
-offset_top = -25.0
-offset_right = 1935.0
-offset_bottom = 20.0
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -298.0
+offset_top = -33.0
+offset_right = -28.0
+offset_bottom = 12.0
+grow_horizontal = 0
+
+[node name="WaveRoadmap" parent="." unique_id=1937857851 instance=ExtResource("9_53uil")]
+anchors_preset = 10
+anchor_bottom = 0.0
+offset_top = -38.0
+offset_bottom = -38.0
+grow_vertical = 1
 
 [node name="TestButtons" type="VBoxContainer" parent="." unique_id=1318161386]
+visible = false
 offset_left = 764.0
 offset_top = 393.0
 offset_right = 911.0
@@ -179,10 +195,10 @@ script = ExtResource("11_t0nuv")
 demolish_cursor = ExtResource("12_s7yhu")
 
 [node name="GazeUpgradeUi" type="VBoxContainer" parent="." unique_id=270773122]
-offset_left = 850.0
-offset_top = 850.0
-offset_right = 1059.0
-offset_bottom = 1004.0
+offset_left = 858.0
+offset_top = 796.0
+offset_right = 1067.0
+offset_bottom = 950.0
 alignment = 2
 script = ExtResource("16_t0nuv")
 
@@ -211,7 +227,9 @@ expand_mode = 1
 
 [node name="LevelLabel" type="Label" parent="GazeUpgradeUi/MainHBox" unique_id=604425129]
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme_override_colors/font_color = Color(0.91, 0.91, 0.27300003, 1)
+theme_override_fonts/font = ExtResource("17_4vti8")
+theme_override_font_sizes/font_size = 40
 
 [node name="UpgradeButton" type="TextureButton" parent="GazeUpgradeUi/MainHBox" unique_id=578441884]
 custom_minimum_size = Vector2(100, 100)
@@ -220,21 +238,6 @@ texture_normal = ExtResource("18_m2vxj")
 texture_disabled = ExtResource("19_t0nuv")
 ignore_texture_size = true
 stretch_mode = 0
-
-[node name="Overlay" type="ColorRect" parent="." unique_id=1441127706]
-offset_top = -60.0
-offset_right = 1978.0
-offset_bottom = 1069.0
-color = Color(0, 0, 0, 0.46666667)
-
-[node name="BackMainWindow" parent="." unique_id=821999516 instance=ExtResource("7_h1qn1")]
-visible = false
-
-[node name="WaveRoadmap" parent="." unique_id=1937857851 instance=ExtResource("9_53uil")]
-offset_left = 45.0
-offset_top = -66.0
-offset_right = 45.0
-offset_bottom = -66.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=324462288]
 offset_left = 1682.0
@@ -253,15 +256,38 @@ icon = ExtResource("15_55qeq")
 [node name="CostTooltip" parent="." unique_id=1624179468 groups=["tooltip_ui"] instance=ExtResource("22_55qeq")]
 offset_left = 309.0
 offset_top = 645.0
-offset_right = 349.0
-offset_bottom = 685.0
+offset_right = 509.0
+offset_bottom = 845.0
+
+[node name="PauseButton" type="TextureButton" parent="." unique_id=35587423]
+custom_minimum_size = Vector2(64, 64)
+offset_left = 18.0
+offset_top = -40.0
+offset_right = 82.0
+offset_bottom = 24.0
+texture_normal = ExtResource("23_qqi5m")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Overlay" type="ColorRect" parent="." unique_id=1441127706]
+offset_top = -60.0
+offset_right = 1978.0
+offset_bottom = 1069.0
+color = Color(0, 0, 0, 0.46666667)
+
+[node name="BackMainWindow" parent="." unique_id=821999516 instance=ExtResource("7_h1qn1")]
+visible = false
 
 [node name="MouseDebugger" type="Control" parent="." unique_id=1310618310]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
 script = ExtResource("23_6py5g")
 
 [connection signal="pressed" from="HBoxContainer/SaveButton" to="." method="_on_save_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="PauseButton" to="." method="_on_pause_button_pressed"]

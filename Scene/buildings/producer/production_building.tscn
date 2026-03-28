@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cs7473lfyhaex"]
 
 [ext_resource type="Script" uid="uid://cwy3sp5kjws12" path="res://scripts/buildings/producer_building.gd" id="1_kj3mx"]
-[ext_resource type="Texture2D" uid="uid://1oh6ldhxsl27" path="res://icon.svg" id="3_4xp6y"]
+[ext_resource type="Texture2D" uid="uid://besyd8pppgkhx" path="res://art_assets/ui/rotator2.png" id="2_klcqe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dvdb5"]
 size = Vector2(116, 117)
@@ -24,12 +24,13 @@ offset_bottom = -39.0
 
 [node name="ProgressBar" type="TextureProgressBar" parent="UIContainer" unique_id=959271549]
 layout_mode = 0
-offset_right = 128.0
-offset_bottom = 128.0
-scale = Vector2(0.34, 0.34)
+offset_left = -1.0
+offset_right = 2047.0
+offset_bottom = 2048.0
+scale = Vector2(0.02, 0.02)
 fill_mode = 4
-texture_under = ExtResource("3_4xp6y")
-texture_progress = ExtResource("3_4xp6y")
+texture_under = ExtResource("2_klcqe")
+texture_progress = ExtResource("2_klcqe")
 tint_under = Color(0.70131457, 0.70131457, 0.70131457, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=262455899]

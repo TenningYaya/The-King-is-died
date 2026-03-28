@@ -121,3 +121,19 @@ func _on_save_button_pressed() -> void:
 
 func _on_exit_button_pressed() -> void:
 	save_popup.open()
+
+func _on_pause_button_pressed() -> void:
+	# 尝试获取 Game 节点下的 PauseMenu
+	var pause_menu = get_node_or_null("/root/Game/PauseMenu")
+	
+	if pause_menu:
+		# 如果你用的普通 Control 或 CanvasLayer，直接调用 show()
+		pause_menu.show() 
+		
+		# 如果你的 PauseMenu 脚本里像 save_popup 一样自己写了 open() 函数，就换成下面这句：
+		# pause_menu.open()
+		
+		# 【关键】既然是暂停菜单，通常需要冻结游戏时间
+		get_tree().paused = true 
+	else:
+		print("[错误] 找不到路径为 /root/Game/PauseMenu 的节点，请检查层级树！")
