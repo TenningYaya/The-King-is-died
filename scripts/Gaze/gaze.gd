@@ -24,7 +24,7 @@ var gaze: Array[Vector2i] = []
 const SHAPE_3: Array[Vector2i] = [Vector2i(1,1), Vector2i(2,1), Vector2i(2,2)]
 const SHAPE_4: Array[Vector2i] = [Vector2i(1,1), Vector2i(1,2), Vector2i(2,1), Vector2i(2,2)]
 const SHAPE_5: Array[Vector2i] = [Vector2i(1,1), Vector2i(1,2), Vector2i(2,1), Vector2i(2,2), Vector2i(2,3)]
-const SHAPE_6: Array[Vector2i] = [Vector2i(1,1), Vector2i(1,2), Vector2i(2,1), Vector2i(2,2), Vector2i(3,1), Vector2i(3,2)]
+const SHAPE_6: Array[Vector2i] = [Vector2i(1,1), Vector2i(2,1), Vector2i(1,2), Vector2i(2,2), Vector2i(1,3), Vector2i(2,3)]
 
 const shape := {
 	3: SHAPE_3,
