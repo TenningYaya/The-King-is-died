@@ -55,9 +55,9 @@ func _setup_card(card, data):
 		var current_coins = ResourceManager.get_currency()
 		var is_disabled = (current_coins < price)
 
-		print(">>> 生成商品卡片: ", data[0])
-		print(">>> 售价: ", price, " | 商店读取到的Q币: ", current_coins)
-		print(">>> 按钮因此被禁用(disabled)? : ", is_disabled)
+		#print(">>> 生成商品卡片: ", data[0])
+		#print(">>> 售价: ", price, " | 商店读取到的Q币: ", current_coins)
+		#print(">>> 按钮因此被禁用(disabled)? : ", is_disabled)
 		
 		if buy_btn.pressed.is_connected(_on_buy_pressed):
 			buy_btn.pressed.disconnect(_on_buy_pressed)
