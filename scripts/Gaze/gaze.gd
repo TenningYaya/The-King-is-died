@@ -4,7 +4,6 @@
 extends Node2D
 class_name GazeController
 
-#设置grid，大小，整个field
 const grid_size := 120
 const field_grid := 5
 const field_size := 600
@@ -12,7 +11,6 @@ const field_size := 600
 @export var min_level := 3
 @export var max_level := 6
 @export var start_level := 3
-#资源文件夹
 @export var gaze_folder := "res://art_assets/gaze/"
 
 @onready var sprite: Sprite2D = $Sprite2D
@@ -20,12 +18,9 @@ const field_size := 600
 var level : int
 var dragging := false
 var drag_offset := Vector2.ZERO
-
-#旋转角度0/90/180/270
 var rotation_degree := 0
-
-#整个凝视的集合array（以格子的形式，0,0 这种）
 var gaze: Array[Vector2i] = []
+
 const SHAPE_3: Array[Vector2i] = [Vector2i(1,1), Vector2i(2,1), Vector2i(2,2)]
 const SHAPE_4: Array[Vector2i] = [Vector2i(1,1), Vector2i(1,2), Vector2i(2,1), Vector2i(2,2)]
 const SHAPE_5: Array[Vector2i] = [Vector2i(1,1), Vector2i(1,2), Vector2i(2,1), Vector2i(2,2), Vector2i(2,3)]
@@ -40,20 +35,15 @@ const shape := {
 
 var width := 1
 var height := 1
-# 
+
 func _ready() -> void:
-	# 1. 【通用初始化】无论读档还是新游戏，这些都得运行
 	sprite.centered = true
 	sprite.position = Vector2.ZERO
 	
-	# 2. 【尝试恢复数据】
 	var my_data = GamedataManager.get_data_for_node(name)
-	
 	if my_data and not my_data.is_empty():
-		# 如果有存档，走读档逻辑（里面会调用 refresh_level 和 set_top_left）
 		load_save_data(my_data)
 	else:
-		# 3. 【新游戏默认值】没有存档才执行这些
 		level = clampi(start_level, min_level, max_level)
 		rotation_degree = 0
 		refresh_level()
@@ -63,14 +53,11 @@ func _process(_delta: float) -> void:
 	if dragging and not Input.is_action_pressed("drag_gaze"):
 		dragging = false
 
-#负责管各种input（左键按住拖动和右键旋转）
 func _input(event: InputEvent) -> void:
-	# ✅ 如果鼠标在任何 UI 上，直接别处理
 	if get_viewport().gui_get_hovered_control() != null:
 		return
 	
 	if event.is_action_pressed("drag_gaze"):
-		# ✅ 优先让 building 的 Shift+拖动生效
 		if Input.is_key_pressed(KEY_SHIFT) and _mouse_over_building():
 			return
 		if mouse_inside_gaze():
@@ -91,11 +78,7 @@ func _input(event: InputEvent) -> void:
 		set_top_left(target)
 		get_viewport().set_input_as_handled()
 
-
-#判断鼠标是否在凝视范围里
 func mouse_inside_gaze() -> bool:
-	# Node2D 原点在“包围盒中心”，所以 local(0,0) 是中心
-	# 转成“左上角为(0,0)”的坐标：
 	var local := to_local(get_global_mouse_position())
 	var mousePos := local + get_pixel_size() * 0.5
 
@@ -105,20 +88,17 @@ func mouse_inside_gaze() -> bool:
 	var gx := int(floor(mousePos.x / grid_size))
 	var gy := int(floor(mousePos.y / grid_size))
 
-	# 注意是 >=
 	if gx < 0 or gy < 0 or gx >= width or gy >= height:
 		return false
 
 	return Vector2i(gx, gy) in gaze
-	
+
 func get_top_left() -> Vector2:
 	var size_px := get_pixel_size()
 	return global_position - size_px * 0.5
 
 func set_top_left(target_top_left: Vector2) -> void:
-	# 吸附到 120px 网格
 	var snapped := target_top_left.snapped(Vector2(grid_size, grid_size))
-	# clamp 到 600×600 内（基于形状包围盒尺寸）
 	var size_px := get_pixel_size()
 	var max_top_left := Vector2(field_size - size_px.x, field_size - size_px.y)
 	var clamped := Vector2(
@@ -126,40 +106,33 @@ func set_top_left(target_top_left: Vector2) -> void:
 		clampf(snapped.y, 0.0, max_top_left.y)
 	)
 	global_position = clamped + size_px * 0.5
-	
+
 func get_pixel_size() -> Vector2:
 	return Vector2(float(width * grid_size), float(height * grid_size))
 
 func rotate_90() -> void:
 	var old_center := global_position
-
 	rotation_degree = (rotation_degree + 1) % 4
 	refresh_shape()
-
-	# ✅ sprite 自转：只转 sprite，不改 sprite.position
 	sprite.rotation = rotation_degree * PI * 0.5
-
-	# ✅ 位置仍然按你的逻辑：保持中心不变，再用 top_left 做 snap + clamp
 	var new_top_left := old_center - get_pixel_size() * 0.5
 	set_top_left(new_top_left)
-	
+
 func refresh_shape() -> void:
 	var base_1based: Array[Vector2i] = shape[level] if shape.has(level) else ([] as Array[Vector2i])
 	var base := normalize_to_0based(base_1based)
 	apply_rotation_from_base(base)
-	
+
 func normalize_to_0based(cells: Array[Vector2i]) -> Array[Vector2i]:
 	var min_x := 1_000_000_000
 	var min_y := 1_000_000_000
 	for c in cells:
 		min_x = mini(min_x, c.x)
 		min_y = mini(min_y, c.y)
-
 	var out: Array[Vector2i] = []
 	for c in cells:
 		out.append(Vector2i(c.x - min_x, c.y - min_y))
 	return out
-
 
 func _update_bbox(cells: Array[Vector2i]) -> void:
 	var max_x := 0
@@ -171,10 +144,7 @@ func _update_bbox(cells: Array[Vector2i]) -> void:
 	height = max_y + 1
 
 func apply_rotation_from_base(base_cells: Array[Vector2i]) -> void:
-	# base_cells 必须是 0-based
 	var out: Array[Vector2i] = []
-
-	# 先拿 base 的 bbox（用于旋转公式）
 	var max_x := 0
 	var max_y := 0
 	for c in base_cells:
@@ -191,36 +161,36 @@ func apply_rotation_from_base(base_cells: Array[Vector2i]) -> void:
 		match rotation_degree:
 			0:
 				rx = x; ry = y
-			1: # 90 CW
+			1:
 				rx = bh - 1 - y
 				ry = x
-			2: # 180
+			2:
 				rx = bw - 1 - x
 				ry = bh - 1 - y
-			3: # 270 CW
+			3:
 				rx = y
 				ry = bw - 1 - x
 		out.append(Vector2i(rx, ry))
 
-	# ✅ 关键：旋转后再 normalize，让形状回到左上角(0,0)
 	out = normalize_to_0based(out)
-
 	gaze = out
 	_update_bbox(gaze)
-	
+
 func update_sprite_offset() -> void:
-	# Sprite2D centered=false，所以它 position 是“绘制左上角”
-	# 我们要让 Node2D 的原点始终在“包围盒中心”，这样旋转好用
 	var size_px := get_pixel_size()
 	sprite.position = -size_px * 0.5
 
 func refresh_level() -> void:
 	apply_texture_for_level(level)
 	rotation_degree = rotation_degree % 4
+	# 先记录旧的中心点
+	var old_center := global_position
+	# 再刷新形状（这会更新 width/height）
 	refresh_shape()
-
-	# ✅ centered=true 后不需要 update_sprite_offset()
 	sprite.rotation = rotation_degree * PI * 0.5
+	# 用旧中心点减去新的 half_size 得到新的 top_left，再 snap + clamp
+	var new_top_left := old_center - get_pixel_size() * 0.5
+	set_top_left(new_top_left)
 
 func apply_texture_for_level(n: int) -> void:
 	var path := "%s%dgrid.png" % [gaze_folder, n]
@@ -230,18 +200,11 @@ func apply_texture_for_level(n: int) -> void:
 		return
 	sprite.texture = tex
 
-## 建筑调用此函数：输入建筑的 global_position，返回是否被覆盖
 func is_position_covered(global_pos: Vector2) -> bool:
-	# 1. 转为 Gaze 节点的局部坐标
 	var local_pos = to_local(global_pos)
-	# 2. 偏移 half_size 得到从左上角 (0,0) 开始的坐标（同 mouse_inside_gaze 逻辑）
 	var offset_pos = local_pos + get_pixel_size() * 0.5
-	
-	# 3. 换算成格子索引
 	var gx = int(floor(offset_pos.x / grid_size))
 	var gy = int(floor(offset_pos.y / grid_size))
-	
-	# 4. 检查是否在有效形状数组内
 	return Vector2i(gx, gy) in gaze
 
 func _mouse_over_building() -> bool:
@@ -250,15 +213,13 @@ func _mouse_over_building() -> bool:
 	params.position = get_global_mouse_position()
 	params.collide_with_areas = true
 	params.collide_with_bodies = true
-	# 不限定 mask，直接查全部；如果你后面想优化，再加 mask
 	var hits := space.intersect_point(params, 32)
-
 	for h in hits:
 		var c = h.get("collider")
 		if c and c.is_in_group("buildings"):
 			return true
 	return false
-	
+
 func get_save_data() -> Dictionary:
 	return {
 		"level": level,
@@ -267,23 +228,13 @@ func get_save_data() -> Dictionary:
 		"top_left_y": get_top_left().y
 	}
 
-# --- 读档：全自动系统会分发数据到这里 ---
 func load_save_data(data: Dictionary):
 	if data.is_empty(): return
-	
-	# 还原等级和旋转
 	level = data.get("level", start_level)
 	rotation_degree = data.get("rotation_degree", 0)
-	
-	# 核心：必须先刷新形状和贴图，再设置位置
-	# 因为 set_top_left 需要知道当前等级和角度下的形状尺寸（pixel_size）
-	refresh_level() 
-	
-	# 还原位置
+	refresh_level()
 	var tl = Vector2(data.get("top_left_x", 0.0), data.get("top_left_y", 0.0))
 	set_top_left(tl)
-	
-	# 如果 UI 没自动更新，这里可以手动刷一下
 	var ui = get_tree().get_first_node_in_group("gaze_upgrade_ui")
 	if ui and ui.has_method("_update_display"):
 		ui._update_display()
