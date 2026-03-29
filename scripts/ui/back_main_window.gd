@@ -34,6 +34,7 @@ func open():
 	show()
 
 func _on_close_pressed():
+	Engine.time_scale = 1.0
 	overlay.hide()
 	hide()
 	

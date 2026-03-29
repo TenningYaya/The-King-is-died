@@ -29,9 +29,20 @@ var elapsed_time: float = 0.0
 @onready var content_container = $MonsterTooltip/ContentContainer
 
 func _ready():
+	add_to_group("save_required")
+	
 	# 初始化进度条
 	timer_bar.max_value = total_time
-	timer_bar.value = 0
+	
+	# --- 读档逻辑 ---
+	if GamedataManager.is_loading_save:
+		var data = GamedataManager.get_data_for_node(self.name)
+		if not data.is_empty():
+			elapsed_time = data.get("elapsed_time", 0.0)
+			timer_bar.value = elapsed_time
+			print("[WaveUI] 进度条已同步至: %.1f" % elapsed_time)
+	else:
+		timer_bar.value = 0
 	tooltip.hide() # 初始隐藏提示框
 	
 	# 批量连接四个点的鼠标信号
@@ -87,3 +98,8 @@ func _on_mouse_entered_point(point_id: String):
 
 func _on_mouse_exited_point():
 	tooltip.hide()
+
+func get_save_data() -> Dictionary:
+	return {
+		"elapsed_time": elapsed_time
+	}

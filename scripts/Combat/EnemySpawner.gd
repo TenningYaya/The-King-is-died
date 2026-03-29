@@ -29,6 +29,15 @@ var waves: Array[Dictionary] = [
 ]
 
 func _ready() -> void:
+	add_to_group("save_required") # 必须加入这个组，SaveManager 才会理它
+	
+	# --- 读档逻辑 ---
+	if GamedataManager.is_loading_save:
+		var data = GamedataManager.get_data_for_node(self.name)
+		if not data.is_empty():
+			current_wave_index = data.get("current_wave_index", 0)
+			timer = data.get("timer", 0.0)
+			print("[EnemySpawner] 已恢复波次: %d, 时间: %.1f" % [current_wave_index, timer])
 	if reward_button:
 		reward_button.visible = false
 		if not reward_button.pressed.is_connected(_on_reward_button_pressed):
@@ -96,3 +105,9 @@ func _spawn_single_enemy(enemy_type: String) -> void:
 		_current_spawn_index += 1
 	else:
 		enemy_instance.global_position = global_position
+		
+func get_save_data() -> Dictionary:
+	return {
+		"current_wave_index": current_wave_index,
+		"timer": timer
+	}

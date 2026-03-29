@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://dxnbi16616sw6"]
 
-[ext_resource type="Script" uid="uid://3k5l0l1751vd" path="res://scripts/system/tutorial_layer.gd" id="1_jd8gt"]
+[ext_resource type="Script" path="res://scripts/system/tutorial_layer.gd" id="1_jd8gt"]
 [ext_resource type="Texture2D" uid="uid://djjv36og5bne4" path="res://art_assets/figure/SectorFigure2.png" id="2_tgqgd"]
 [ext_resource type="Texture2D" uid="uid://bs4ifc4vnhyfe" path="res://art_assets/figure/DevFigure2.png" id="3_i3cxs"]
 [ext_resource type="Texture2D" uid="uid://cm8vhdyfnw4jt" path="res://art_assets/tutorial_image.png" id="4_wxinp"]
-[ext_resource type="Texture2D" uid="uid://2pbthdilfja5" path="res://art_assets/background/dialogue_panel.jpg" id="5_tbelv"]
+[ext_resource type="Texture2D" uid="uid://de2ha0k5lh8mn" path="res://art_assets/background/bcg_dialogue2.png" id="5_tgqgd"]
+[ext_resource type="Texture2D" uid="uid://dcgyebt1n48mk" path="res://art_assets/tile/tile.jpg" id="6_i3cxs"]
 
 [node name="TutorialLayer" type="CanvasLayer" unique_id=34610855]
 process_mode = 3
@@ -20,34 +21,34 @@ offset_bottom = 1165.0
 color = Color(0, 0, 0, 0.39607844)
 
 [node name="TutorialImage" type="TextureRect" parent="." unique_id=1618353617]
-offset_left = 7.0
 offset_top = -37.0
 offset_right = 1923.0
 offset_bottom = 1065.0
 texture = ExtResource("4_wxinp")
 
 [node name="DialogueBox" type="TextureRect" parent="." unique_id=1248810034]
-offset_left = 435.0
+offset_left = 478.0
 offset_top = 639.0
-offset_right = 1892.0
-offset_bottom = 999.0
-texture = ExtResource("5_tbelv")
+offset_right = 1896.0
+offset_bottom = 1029.0
+texture = ExtResource("5_tgqgd")
+expand_mode = 1
 
 [node name="NPCFigure" type="TextureRect" parent="DialogueBox" unique_id=1642041931]
 layout_mode = 0
-offset_left = -403.0
-offset_top = -11.0
+offset_left = -394.0
 offset_right = -13.0
-offset_bottom = 386.0
+offset_bottom = 388.0
+texture = ExtResource("6_i3cxs")
 expand_mode = 1
 
 [node name="TextLabel" type="RichTextLabel" parent="DialogueBox" unique_id=1739077235]
-modulate = Color(0, 0, 0, 1)
+modulate = Color(0.8660709, 0.9409932, 0.9774589, 1)
 layout_mode = 0
 offset_left = 167.0
-offset_top = 95.0
+offset_top = 113.0
 offset_right = 1283.0
-offset_bottom = 236.0
+offset_bottom = 254.0
 theme_override_font_sizes/normal_font_size = 40
 
 [node name="ClickAnywhereBtn" type="Button" parent="." unique_id=488723447]

@@ -154,10 +154,10 @@ offset = Vector2(0, 40)
 transform = Transform2D(1, 0, 0, 1, 0, 40)
 
 [node name="RewardButton" type="Button" parent="BlueprintUI" unique_id=1573200763]
-offset_left = 1805.0
-offset_top = 628.0
-offset_right = 1877.0
-offset_bottom = 700.0
+offset_left = 908.0
+offset_top = 327.0
+offset_right = 1019.0
+offset_bottom = 440.0
 theme_override_constants/icon_max_width = 64
 icon = ExtResource("25_ghk2r")
 icon_alignment = 1

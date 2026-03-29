@@ -1,9 +1,10 @@
-# MusicManager.gd
+# audio_manager.gd
 extends Node
 
 # 预加载你的老祖 BGM 资源
 var bgm_resource = preload("res://audio/Ancestor’s Sight.mp3")
 var player: AudioStreamPlayer
+@onready var _master_bus_index = AudioServer.get_bus_index("Master")
 
 func _ready():
 	# 动态创建一个播放器并添加到全局节点下
@@ -21,6 +22,15 @@ func _ready():
 	
 	# 自动播放
 	player.play()
+	
+	if GamedataManager.is_loading_save:
+		var data = GamedataManager.get_data_for_node(self.name)
+		if not data.is_empty():
+			var saved_db = data.get("master_volume_db", 0.0)
+			AudioServer.set_bus_volume_db(_master_bus_index, saved_db)
+			# 同步到内存，防止 UI 没更新
+			GamedataManager.master_volume_db = saved_db
+			print("[MusicManager] 音量已恢复: %.1f dB" % saved_db)
 
 # 以后你想在特定剧情停掉音乐，可以调用这个
 func stop_music():
@@ -31,3 +41,8 @@ func play_music(new_stream: AudioStream):
 	if player.stream == new_stream: return
 	player.stream = new_stream
 	player.play()
+
+func get_save_data() -> Dictionary:
+	return {
+		"master_volume_db": AudioServer.get_bus_volume_db(_master_bus_index)
+	}

@@ -18,7 +18,8 @@ func _ready():
 	# 点击窗口右上角的 X 关闭菜单
 	close_btn.pressed.connect(close_menu)
 	var current_db = AudioServer.get_bus_volume_db(_master_bus_index)
-	volume.value = db_to_linear(current_db) # 将分贝转回 0-1 的线性值
+	# 把分贝转回 0.0 到 1.0 的滑块位置
+	volume.value = db_to_linear(current_db)
 	
 func _on_quit_pressed():
 	# 唤醒确认弹窗
