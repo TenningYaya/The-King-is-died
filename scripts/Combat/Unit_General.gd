@@ -279,3 +279,35 @@ func _on_ready_override() -> void: pass
 func _on_attack_override(_target: Unit_General) -> void: pass
 func _on_damage_override(_amount: float) -> void: pass
 func _on_death_override() -> void: pass
+
+# ─────────────────────────────────────────
+#  存档与加载 (用于 SaveManager)
+# ─────────────────────────────────────────
+
+## 导出存档数据
+func get_save_data() -> Dictionary:
+	return {
+		"scene_path": scene_file_path,       # 关键：告诉引擎加载时用哪个 .tscn
+		"name": name,
+		"global_position": { "x": global_position.x, "y": global_position.y },
+		"current_hp": current_hp,
+		"faction": faction,
+		"creator_building_name": creator_building_name # 记录它是哪个建筑生的
+	}
+
+## 恢复存档数据
+func load_save_data(data: Dictionary) -> void:
+	if data.has("global_position"):
+		var pos = data["global_position"]
+		global_position = Vector2(pos.x, pos.y)
+	
+	if data.has("current_hp"):
+		current_hp = data["current_hp"]
+		if hp_bar:
+			hp_bar.value = current_hp
+			
+	if data.has("faction"):
+		faction = data["faction"] as Faction
+		
+	if data.has("creator_building_name"):
+		creator_building_name = data["creator_building_name"]

@@ -18,25 +18,33 @@ func _ready():
 	
 	_on_speed_changed(SPEED_NORMAL)
 
-func _input(event):
-	if event is InputEventKey and event.pressed and not event.is_echo():
-		match event.keycode:
-			KEY_SPACE:
-				# 核心逻辑：如果是暂停状态，按空格回到 1 倍速；否则进入暂停
-				if Engine.time_scale == SPEED_PAUSE:
-					_on_speed_changed(SPEED_NORMAL)
-				else:
-					_on_speed_changed(SPEED_PAUSE)
-			KEY_1:
-				_on_speed_changed(SPEED_NORMAL)
-			KEY_2:
-				_on_speed_changed(SPEED_FAST)
-			KEY_3:
-				_on_speed_changed(SPEED_SUPER)
-
 func _on_speed_changed(speed_value: float):
+	# 【核心修改 1】只有在设置非 0 速度时，才记录为“上一次速度”
+	if speed_value != SPEED_PAUSE:
+		last_speed = speed_value
+	
 	Engine.time_scale = speed_value
 	_update_button_visuals(speed_value)
+
+func _input(event):
+	# 【核心修改 2】确保只在按下那一瞬间触发，且不重复响应
+	if event is InputEventKey and event.pressed and not event.is_echo():
+		if event.keycode == KEY_SPACE:
+			# 消耗掉输入，防止触发按钮的“确认”点击
+			get_viewport().set_input_as_handled()
+			
+			if Engine.time_scale == SPEED_PAUSE:
+				# 恢复到暂停前的速度（可能是 1.0, 2.0 或 3.0）
+				_on_speed_changed(last_speed)
+			else:
+				# 记录当前速度并暂停
+				_on_speed_changed(SPEED_PAUSE)
+				
+		# 数字键切换直接触发，会自动更新 last_speed
+		match event.keycode:
+			KEY_1: _on_speed_changed(SPEED_NORMAL)
+			KEY_2: _on_speed_changed(SPEED_FAST)
+			KEY_3: _on_speed_changed(SPEED_SUPER)
 
 func _update_button_visuals(current_speed: float):
 	# 更新按钮高亮

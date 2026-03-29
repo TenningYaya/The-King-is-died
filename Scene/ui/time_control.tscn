@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cmouk5c6ooa1g" path="res://art_assets/ui/button/speed_3x.webp" id="5_jo45q"]
 
 [node name="TimeControl" type="HBoxContainer" unique_id=835025454]
+process_mode = 3
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 30
