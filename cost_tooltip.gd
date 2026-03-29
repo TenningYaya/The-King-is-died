@@ -40,16 +40,28 @@ func update_display(data: BuildingData):
 				tex = load(icon_path)
 			_add_line(tex, " x " + str(amount))
 
-	# 显示描述
-	if data.description != "":
-		var desc_lbl = Label.new()
-		desc_lbl.text = data.description
-		desc_lbl.autowrap_mode = TextServer.AUTOWRAP_WORD
-		desc_lbl.custom_minimum_size = Vector2(200, 0)
-		desc_lbl.add_theme_font_size_override("font_size", 18)
-		desc_lbl.add_theme_color_override("font_color", Color(0.8, 0.8, 0.8))
-		desc_lbl.add_theme_font_override("font", load("res://fonts/Stacked pixel.ttf"))
-		cost_list.add_child(desc_lbl)
+	# 显示产出资源
+	if data.description != "" or data.description_icon != null:
+		var prod_row = HBoxContainer.new()
+		prod_row.alignment = BoxContainer.ALIGNMENT_CENTER
+
+		if data.description != "":
+			var prod_lbl = Label.new()
+			prod_lbl.text = data.description
+			prod_lbl.add_theme_font_size_override("font_size", 20)
+			prod_lbl.add_theme_color_override("font_color", Color.WHITE)
+			prod_lbl.add_theme_font_override("font", load("res://fonts/Stacked pixel.ttf"))
+			prod_row.add_child(prod_lbl)
+
+		if data.description_icon != null:
+			var rect = TextureRect.new()
+			rect.texture = data.description_icon
+			rect.custom_minimum_size = Vector2(32, 32)
+			rect.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+			rect.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+			prod_row.add_child(rect)
+
+		cost_list.add_child(prod_row)
 
 func _add_line(icon_tex: Texture2D, text: String):
 	var h_box = HBoxContainer.new()

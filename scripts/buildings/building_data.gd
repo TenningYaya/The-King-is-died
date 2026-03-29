@@ -75,7 +75,8 @@ enum ResourceType {
 
 @export_group("基础配置")
 @export var building_name: String = "新建筑"
-@export var description: String = ""  # 加这行
+@export var description: String = "" 
+@export var description_icon: Texture2D = null
 @export var type: BuildingType = BuildingType.PRODUCTION
 @export_file("*.tscn") var base_scene_path: String = "res://Scene/buildings/blueprint.tscn"
 @export var cost: Dictionary[ResourceType, int] = {}
