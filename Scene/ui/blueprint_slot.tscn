@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://e27owbe3qpni"]
 
 [ext_resource type="Script" uid="uid://by2aqnfalv8uj" path="res://scripts/ui/blueprint_slot.gd" id="1_34gw6"]
+[ext_resource type="Texture2D" uid="uid://bslp6itib2cxk" path="res://art_assets/tile/blueprint_slot.png" id="2_xo3p7"]
 
 [node name="BlueprintSlot" type="Button" unique_id=2013709848]
 custom_minimum_size = Vector2(120, 120)
@@ -11,6 +12,13 @@ layout_mode = 0
 offset_right = 120.0
 offset_bottom = 118.0
 color = Color(0.6781173, 0.6781179, 0.67811733, 1)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1950778669]
+layout_mode = 0
+offset_right = 120.0
+offset_bottom = 119.0
+texture = ExtResource("2_xo3p7")
+expand_mode = 1
 
 [node name="Icon" type="TextureRect" parent="." unique_id=71297365]
 layout_mode = 0
