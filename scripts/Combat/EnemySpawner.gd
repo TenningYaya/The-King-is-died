@@ -7,6 +7,7 @@ extends Node2D
 @export var reward_ui: CanvasLayer
 @export var reward_button: BaseButton
 
+
 var _current_spawn_index: int = 0
 var current_wave_index: int = 0
 var timer: float = 0.0
@@ -46,10 +47,23 @@ func _process(delta: float) -> void:
 
 func _on_wave_completed(wave_number: int) -> void:
 	ResourceManager.add_currency(10)
+	
 	if wave_number == 4 or wave_number == 8:
 		_open_shop()
+	
 	if reward_button:
 		reward_button.visible = true
+	
+	# 如果是最后一波，切到 Win Scene
+	if wave_number == waves.size() - 1:
+		_go_to_win_scene()
+
+func _go_to_win_scene() -> void:
+	if win_scene:
+		get_tree().paused = false
+		get_tree().change_scene_to_file("res://Scene/system/win.tscn")
+	else:
+		push_error("EnemySpawner: win_scene 没有在 Inspector 里设置")
 
 func _open_shop() -> void:
 	if shop_ui:
