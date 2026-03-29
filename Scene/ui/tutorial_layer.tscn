@@ -1,16 +1,16 @@
 [gd_scene format=3 uid="uid://dxnbi16616sw6"]
 
 [ext_resource type="Script" uid="uid://3k5l0l1751vd" path="res://Scene/ui/tutorial_layer.gd" id="1_km3yv"]
-[ext_resource type="Texture2D" uid="uid://crinavj520ydj" path="res://art_assets/figure/Gemini_Generated_Image_3eqk5x3eqk5x3eqk.png" id="2_hmj35"]
 [ext_resource type="Texture2D" uid="uid://cm8vhdyfnw4jt" path="res://art_assets/tutorial_image.png" id="2_ih3nq"]
-[ext_resource type="Texture2D" uid="uid://rvymt5afi0mi" path="res://art_assets/figure/Gemini_Generated_Image_hr2aichr2aichr2a.png" id="3_lj0xc"]
+[ext_resource type="Texture2D" uid="uid://djjv36og5bne4" path="res://art_assets/figure/SectorFigure2.png" id="2_lj0xc"]
+[ext_resource type="Texture2D" uid="uid://bs4ifc4vnhyfe" path="res://art_assets/figure/DevFigure2.png" id="3_xe82w"]
 [ext_resource type="Texture2D" uid="uid://2pbthdilfja5" path="res://art_assets/background/dialogue_panel.jpg" id="5_lj0xc"]
 
 [node name="TutorialLayer" type="CanvasLayer" unique_id=34610855]
 process_mode = 3
 script = ExtResource("1_km3yv")
-portrait_sect_master = ExtResource("2_hmj35")
-portrait_narrator = ExtResource("3_lj0xc")
+portrait_sect_master = ExtResource("2_lj0xc")
+portrait_narrator = ExtResource("3_xe82w")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1803541164]
 offset_left = -98.0
@@ -35,10 +35,10 @@ texture = ExtResource("5_lj0xc")
 
 [node name="NPCFigure" type="TextureRect" parent="DialogueBox" unique_id=1642041931]
 layout_mode = 0
-offset_left = -415.0
+offset_left = -403.0
 offset_top = -11.0
-offset_right = -2.0
-offset_bottom = 326.0
+offset_right = -13.0
+offset_bottom = 386.0
 expand_mode = 1
 
 [node name="TextLabel" type="RichTextLabel" parent="DialogueBox" unique_id=1739077235]

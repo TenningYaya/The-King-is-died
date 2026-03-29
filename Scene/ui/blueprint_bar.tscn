@@ -239,17 +239,17 @@ texture_disabled = ExtResource("19_t0nuv")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=324462288]
+[node name="SaveExitContainer" type="HBoxContainer" parent="." unique_id=324462288]
 offset_left = 1682.0
 offset_top = 44.0
 offset_right = 1902.0
 offset_bottom = 152.0
 
-[node name="SaveButton" type="Button" parent="HBoxContainer" unique_id=148902364]
+[node name="SaveButton" type="Button" parent="SaveExitContainer" unique_id=148902364]
 layout_mode = 2
 icon = ExtResource("14_m2vxj")
 
-[node name="ExitButton" type="Button" parent="HBoxContainer" unique_id=709699290]
+[node name="ExitButton" type="Button" parent="SaveExitContainer" unique_id=709699290]
 layout_mode = 2
 icon = ExtResource("15_55qeq")
 
@@ -288,6 +288,6 @@ grow_horizontal = 2
 grow_vertical = 0
 script = ExtResource("23_6py5g")
 
-[connection signal="pressed" from="HBoxContainer/SaveButton" to="." method="_on_save_button_pressed"]
-[connection signal="pressed" from="HBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="SaveExitContainer/SaveButton" to="." method="_on_save_button_pressed"]
+[connection signal="pressed" from="SaveExitContainer/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="PauseButton" to="." method="_on_pause_button_pressed"]
