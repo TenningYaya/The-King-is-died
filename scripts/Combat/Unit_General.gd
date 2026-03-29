@@ -112,7 +112,6 @@ func _physics_process(delta: float) -> void:
 		else:
 			_play_anim("idle")
 
-	# 根据移动方向翻转sprite
 	if anim and velocity.x != 0:
 		anim.flip_h = velocity.x < 0
 
@@ -228,7 +227,6 @@ func _fire_projectile(target: Unit_General) -> void:
 	if proj == null:
 		push_error("[%s] 弹体实例化失败" % name)
 		return
-	print("[%s] 弹体类型: %s" % [name, proj.get_class()])
 	get_tree().current_scene.add_child(proj)
 	proj.global_position = global_position
 	if proj.has_method("init"):

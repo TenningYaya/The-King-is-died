@@ -33,7 +33,6 @@ func _tick_production(delta):
 	super._tick_production(delta)
 
 	if current_progress <= 0.0 and old_progress > 0.9:
-		print("[%s] 进度条触发！准备产兵" % name)
 		_spawn_minion()
 
 func _physics_process(_delta):

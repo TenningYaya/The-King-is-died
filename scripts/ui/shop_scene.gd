@@ -78,8 +78,6 @@ func _on_buy_pressed(card, price, item_name):
 		if sold_out: sold_out.show()
 		if buy_btn: buy_btn.disabled = true
 		
-		# 发放玩家真正点击的那个奖励
-		print("玩家选择了奖励：", item_name)
 		_grant_reward(item_name)
 		
 func _grant_reward(item_name: String) -> void:

@@ -60,7 +60,6 @@ func _setup_card(card, data):
 func _on_select_pressed(data):
 	var item_name = data[0]
 
-	print("玩家选择了奖励：", item_name)
 	_grant_reward(item_name)
 	_close_reward_ui()
 
