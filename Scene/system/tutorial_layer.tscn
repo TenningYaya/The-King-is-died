@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cm8vhdyfnw4jt" path="res://art_assets/tutorial_image.png" id="4_wxinp"]
 [ext_resource type="Texture2D" uid="uid://de2ha0k5lh8mn" path="res://art_assets/background/bcg_dialogue2.png" id="5_tgqgd"]
 [ext_resource type="Texture2D" uid="uid://dcgyebt1n48mk" path="res://art_assets/tile/tile.jpg" id="6_i3cxs"]
+[ext_resource type="PackedScene" uid="uid://kqx4twth4his" path="res://Scene/ui/normal_button.tscn" id="7_i3cxs"]
 
 [node name="TutorialLayer" type="CanvasLayer" unique_id=34610855]
 process_mode = 3
@@ -58,10 +59,9 @@ offset_right = 2016.0
 offset_bottom = 1147.0
 flat = true
 
-[node name="SkipButton" type="Button" parent="." unique_id=135350186]
-offset_left = 1739.0
-offset_top = 16.0
-offset_right = 1896.0
-offset_bottom = 179.0
-theme_override_font_sizes/font_size = 50
-text = "SKIP"
+[node name="SkipButton" parent="." unique_id=357304590 instance=ExtResource("7_i3cxs")]
+offset_left = 1577.0
+offset_top = 517.0
+offset_right = 1893.0
+offset_bottom = 624.0
+button_text = "SKIP"
