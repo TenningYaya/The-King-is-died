@@ -17,4 +17,5 @@ cost = Dictionary[int, int]({
 })
 product_type = "mystic_iron"
 production_time = 1.0
+max_production = 0
 metadata/_custom_type_script = "uid://dai8darcd7q2w"

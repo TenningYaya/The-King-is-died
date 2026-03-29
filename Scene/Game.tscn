@@ -16,13 +16,13 @@
 [ext_resource type="Script" uid="uid://tqfstski4omi" path="res://scripts/Combat/EnemySpawner.gd" id="10_2j816"]
 [ext_resource type="Texture2D" uid="uid://bbunl2i540nyy" path="res://art_assets/product_resource/spirit_stone.webp" id="10_10r1t"]
 [ext_resource type="PackedScene" uid="uid://duptcluexkt70" path="res://Scene/Combat/enemy_scene/Enemy_Tank.tscn" id="11_g3fkh"]
+[ext_resource type="Texture2D" uid="uid://deiky7yh5vwnu" path="res://art_assets/ui/button/button_reward.png" id="12_65ldo"]
 [ext_resource type="PackedScene" uid="uid://gj80dsafogu0" path="res://Scene/Combat/enemy_scene/Enemy_Mage.tscn" id="16_0yiub"]
 [ext_resource type="PackedScene" uid="uid://i5yi4715o47o" path="res://Scene/Combat/enemy_scene/Enemy_Boss.tscn" id="17_10r1t"]
 [ext_resource type="PackedScene" uid="uid://bcbb67y0b57cy" path="res://Scene/Combat/enemy_scene/Enemy_Assassin.tscn" id="18_vmjmr"]
 [ext_resource type="PackedScene" uid="uid://do8xgvq4ry37i" path="res://Scene/ui/button_gaze_upgrade.tscn" id="20_1e3q2"]
 [ext_resource type="Script" uid="uid://htykhra2fbhu" path="res://scripts/buildings/building_manager.gd" id="23_hjrqo"]
 [ext_resource type="PackedScene" uid="uid://cs7473lfyhaex" path="res://Scene/buildings/producer/production_building.tscn" id="24_ghk2r"]
-[ext_resource type="Texture2D" uid="uid://b6igh8b028wcf" path="res://art_assets/ui/rewards.png" id="25_ghk2r"]
 [ext_resource type="PackedScene" uid="uid://bvm5flnoabotw" path="res://Scene/buildings/producer/production_market.tscn" id="25_mw7jm"]
 [ext_resource type="PackedScene" uid="uid://cs2uw4cq2noiw" path="res://Scene/buildings/combat_building.tscn" id="26_1mx4w"]
 [ext_resource type="PackedScene" uid="uid://dwyka17gkpfh4" path="res://Scene/ui/reward.tscn" id="26_ghk2r"]
@@ -30,6 +30,14 @@
 [ext_resource type="Script" uid="uid://bn8vhp34jly7x" path="res://scripts/dialog/dialogManager.gd" id="28_1mx4w"]
 [ext_resource type="Script" uid="uid://dk4ghcukvb465" path="res://scripts/buildings/initial_building.gd" id="28_mw7jm"]
 [ext_resource type="PackedScene" uid="uid://cnig3oeox1y0j" path="res://Scene/system/mouse_debugger.tscn" id="30_65ldo"]
+
+[sub_resource type="Animation" id="Animation_0yiub"]
+resource_name = "shake"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_10r1t"]
+_data = {
+&"shake": SubResource("Animation_0yiub")
+}
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_bxrg2"]
 vertices = PackedVector2Array(1831.1016, 26.992188, 1837.8828, 637.0078, 756.03906, 638.97656, 758.9531, 26)
@@ -154,18 +162,24 @@ offset = Vector2(0, 40)
 transform = Transform2D(1, 0, 0, 1, 0, 40)
 
 [node name="RewardButton" type="Button" parent="BlueprintUI" unique_id=1573200763]
-offset_left = 908.0
-offset_top = 327.0
-offset_right = 1019.0
-offset_bottom = 440.0
-theme_override_constants/icon_max_width = 64
-icon = ExtResource("25_ghk2r")
+offset_left = 1424.0
+offset_top = 395.0
+offset_right = 1624.0
+offset_bottom = 595.0
+pivot_offset = Vector2(100, 0)
+icon = ExtResource("12_65ldo")
+flat = true
 icon_alignment = 1
+expand_icon = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BlueprintUI/RewardButton" unique_id=101772404]
+libraries/ = SubResource("AnimationLibrary_10r1t")
 
 [node name="Wall" parent="." unique_id=1173008175 groups=["save_required"] instance=ExtResource("6_48ymf")]
 position = Vector2(658, 379)
 
 [node name="PauseMenu" parent="." unique_id=1743093916 instance=ExtResource("9_tujvx")]
+visible = false
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=120020792 groups=["spawn_point"]]
 position = Vector2(967, 420)

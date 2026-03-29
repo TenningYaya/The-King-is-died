@@ -14,6 +14,7 @@ offset_bottom = 118.0
 color = Color(0.6781173, 0.6781179, 0.67811733, 1)
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1950778669]
+modulate = Color(0.83290213, 0.83290213, 0.8329023, 1)
 layout_mode = 0
 offset_right = 120.0
 offset_bottom = 119.0

@@ -17,6 +17,6 @@ cost = Dictionary[int, int]({
 })
 product_type = "aether_crystal"
 production_time = 1.0
-max_production = 500
+max_production = 0
 minion_scene = ExtResource("2_6mrvj")
 metadata/_custom_type_script = "uid://dai8darcd7q2w"
