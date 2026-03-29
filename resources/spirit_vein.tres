@@ -9,7 +9,6 @@
 script = ExtResource("1_cyop6")
 icon = ExtResource("1_6mrvj")
 building_name = "SpiritVein"
-description = "product"
 description_icon = ExtResource("1_ovgpb")
 base_scene_path = "uid://cs7473lfyhaex"
 cost = Dictionary[int, int]({

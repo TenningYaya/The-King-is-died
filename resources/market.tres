@@ -8,7 +8,6 @@
 script = ExtResource("1_aul5h")
 icon = ExtResource("1_4lpqn")
 building_name = "Market"
-description = "product"
 description_icon = ExtResource("1_cm5mw")
 type = 2
 base_scene_path = "uid://bvm5flnoabotw"

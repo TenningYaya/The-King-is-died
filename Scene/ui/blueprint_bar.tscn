@@ -182,6 +182,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 icon = ExtResource("7_s7yhu")
+flat = true
 expand_icon = true
 script = ExtResource("8_g5nr5")
 sell_cursor = ExtResource("9_s7yhu")
@@ -190,6 +191,7 @@ sell_cursor = ExtResource("9_s7yhu")
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 icon = ExtResource("10_qo8sw")
+flat = true
 expand_icon = true
 script = ExtResource("11_t0nuv")
 demolish_cursor = ExtResource("12_s7yhu")
@@ -248,10 +250,12 @@ offset_bottom = 152.0
 [node name="SaveButton" type="Button" parent="SaveExitContainer" unique_id=148902364]
 layout_mode = 2
 icon = ExtResource("14_m2vxj")
+flat = true
 
 [node name="ExitButton" type="Button" parent="SaveExitContainer" unique_id=709699290]
 layout_mode = 2
 icon = ExtResource("15_55qeq")
+flat = true
 
 [node name="CostTooltip" parent="." unique_id=1624179468 groups=["tooltip_ui"] instance=ExtResource("22_55qeq")]
 offset_left = 309.0

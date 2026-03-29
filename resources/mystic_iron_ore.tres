@@ -8,7 +8,6 @@
 script = ExtResource("1_u7yqm")
 icon = ExtResource("1_pqf0l")
 building_name = "MysticIronOre"
-description = "product"
 description_icon = ExtResource("1_6mijt")
 base_scene_path = "uid://cs7473lfyhaex"
 cost = Dictionary[int, int]({

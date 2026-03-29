@@ -297,7 +297,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_rlf41")
 }],
-"loop": true,
+"loop": false,
 "name": &"hit",
 "speed": 10.0
 }]
@@ -315,7 +315,6 @@ position = Vector2(-380.00003, -130)
 scale = Vector2(1.8229167, 1.8437499)
 sprite_frames = SubResource("SpriteFrames_5ug06")
 animation = &"hit"
-frame_progress = 0.42506856
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=395842887]
 position = Vector2(334, 339)

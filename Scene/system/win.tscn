@@ -43,10 +43,10 @@ theme_override_font_sizes/font_size = 70
 text = "Restart"
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=313350248]
-offset_left = 269.0
-offset_top = 877.0
-offset_right = 1665.0
-offset_bottom = 1061.0
+offset_left = 263.0
+offset_top = 844.0
+offset_right = 1659.0
+offset_bottom = 1028.0
 color = Color(0.07450981, 0.07450981, 0.07450981, 0.43529412)
 
 [node name="Label" type="Label" parent="ColorRect" unique_id=2041916217]

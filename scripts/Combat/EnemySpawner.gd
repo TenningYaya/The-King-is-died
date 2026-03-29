@@ -70,7 +70,6 @@ func _on_wave_completed(wave_number: int) -> void:
 func _go_to_win_scene() -> void:
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://Scene/system/win.tscn")
-	push_error("EnemySpawner: win_scene 没有在 Inspector 里设置")
 
 func _open_shop() -> void:
 	if shop_ui:

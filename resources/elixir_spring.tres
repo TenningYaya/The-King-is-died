@@ -8,7 +8,6 @@
 script = ExtResource("1_rf7nl")
 icon = ExtResource("1_hbora")
 building_name = "ElixirSpring"
-description = "product"
 description_icon = ExtResource("1_666o0")
 base_scene_path = "uid://cs7473lfyhaex"
 product_type = "elixir"

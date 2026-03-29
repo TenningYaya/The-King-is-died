@@ -15,6 +15,7 @@ layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1900034917]
 layout_mode = 2
+theme_override_constants/separation = 10
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1414229034]
 layout_mode = 2
