@@ -2,12 +2,15 @@
 
 [ext_resource type="Texture2D" uid="uid://dnxnntyvtfpce" path="res://art_assets/buildings/final_buildings/Spirit Vein.webp" id="1_6mrvj"]
 [ext_resource type="Script" uid="uid://dai8darcd7q2w" path="res://scripts/buildings/building_data.gd" id="1_cyop6"]
+[ext_resource type="Texture2D" uid="uid://c8ageqiqbfoug" path="res://art_assets/product_resource/aether_crystal.webp" id="1_ovgpb"]
 [ext_resource type="PackedScene" uid="uid://ds7qlt13y0rsv" path="res://Scene/Combat/player_scene/Unit_Tank.tscn" id="2_6mrvj"]
 
 [resource]
 script = ExtResource("1_cyop6")
 icon = ExtResource("1_6mrvj")
 building_name = "SpiritVein"
+description = "product"
+description_icon = ExtResource("1_ovgpb")
 base_scene_path = "uid://cs7473lfyhaex"
 cost = Dictionary[int, int]({
 0: 50

@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="BuildingData" format=3 uid="uid://bwac0f2i8fdcs"]
 
+[ext_resource type="Texture2D" uid="uid://c1lyyoae7o3s1" path="res://art_assets/product_resource/elixir.webp" id="1_666o0"]
 [ext_resource type="Texture2D" uid="uid://cyd4g1p53n8ee" path="res://art_assets/buildings/final_buildings/Elixir Spring.webp" id="1_hbora"]
 [ext_resource type="Script" uid="uid://dai8darcd7q2w" path="res://scripts/buildings/building_data.gd" id="1_rf7nl"]
 
@@ -7,6 +8,8 @@
 script = ExtResource("1_rf7nl")
 icon = ExtResource("1_hbora")
 building_name = "ElixirSpring"
+description = "product"
+description_icon = ExtResource("1_666o0")
 base_scene_path = "uid://cs7473lfyhaex"
 product_type = "elixir"
 production_time = 1.0

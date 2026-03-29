@@ -2,11 +2,14 @@
 
 [ext_resource type="Texture2D" uid="uid://cv4t0sc18tfpu" path="res://art_assets/buildings/final_buildings/Herb Garden.webp" id="1_j82hb"]
 [ext_resource type="Script" uid="uid://dai8darcd7q2w" path="res://scripts/buildings/building_data.gd" id="1_nyxeu"]
+[ext_resource type="Texture2D" uid="uid://cd2lq8mgtuyhk" path="res://art_assets/product_resource/herb.webp" id="1_pmgkt"]
 
 [resource]
 script = ExtResource("1_nyxeu")
 icon = ExtResource("1_j82hb")
 building_name = "HerbGarden"
+description = "product"
+description_icon = ExtResource("1_pmgkt")
 base_scene_path = "uid://cs7473lfyhaex"
 cost = Dictionary[int, int]({
 0: 50

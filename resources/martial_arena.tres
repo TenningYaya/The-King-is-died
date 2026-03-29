@@ -8,6 +8,7 @@
 script = ExtResource("1_5jyar")
 icon = ExtResource("1_xhkkv")
 building_name = "MartialArena"
+description = "product tank"
 type = 1
 base_scene_path = "uid://cs2uw4cq2noiw"
 cost = Dictionary[int, int]({

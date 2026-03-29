@@ -2,11 +2,14 @@
 
 [ext_resource type="Texture2D" uid="uid://dlrwtv3v5aq87" path="res://art_assets/buildings/final_buildings/Market.webp" id="1_4lpqn"]
 [ext_resource type="Script" uid="uid://dai8darcd7q2w" path="res://scripts/buildings/building_data.gd" id="1_aul5h"]
+[ext_resource type="Texture2D" uid="uid://cxksjqrl8qp74" path="res://art_assets/product_resource/Q coin.webp" id="1_cm5mw"]
 
 [resource]
 script = ExtResource("1_aul5h")
 icon = ExtResource("1_4lpqn")
 building_name = "Market"
+description = "product"
+description_icon = ExtResource("1_cm5mw")
 type = 2
 base_scene_path = "uid://bvm5flnoabotw"
 cost = Dictionary[int, int]({
