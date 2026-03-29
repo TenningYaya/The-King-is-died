@@ -29,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://cc5n01itk08si" path="res://Scene/ui/shop_scene.tscn" id="26_hjrqo"]
 [ext_resource type="Script" uid="uid://bn8vhp34jly7x" path="res://scripts/dialog/dialogManager.gd" id="28_1mx4w"]
 [ext_resource type="Script" uid="uid://dk4ghcukvb465" path="res://scripts/buildings/initial_building.gd" id="28_mw7jm"]
+[ext_resource type="PackedScene" uid="uid://cnig3oeox1y0j" path="res://Scene/system/mouse_debugger.tscn" id="30_65ldo"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_bxrg2"]
 vertices = PackedVector2Array(1831.1016, 26.992188, 1837.8828, 637.0078, 756.03906, 638.97656, 758.9531, 26)
@@ -234,3 +235,5 @@ position = Vector2(123, 79)
 
 [node name="Dialogue" type="Node2D" parent="." unique_id=2011956737]
 script = ExtResource("28_1mx4w")
+
+[node name="MouseDebugger" parent="." unique_id=1481261857 instance=ExtResource("30_65ldo")]

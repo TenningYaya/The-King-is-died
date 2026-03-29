@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cnig3oeox1y0j"]
+
+[ext_resource type="Script" uid="uid://djh4uv0x4iswg" path="res://scripts/system/mouse_debugger.gd" id="1_tpcfk"]
+
+[node name="MouseDebugger" type="CanvasLayer" unique_id=1481261857]
+layer = 1000
+
+[node name="MouseDebugger" type="Control" parent="." unique_id=185888287]
+process_mode = 3
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+script = ExtResource("1_tpcfk")

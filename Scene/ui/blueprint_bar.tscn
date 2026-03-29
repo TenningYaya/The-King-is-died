@@ -279,6 +279,7 @@ color = Color(0, 0, 0, 0.46666667)
 visible = false
 
 [node name="MouseDebugger" type="Control" parent="." unique_id=1310618310]
+custom_minimum_size = Vector2(20, 20)
 layout_mode = 3
 anchors_preset = 12
 anchor_top = 1.0

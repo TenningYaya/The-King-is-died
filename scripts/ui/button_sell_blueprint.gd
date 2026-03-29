@@ -9,7 +9,7 @@ func _ready():
 
 func _on_toggle_sell_mode():
 	# 切换指针
-	Input.set_custom_mouse_cursor(sell_cursor, Input.CURSOR_ARROW)
+	Input.set_custom_mouse_cursor(sell_cursor, Input.CURSOR_ARROW, Vector2(45, 45))
 	# 让所有格子进入变红待命状态
 	get_tree().call_group("blueprint_slots", "enter_sell_mode")
 

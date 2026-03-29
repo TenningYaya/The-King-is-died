@@ -38,7 +38,7 @@ func exit_demolish_mode():
 
 func _on_mouse_entered():
 	if is_in_demolish_mode:
-		modulate = Color(2.0, 0.5, 0.5)
+		modulate = Color(1.0, 0.5, 0.5)
 
 func _on_mouse_exited():
 	modulate = Color(1, 1, 1)

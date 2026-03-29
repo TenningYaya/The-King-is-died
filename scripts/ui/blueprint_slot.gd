@@ -82,7 +82,7 @@ func _gui_input(event):
 
 func _on_mouse_entered():
 	if is_in_sell_mode and current_data:
-		modulate = Color(2, 0.5, 0.5)
+		modulate = Color(1, 0.5, 0.5)
 	
 	# --- 【新增】悬停显示 Tooltip ---
 	if current_data:
@@ -126,7 +126,7 @@ func _execute_sell():
 func enter_sell_mode():
 	is_in_sell_mode = true
 	# 可以在进入时给个淡淡的底色提示
-	modulate = Color(1, 0.8, 0.8) 
+	#modulate = Color(1, 0.8, 0.8) 
 
 func exit_sell_mode():
 	is_in_sell_mode = false

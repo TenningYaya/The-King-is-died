@@ -8,7 +8,7 @@ func _ready():
 	z_index = 4096 
 
 func _process(_delta):
-	# 每一帧请求重绘
+
 	queue_redraw()
 
 func _draw():

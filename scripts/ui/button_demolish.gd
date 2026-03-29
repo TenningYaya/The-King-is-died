@@ -8,7 +8,7 @@ func _ready():
 	pressed.connect(_on_pressed)
 
 func _on_pressed():
-	Input.set_custom_mouse_cursor(demolish_cursor, Input.CURSOR_ARROW)
+	Input.set_custom_mouse_cursor(demolish_cursor, Input.CURSOR_ARROW, Vector2(40, 40))
 	# 2. 全局通知：进入拆除模式
 	get_tree().call_group("buildings", "enter_demolish_mode")
 
