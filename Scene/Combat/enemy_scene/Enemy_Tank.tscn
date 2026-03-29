@@ -207,6 +207,7 @@ collision_mask = 2
 script = ExtResource("1_pojax")
 faction = 1
 max_hp = 300.0
+attack_damage = 5.0
 attack_range = 100.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=35597690]

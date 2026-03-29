@@ -10,7 +10,7 @@ func _on_ready_override() -> void:
 	faction = Faction.PLAYER
 	add_to_group("player_units")
 	add_to_group("structures")
-	max_hp = 100000000
+	max_hp = 1000
 	current_hp = max_hp
 	
 	if shield_anim:

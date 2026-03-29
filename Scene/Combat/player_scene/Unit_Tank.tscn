@@ -202,8 +202,8 @@ animations = [{
 
 [node name="PlayerTank" type="CharacterBody2D" unique_id=422876923 groups=["player_units"]]
 script = ExtResource("1_kjgma")
-max_hp = 10000.0
-attack_damage = 10000.0
+max_hp = 250.0
+attack_damage = 20.0
 attack_range = 100.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=35597690]
