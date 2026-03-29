@@ -42,4 +42,21 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 70
 text = "Restart"
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1553217478]
+offset_left = 348.0
+offset_top = 859.0
+offset_right = 1645.0
+offset_bottom = 1034.0
+color = Color(0, 0, 0, 0.4117647)
+
+[node name="Label" type="Label" parent="ColorRect" unique_id=1795469663]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 47.0
+offset_right = 1286.0
+offset_bottom = 134.0
+theme_override_font_sizes/font_size = 30
+text = "The Eastern sky bleeds purple, and the cry of the Sect Master falls silent forever. The divine transmission ends in chaos. But maybe there's still another chance...."
+autowrap_mode = 2
+
 [connection signal="pressed" from="CenterContainer/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]

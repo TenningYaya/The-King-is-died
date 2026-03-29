@@ -43,18 +43,18 @@ theme_override_font_sizes/font_size = 70
 text = "Restart"
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=313350248]
-offset_left = 136.0
-offset_top = 849.0
-offset_right = 1800.0
-offset_bottom = 1033.0
-color = Color(0.21960784, 0.21960784, 0.21960784, 0.44313726)
+offset_left = 269.0
+offset_top = 877.0
+offset_right = 1665.0
+offset_bottom = 1061.0
+color = Color(0.07450981, 0.07450981, 0.07450981, 0.43529412)
 
 [node name="Label" type="Label" parent="ColorRect" unique_id=2041916217]
 layout_mode = 0
-offset_left = 25.0
-offset_top = 43.0
-offset_right = 1699.0
-offset_bottom = 177.0
+offset_left = 122.0
+offset_top = 26.0
+offset_right = 1263.0
+offset_bottom = 160.0
 theme_override_font_sizes/font_size = 30
 text = "The land is reborn, and Malevolent Qi retreats before your righteous decree. You have not just saved a sect; you have preserved the very heartbeat of the East. May this newfound peace stand the test of eternity."
 autowrap_mode = 2
