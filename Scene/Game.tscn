@@ -237,3 +237,4 @@ position = Vector2(123, 79)
 script = ExtResource("28_1mx4w")
 
 [node name="MouseDebugger" parent="." unique_id=1481261857 instance=ExtResource("30_65ldo")]
+visible = false

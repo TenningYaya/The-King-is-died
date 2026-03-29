@@ -2,7 +2,7 @@
 extends Node2D
 
 # 1. 预加载你的引导界面场景（注意替换为你实际保存的文件路径！）
-const TUTORIAL_SCENE = preload("res://Scene/ui/tutorial_layer.tscn")
+const TUTORIAL_SCENE = preload("res://Scene/system/tutorial_layer.tscn")
 
 func _ready():
 	if GamedataManager.is_loading_save:

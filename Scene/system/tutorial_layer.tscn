@@ -1,16 +1,16 @@
 [gd_scene format=3 uid="uid://dxnbi16616sw6"]
 
-[ext_resource type="Script" uid="uid://3k5l0l1751vd" path="res://Scene/ui/tutorial_layer.gd" id="1_km3yv"]
-[ext_resource type="Texture2D" uid="uid://cm8vhdyfnw4jt" path="res://art_assets/tutorial_image.png" id="2_ih3nq"]
-[ext_resource type="Texture2D" uid="uid://djjv36og5bne4" path="res://art_assets/figure/SectorFigure2.png" id="2_lj0xc"]
-[ext_resource type="Texture2D" uid="uid://bs4ifc4vnhyfe" path="res://art_assets/figure/DevFigure2.png" id="3_xe82w"]
-[ext_resource type="Texture2D" uid="uid://2pbthdilfja5" path="res://art_assets/background/dialogue_panel.jpg" id="5_lj0xc"]
+[ext_resource type="Script" uid="uid://3k5l0l1751vd" path="res://scripts/system/tutorial_layer.gd" id="1_jd8gt"]
+[ext_resource type="Texture2D" uid="uid://djjv36og5bne4" path="res://art_assets/figure/SectorFigure2.png" id="2_tgqgd"]
+[ext_resource type="Texture2D" uid="uid://bs4ifc4vnhyfe" path="res://art_assets/figure/DevFigure2.png" id="3_i3cxs"]
+[ext_resource type="Texture2D" uid="uid://cm8vhdyfnw4jt" path="res://art_assets/tutorial_image.png" id="4_wxinp"]
+[ext_resource type="Texture2D" uid="uid://2pbthdilfja5" path="res://art_assets/background/dialogue_panel.jpg" id="5_tbelv"]
 
 [node name="TutorialLayer" type="CanvasLayer" unique_id=34610855]
 process_mode = 3
-script = ExtResource("1_km3yv")
-portrait_sect_master = ExtResource("2_lj0xc")
-portrait_narrator = ExtResource("3_xe82w")
+script = ExtResource("1_jd8gt")
+portrait_sect_master = ExtResource("2_tgqgd")
+portrait_narrator = ExtResource("3_i3cxs")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1803541164]
 offset_left = -98.0
@@ -24,14 +24,14 @@ offset_left = 7.0
 offset_top = -37.0
 offset_right = 1923.0
 offset_bottom = 1065.0
-texture = ExtResource("2_ih3nq")
+texture = ExtResource("4_wxinp")
 
 [node name="DialogueBox" type="TextureRect" parent="." unique_id=1248810034]
 offset_left = 435.0
 offset_top = 639.0
 offset_right = 1892.0
 offset_bottom = 999.0
-texture = ExtResource("5_lj0xc")
+texture = ExtResource("5_tbelv")
 
 [node name="NPCFigure" type="TextureRect" parent="DialogueBox" unique_id=1642041931]
 layout_mode = 0

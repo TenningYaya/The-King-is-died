@@ -47,10 +47,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -311.0
-offset_top = -105.0
-offset_right = 254.0
-offset_bottom = 95.0
+offset_left = -291.0
+offset_top = -108.0
+offset_right = 274.0
+offset_bottom = 92.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/h_separation = 10
@@ -62,7 +62,7 @@ custom_minimum_size = Vector2(130, 90)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-alignment = 1
+theme_override_constants/separation = 10
 
 [node name="TextureRect2" type="TextureRect" parent="Background/GridContainer/ElixirItem" unique_id=1549038704]
 custom_minimum_size = Vector2(60, 60)
@@ -78,7 +78,6 @@ theme_override_colors/font_color = Color(0.43212274, 0.6228836, 0.8580426, 1)
 theme_override_fonts/font = ExtResource("4_fjudx")
 theme_override_font_sizes/font_size = 40
 text = "0"
-horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="HerbItem" type="HBoxContainer" parent="Background/GridContainer" unique_id=360231571]
@@ -86,7 +85,7 @@ custom_minimum_size = Vector2(130, 90)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-alignment = 1
+theme_override_constants/separation = 10
 
 [node name="TextureRect2" type="TextureRect" parent="Background/GridContainer/HerbItem" unique_id=1598915694]
 custom_minimum_size = Vector2(60, 60)
@@ -102,7 +101,7 @@ theme_override_colors/font_color = Color(0.43212274, 0.6228836, 0.8580426, 1)
 theme_override_fonts/font = ExtResource("4_fjudx")
 theme_override_font_sizes/font_size = 40
 text = "0"
-horizontal_alignment = 1
+horizontal_alignment = 3
 vertical_alignment = 1
 
 [node name="CrystalItem" type="HBoxContainer" parent="Background/GridContainer" unique_id=477723495]
@@ -110,7 +109,7 @@ custom_minimum_size = Vector2(130, 90)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-alignment = 1
+theme_override_constants/separation = 10
 
 [node name="TextureRect2" type="TextureRect" parent="Background/GridContainer/CrystalItem" unique_id=2138683348]
 custom_minimum_size = Vector2(60, 60)
@@ -126,7 +125,7 @@ theme_override_colors/font_color = Color(0.43212274, 0.6228836, 0.8580426, 1)
 theme_override_fonts/font = ExtResource("4_fjudx")
 theme_override_font_sizes/font_size = 40
 text = "0"
-horizontal_alignment = 1
+horizontal_alignment = 3
 vertical_alignment = 1
 
 [node name="IronItem" type="HBoxContainer" parent="Background/GridContainer" unique_id=2047502614]
@@ -134,7 +133,7 @@ custom_minimum_size = Vector2(130, 90)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-alignment = 1
+theme_override_constants/separation = 10
 
 [node name="TextureRect2" type="TextureRect" parent="Background/GridContainer/IronItem" unique_id=995721676]
 custom_minimum_size = Vector2(60, 60)
@@ -150,7 +149,7 @@ theme_override_colors/font_color = Color(0.43212274, 0.6228836, 0.8580426, 1)
 theme_override_fonts/font = ExtResource("4_fjudx")
 theme_override_font_sizes/font_size = 40
 text = "0"
-horizontal_alignment = 1
+horizontal_alignment = 3
 vertical_alignment = 1
 
 [node name="StoneItem" type="HBoxContainer" parent="Background/GridContainer" unique_id=1524594508]
@@ -158,7 +157,7 @@ custom_minimum_size = Vector2(130, 90)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-alignment = 1
+theme_override_constants/separation = 10
 
 [node name="TextureRect2" type="TextureRect" parent="Background/GridContainer/StoneItem" unique_id=2038578690]
 custom_minimum_size = Vector2(60, 60)
@@ -174,7 +173,7 @@ theme_override_colors/font_color = Color(0.43212274, 0.6228836, 0.8580426, 1)
 theme_override_fonts/font = ExtResource("4_fjudx")
 theme_override_font_sizes/font_size = 40
 text = "0"
-horizontal_alignment = 1
+horizontal_alignment = 3
 vertical_alignment = 1
 
 [node name="CoinItem" type="HBoxContainer" parent="Background/GridContainer" unique_id=1375181130]
@@ -182,7 +181,7 @@ custom_minimum_size = Vector2(130, 90)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-alignment = 1
+theme_override_constants/separation = 10
 
 [node name="TextureRect2" type="TextureRect" parent="Background/GridContainer/CoinItem" unique_id=340168756]
 custom_minimum_size = Vector2(60, 60)
@@ -198,7 +197,7 @@ theme_override_colors/font_color = Color(0.43212274, 0.6228836, 0.8580426, 1)
 theme_override_fonts/font = ExtResource("4_fjudx")
 theme_override_font_sizes/font_size = 40
 text = "0"
-horizontal_alignment = 1
+horizontal_alignment = 3
 vertical_alignment = 1
 
 [node name="999" type="Button" parent="." unique_id=1501281393]
