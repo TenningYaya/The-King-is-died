@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvk6hrdkjbq8h"
-path="res://.godot/imported/gaze_upgrade.webp-0a96683c34d002b42b3e52a87469f08a.ctex"
+uid="uid://b5hebbd5h5sai"
+path="res://.godot/imported/button_market_void.png-43fc421b06b288f827e7466342609f41.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art_assets/ui/gaze_upgrade.webp"
-dest_files=["res://.godot/imported/gaze_upgrade.webp-0a96683c34d002b42b3e52a87469f08a.ctex"]
+source_file="res://art_assets/ui/button/button_market_void.png"
+dest_files=["res://.godot/imported/button_market_void.png-43fc421b06b288f827e7466342609f41.ctex"]
 
 [params]
 

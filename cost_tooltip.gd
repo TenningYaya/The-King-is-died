@@ -21,7 +21,7 @@ func _process(_delta):
 	if py + s.y > screen.y:
 		py = mouse.y - s.y - offset.y
 
-	global_position = Vector2(px, py)
+	#global_position = Vector2(px, py)
 
 func update_display(data: BuildingData):
 	# 1. 清空旧内容

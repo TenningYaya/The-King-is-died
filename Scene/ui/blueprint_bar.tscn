@@ -19,14 +19,19 @@
 [ext_resource type="Texture2D" uid="uid://b0f7j2icl0h2o" path="res://art_assets/ui/button/Quit.png" id="15_55qeq"]
 [ext_resource type="Script" uid="uid://cj8mwu7ivs627" path="res://scripts/ui/gaze_upgrade.gd" id="16_t0nuv"]
 [ext_resource type="FontFile" uid="uid://cx34bvrh8vf80" path="res://fonts/Stacked pixel.ttf" id="17_4vti8"]
-[ext_resource type="Texture2D" uid="uid://cvk6hrdkjbq8h" path="res://art_assets/ui/gaze_upgrade.webp" id="17_t0nuv"]
+[ext_resource type="Texture2D" uid="uid://cvk6hrdkjbq8h" path="res://art_assets/gaze/gaze_upgrade.webp" id="17_t0nuv"]
 [ext_resource type="Texture2D" uid="uid://dnlgpdcq5jusx" path="res://art_assets/ui/button/upgrade.webp" id="18_m2vxj"]
 [ext_resource type="Texture2D" uid="uid://btpypob3sgb43" path="res://art_assets/ui/button/upgrade_disabled_2.webp" id="19_t0nuv"]
 [ext_resource type="PackedScene" uid="uid://casddr1rqpyw6" path="res://Scene/ui/cost_tooltip.tscn" id="22_55qeq"]
 [ext_resource type="Script" path="res://scripts/system/mouse_debugger.gd" id="23_6py5g"]
 [ext_resource type="Texture2D" uid="uid://copi7q06004h4" path="res://art_assets/ui/Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_IconGear01a.png" id="23_qqi5m"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cslux"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qqi5m"]
+bg_color = Color(0, 0, 0, 0.5294118)
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
 
 [node name="BlueprintUI" type="CanvasLayer" unique_id=55262024]
 script = ExtResource("1_hhnae")
@@ -205,12 +210,12 @@ alignment = 2
 script = ExtResource("16_t0nuv")
 
 [node name="RequirementPopup" type="PanelContainer" parent="GazeUpgradeUi" unique_id=1535484485]
-self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 0
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_cslux")
+theme_override_styles/panel = SubResource("StyleBoxFlat_qqi5m")
 
 [node name="RequirementsList" type="HBoxContainer" parent="GazeUpgradeUi/RequirementPopup" unique_id=1363804259]
 layout_mode = 2
@@ -258,10 +263,10 @@ icon = ExtResource("15_55qeq")
 flat = true
 
 [node name="CostTooltip" parent="." unique_id=1624179468 groups=["tooltip_ui"] instance=ExtResource("22_55qeq")]
-offset_left = 309.0
-offset_top = 645.0
-offset_right = 509.0
-offset_bottom = 845.0
+offset_left = 733.0
+offset_top = 642.0
+offset_right = 933.0
+offset_bottom = 842.0
 
 [node name="PauseButton" type="TextureButton" parent="." unique_id=35587423]
 custom_minimum_size = Vector2(54, 54)

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cs2uw4cq2noiw"]
 
-[ext_resource type="Texture2D" uid="uid://1oh6ldhxsl27" path="res://icon.svg" id="1_133jy"]
 [ext_resource type="Script" uid="uid://54l60nadu43t" path="res://scripts/buildings/combat_building.gd" id="1_cjbx4"]
+[ext_resource type="Texture2D" uid="uid://besyd8pppgkhx" path="res://art_assets/ui/rotator2.png" id="2_8je6e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q2xer"]
 size = Vector2(116, 115)
@@ -25,10 +25,10 @@ offset_bottom = -39.215027
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-scale = Vector2(0.345, 0.345)
+scale = Vector2(0.02, 0.02)
 fill_mode = 4
-texture_under = ExtResource("1_133jy")
-texture_progress = ExtResource("1_133jy")
+texture_under = ExtResource("2_8je6e")
+texture_progress = ExtResource("2_8je6e")
 tint_under = Color(0.6814234, 0.6814234, 0.6814234, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=326618333]

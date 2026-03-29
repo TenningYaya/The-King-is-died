@@ -30,8 +30,19 @@ offset_bottom = 295.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 100
-text = "The Ancestor's
- Sight"
+text = "The Ancestor's"
+horizontal_alignment = 2
+
+[node name="Label2" type="Label" parent="Control" unique_id=1642130619]
+layout_mode = 0
+offset_left = 627.0
+offset_top = 152.0
+offset_right = 1710.0
+offset_bottom = 569.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = " Sight"
 horizontal_alignment = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=726758898]

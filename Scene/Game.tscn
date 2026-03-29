@@ -20,7 +20,6 @@
 [ext_resource type="PackedScene" uid="uid://gj80dsafogu0" path="res://Scene/Combat/enemy_scene/Enemy_Mage.tscn" id="16_0yiub"]
 [ext_resource type="PackedScene" uid="uid://i5yi4715o47o" path="res://Scene/Combat/enemy_scene/Enemy_Boss.tscn" id="17_10r1t"]
 [ext_resource type="PackedScene" uid="uid://bcbb67y0b57cy" path="res://Scene/Combat/enemy_scene/Enemy_Assassin.tscn" id="18_vmjmr"]
-[ext_resource type="PackedScene" uid="uid://do8xgvq4ry37i" path="res://Scene/ui/button_gaze_upgrade.tscn" id="20_1e3q2"]
 [ext_resource type="Script" uid="uid://htykhra2fbhu" path="res://scripts/buildings/building_manager.gd" id="23_hjrqo"]
 [ext_resource type="PackedScene" uid="uid://cs7473lfyhaex" path="res://Scene/buildings/producer/production_building.tscn" id="24_ghk2r"]
 [ext_resource type="PackedScene" uid="uid://bvm5flnoabotw" path="res://Scene/buildings/producer/production_market.tscn" id="25_mw7jm"]
@@ -246,13 +245,6 @@ position = Vector2(1737, 277)
 
 [node name="EnemySpawnPoint4" type="Marker2D" parent="EnemySpawnPoints" unique_id=1520395630]
 position = Vector2(1751, 188)
-
-[node name="GazeUpgradeUi" parent="." unique_id=1442738214 instance=ExtResource("20_1e3q2")]
-visible = false
-offset_left = 957.0
-offset_top = 812.0
-offset_right = 1066.0
-offset_bottom = 916.0
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=213039517]
 position = Vector2(961, 481)

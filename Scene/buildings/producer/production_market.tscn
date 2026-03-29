@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://bvm5flnoabotw"]
 
 [ext_resource type="Script" uid="uid://xdesq40gsl5g" path="res://scripts/buildings/producer_market.gd" id="1_hbdac"]
-[ext_resource type="Texture2D" uid="uid://1oh6ldhxsl27" path="res://icon.svg" id="1_jdq6o"]
+[ext_resource type="Texture2D" uid="uid://b5hebbd5h5sai" path="res://art_assets/ui/button/button_market_void.png" id="2_3xl5r"]
+[ext_resource type="Texture2D" uid="uid://besyd8pppgkhx" path="res://art_assets/ui/rotator2.png" id="2_hbdac"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hbdac"]
 size = Vector2(116, 117)
@@ -10,10 +11,11 @@ size = Vector2(116, 117)
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_hbdac")
+void_icon = ExtResource("2_3xl5r")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=153305542]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=384215148]
+[node name="Market" type="CollisionShape2D" parent="." unique_id=384215148]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_hbdac")
 
@@ -30,11 +32,11 @@ mouse_filter = 2
 layout_mode = 0
 offset_right = 128.0
 offset_bottom = 128.0
-scale = Vector2(0.34, 0.34)
+scale = Vector2(0.02, 0.02)
 mouse_filter = 2
 fill_mode = 4
-texture_under = ExtResource("1_jdq6o")
-texture_progress = ExtResource("1_jdq6o")
+texture_under = ExtResource("2_hbdac")
+texture_progress = ExtResource("2_hbdac")
 tint_under = Color(0.70131457, 0.70131457, 0.70131457, 1)
 
 [node name="SelectButton" type="Button" parent="UIContainer" unique_id=1540760497]
@@ -44,6 +46,7 @@ offset_top = -2.0
 offset_right = -15.0
 offset_bottom = 43.0
 mouse_filter = 1
+flat = true
 
 [node name="ResourceList" type="VBoxContainer" parent="UIContainer" unique_id=610161533]
 layout_mode = 0

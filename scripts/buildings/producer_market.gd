@@ -4,6 +4,7 @@ class_name MarketBuilding
 
 @onready var select_button = $UIContainer/SelectButton
 @onready var resource_list = $UIContainer/ResourceList
+@export var void_icon : Texture2D = null
 
 var current_target_resource: String = "" # 这一轮正在换的
 var next_target_resource: String = ""    # 玩家刚刚点的（下一轮生效）
@@ -98,7 +99,7 @@ func _build_resource_menu():
 		count += 1
 	
 	# 1. 强制添加测试按钮
-	_add_menu_item("TEST", null, "test_id")
+	_add_menu_item("NONE", void_icon, "")
 	
 	# 2. 检查管理器资源
 	var manager = get_tree().get_first_node_in_group("level_manager")
@@ -141,8 +142,7 @@ func _update_main_button_ui():
 		select_button.icon_alignment = HORIZONTAL_ALIGNMENT_CENTER
 		select_button.vertical_icon_alignment = VERTICAL_ALIGNMENT_CENTER
 		if current_target_resource == "":
-			select_button.icon = null # 或者设为一个默认问号图
-			select_button.text = "?"
+			select_button.icon = void_icon
 		else:
 			var manager = get_tree().get_first_node_in_group("level_manager")
 			if manager:
