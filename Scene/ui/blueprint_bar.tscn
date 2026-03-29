@@ -23,7 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://dnlgpdcq5jusx" path="res://art_assets/ui/button/upgrade.webp" id="18_m2vxj"]
 [ext_resource type="Texture2D" uid="uid://btpypob3sgb43" path="res://art_assets/ui/button/upgrade_disabled_2.webp" id="19_t0nuv"]
 [ext_resource type="PackedScene" uid="uid://casddr1rqpyw6" path="res://Scene/ui/cost_tooltip.tscn" id="22_55qeq"]
-[ext_resource type="Script" uid="uid://djh4uv0x4iswg" path="res://scripts/system/mouse_debugger.gd" id="23_6py5g"]
+[ext_resource type="Script" path="res://scripts/system/mouse_debugger.gd" id="23_6py5g"]
 [ext_resource type="Texture2D" uid="uid://copi7q06004h4" path="res://art_assets/ui/Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_IconGear01a.png" id="23_qqi5m"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cslux"]
@@ -260,11 +260,11 @@ offset_right = 509.0
 offset_bottom = 845.0
 
 [node name="PauseButton" type="TextureButton" parent="." unique_id=35587423]
-custom_minimum_size = Vector2(64, 64)
+custom_minimum_size = Vector2(54, 54)
 offset_left = 18.0
 offset_top = -40.0
-offset_right = 82.0
-offset_bottom = 24.0
+offset_right = 72.0
+offset_bottom = 14.0
 texture_normal = ExtResource("23_qqi5m")
 ignore_texture_size = true
 stretch_mode = 5
