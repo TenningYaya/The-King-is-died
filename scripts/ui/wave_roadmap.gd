@@ -14,9 +14,9 @@ var wave_monster_data = {
 		["res://art_assets/buildings/elixir_spring.jpg", 4],
 		["res://art_assets/buildings/herb_garden.png", 1]
 	],
-	"PointBoss": [
-		["res://icon.svg", 1] # 这里的图片路径请根据你实际的资源修改
-	]
+	#"PointBoss": [
+		#["res://icon.svg", 1] # 这里的图片路径请根据你实际的资源修改
+	#]
 }
 
 # --- 2. 定义时间变量 ---
@@ -39,7 +39,7 @@ func _ready():
 	_connect_point_signals("Point1")
 	_connect_point_signals("Point2")
 	_connect_point_signals("Point3")
-	_connect_point_signals("PointBoss")
+	#_connect_point_signals("PointBoss")
 
 func _process(delta):
 	# 让进度条随着时间自动推进
