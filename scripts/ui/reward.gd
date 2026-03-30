@@ -1,3 +1,4 @@
+#reward.gd
 extends CanvasLayer
 
 # 1. 奖励池
@@ -101,11 +102,27 @@ func _grant_reward(item_name: String) -> void:
 
 	if blueprint_manager.has_method("add_blueprint"):
 		blueprint_manager.add_blueprint(building_data)
-		print("已发放蓝图奖励: ", item_name, " -> ", res_path)
 	else:
 		push_error("Blueprint Manager 没有 add_blueprint 方法")
 	
 func _close_reward_ui() -> void:
-	print("点击了finish按钮")
 	self.visible = false
 	get_tree().paused = false
+	
+	# --- 核心修复：强制重置所有交互状态 ---
+	# 1. 重置 Gaze
+	var gaze = get_tree().get_first_node_in_group("gaze_controller")
+	if gaze and gaze.has_method("force_reset_interaction"):
+		gaze.force_reset_interaction()
+	
+	# 2. 重置所有建筑（通过组）
+	# 假设你的建筑都在 "structures" 组
+	for building in get_tree().get_nodes_in_group("buildings"):
+		if building.has_method("force_reset_interaction"):
+			building.force_reset_interaction()
+	
+	var focus_owner = get_viewport().gui_get_focus_owner()
+	if focus_owner:
+		focus_owner.release_focus()
+		
+	print("交互状态已强制重置")

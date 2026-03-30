@@ -183,6 +183,18 @@ func _return_blueprint():
 	if bp_ui and bp_ui.has_method("add_blueprint"):
 		bp_ui.add_blueprint(self.data)
 
+func force_reset_interaction():
+	is_moving = false  # 确保拖拽状态归零
+	# 如果你有任何记录鼠标偏移的变量，也重置它
+	# drag_offset = Vector2.ZERO
+
+func _notification(what):
+	# 31 对应的是 NOTIFICATION_UNPAUSED (恢复游戏)
+	if what == 31: 
+		if is_moving:
+			print("[建筑] 检测到取消暂停，强制重置移动状态")
+			_stop_moving()
+			
 func show_production_popup(res_id: String, amount: int):
 	var manager = get_tree().get_first_node_in_group("level_manager")
 	if not manager: return
