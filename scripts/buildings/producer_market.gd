@@ -87,10 +87,13 @@ func _on_select_button_pressed():
 	resource_list.visible = !resource_list.visible
 	
 	if resource_list.visible:
+		$UIContainer.z_index = 100
 		_build_resource_menu()
 		# 强制 UI 刷新布局
 		resource_list.force_update_transform()
-
+	else:
+		$UIContainer.z_index = 0
+		
 func _build_resource_menu():
 	# 清空旧按钮
 	var count = 0
