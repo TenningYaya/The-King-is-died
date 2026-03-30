@@ -217,12 +217,12 @@ position = Vector2(967, 420)
 [node name="EnemySpawner" type="Node2D" parent="." unique_id=216947881 node_paths=PackedStringArray("spawn_points", "shop_ui", "reward_ui", "reward_button")]
 position = Vector2(739, 382)
 script = ExtResource("10_2j816")
-enemy_scenes = Dictionary[String, PackedScene]({
+enemy_scenes = {
 "assassin": ExtResource("18_vmjmr"),
 "boss": ExtResource("17_10r1t"),
 "mage": ExtResource("16_0yiub"),
 "tank": ExtResource("11_g3fkh")
-})
+}
 spawn_points = [NodePath("../EnemySpawnPoints/EnemySpawnPoint"), NodePath("../EnemySpawnPoints/EnemySpawnPoint2"), NodePath("../EnemySpawnPoints/EnemySpawnPoint3"), NodePath("../EnemySpawnPoints/EnemySpawnPoint4")]
 shop_ui = NodePath("../ShopScene")
 reward_ui = NodePath("../Reward")
@@ -256,6 +256,7 @@ market_scene = ExtResource("25_mw7jm")
 combat_scene = ExtResource("26_1mx4w")
 
 [node name="Reward" parent="." unique_id=983007215 instance=ExtResource("26_ghk2r")]
+process_mode = 2
 visible = false
 
 [node name="ShopScene" parent="." unique_id=1459319748 node_paths=PackedStringArray("blueprint_manager") instance=ExtResource("26_hjrqo")]

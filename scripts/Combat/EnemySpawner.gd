@@ -1,7 +1,9 @@
 class_name EnemySpawner
 extends Node2D
 
-@export var enemy_scenes: Dictionary[String, PackedScene] = {}
+# 建议去掉 [String, PackedScene] 类型限制，因为在部分 Godot 4.x 版本中
+# 强类型字典可能会导致解析报错，写成 Dictionary 兼容性最好。
+@export var enemy_scenes: Dictionary = {}
 @export var spawn_points: Array[Node2D] = []
 @export var shop_ui: CanvasLayer
 @export var reward_ui: CanvasLayer
@@ -25,11 +27,12 @@ var waves: Array[Dictionary] = [
 	{ "spawn_time": 60.0, "spawn_list": { "tank": 2, "assassin": 2, "mage": 3 } },
 	{ "spawn_time": 60.0, "spawn_list": { "tank": 2, "assassin": 2, "mage": 3 } },
 	{ "spawn_time": 60.0, "spawn_list": { "tank": 2, "assassin": 2, "mage": 3 } },
-	{ "spawn_time": 60.0, "spawn_list": { "boss": 1 } }
+	# 建议把这里的 spawn_time 改小一点（比如 5.0），这样清完上一波后 Boss 能更快出场
+	{ "spawn_time": 60.0, "spawn_list": { "boss": 1 } } 
 ]
 
 func _ready() -> void:
-	add_to_group("save_required") # 必须加入这个组，SaveManager 才会理它
+	add_to_group("save_required")
 	
 	# --- 读档逻辑 ---
 	if GamedataManager.is_loading_save:
@@ -49,8 +52,18 @@ func _process(delta: float) -> void:
 
 	timer += delta
 	if timer >= waves[current_wave_index]["spawn_time"]:
+		var is_boss_wave = (current_wave_index == waves.size() - 1)
+		
+		# 1. 生成敌人
 		_spawn_wave(waves[current_wave_index]["spawn_list"])
-		_on_wave_completed(current_wave_index)
+		
+		# 2. 如果是普通波次，给奖励；如果是Boss波次，不弹奖励UI以免打断节奏
+		if not is_boss_wave:
+			_on_wave_completed(current_wave_index)
+		else:
+			print("最终 Boss 已生成！")
+			
+		# 3. 推进进度并重置计时器
 		current_wave_index += 1
 		timer = 0.0
 
@@ -62,10 +75,6 @@ func _on_wave_completed(wave_number: int) -> void:
 	
 	if reward_button:
 		reward_button.visible = true
-	
-	## 如果是最后一波，切到 Win Scene
-	#if wave_number == waves.size() - 1:
-		#_go_to_win_scene()
 
 func _go_to_win_scene() -> void:
 	get_tree().paused = false
@@ -82,7 +91,8 @@ func _on_reward_button_pressed() -> void:
 			reward_ui.refresh_rewards()
 		reward_ui.visible = true
 		get_tree().paused = true
-		reward_button.visible = false
+		if reward_button:
+			reward_button.visible = false
 
 func _spawn_wave(spawn_list: Dictionary) -> void:
 	for enemy_type in spawn_list.keys():
@@ -91,7 +101,7 @@ func _spawn_wave(spawn_list: Dictionary) -> void:
 
 func _spawn_single_enemy(enemy_type: String) -> void:
 	if not enemy_scenes.has(enemy_type) or enemy_scenes[enemy_type] == null:
-		push_error("找不到敌人类型: " + enemy_type) # 加个报错提示，防止你在属性面板忘拖预制体
+		push_error("找不到敌人类型: " + enemy_type + "。请务必检查 Inspector 面板中的 enemy_scenes 字典是否添加了该键名！")
 		return
 
 	var enemy_instance = enemy_scenes[enemy_type].instantiate()
@@ -99,8 +109,6 @@ func _spawn_single_enemy(enemy_type: String) -> void:
 
 	# --- 核心修复：监听 Boss 死亡 ---
 	if enemy_type == "boss":
-		# 如果你的敌人基类有 died 信号，用 died.connect(_go_to_win_scene)
-		# 如果没有，可以直接监听节点被销毁的内置信号 tree_exited
 		enemy_instance.tree_exited.connect(_on_boss_defeated)
 
 	if spawn_points.size() > 0:
@@ -113,9 +121,8 @@ func _spawn_single_enemy(enemy_type: String) -> void:
 
 func _on_boss_defeated() -> void:
 	print("Boss 被击败了！准备进入胜利界面！")
-	# 可以考虑在这里加个延迟，比如让玩家看看 Boss 死亡动画，或者掉落奖励
-	# await get_tree().create_timer(2.0).timeout 
-	_go_to_win_scene()
+	# 使用 call_deferred 可以防止在 Godot 清理物理帧/节点树时直接切场景导致报错崩溃
+	call_deferred("_go_to_win_scene")
 			
 func get_save_data() -> Dictionary:
 	return {
