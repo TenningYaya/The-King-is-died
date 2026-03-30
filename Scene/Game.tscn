@@ -208,10 +208,6 @@ autoplay = &"shake"
 [node name="Wall" parent="." unique_id=1173008175 groups=["save_required"] instance=ExtResource("6_48ymf")]
 position = Vector2(658, 379)
 
-[node name="Reward" parent="." unique_id=983007215 instance=ExtResource("26_ghk2r")]
-process_mode = 2
-visible = false
-
 [node name="PauseMenu" parent="." unique_id=1743093916 instance=ExtResource("9_tujvx")]
 visible = false
 
@@ -258,6 +254,10 @@ script = ExtResource("23_hjrqo")
 production_scene = ExtResource("24_ghk2r")
 market_scene = ExtResource("25_mw7jm")
 combat_scene = ExtResource("26_1mx4w")
+
+[node name="Reward" parent="." unique_id=983007215 instance=ExtResource("26_ghk2r")]
+process_mode = 2
+visible = false
 
 [node name="ShopScene" parent="." unique_id=1459319748 node_paths=PackedStringArray("blueprint_manager") instance=ExtResource("26_hjrqo")]
 process_mode = 2

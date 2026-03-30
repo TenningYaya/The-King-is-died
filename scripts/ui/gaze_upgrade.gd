@@ -107,10 +107,6 @@ func _refresh_requirement_colors():
 	for container in requirements_list.get_children():
 		var label = container.get_child(1) as Label
 		var res_id = label.name
-# --- 关键修复：防御性编程 ---
-		if not cost.has(res_id):
-			continue # 如果当前等级的消耗表里没这个资源，跳过变色逻辑
-		
 		if _get_amount(res_id) < cost[res_id]:
 			label.add_theme_color_override("font_color", Color.RED)
 		else:
@@ -142,10 +138,6 @@ func _on_upgrade_pressed():
 		_consume(id, cost[id])
 
 	gaze_ctrl.level += 1
-	requirement_popup.modulate.a = 0.0
-	for child in requirements_list.get_children():
-		child.free()
-		
 	gaze_ctrl.refresh_level()
 	_update_display()
 

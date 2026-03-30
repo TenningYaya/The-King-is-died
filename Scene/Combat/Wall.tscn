@@ -323,10 +323,9 @@ texture = ExtResource("4_qg0o5")
 
 [node name="HPLabel" type="Label" parent="Sprite2D" unique_id=1735860095]
 modulate = Color(0.8692822, 0.20189568, 0.19213292, 1)
-offset_left = -17.500008
+offset_left = -87.5
 offset_top = -67.5
-offset_right = 22.499992
+offset_right = -47.5
 offset_bottom = 14.5
 theme_override_fonts/font = ExtResource("5_qaftt")
 theme_override_font_sizes/font_size = 100
-horizontal_alignment = 1

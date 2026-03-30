@@ -220,11 +220,6 @@ func _mouse_over_building() -> bool:
 			return true
 	return false
 
-func force_reset_interaction():
-	dragging = false  # 确保拖拽状态归零
-	# 如果你有任何记录鼠标偏移的变量，也重置它
-	drag_offset = Vector2.ZERO
-
 func get_save_data() -> Dictionary:
 	return {
 		"level": level,
