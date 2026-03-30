@@ -37,7 +37,7 @@ func _ready() -> void:
 		if not data.is_empty():
 			current_wave_index = data.get("current_wave_index", 0)
 			timer = data.get("timer", 0.0)
-			print("[EnemySpawner] 已恢复波次: %d, 时间: %.1f" % [current_wave_index, timer])
+
 	if reward_button:
 		reward_button.visible = false
 		if not reward_button.pressed.is_connected(_on_reward_button_pressed):
@@ -88,7 +88,6 @@ func _spawn_wave(spawn_list: Dictionary) -> void:
 	for enemy_type in spawn_list.keys():
 		for i in range(spawn_list[enemy_type]):
 			_spawn_single_enemy(enemy_type)
-	print("[EnemySpawner] 第 %d 波生成完毕" % current_wave_index)
 
 func _spawn_single_enemy(enemy_type: String) -> void:
 	if not enemy_scenes.has(enemy_type) or enemy_scenes[enemy_type] == null:
