@@ -7,6 +7,7 @@ var player: AudioStreamPlayer
 @onready var _master_bus_index = AudioServer.get_bus_index("Master")
 
 func _ready():
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	# 动态创建一个播放器并添加到全局节点下
 	player = AudioStreamPlayer.new()
 	add_child(player)
