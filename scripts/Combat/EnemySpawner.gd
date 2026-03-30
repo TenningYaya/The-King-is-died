@@ -63,9 +63,9 @@ func _on_wave_completed(wave_number: int) -> void:
 	if reward_button:
 		reward_button.visible = true
 	
-	# 如果是最后一波，切到 Win Scene
-	if wave_number == waves.size() - 1:
-		_go_to_win_scene()
+	## 如果是最后一波，切到 Win Scene
+	#if wave_number == waves.size() - 1:
+		#_go_to_win_scene()
 
 func _go_to_win_scene() -> void:
 	get_tree().paused = false
@@ -91,10 +91,17 @@ func _spawn_wave(spawn_list: Dictionary) -> void:
 
 func _spawn_single_enemy(enemy_type: String) -> void:
 	if not enemy_scenes.has(enemy_type) or enemy_scenes[enemy_type] == null:
+		push_error("找不到敌人类型: " + enemy_type) # 加个报错提示，防止你在属性面板忘拖预制体
 		return
 
 	var enemy_instance = enemy_scenes[enemy_type].instantiate()
 	add_child(enemy_instance)
+
+	# --- 核心修复：监听 Boss 死亡 ---
+	if enemy_type == "boss":
+		# 如果你的敌人基类有 died 信号，用 died.connect(_go_to_win_scene)
+		# 如果没有，可以直接监听节点被销毁的内置信号 tree_exited
+		enemy_instance.tree_exited.connect(_on_boss_defeated)
 
 	if spawn_points.size() > 0:
 		var target_point = spawn_points[_current_spawn_index % spawn_points.size()]
@@ -103,7 +110,13 @@ func _spawn_single_enemy(enemy_type: String) -> void:
 		_current_spawn_index += 1
 	else:
 		enemy_instance.global_position = global_position
-		
+
+func _on_boss_defeated() -> void:
+	print("Boss 被击败了！准备进入胜利界面！")
+	# 可以考虑在这里加个延迟，比如让玩家看看 Boss 死亡动画，或者掉落奖励
+	# await get_tree().create_timer(2.0).timeout 
+	_go_to_win_scene()
+			
 func get_save_data() -> Dictionary:
 	return {
 		"current_wave_index": current_wave_index,
